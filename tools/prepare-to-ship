@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+./clean-docs
+./make-docs
+find .. -type d -exec chmod 755 {} \;
+find .. -type f -exec chmod 644 {} \;
+chmod +x clean-docs make-docs prepare-to-ship
+find .. -exec touch {} +

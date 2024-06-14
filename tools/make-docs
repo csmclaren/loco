@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+curl https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css -o ../docs/README.css
+
+pandoc\
+  --lua-filter=filter-embed-stylesheet.lua\
+  --lua-filter=filter-append-footer.lua\
+  --metadata title="Loco"\
+  --template README-template.html\
+  ../README.md\
+  -o ../docs/README-standalone.html
+
+pandoc\
+  --lua-filter=filter-link-stylesheet.lua\
+  --lua-filter=filter-append-footer.lua\
+  --metadata title="Loco"\
+  --template README-template.html\
+  ../README.md\
+  -o ../docs/README.html

@@ -1,0 +1,2429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  @media (prefers-color-scheme: dark) {
+    .markdown-body,
+    [data-theme="dark"] {
+      /*dark*/
+      color-scheme: dark;
+      --fontStack-monospace: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+      --base-text-weight-semibold: 600;
+      --base-text-weight-medium: 500;
+      --base-text-weight-normal: 400;
+      --base-size-16: 1rem;
+      --base-size-8: 0.5rem;
+      --base-size-4: 0.25rem;
+      --focus-outlineColor: #1f6feb;
+      --fgColor-default: #e6edf3;
+      --fgColor-muted: #8d96a0;
+      --fgColor-accent: #4493f8;
+      --fgColor-success: #3fb950;
+      --fgColor-attention: #d29922;
+      --fgColor-danger: #f85149;
+      --fgColor-done: #ab7df8;
+      --bgColor-default: #0d1117;
+      --bgColor-muted: #161b22;
+      --bgColor-neutral-muted: #6e768166;
+      --bgColor-attention-muted: #bb800926;
+      --borderColor-default: #30363d;
+      --borderColor-muted: #30363db3;
+      --borderColor-neutral-muted: #6e768166;
+      --borderColor-accent-emphasis: #1f6feb;
+      --borderColor-success-emphasis: #238636;
+      --borderColor-attention-emphasis: #9e6a03;
+      --borderColor-danger-emphasis: #da3633;
+      --borderColor-done-emphasis: #8957e5;
+      --color-prettylights-syntax-comment: #8b949e;
+      --color-prettylights-syntax-constant: #79c0ff;
+      --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+      --color-prettylights-syntax-entity: #d2a8ff;
+      --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+      --color-prettylights-syntax-entity-tag: #7ee787;
+      --color-prettylights-syntax-keyword: #ff7b72;
+      --color-prettylights-syntax-string: #a5d6ff;
+      --color-prettylights-syntax-variable: #ffa657;
+      --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+      --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
+      --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+      --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+      --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+      --color-prettylights-syntax-carriage-return-bg: #b62324;
+      --color-prettylights-syntax-string-regexp: #7ee787;
+      --color-prettylights-syntax-markup-list: #f2cc60;
+      --color-prettylights-syntax-markup-heading: #1f6feb;
+      --color-prettylights-syntax-markup-italic: #c9d1d9;
+      --color-prettylights-syntax-markup-bold: #c9d1d9;
+      --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+      --color-prettylights-syntax-markup-deleted-bg: #67060c;
+      --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+      --color-prettylights-syntax-markup-inserted-bg: #033a16;
+      --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+      --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+      --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+      --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+      --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+      --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    .markdown-body,
+    [data-theme="light"] {
+      /*light*/
+      color-scheme: light;
+      --fontStack-monospace: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+      --base-text-weight-semibold: 600;
+      --base-text-weight-medium: 500;
+      --base-text-weight-normal: 400;
+      --base-size-16: 1rem;
+      --base-size-8: 0.5rem;
+      --base-size-4: 0.25rem;
+      --focus-outlineColor: #0969da;
+      --fgColor-default: #1f2328;
+      --fgColor-muted: #636c76;
+      --fgColor-accent: #0969da;
+      --fgColor-success: #1a7f37;
+      --fgColor-attention: #9a6700;
+      --fgColor-danger: #d1242f;
+      --fgColor-done: #8250df;
+      --bgColor-default: #ffffff;
+      --bgColor-muted: #f6f8fa;
+      --bgColor-neutral-muted: #afb8c133;
+      --bgColor-attention-muted: #fff8c5;
+      --borderColor-default: #d0d7de;
+      --borderColor-muted: #d0d7deb3;
+      --borderColor-neutral-muted: #afb8c133;
+      --borderColor-accent-emphasis: #0969da;
+      --borderColor-success-emphasis: #1a7f37;
+      --borderColor-attention-emphasis: #bf8700;
+      --borderColor-danger-emphasis: #cf222e;
+      --borderColor-done-emphasis: #8250df;
+      --color-prettylights-syntax-comment: #57606a;
+      --color-prettylights-syntax-constant: #0550ae;
+      --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+      --color-prettylights-syntax-entity: #6639ba;
+      --color-prettylights-syntax-storage-modifier-import: #24292f;
+      --color-prettylights-syntax-entity-tag: #0550ae;
+      --color-prettylights-syntax-keyword: #cf222e;
+      --color-prettylights-syntax-string: #0a3069;
+      --color-prettylights-syntax-variable: #953800;
+      --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+      --color-prettylights-syntax-brackethighlighter-angle: #57606a;
+      --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+      --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+      --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+      --color-prettylights-syntax-carriage-return-bg: #cf222e;
+      --color-prettylights-syntax-string-regexp: #116329;
+      --color-prettylights-syntax-markup-list: #3b2300;
+      --color-prettylights-syntax-markup-heading: #0550ae;
+      --color-prettylights-syntax-markup-italic: #24292f;
+      --color-prettylights-syntax-markup-bold: #24292f;
+      --color-prettylights-syntax-markup-deleted-text: #82071e;
+      --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+      --color-prettylights-syntax-markup-inserted-text: #116329;
+      --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+      --color-prettylights-syntax-markup-changed-text: #953800;
+      --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+      --color-prettylights-syntax-markup-ignored-text: #eaeef2;
+      --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+      --color-prettylights-syntax-meta-diff-range: #8250df;
+      --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+    }
+  }
+
+  .markdown-body {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    color: var(--fgColor-default);
+    background-color: var(--bgColor-default);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    scroll-behavior: auto;
+  }
+
+  .markdown-body .octicon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: text-bottom;
+  }
+
+  .markdown-body h1:hover .anchor .octicon-link:before,
+  .markdown-body h2:hover .anchor .octicon-link:before,
+  .markdown-body h3:hover .anchor .octicon-link:before,
+  .markdown-body h4:hover .anchor .octicon-link:before,
+  .markdown-body h5:hover .anchor .octicon-link:before,
+  .markdown-body h6:hover .anchor .octicon-link:before {
+    width: 16px;
+    height: 16px;
+    content: ' ';
+    display: inline-block;
+    background-color: currentColor;
+    -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+    mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+  }
+
+  .markdown-body details,
+  .markdown-body figcaption,
+  .markdown-body figure {
+    display: block;
+  }
+
+  .markdown-body summary {
+    display: list-item;
+  }
+
+  .markdown-body [hidden] {
+    display: none !important;
+  }
+
+  .markdown-body a {
+    background-color: transparent;
+    color: var(--fgColor-accent);
+    text-decoration: none;
+  }
+
+  .markdown-body abbr[title] {
+    border-bottom: none;
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+
+  .markdown-body b,
+  .markdown-body strong {
+    font-weight: var(--base-text-weight-semibold, 600);
+  }
+
+  .markdown-body dfn {
+    font-style: italic;
+  }
+
+  .markdown-body h1 {
+    margin: .67em 0;
+    font-weight: var(--base-text-weight-semibold, 600);
+    padding-bottom: .3em;
+    font-size: 2em;
+    border-bottom: 1px solid var(--borderColor-muted);
+  }
+
+  .markdown-body mark {
+    background-color: var(--bgColor-attention-muted);
+    color: var(--fgColor-default);
+  }
+
+  .markdown-body small {
+    font-size: 90%;
+  }
+
+  .markdown-body sub,
+  .markdown-body sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  .markdown-body sub {
+    bottom: -0.25em;
+  }
+
+  .markdown-body sup {
+    top: -0.5em;
+  }
+
+  .markdown-body img {
+    border-style: none;
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: var(--bgColor-default);
+  }
+
+  .markdown-body code,
+  .markdown-body kbd,
+  .markdown-body pre,
+  .markdown-body samp {
+    font-family: monospace;
+    font-size: 1em;
+  }
+
+  .markdown-body figure {
+    margin: 1em 40px;
+  }
+
+  .markdown-body hr {
+    box-sizing: content-box;
+    overflow: hidden;
+    background: transparent;
+    border-bottom: 1px solid var(--borderColor-muted);
+    height: .25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: var(--borderColor-default);
+    border: 0;
+  }
+
+  .markdown-body input {
+    font: inherit;
+    margin: 0;
+    overflow: visible;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .markdown-body [type=button],
+  .markdown-body [type=reset],
+  .markdown-body [type=submit] {
+    -webkit-appearance: button;
+    appearance: button;
+  }
+
+  .markdown-body [type=checkbox],
+  .markdown-body [type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .markdown-body [type=number]::-webkit-inner-spin-button,
+  .markdown-body [type=number]::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  .markdown-body [type=search]::-webkit-search-cancel-button,
+  .markdown-body [type=search]::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .markdown-body ::-webkit-input-placeholder {
+    color: inherit;
+    opacity: .54;
+  }
+
+  .markdown-body ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    appearance: button;
+    font: inherit;
+  }
+
+  .markdown-body a:hover {
+    text-decoration: underline;
+  }
+
+  .markdown-body ::placeholder {
+    color: var(--fgColor-muted);
+    opacity: 1;
+  }
+
+  .markdown-body hr::before {
+    display: table;
+    content: "";
+  }
+
+  .markdown-body hr::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+
+  .markdown-body table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+  }
+
+  .markdown-body td,
+  .markdown-body th {
+    padding: 0;
+  }
+
+  .markdown-body details summary {
+    cursor: pointer;
+  }
+
+  .markdown-body details:not([open])>*:not(summary) {
+    display: none;
+  }
+
+  .markdown-body a:focus,
+  .markdown-body [role=button]:focus,
+  .markdown-body input[type=radio]:focus,
+  .markdown-body input[type=checkbox]:focus {
+    outline: 2px solid var(--focus-outlineColor);
+    outline-offset: -2px;
+    box-shadow: none;
+  }
+
+  .markdown-body a:focus:not(:focus-visible),
+  .markdown-body [role=button]:focus:not(:focus-visible),
+  .markdown-body input[type=radio]:focus:not(:focus-visible),
+  .markdown-body input[type=checkbox]:focus:not(:focus-visible) {
+    outline: solid 1px transparent;
+  }
+
+  .markdown-body a:focus-visible,
+  .markdown-body [role=button]:focus-visible,
+  .markdown-body input[type=radio]:focus-visible,
+  .markdown-body input[type=checkbox]:focus-visible {
+    outline: 2px solid var(--focus-outlineColor);
+    outline-offset: -2px;
+    box-shadow: none;
+  }
+
+  .markdown-body a:not([class]):focus,
+  .markdown-body a:not([class]):focus-visible,
+  .markdown-body input[type=radio]:focus,
+  .markdown-body input[type=radio]:focus-visible,
+  .markdown-body input[type=checkbox]:focus,
+  .markdown-body input[type=checkbox]:focus-visible {
+    outline-offset: 0;
+  }
+
+  .markdown-body kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font: 11px var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
+    line-height: 10px;
+    color: var(--fgColor-default);
+    vertical-align: middle;
+    background-color: var(--bgColor-muted);
+    border: solid 1px var(--borderColor-neutral-muted);
+    border-bottom-color: var(--borderColor-neutral-muted);
+    border-radius: 6px;
+    box-shadow: inset 0 -1px 0 var(--borderColor-neutral-muted);
+  }
+
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3,
+  .markdown-body h4,
+  .markdown-body h5,
+  .markdown-body h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: var(--base-text-weight-semibold, 600);
+    line-height: 1.25;
+  }
+
+  .markdown-body h2 {
+    font-weight: var(--base-text-weight-semibold, 600);
+    padding-bottom: .3em;
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--borderColor-muted);
+  }
+
+  .markdown-body h3 {
+    font-weight: var(--base-text-weight-semibold, 600);
+    font-size: 1.25em;
+  }
+
+  .markdown-body h4 {
+    font-weight: var(--base-text-weight-semibold, 600);
+    font-size: 1em;
+  }
+
+  .markdown-body h5 {
+    font-weight: var(--base-text-weight-semibold, 600);
+    font-size: .875em;
+  }
+
+  .markdown-body h6 {
+    font-weight: var(--base-text-weight-semibold, 600);
+    font-size: .85em;
+    color: var(--fgColor-muted);
+  }
+
+  .markdown-body p {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .markdown-body blockquote {
+    margin: 0;
+    padding: 0 1em;
+    color: var(--fgColor-muted);
+    border-left: .25em solid var(--borderColor-default);
+  }
+
+  .markdown-body ul,
+  .markdown-body ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 2em;
+  }
+
+  .markdown-body ol ol,
+  .markdown-body ul ol {
+    list-style-type: lower-roman;
+  }
+
+  .markdown-body ul ul ol,
+  .markdown-body ul ol ol,
+  .markdown-body ol ul ol,
+  .markdown-body ol ol ol {
+    list-style-type: lower-alpha;
+  }
+
+  .markdown-body dd {
+    margin-left: 0;
+  }
+
+  .markdown-body tt,
+  .markdown-body code,
+  .markdown-body samp {
+    font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
+    font-size: 12px;
+  }
+
+  .markdown-body pre {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
+    font-size: 12px;
+    word-wrap: normal;
+  }
+
+  .markdown-body .octicon {
+    display: inline-block;
+    overflow: visible !important;
+    vertical-align: text-bottom;
+    fill: currentColor;
+  }
+
+  .markdown-body input::-webkit-outer-spin-button,
+  .markdown-body input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .markdown-body .mr-2 {
+    margin-right: var(--base-size-8, 8px) !important;
+  }
+
+  .markdown-body::before {
+    display: table;
+    content: "";
+  }
+
+  .markdown-body::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+
+  .markdown-body>*:first-child {
+    margin-top: 0 !important;
+  }
+
+  .markdown-body>*:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .markdown-body a:not([href]) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .markdown-body .absent {
+    color: var(--fgColor-danger);
+  }
+
+  .markdown-body .anchor {
+    float: left;
+    padding-right: 4px;
+    margin-left: -20px;
+    line-height: 1;
+  }
+
+  .markdown-body .anchor:focus {
+    outline: none;
+  }
+
+  .markdown-body p,
+  .markdown-body blockquote,
+  .markdown-body ul,
+  .markdown-body ol,
+  .markdown-body dl,
+  .markdown-body table,
+  .markdown-body pre,
+  .markdown-body details {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .markdown-body blockquote>:first-child {
+    margin-top: 0;
+  }
+
+  .markdown-body blockquote>:last-child {
+    margin-bottom: 0;
+  }
+
+  .markdown-body h1 .octicon-link,
+  .markdown-body h2 .octicon-link,
+  .markdown-body h3 .octicon-link,
+  .markdown-body h4 .octicon-link,
+  .markdown-body h5 .octicon-link,
+  .markdown-body h6 .octicon-link {
+    color: var(--fgColor-default);
+    vertical-align: middle;
+    visibility: hidden;
+  }
+
+  .markdown-body h1:hover .anchor,
+  .markdown-body h2:hover .anchor,
+  .markdown-body h3:hover .anchor,
+  .markdown-body h4:hover .anchor,
+  .markdown-body h5:hover .anchor,
+  .markdown-body h6:hover .anchor {
+    text-decoration: none;
+  }
+
+  .markdown-body h1:hover .anchor .octicon-link,
+  .markdown-body h2:hover .anchor .octicon-link,
+  .markdown-body h3:hover .anchor .octicon-link,
+  .markdown-body h4:hover .anchor .octicon-link,
+  .markdown-body h5:hover .anchor .octicon-link,
+  .markdown-body h6:hover .anchor .octicon-link {
+    visibility: visible;
+  }
+
+  .markdown-body h1 tt,
+  .markdown-body h1 code,
+  .markdown-body h2 tt,
+  .markdown-body h2 code,
+  .markdown-body h3 tt,
+  .markdown-body h3 code,
+  .markdown-body h4 tt,
+  .markdown-body h4 code,
+  .markdown-body h5 tt,
+  .markdown-body h5 code,
+  .markdown-body h6 tt,
+  .markdown-body h6 code {
+    padding: 0 .2em;
+    font-size: inherit;
+  }
+
+  .markdown-body summary h1,
+  .markdown-body summary h2,
+  .markdown-body summary h3,
+  .markdown-body summary h4,
+  .markdown-body summary h5,
+  .markdown-body summary h6 {
+    display: inline-block;
+  }
+
+  .markdown-body summary h1 .anchor,
+  .markdown-body summary h2 .anchor,
+  .markdown-body summary h3 .anchor,
+  .markdown-body summary h4 .anchor,
+  .markdown-body summary h5 .anchor,
+  .markdown-body summary h6 .anchor {
+    margin-left: -40px;
+  }
+
+  .markdown-body summary h1,
+  .markdown-body summary h2 {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .markdown-body ul.no-list,
+  .markdown-body ol.no-list {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .markdown-body ol[type="a s"] {
+    list-style-type: lower-alpha;
+  }
+
+  .markdown-body ol[type="A s"] {
+    list-style-type: upper-alpha;
+  }
+
+  .markdown-body ol[type="i s"] {
+    list-style-type: lower-roman;
+  }
+
+  .markdown-body ol[type="I s"] {
+    list-style-type: upper-roman;
+  }
+
+  .markdown-body ol[type="1"] {
+    list-style-type: decimal;
+  }
+
+  .markdown-body div>ol:not([type]) {
+    list-style-type: decimal;
+  }
+
+  .markdown-body ul ul,
+  .markdown-body ul ol,
+  .markdown-body ol ol,
+  .markdown-body ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .markdown-body li>p {
+    margin-top: 16px;
+  }
+
+  .markdown-body li+li {
+    margin-top: .25em;
+  }
+
+  .markdown-body dl {
+    padding: 0;
+  }
+
+  .markdown-body dl dt {
+    padding: 0;
+    margin-top: 16px;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: var(--base-text-weight-semibold, 600);
+  }
+
+  .markdown-body dl dd {
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+
+  .markdown-body table th {
+    font-weight: var(--base-text-weight-semibold, 600);
+  }
+
+  .markdown-body table th,
+  .markdown-body table td {
+    padding: 6px 13px;
+    border: 1px solid var(--borderColor-default);
+  }
+
+  .markdown-body table td>:last-child {
+    margin-bottom: 0;
+  }
+
+  .markdown-body table tr {
+    background-color: var(--bgColor-default);
+    border-top: 1px solid var(--borderColor-muted);
+  }
+
+  .markdown-body table tr:nth-child(2n) {
+    background-color: var(--bgColor-muted);
+  }
+
+  .markdown-body table img {
+    background-color: transparent;
+  }
+
+  .markdown-body img[align=right] {
+    padding-left: 20px;
+  }
+
+  .markdown-body img[align=left] {
+    padding-right: 20px;
+  }
+
+  .markdown-body .emoji {
+    max-width: none;
+    vertical-align: text-top;
+    background-color: transparent;
+  }
+
+  .markdown-body span.frame {
+    display: block;
+    overflow: hidden;
+  }
+
+  .markdown-body span.frame>span {
+    display: block;
+    float: left;
+    width: auto;
+    padding: 7px;
+    margin: 13px 0 0;
+    overflow: hidden;
+    border: 1px solid var(--borderColor-default);
+  }
+
+  .markdown-body span.frame span img {
+    display: block;
+    float: left;
+  }
+
+  .markdown-body span.frame span span {
+    display: block;
+    padding: 5px 0 0;
+    clear: both;
+    color: var(--fgColor-default);
+  }
+
+  .markdown-body span.align-center {
+    display: block;
+    overflow: hidden;
+    clear: both;
+  }
+
+  .markdown-body span.align-center>span {
+    display: block;
+    margin: 13px auto 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .markdown-body span.align-center span img {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .markdown-body span.align-right {
+    display: block;
+    overflow: hidden;
+    clear: both;
+  }
+
+  .markdown-body span.align-right>span {
+    display: block;
+    margin: 13px 0 0;
+    overflow: hidden;
+    text-align: right;
+  }
+
+  .markdown-body span.align-right span img {
+    margin: 0;
+    text-align: right;
+  }
+
+  .markdown-body span.float-left {
+    display: block;
+    float: left;
+    margin-right: 13px;
+    overflow: hidden;
+  }
+
+  .markdown-body span.float-left span {
+    margin: 13px 0 0;
+  }
+
+  .markdown-body span.float-right {
+    display: block;
+    float: right;
+    margin-left: 13px;
+    overflow: hidden;
+  }
+
+  .markdown-body span.float-right>span {
+    display: block;
+    margin: 13px auto 0;
+    overflow: hidden;
+    text-align: right;
+  }
+
+  .markdown-body code,
+  .markdown-body tt {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 85%;
+    white-space: break-spaces;
+    background-color: var(--bgColor-neutral-muted);
+    border-radius: 6px;
+  }
+
+  .markdown-body code br,
+  .markdown-body tt br {
+    display: none;
+  }
+
+  .markdown-body del code {
+    text-decoration: inherit;
+  }
+
+  .markdown-body samp {
+    font-size: 85%;
+  }
+
+  .markdown-body pre code {
+    font-size: 100%;
+  }
+
+  .markdown-body pre>code {
+    padding: 0;
+    margin: 0;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+  }
+
+  .markdown-body .highlight {
+    margin-bottom: 16px;
+  }
+
+  .markdown-body .highlight pre {
+    margin-bottom: 0;
+    word-break: normal;
+  }
+
+  .markdown-body .highlight pre,
+  .markdown-body pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    color: var(--fgColor-default);
+    background-color: var(--bgColor-muted);
+    border-radius: 6px;
+  }
+
+  .markdown-body pre code,
+  .markdown-body pre tt {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .markdown-body .csv-data td,
+  .markdown-body .csv-data th {
+    padding: 5px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .markdown-body .csv-data .blob-num {
+    padding: 10px 8px 9px;
+    text-align: right;
+    background: var(--bgColor-default);
+    border: 0;
+  }
+
+  .markdown-body .csv-data tr {
+    border-top: 0;
+  }
+
+  .markdown-body .csv-data th {
+    font-weight: var(--base-text-weight-semibold, 600);
+    background: var(--bgColor-muted);
+    border-top: 0;
+  }
+
+  .markdown-body [data-footnote-ref]::before {
+    content: "[";
+  }
+
+  .markdown-body [data-footnote-ref]::after {
+    content: "]";
+  }
+
+  .markdown-body .footnotes {
+    font-size: 12px;
+    color: var(--fgColor-muted);
+    border-top: 1px solid var(--borderColor-default);
+  }
+
+  .markdown-body .footnotes ol {
+    padding-left: 16px;
+  }
+
+  .markdown-body .footnotes ol ul {
+    display: inline-block;
+    padding-left: 16px;
+    margin-top: 16px;
+  }
+
+  .markdown-body .footnotes li {
+    position: relative;
+  }
+
+  .markdown-body .footnotes li:target::before {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -24px;
+    pointer-events: none;
+    content: "";
+    border: 2px solid var(--borderColor-accent-emphasis);
+    border-radius: 6px;
+  }
+
+  .markdown-body .footnotes li:target {
+    color: var(--fgColor-default);
+  }
+
+  .markdown-body .footnotes .data-footnote-backref g-emoji {
+    font-family: monospace;
+  }
+
+  .markdown-body .pl-c {
+    color: var(--color-prettylights-syntax-comment);
+  }
+
+  .markdown-body .pl-c1,
+  .markdown-body .pl-s .pl-v {
+    color: var(--color-prettylights-syntax-constant);
+  }
+
+  .markdown-body .pl-e,
+  .markdown-body .pl-en {
+    color: var(--color-prettylights-syntax-entity);
+  }
+
+  .markdown-body .pl-smi,
+  .markdown-body .pl-s .pl-s1 {
+    color: var(--color-prettylights-syntax-storage-modifier-import);
+  }
+
+  .markdown-body .pl-ent {
+    color: var(--color-prettylights-syntax-entity-tag);
+  }
+
+  .markdown-body .pl-k {
+    color: var(--color-prettylights-syntax-keyword);
+  }
+
+  .markdown-body .pl-s,
+  .markdown-body .pl-pds,
+  .markdown-body .pl-s .pl-pse .pl-s1,
+  .markdown-body .pl-sr,
+  .markdown-body .pl-sr .pl-cce,
+  .markdown-body .pl-sr .pl-sre,
+  .markdown-body .pl-sr .pl-sra {
+    color: var(--color-prettylights-syntax-string);
+  }
+
+  .markdown-body .pl-v,
+  .markdown-body .pl-smw {
+    color: var(--color-prettylights-syntax-variable);
+  }
+
+  .markdown-body .pl-bu {
+    color: var(--color-prettylights-syntax-brackethighlighter-unmatched);
+  }
+
+  .markdown-body .pl-ii {
+    color: var(--color-prettylights-syntax-invalid-illegal-text);
+    background-color: var(--color-prettylights-syntax-invalid-illegal-bg);
+  }
+
+  .markdown-body .pl-c2 {
+    color: var(--color-prettylights-syntax-carriage-return-text);
+    background-color: var(--color-prettylights-syntax-carriage-return-bg);
+  }
+
+  .markdown-body .pl-sr .pl-cce {
+    font-weight: bold;
+    color: var(--color-prettylights-syntax-string-regexp);
+  }
+
+  .markdown-body .pl-ml {
+    color: var(--color-prettylights-syntax-markup-list);
+  }
+
+  .markdown-body .pl-mh,
+  .markdown-body .pl-mh .pl-en,
+  .markdown-body .pl-ms {
+    font-weight: bold;
+    color: var(--color-prettylights-syntax-markup-heading);
+  }
+
+  .markdown-body .pl-mi {
+    font-style: italic;
+    color: var(--color-prettylights-syntax-markup-italic);
+  }
+
+  .markdown-body .pl-mb {
+    font-weight: bold;
+    color: var(--color-prettylights-syntax-markup-bold);
+  }
+
+  .markdown-body .pl-md {
+    color: var(--color-prettylights-syntax-markup-deleted-text);
+    background-color: var(--color-prettylights-syntax-markup-deleted-bg);
+  }
+
+  .markdown-body .pl-mi1 {
+    color: var(--color-prettylights-syntax-markup-inserted-text);
+    background-color: var(--color-prettylights-syntax-markup-inserted-bg);
+  }
+
+  .markdown-body .pl-mc {
+    color: var(--color-prettylights-syntax-markup-changed-text);
+    background-color: var(--color-prettylights-syntax-markup-changed-bg);
+  }
+
+  .markdown-body .pl-mi2 {
+    color: var(--color-prettylights-syntax-markup-ignored-text);
+    background-color: var(--color-prettylights-syntax-markup-ignored-bg);
+  }
+
+  .markdown-body .pl-mdr {
+    font-weight: bold;
+    color: var(--color-prettylights-syntax-meta-diff-range);
+  }
+
+  .markdown-body .pl-ba {
+    color: var(--color-prettylights-syntax-brackethighlighter-angle);
+  }
+
+  .markdown-body .pl-sg {
+    color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
+  }
+
+  .markdown-body .pl-corl {
+    text-decoration: underline;
+    color: var(--color-prettylights-syntax-constant-other-reference-link);
+  }
+
+  .markdown-body [role=button]:focus:not(:focus-visible),
+  .markdown-body [role=tabpanel][tabindex="0"]:focus:not(:focus-visible),
+  .markdown-body button:focus:not(:focus-visible),
+  .markdown-body summary:focus:not(:focus-visible),
+  .markdown-body a:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .markdown-body [tabindex="0"]:focus:not(:focus-visible),
+  .markdown-body details-dialog:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .markdown-body g-emoji {
+    display: inline-block;
+    min-width: 1ch;
+    font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1em;
+    font-style: normal !important;
+    font-weight: var(--base-text-weight-normal, 400);
+    line-height: 1;
+    vertical-align: -0.075em;
+  }
+
+  .markdown-body g-emoji img {
+    width: 1em;
+    height: 1em;
+  }
+
+  .markdown-body .task-list-item {
+    list-style-type: none;
+  }
+
+  .markdown-body .task-list-item label {
+    font-weight: var(--base-text-weight-normal, 400);
+  }
+
+  .markdown-body .task-list-item.enabled label {
+    cursor: pointer;
+  }
+
+  .markdown-body .task-list-item+.task-list-item {
+    margin-top: var(--base-size-4);
+  }
+
+  .markdown-body .task-list-item .handle {
+    display: none;
+  }
+
+  .markdown-body .task-list-item-checkbox {
+    margin: 0 .2em .25em -1.4em;
+    vertical-align: middle;
+  }
+
+  .markdown-body .contains-task-list:dir(rtl) .task-list-item-checkbox {
+    margin: 0 -1.6em .25em .2em;
+  }
+
+  .markdown-body .contains-task-list {
+    position: relative;
+  }
+
+  .markdown-body .contains-task-list:hover .task-list-item-convert-container,
+  .markdown-body .contains-task-list:focus-within .task-list-item-convert-container {
+    display: block;
+    width: auto;
+    height: 24px;
+    overflow: visible;
+    clip: auto;
+  }
+
+  .markdown-body ::-webkit-calendar-picker-indicator {
+    filter: invert(50%);
+  }
+
+  .markdown-body .markdown-alert {
+    padding: var(--base-size-8) var(--base-size-16);
+    margin-bottom: var(--base-size-16);
+    color: inherit;
+    border-left: .25em solid var(--borderColor-default);
+  }
+
+  .markdown-body .markdown-alert>:first-child {
+    margin-top: 0;
+  }
+
+  .markdown-body .markdown-alert>:last-child {
+    margin-bottom: 0;
+  }
+
+  .markdown-body .markdown-alert .markdown-alert-title {
+    display: flex;
+    font-weight: var(--base-text-weight-medium, 500);
+    align-items: center;
+    line-height: 1;
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-note {
+    border-left-color: var(--borderColor-accent-emphasis);
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-note .markdown-alert-title {
+    color: var(--fgColor-accent);
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-important {
+    border-left-color: var(--borderColor-done-emphasis);
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-important .markdown-alert-title {
+    color: var(--fgColor-done);
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-warning {
+    border-left-color: var(--borderColor-attention-emphasis);
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-warning .markdown-alert-title {
+    color: var(--fgColor-attention);
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-tip {
+    border-left-color: var(--borderColor-success-emphasis);
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-tip .markdown-alert-title {
+    color: var(--fgColor-success);
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-caution {
+    border-left-color: var(--borderColor-danger-emphasis);
+  }
+
+  .markdown-body .markdown-alert.markdown-alert-caution .markdown-alert-title {
+    color: var(--fgColor-danger);
+  }
+
+  .markdown-body>*:first-child>.heading-element:first-child {
+    margin-top: 0 !important;
+  }
+
+  </style>
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      margin: 0 auto;
+      max-width: 980px;
+      min-width: 200px;
+      padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+  <title>Loco</title>
+</head>
+<body class="markdown-body">
+  <h1 id="loco">Loco  🚋</h1>
+  <p>Loco is a <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html">package</a>
+  for <a href="https://www.gnu.org/software/emacs/">Emacs</a>. Loco lets
+  you type any <a href="#keys-key-sequences-and-commands">key
+  sequence</a>, including those requiring the modifiers <kbd>Alt</kbd>,
+  <kbd>Control</kbd>, <kbd>Hyper</kbd>, <kbd>Meta</kbd>, or
+  <kbd>Super</kbd>, without using any physical modifier keys except
+  <kbd>Shift</kbd>. This makes it easy to enter key sequences that are
+  complicated or use hard-to-reach keys.</p>
+  <p>Loco works by translating key sequences from one form to another.
+  It does not redefine the <a
+  href="https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf">standard
+  key bindings</a>, nor does it prevent you from <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Bindings.html">defining
+  your own</a>. Learn the few rules of Loco and be productive
+  immediately, using the key bindings you already know.</p>
+  <p>Loco does not preclude the use of physical modifier keys; it
+  integrates well with them. There may even be some key bindings for
+  which you find using physical modifier keys preferable. And it works
+  equally well in the <a
+  href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a>
+  or the <a
+  href="https://en.wikipedia.org/wiki/Computer_terminal">terminal</a>,
+  working around the <a
+  href="#considerations-when-using-a-terminal">limitations of
+  terminals</a> that prevent the entry of certain keys, allowing you to
+  move between both with ease.</p>
+  <p>When enabled, and using the default configuration, pressing
+  <kbd>S‑&lt;return&gt;</kbd> will activate Loco. Once activated, you
+  can type any key sequence, taking advantage of the following special
+  keys to help you avoid pressing any physical modifier keys:</p>
+  <ul>
+  <li><kbd>j</kbd> to apply the modifier <kbd>Control</kbd> to the next
+  non‑special key;</li>
+  <li><kbd>k</kbd> to apply the modifier <kbd>Meta</kbd> to the next
+  non‑special key; or</li>
+  <li><kbd>l</kbd> to open a menu that includes options to:
+  <ul>
+  <li>apply other modifiers (for example, <kbd>Alt</kbd>,
+  <kbd>Hyper</kbd>, or <kbd>Super</kbd>) to the next non‑special key;
+  or</li>
+  <li>enter the special keys themselves as the literal characters
+  <em>j</em>, <em>k</em>, or <em>l</em>.</li>
+  </ul></li>
+  </ul>
+  <table>
+  <caption>
+  Examples (using the default configuration)
+  </caption>
+  <tbody>
+  <tr>
+  <th>
+  Typed Key Sequence
+  </th>
+  <th>
+  Translated Key Sequence
+  </th>
+  <th>
+  Command
+  </th>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j d</kbd>
+  </td>
+  <td>
+  <kbd>C‑d</kbd>
+  </td>
+  <td>
+  <code>delete‑char</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>k d</kbd>
+  </td>
+  <td>
+  <kbd>M‑d</kbd>
+  </td>
+  <td>
+  <code>kill‑word</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j h i</kbd>
+  </td>
+  <td>
+  <kbd>C‑h i</kbd>
+  </td>
+  <td>
+  <code>info</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j x j s</kbd>
+  </td>
+  <td>
+  <kbd>C‑x C‑s</kbd>
+  </td>
+  <td>
+  <code>save‑buffer</code>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>This is only a brief overview; see <a href="#usage">Usage</a> for a
+  detailed explanation.</p>
+  <p>The default configuration is not the only way to use Loco. Loco can
+  be <a href="#customization">extensively customized</a> with just a few
+  lines of code. Many options are possible, including:</p>
+  <ul>
+  <li>Changing the key bindings used to enable, disable, or activate
+  Loco;</li>
+  <li>Changing the keys used while Loco reads a key sequence;</li>
+  <li>Configuring activation keys that also function as modifiers;
+  and</li>
+  <li>Configuring activation keys that avoid modifiers completely.</li>
+  </ul>
+  <h2 id="installation">Installation</h2>
+  <h3 id="from-melpa">From MELPA</h3>
+  <p>To install Loco from <a href="https://melpa.org">MELPA</a> (the
+  easiest method), follow these steps:</p>
+  <ol type="1">
+  <li><p>Modify your Emacs configuration</p>
+  <p>Open your <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">Emacs
+  init file</a> and complete the following steps:</p>
+  <ul>
+  <li><p>Add the MELPA package archives</p>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;package</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>(add-to-list <span class="dt">&#39;package-archives</span> &#39;(<span class="st">&quot;melpa&quot;</span> . <span class="st">&quot;https://melpa.org/packages/&quot;</span>) <span class="kw">t</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>(package-initialize)</span></code></pre></div></li>
+  <li><p>Require <code>loco</code></p>
+  <div class="sourceCode" id="cb2"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;loco</span>)</span></code></pre></div></li>
+  <li><p>Set the default key bindings and enable Loco in all buffers
+  automatically on startup</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(loco-set-default-key-bindings)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>) <span class="co">; Enable in all buffers</span></span></code></pre></div></li>
+  </ul>
+  <p>To apply these changes, either restart Emacs or evaluate the
+  modified sections of your configuration file.</p></li>
+  </ol>
+  <h3 id="from-source">From source</h3>
+  <p>To install Loco from source, follow these steps:</p>
+  <ol type="1">
+  <li><p>Clone the <a href="https://github.com/csmclaren/loco">official
+  repository</a> from GitHub</p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/csmclaren/loco.git</span></code></pre></div></li>
+  <li><p>Modify your Emacs configuration</p>
+  <p>Open your <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">Emacs
+  init file</a> and complete the following steps:</p>
+  <ul>
+  <li><p>Add the load path and make sure to replace
+  <code>/path/to/loco</code> with the path to your cloned repository</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(add-to-list <span class="dt">&#39;load-path</span> <span class="st">&quot;/path/to/loco&quot;</span>)</span></code></pre></div></li>
+  <li><p>Require <code>loco</code></p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;loco</span>)</span></code></pre></div></li>
+  <li><p>Set the default key bindings and enable Loco in all buffers
+  automatically on startup</p>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(loco-set-default-key-bindings)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>) <span class="co">; Enable in all buffers</span></span></code></pre></div></li>
+  </ul>
+  <p>To apply these changes, either restart Emacs or evaluate the
+  modified sections of your configuration file.</p></li>
+  </ol>
+  <h2 id="usage">Usage</h2>
+  <blockquote>
+  <p>This section assumes that you have set the default key bindings for
+  Loco, as recommended in <a href="#installation">Installation</a>.</p>
+  </blockquote>
+  <h3 id="keys-key-sequences-and-commands">Keys, key sequences, and
+  commands</h3>
+  <p>When discussing keys, it is helpful to distinguish between
+  <em>physical</em> keys and <em>logical</em> keys.</p>
+  <p>A physical key is what you press with your fingers on the keyboard.
+  Some physical keys are called <em>modifier</em> keys. Emacs recognizes
+  six modifier keys: <kbd>Alt</kbd>, <kbd>Control</kbd>,
+  <kbd>Hyper</kbd>, <kbd>Meta</kbd>, <kbd>Super</kbd>, and
+  <kbd>Shift</kbd>. Your keyboard may not have all of these keys.
+  Furthermore, your keyboard might have different names for the modifier
+  keys that it does have. For example, <kbd>Super</kbd> is called
+  <kbd>Command</kbd> on <a
+  href="https://en.wikipedia.org/wiki/Apple_keyboards">Apple
+  keyboards</a>, and <kbd>Meta</kbd> is called <kbd>Alt</kbd> or
+  <kbd>Option</kbd> on most modern keyboards. Most physical keys, like
+  letters, numbers, and symbols, are <em>non-modifier</em> keys.</p>
+  <p>A logical key (or simply a <em>key</em>) is zero or more modifier
+  keys pressed simultaneously with a non-modifier key. For example,
+  holding down the physical <kbd>Control</kbd> key (written as
+  <kbd>C‑</kbd>) while pressing the physical <kbd>x</kbd> key produces
+  the key <kbd>C‑x</kbd>.</p>
+  <p>Key sequences are composed of one or more keys. For example, the
+  key sequence <kbd>C‑x s</kbd> is composed of two keys: <kbd>C‑x</kbd>
+  and <kbd>s</kbd>. Key sequences can be bound to commands. For example,
+  <kbd>C‑x s</kbd> is bound to the command
+  <code>save-all-files</code>.</p>
+  <p>By composing key sequences from keys, a large number of key
+  sequences can be created from a small number of keys. This is similar
+  to how an alphabet can be used to compose the words of a language: a
+  large number of words can be created from a small number of
+  letters.</p>
+  <h3 id="how-loco-is-different">How Loco is different</h3>
+  <p>On modern keyboards, which typically have small or hard-to-reach
+  modifier keys, or for people with <a
+  href="https://en.wikipedia.org/wiki/Repetitive_strain_injury">RSI</a>
+  or other forms of limited mobility, pressing one or more keys
+  simultaneously can be difficult or even painful. This is especially
+  true when two or more modifier keys are required to complete a single
+  key, or if a certain modifier key is particularly hard to reach.</p>
+  <p>To help solve this problem, Loco extends the idea of composing key
+  sequences from keys to the level of the key itself. In Loco, logical
+  keys can be composed of one or more physical keys pressed one after
+  the other, not simultaneously. Additionally, Loco uses certain
+  easy-to-reach non-modifier keys (or <em>special</em> keys) to assist
+  you with key entry.</p>
+  <h3 id="enabling-disabling-and-activating-loco">Enabling, disabling,
+  and activating Loco</h3>
+  <p>Loco works by adding a <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Minor-Modes.html">minor
+  mode</a> to Emacs. This mode can be enabled or disabled in some or all
+  buffers.</p>
+  <p>To enable or disable Loco <em>in the current buffer</em>, use the
+  command <code>loco-mode</code>. The key sequence <kbd>C‑c ,</kbd> is
+  bound to this command; pressing it will toggle Loco in the current
+  buffer.</p>
+  <p>You can also call this command using Emacs Lisp with:</p>
+  <ul>
+  <li><p>No argument, <code>nil</code>, or a positive number to enable
+  Loco in the current buffer;</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dv">1</span>) <span class="co">; Enable in the current buffer</span></span></code></pre></div></li>
+  <li><p>A zero or negative number to disable Loco in the current
+  buffer; or</p>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dv">0</span>) <span class="co">; Disable in the current buffer</span></span></code></pre></div></li>
+  <li><p>The symbol <code>toggle</code> to toggle Loco in the current
+  buffer.</p>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dt">&#39;toggle</span>) <span class="co">; Toggle in the current buffer</span></span></code></pre></div></li>
+  </ul>
+  <p>To enable or disable Loco <em>in all buffers</em>, use the command
+  <code>global-loco-mode</code>. The key sequence <kbd>C‑c .</kbd> is
+  bound to this command; pressing it will toggle Loco in all
+  buffers.</p>
+  <blockquote>
+  <p>This command will override any local settings.</p>
+  </blockquote>
+  <p>You can also call this command using Emacs Lisp with:</p>
+  <ul>
+  <li><p>No argument, <code>nil</code>, or a positive number to enable
+  Loco in all buffers;</p>
+  <div class="sourceCode" id="cb11"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>) <span class="co">; Enable in all buffers</span></span></code></pre></div></li>
+  <li><p>A zero or negative number to disable Loco in all buffers;
+  or</p>
+  <div class="sourceCode" id="cb12"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">0</span>) <span class="co">; Disable in all buffers</span></span></code></pre></div></li>
+  <li><p>The symbol <code>toggle</code> to toggle Loco in all
+  buffers.</p>
+  <div class="sourceCode" id="cb13"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dt">&#39;toggle</span>) <span class="co">; Toggle in all buffers</span></span></code></pre></div></li>
+  </ul>
+  <p>When Loco is <em>disabled</em> in the current buffer, all keys can
+  be typed normally as if Loco were not installed, with the exception of
+  <kbd>C‑c ,</kbd> and <kbd>C‑c .</kbd> themselves, which are bound in
+  the global keymap.</p>
+  <p>When Loco is <em>enabled</em> in the current buffer it will place
+  an indicator, which Emacs calls a “lighter”, in the mode line of that
+  buffer. The lighter for Loco looks like this:  🚋 . Loco will also
+  bind two additional key sequences: <kbd>S‑&lt;return&gt;</kbd> and
+  <kbd>C‑h S‑&lt;return&gt;</kbd>. Pressing either of these will
+  <em>activate</em> Loco.</p>
+  <p>When Loco is activated, it will prompt you to enter a key sequence,
+  then it will lookup whether or not that key sequence is bound to a
+  command. If a command is found, it will either execute or describe
+  that command, depending on which key sequence was used to activate it.
+  <kbd>S‑&lt;return&gt;</kbd> tells Loco that it should <em>execute</em>
+  the command. <kbd>C‑h S‑&lt;return&gt;</kbd> tells Loco it should
+  <em>describe</em> the command.</p>
+  <h3 id="entering-key-sequences">Entering key sequences</h3>
+  <p>When Loco reads a key sequence:</p>
+  <ul>
+  <li><p>It tracks a set of modifiers (<kbd>Alt</kbd>,
+  <kbd>Control</kbd>, <kbd>Hyper</kbd>, <kbd>Meta</kbd>, and
+  <kbd>Super</kbd>) that it considers “pending”.</p></li>
+  <li><p><kbd>j</kbd> and <kbd>k</kbd> add <kbd>Control</kbd> and
+  <kbd>Meta</kbd>, respectively, to the set of pending modifiers, or
+  represent themselves, if their respective modifiers are already
+  pending.</p></li>
+  <li><p><kbd>l</kbd> opens the Assist Menu, a menu which includes
+  commands to toggle pending modifiers (<kbd>a</kbd> <kbd>c</kbd>
+  <kbd>h</kbd> <kbd>m</kbd> and <kbd>s</kbd>) or enter keys for which
+  there is no other way to enter because they have been repurposed by
+  Loco (<kbd>j</kbd> <kbd>k</kbd> and <kbd>l</kbd> itself).</p></li>
+  <li><p>When a key is pressed to which modifiers could be applied, any
+  pending modifiers from that set are applied to the key, as if the
+  equivalent physical modifier keys were held down at the time the key
+  was pressed. The set (if not empty) is then cleared. The key (now
+  potentially modified) is then added to the key sequence.</p></li>
+  <li><p>When a key is added to the key sequence, Loco will check if the
+  key sequence is bound to a command. If it is a <em>partial match</em>
+  to one (or more) commands, Loco will continue to read keys. If it is
+  an <em>exact match</em> to a command, Loco will stop reading keys and
+  execute or describe that command (depending on how Loco was
+  activated). Otherwise, Loco will stop reading keys and tell the user
+  that no match was found.</p></li>
+  <li><p>It will display its prompt in the minibuffer. The prompt will
+  consist of:</p>
+  <ul>
+  <li><p>A right-pointing triangle (▶);</p></li>
+  <li><p>The current key sequence, if any, displayed in the normal Emacs
+  style;</p></li>
+  <li><p>The set of pending modifiers, if any, displayed in the normal
+  Emacs style, i.e., <code>A-</code>, <code>C-</code>, <code>H-</code>,
+  <code>M-</code>, and <code>s-</code>, corresponding to the modifiers
+  <kbd>Alt</kbd>, <kbd>Control</kbd>, <kbd>Hyper</kbd>, <kbd>Meta</kbd>,
+  and <kbd>Super</kbd>, respectively; and</p></li>
+  <li><p>The Assist Menu, if open, displayed as <code>[;]</code> (in its
+  collapsed state) or <code>[achms jkl q x ;]</code> (in its expanded
+  state).</p></li>
+  </ul></li>
+  </ul>
+  <p>The following tables explain exactly how key presses are handled
+  while reading a key sequence.</p>
+  <table>
+  <caption>
+  Normal operation (i.e., when the Assist Menu is closed)
+  </caption>
+  <tbody>
+  <tr>
+  <th>
+  Key
+  </th>
+  <th>
+  Rule
+  </th>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j</kbd>
+  </td>
+  <td>
+  There are two possibilities for how this key is handled:
+  <ul>
+  <li>
+  If <kbd>Control</kbd> is already pending, apply all pending modifiers
+  to the key (clearing the modifiers), then add the modified key to the
+  key sequence.
+  </li>
+  <li>
+  Otherwise, add <kbd>Control</kbd> to the set of pending modifiers.
+  </li>
+  </ul>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>k</kbd>
+  </td>
+  <td>
+  There are two possibilities for how this key is handled:
+  <ul>
+  <li>
+  If <kbd>Meta</kbd> is already pending, apply all pending modifiers to
+  the key (clearing the modifiers), then add the modified key to the key
+  sequence.
+  </li>
+  <li>
+  Otherwise, add <kbd>Meta</kbd> to the set of pending modifiers.
+  </li>
+  </ul>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>l</kbd>
+  </td>
+  <td>
+  Open the Assist Menu.
+  </td>
+  </tr>
+  <tr>
+  <td>
+  Other
+  </td>
+  <td>
+  Apply any pending modifiers to the key (clearing the modifiers), then
+  add the (potentially modified) key to the key sequence.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <table>
+  <caption>
+  Assisted operation (i.e., when the Assist Menu is open)
+  </caption>
+  <tbody>
+  <tr>
+  <th>
+  Key
+  </th>
+  <th>
+  Rule
+  </th>
+  </tr>
+  <tr>
+  <td>
+  <kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd> or <kbd>s</kbd>
+  </td>
+  <td>
+  Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd>
+  <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of
+  pending modifiers, and close the Assist Menu.
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>A</kbd> <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> or <kbd>S</kbd>
+  </td>
+  <td>
+  Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd>
+  <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of
+  pending modifiers, but do not close the Assist Menu (see
+  <a href="#sticky-keys">Sticky keys</a>).
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j</kbd> <kbd>k</kbd> or <kbd>l</kbd>
+  </td>
+  <td>
+  Apply any pending modifiers to the key (clearing the modifiers), add
+  the (potentially modified) key to the key sequence, and close the
+  Assist Menu.
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>q</kbd>
+  </td>
+  <td>
+  Close the Assist Menu and cancel the key sequence (equivalent to
+  <kbd>C‑g</kbd>).
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>x</kbd>
+  </td>
+  <td>
+  Close the Assist Menu.
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>;</kbd>
+  </td>
+  <td>
+  Toggle the Assist Menu between its collapsed and expanded states.
+  </td>
+  </tr>
+  <tr>
+  <td>
+  Other
+  </td>
+  <td>
+  Discard the key, but do not close the Assist Menu. If the Assist Menu
+  is currently collapsed, expand it to remind the user of all available
+  options.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <h4 id="rock-roll">Rock &amp; roll</h4>
+  <p>The keys <kbd>j</kbd>, <kbd>k</kbd>, and <kbd>l</kbd> were chosen
+  to represent <kbd>Control</kbd>, <kbd>Meta</kbd>, and the Assist Menu,
+  respectively, because on a <a
+  href="https://en.wikipedia.org/wiki/QWERTY">QWERTY</a> keyboard these
+  keys are adjacent. This allows you to roll from side to side or rock
+  your fingers back and forth over them.</p>
+  <p>Furthermore, you can build up the set of pending modifiers for a
+  key in any order; for example, both <kbd>j k</kbd> and <kbd>k j</kbd>
+  translate to <kbd>C‑M‑</kbd>.</p>
+  <p>These design choices enable efficient key entry, enhancing your
+  ability to enter these important keys swiftly and accurately.</p>
+  <h4 id="sticky-keys">Sticky keys</h4>
+  <p>On the Assist Menu, the keys used to toggle modifiers
+  (<kbd>a</kbd>, <kbd>c</kbd>, <kbd>h</kbd>, <kbd>m</kbd>, and
+  <kbd>s</kbd>) can be pressed in conjunction with the physical
+  <kbd>Shift</kbd> key (<kbd>A</kbd>, <kbd>C</kbd>, <kbd>H</kbd>,
+  <kbd>M</kbd>, and <kbd>S</kbd>, respectively).</p>
+  <p>These <kbd>Shift</kbd>-modified keys perform the same operation as
+  their unmodified counterparts but make the Assist Menu
+  <em>sticky</em>: after use, the menu remains open to use again.</p>
+  <p>The advantage of these keys is that multiple modifiers can be added
+  or removed quickly. The disadvantage is that another key (for example,
+  <kbd>x</kbd>) is then required to close the Assist Menu.</p>
+  <p>These keys are optional and not shown on the Assist Menu.</p>
+  <h4 id="examples">Examples</h4>
+  <p>Most key sequences do not involve <kbd>Control</kbd> or
+  <kbd>Meta</kbd> in conjunction with <kbd>j</kbd>, <kbd>k</kbd>, or
+  <kbd>l</kbd>, making them easy to enter.</p>
+  <table>
+  <caption>
+  Typical key sequences and their translations
+  </caption>
+  <tbody>
+  <tr>
+  <th>
+  Typed Key Sequence
+  </th>
+  <th>
+  Translated Key Sequence
+  </th>
+  <th>
+  Command
+  </th>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j e</kbd>
+  </td>
+  <td>
+  <kbd>C‑e</kbd>
+  </td>
+  <td>
+  <code>move-end-of-line</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>k e</kbd>
+  </td>
+  <td>
+  <kbd>M‑e</kbd>
+  </td>
+  <td>
+  <code>forward-sentence</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j k e</kbd> or <kbd>k j e</kbd>
+  </td>
+  <td>
+  <kbd>C‑M‑e</kbd>
+  </td>
+  <td>
+  <code>end-of-defun</code>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>Nine key sequences involve <kbd>Control</kbd> or <kbd>Meta</kbd> in
+  conjunction with <kbd>j</kbd>, <kbd>k</kbd>, or <kbd>l</kbd>, making
+  them more difficult to enter.</p>
+  <table>
+  <caption>
+  More difficult key sequences and their translations
+  </caption>
+  <tbody>
+  <tr>
+  <th>
+  Typed Key Sequence
+  </th>
+  <th>
+  Translated Key Sequence
+  </th>
+  <th>
+  Command
+  </th>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j l j</kbd> or <kbd>j j</kbd>
+  </td>
+  <td>
+  <kbd>C‑j</kbd>
+  </td>
+  <td>
+  <code>eval-print-last-sexp</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j l k</kbd>
+  </td>
+  <td>
+  <kbd>C‑k</kbd>
+  </td>
+  <td>
+  <code>kill-line</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j l l</kbd>
+  </td>
+  <td>
+  <kbd>C‑l</kbd>
+  </td>
+  <td>
+  <code>recenter-top-bottom</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>k l j</kbd>
+  </td>
+  <td>
+  <kbd>M‑j</kbd>
+  </td>
+  <td>
+  <code>default-indent-new-line</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>k l k</kbd> or <kbd>k k</kbd>
+  </td>
+  <td>
+  <kbd>M‑k</kbd>
+  </td>
+  <td>
+  <code>kill-sentence</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>k l l</kbd>
+  </td>
+  <td>
+  <kbd>M‑l</kbd>
+  </td>
+  <td>
+  <code>downcase-word</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j k j</kbd> or <kbd>k j j</kbd>
+  </td>
+  <td>
+  <kbd>C‑M‑j</kbd>
+  </td>
+  <td>
+  <code>default-indent-new-line</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j k k</kbd> or <kbd>k j k</kbd>
+  </td>
+  <td>
+  <kbd>C‑M‑k</kbd>
+  </td>
+  <td>
+  <code>kill-sexp</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <kbd>j k l l</kbd> or <kbd>k j l l</kbd>
+  </td>
+  <td>
+  <kbd>C‑M‑l</kbd>
+  </td>
+  <td>
+  <code>reposition-window</code>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <h3 id="describing-commands">Describing commands</h3>
+  <p>The built-in command <code>describe-key</code> waits for a key
+  sequence to be input. If that key sequence is bound to a command, it
+  describes the command. This is an excellent way to discover (or remind
+  yourself) to which command a key sequence is bound.</p>
+  <p>In the global keymap, <kbd>C‑h k</kbd> (<kbd>j h k</kbd>) is bound
+  to <code>describe-key</code>.</p>
+  <p>This command reads key sequences directly, without leveraging Loco.
+  To use Loco to enter a key sequence for the purpose of describing the
+  command to which it is bound, Loco provides a similar command called
+  <code>loco-default-describe-kseq</code>.</p>
+  <p>When Loco is enabled in the current buffer, <kbd>C‑h
+  S‑&lt;return&gt;</kbd> (<kbd>j h S‑&lt;return&gt;</kbd>) is bound to
+  <code>loco-default-describe-kseq</code>.</p>
+  <h3 id="repeating-commands">Repeating commands</h3>
+  <p>One advantage of using physical modifier keys is that once held,
+  the non-modifier key can be pressed multiple times in sequence to
+  repeat the command.</p>
+  <p>Emacs provides a <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Repeating.html">number
+  of ways</a> to assist with repeating a command, and Loco works well
+  with all of them. In particular, using <code>repeat-mode</code> to
+  setup groups of commands that can be repeated by pressing only their
+  last letter is highly recommended.</p>
+  <h3 id="working-with-physical-modifier-keys">Working with physical
+  modifier keys</h3>
+  <p>While Loco aims to replace the need for physical modifier keys,
+  there might be some cases where you want to use key bindings that use
+  them. Because Loco does not replace or disable any keymaps, you are
+  able to use other key bindings as you see fit.</p>
+  <p>Furthermore, while not necessary, any physical modifier keys you
+  use while entering key sequences in Loco are properly merged with the
+  set of pending modifiers.</p>
+  <h3 id="considerations-when-using-a-terminal">Considerations when
+  using a terminal</h3>
+  <p>In a GUI environment, applications receive key events directly from
+  the <a href="https://en.wikipedia.org/wiki/Windowing_system">windowing
+  system</a> (for example, X11, Wayland, or Quartz Compositor). These
+  systems have comprehensive support for detecting various key
+  combinations, including multiple modifiers pressed simultaneously with
+  other keys. The only limitation is usually from the operating system
+  itself, which reserves certain key combinations for its own
+  functions.</p>
+  <p>Modern terminal applications are typically run within a <a
+  href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal
+  emulator</a>, an application that itself reserves certain key
+  combinations for its own functions. This creates a disparity between
+  the total number of keys available to the GUI application and the
+  terminal application.</p>
+  <p>Terminal emulators are designed to mimic the behaviour of older
+  physical terminals (for example, the <a
+  href="https://en.wikipedia.org/wiki/VT100">VT100</a>). Most terminal
+  emulators work by encoding input into characters or escape sequences
+  that the terminal application interprets. This limits how key events
+  are handled by terminal applications in several ways:</p>
+  <ul>
+  <li><p>The <kbd>Control</kbd> key is typically limited to modifying
+  these specific 32 characters:
+  <code>@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ?</code>.
+  These characters have <a
+  href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> codes of 64 to 95
+  inclusive. When pressed in conjunction with <kbd>Control</kbd>, 64 is
+  subtracted from their ASCII code, resulting in a <a
+  href="https://en.wikipedia.org/wiki/Control_character">Control
+  Character</a>. This form of encoding inherently limits which
+  combinations are possible with <kbd>Control</kbd> and does not work
+  well in conjunction with any other modifier key.</p></li>
+  <li><p>Other modifier keys, and keys without ASCII equivalents (for
+  example, the arrow and function keys), are either encoded as character
+  sequences beginning with the <kbd>ESC</kbd> character or not sent to
+  terminal applications at all. Interpreting these sequences can be less
+  reliable, especially for complex combinations involving multiple
+  modifiers.</p></li>
+  </ul>
+  <p>Fortunately, Loco works consistently in both the GUI and terminal.
+  By translating simple key sequences into complex ones, Loco avoids the
+  above limitations.</p>
+  <h2 id="customization">Customization</h2>
+  <blockquote>
+  <p>Most of this section assumes the reader has basic experience with
+  <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/eintr/">Emacs
+  Lisp</a>.</p>
+  </blockquote>
+  <h3 id="using-the-easy-customization-interface">Using the “Easy
+  Customization Interface”</h3>
+  <p>The <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html">Easy
+  Customization Interface</a> can be used to customize certain
+  properties of Loco, including its lighter and its prompts.</p>
+  <blockquote>
+  <p>You can also customize properties related to logging, which is
+  useful if you are planning on modifying the source code for Loco.
+  Logging is not explained in this document; see the source code for
+  details.</p>
+  </blockquote>
+  <p>Some of the properties presented in this interface take <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Expressions.html">S-expressions</a>
+  as values. These permit more possibilities for values; for example,
+  strings styled with custom colours and fonts.</p>
+  <p>All of the properties presented in this interface can be set using
+  Emacs Lisp as well.</p>
+  <h3
+  id="changing-the-key-bindings-used-to-enable-disable-or-activate-loco">Changing
+  the key bindings used to enable, disable, or activate Loco</h3>
+  <p>The command <code>loco-set-default-key-bindings</code> sets the
+  default key bindings to enable, disable, or activate Loco. Typically,
+  you should call this command automatically on startup, as recommended
+  in <a href="#installation">Installation</a>, but it is not required
+  that you do so. This command sets the default key bindings as follows,
+  and you can edit this code to bind your own key sequences as
+  desired.</p>
+  <div class="sourceCode" id="cb14"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; Bind &quot;C-c ,&quot; to toggle Loco in the current buffer</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>(keymap-global-set <span class="st">&quot;C-c ,&quot;</span> <span class="op">#&#39;</span>loco-mode)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">;; Bind &quot;C-c .&quot; to toggle Loco in all buffers</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>(keymap-global-set <span class="st">&quot;C-c .&quot;</span> <span class="op">#&#39;</span>global-loco-mode)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-h S-&lt;return&gt;&quot;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then describe the command to which it is bound</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h S-&lt;return&gt;&quot;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-describe-kseq)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;S-&lt;return&gt;&quot;</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then execute the command to which it is bound</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;S-&lt;return&gt;&quot;</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-execute-kseq)</span></code></pre></div>
+  <p>The command <code>loco-unset-default-key-bindings</code> is the
+  inverse of <code>loco-set-default-key-bindings</code>; the former will
+  unset any keybindings set by the latter.</p>
+  <h3
+  id="changing-the-keys-used-while-loco-reads-a-key-sequence">Changing
+  the keys used while Loco reads a key sequence</h3>
+  <p>By default, <kbd>S‑&lt;return&gt;</kbd> is bound to
+  <code>loco-default-execute-kseq</code>. This command is defined as
+  follows.</p>
+  <div class="sourceCode" id="cb15"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> loco-default-execute-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-mod-c ?j :key-mod-m ?k args))</span></code></pre></div>
+  <p>This command calls <code>loco-read-kseq</code> with two arguments.
+  These arguments tell <code>loco-read-kseq</code> that while reading a
+  key sequence, <kbd>j</kbd> should set <kbd>Control</kbd> pending and
+  <kbd>k</kbd> should set <kbd>Meta</kbd> pending, respectively.</p>
+  <p>We can define a similar command, called
+  <code>my-loco-execute-kseq</code>, and rebind
+  <kbd>S‑&lt;return&gt;</kbd> to it as follows.</p>
+  <div class="sourceCode" id="cb16"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;S-&lt;return&gt;&quot;</span> <span class="op">#&#39;</span>my-loco-execute-kseq)</span></code></pre></div>
+  <p>Our command calls <code>loco-read-kseq</code> with eight
+  arguments.</p>
+  <p>The first seven arguments tell <code>loco-read-kseq</code> that
+  while reading a key sequence: * <em>no</em> key should toggle
+  <kbd>Control</kbd> then close the Assist Menu (when it is open); *
+  <em>no</em> key should toggle <kbd>Meta</kbd> then close the Assist
+  Menu (when it is open); * <kbd>/</kbd> should collapse the Assist Menu
+  (when it is open and expanded); * <kbd>/</kbd> should expand the
+  Assist Menu (when it is open and collapsed); * <kbd>m</kbd> should
+  open the Assist Menu; * <kbd>,</kbd> should set <kbd>Control</kbd>
+  pending; and * <kbd>.</kbd> should set <kbd>Meta</kbd> pending,
+  respectively.</p>
+  <blockquote>
+  <p>On a QWERTY keyboard, <kbd>m</kbd>, <kbd>,</kbd>, <kbd>.</kbd>, and
+  <kbd>/</kbd> are adjacent, like the default keys <kbd>j</kbd>,
+  <kbd>k</kbd>, <kbd>l</kbd>, and <kbd>;</kbd>, but located one row
+  lower on the keyboard and with the two modifier keys located in the
+  centre of the group. While only an example, this may be a desirable
+  configuration for those who find it easier to mentally associate the
+  modifiers to punctuation (<kbd>,</kbd> and <kbd>.</kbd> instead of
+  <kbd>j</kbd> and <kbd>k</kbd>, respectively), or remember <kbd>m</kbd>
+  as “menu”.</p>
+  </blockquote>
+  <p>In this configuration, we’ve decided that when Loco is reading a
+  key sequence, <kbd>m</kbd> should open the Assist Menu. By repurposing
+  <kbd>m</kbd> for this, we need to rely on the Assist Menu to help us
+  enter a literal <em>m</em> when necessary. By default, the Assist Menu
+  already reserves <kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd>
+  and <kbd>s</kbd> to toggle pending modifiers then close the Assist
+  Menu. This creates the potential for conflict.</p>
+  <p>Our configuration also defines <kbd>,</kbd> and <kbd>.</kbd> as the
+  primary means to set <kbd>Control</kbd> and <kbd>Meta</kbd> pending,
+  respectively. As such, having the means to toggle these modifiers from
+  the Assist Menu is less useful. To avoid the potential conflict in
+  setting <kbd>m</kbd> to mean both <em>m</em> and <kbd>Meta</kbd> when
+  the Assist Menu is open, we remove the latter meaning using
+  <code>:key-am-mod-m-qk nil</code>. And while not necessary to avoid a
+  conflict, for clarity and consistency we also set
+  <code>:key-am-mod-c-qk nil</code>.</p>
+  <blockquote>
+  <p>Note that, by default, the Assist Menu also reserves <kbd>A</kbd>
+  <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> and <kbd>S</kbd> as the <a
+  href="#sticky-keys">sticky</a> versions of <kbd>a</kbd> <kbd>c</kbd>
+  <kbd>h</kbd> <kbd>m</kbd> and <kbd>s</kbd>, respectively. As none of
+  the sticky versions of these keys were removed from our configuration,
+  there does remain a means to toggle <kbd>Control</kbd> and
+  <kbd>Meta</kbd> from the Assist Menu if desired.</p>
+  </blockquote>
+  <p>Our command calls <code>loco-read-kseq</code> with one additional
+  argument: <code>:validate t</code>. When non-nil, this argument tells
+  <code>loco-read-kseq</code> to validate the set of keys it will use
+  while reading a key sequence. For example, the validation process
+  checks that no key is assigned to more than one function. Any problems
+  found during the validation process are printed in the log.
+  <code>:validate t</code> is recommended any time you are customizing
+  Loco’s keys.</p>
+  <p>The Assist Menu displays itself according to the keys as you’ve
+  configured them. By default, it will display itself (when open and
+  expanded) like this: <code>[achms jkl q x ;]</code>. For the
+  configuration in this example, it will display itself (when open and
+  expanded) like this: <code>[ahs ,.m q x /]</code>.</p>
+  <p>Our example is not quite complete. We should also ensure that we
+  have a describe command that works in the same manner as our execute
+  command.</p>
+  <p>By default, <kbd>C‑h S‑&lt;return&gt;</kbd> is bound to
+  <code>loco-default-describe-kseq</code>. This command is defined as
+  follows.</p>
+  <div class="sourceCode" id="cb17"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> loco-default-describe-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-default-execute-kseq :d <span class="kw">t</span> args))</span></code></pre></div>
+  <p>This command calls <code>loco-default-execute-kseq</code> with one
+  additional argument: <code>:d t</code>. When non-nil, this argument
+  tells <code>loco-read-kseq</code> that if it reads a key sequence that
+  is bound to a command, that command should be described instead of
+  executed.</p>
+  <p>We can define a similar command, called
+  <code>my-loco-describe-kseq</code>, and rebind <kbd>C‑h
+  S‑&lt;return&gt;</kbd> to it as follows.</p>
+  <div class="sourceCode" id="cb18"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h S-&lt;return&gt;&quot;</span> <span class="op">#&#39;</span>my-loco-describe-kseq)</span></code></pre></div>
+  <p>There are a total of 25 keyword arguments that can be passed to
+  <code>loco-read-kseq</code>, all of which are explained in the
+  documentation for that command.</p>
+  <h3 id="advanced-topics">Advanced topics</h3>
+  <h4 id="mapping-caps-lock-to-control">Mapping Caps Lock to
+  Control</h4>
+  <p><kbd>S‑&lt;return&gt;</kbd> is easy to press, but it would be
+  easier still to be able to activate Loco with a physical modifier key
+  located right on the home row. If this physical modifier key were
+  <kbd>Control</kbd>, you would also have quick access to some very
+  common Emacs key bindings without use of Loco. For example,
+  <kbd>C‑n</kbd> and <kbd>C‑p</kbd>.</p>
+  <p><kbd>Caps Lock</kbd>, located to the left of <kbd>a</kbd> on a
+  QWERTY keyboard, is a rarely-used key in a prime location. As such, it
+  is common to remap this key to <kbd>Control</kbd>.</p>
+  <p>For example, on MacOS, where keys are not easily remapped
+  system-wide, mapping <kbd>Caps Lock</kbd> to <kbd>Control</kbd> is
+  possible without any third-party tools. In <em>System Preferences &gt;
+  Keyboard &gt; Keyboard Shortcuts… &gt; Modifier Keys</em>, change
+  <em>Caps Lock key</em> to <em>Control</em>. You might also want to
+  change <em>Control key</em> to <em>Caps Lock</em>, effectively
+  swapping the behaviour of the two keys, to ensure you still have a
+  means to toggle <kbd>Caps Lock</kbd> if desired. If you use multiple
+  keyboards, make sure to change these settings for each keyboard in
+  turn by selecting each keyboard at the top of this dialog box. Press
+  <em>Done</em> when complete.</p>
+  <p>You can set key bindings for <kbd>C‑&lt;return&gt;</kbd> and
+  <kbd>C‑h C‑&lt;return&gt;</kbd> as follows.</p>
+  <div class="sourceCode" id="cb19"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-h C-&lt;return&gt;&quot;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then describe the command to which it is bound</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h C-&lt;return&gt;&quot;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-describe-kseq)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-&lt;return&gt;&quot;</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then execute the command to which it is bound</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-&lt;return&gt;&quot;</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-execute-kseq)</span></code></pre></div>
+  <h4 id="activation-keys-that-also-function-as-modifiers">Activation
+  keys that also function as modifiers</h4>
+  <p>Activation keys can also function as modifiers, allowing you to
+  both activate Loco and set a pending modifier with a single key.</p>
+  <p>This example will extend the example in <a
+  href="#changing-the-keys-used-while-loco-reads-a-key-sequence">Changing
+  the keys used while Loco reads a key sequence</a>.</p>
+  <p>Consider the following code:</p>
+  <div class="sourceCode" id="cb20"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h C-,&quot;</span> <span class="op">#&#39;</span>my-loco-describe-control-kseq)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h C-.&quot;</span> <span class="op">#&#39;</span>my-loco-describe-meta-kseq)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>                          :kseq [?,] :strip <span class="kw">t</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>                          :kseq [?.] :strip <span class="kw">t</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-,&quot;</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq)</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-.&quot;</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq)</span></code></pre></div>
+  <p>Here we create a total of four activation keys.</p>
+  <p><kbd>C‑,</kbd> and <kbd>C‑.</kbd> both activate Loco to read a key
+  sequence and execute the command to which it is bound, but
+  <kbd>C‑,</kbd> activates Loco with <kbd>Control</kbd> pending and
+  <kbd>C‑.</kbd> with <kbd>Meta</kbd> pending.</p>
+  <p><kbd>C‑h C‑,</kbd> and <kbd>C‑h C‑.</kbd> both activate Loco to
+  read a key sequence and describe the command to which it is bound, but
+  <kbd>C‑h C‑,</kbd> activates Loco with <kbd>Control</kbd> pending and
+  <kbd>C‑h C‑.</kbd> with <kbd>Meta</kbd> pending.</p>
+  <blockquote>
+  <p>Note the use of the physical <kbd>Control</kbd> key here. This
+  allows us to choose two adjacent activation keys, as there are almost
+  no keys that use <kbd>Shift</kbd> that aren’t extremely important,
+  aside from a few keys like <kbd>S‑&lt;return&gt;</kbd>, which we’ve
+  been using. To use this example effectively, consider <a
+  href="#mapping-caps-lock-to-control">Mapping Caps Lock to Control</a>
+  to ensure that <kbd>Control</kbd> is easy to press.</p>
+  </blockquote>
+  <p>The argument <code>:kseq</code> tells <code>loco-read-kseq</code>
+  to immediately process a key sequence before reading any input from
+  the user.</p>
+  <p>In <code>my-loco-execute-control-kseq</code>,
+  <code>:kseq [?,]</code> tells <code>loco-read-kseq</code> to
+  immediately process a single <kbd>,</kbd> before reading any input
+  from the user. Because we’ve also assigned <kbd>,</kbd> to be
+  interpreted as <kbd>Control</kbd>, the combined effect of both
+  arguments is to make <kbd>Control</kbd> immediately pending.</p>
+  <p>Similarly, in <code>my-loco-execute-meta-kseq</code>,
+  <code>:kseq [?.]</code> tells <code>loco-read-kseq</code> to
+  immediately process a single <kbd>.</kbd> before reading any input
+  from the user. Because we’ve also assigned <kbd>.</kbd> to be
+  interpreted as <kbd>Meta</kbd>, the combined effect of both arguments
+  is to make <kbd>Meta</kbd> immediately pending.</p>
+  <p>The argument <code>:strip t</code> tells
+  <code>loco-read-kseq</code> to strip all modifiers from any key that
+  it reads. This is optional; its effect, though subtle, can be
+  desirable. As per <a
+  href="#working-with-physical-modifier-keys">Working with physical
+  modifier keys</a>, Loco is happy to merge any modified keys with any
+  pending modifiers. When activating Loco with a key that is similar to
+  the keys required to toggle pending modifiers, accidentally holding
+  any physical modifier key past its intended key may modify subsequent
+  keys, possibly resulting in a key sequence bound to a different
+  command that intended. Stripping modifiers from keys allows for some
+  forgiveness when typing quickly, to ensure the modifiers aren’t
+  incorrectly applied to the wrong keys.</p>
+  <blockquote>
+  <p>Note that when both <code>:strip</code> and <code>:validate</code>
+  are non-nil, the validation process will correctly strip all keys
+  before checking for duplicates.</p>
+  </blockquote>
+  <h4 id="activation-keys-that-avoid-modifiers-completely">Activation
+  keys that avoid modifiers completely</h4>
+  <p>Activation keys can avoid modifiers completely, allowing you use
+  Loco without using any physical modifier keys.</p>
+  <p>This example will extend the example in <a
+  href="#activation-keys-that-also-function-as-modifiers">Activation
+  keys that also function as modifiers</a>.</p>
+  <p>Consider the following code:</p>
+  <div class="sourceCode" id="cb21"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h ,&quot;</span> <span class="op">#&#39;</span>my-loco-describe-control-kseq)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h .&quot;</span> <span class="op">#&#39;</span>my-loco-describe-meta-kseq)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :dt <span class="kw">t</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                          :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                          :kseq [?,] :strip <span class="kw">t</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :dt <span class="kw">t</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>                          :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>                          :kseq [?.] :strip <span class="kw">t</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;,&quot;</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq)</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;.&quot;</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq)</span></code></pre></div>
+  <p>Here we consider an extreme (but useful) configuration that reduces
+  the activation keys to <kbd>C‑h ,</kbd>, <kbd>C‑h .</kbd>,
+  <kbd>,</kbd>, and <kbd>.</kbd>.</p>
+  <p>The effect of setting <kbd>,</kbd> and <kbd>.</kbd> as activation
+  keys is significant. By rebinding them to activation keys, they no
+  longer perform their original purpose: to enter a literal comma or
+  period, respectively. Both are essential punctuation, second only to
+  the letters and digits in terms of frequency of use.</p>
+  <p>Here we see a new argument: <code>:dt t</code>. When non-nil, this
+  argument tells <code>loco-read-kseq</code> to apply an additional rule
+  when processing keys: the <em>double-tap</em> rule.</p>
+  <p>The double-tap rule, for this configuration, states that if
+  <kbd>,</kbd> is pressed when <kbd>Control</kbd> is the <em>only</em>
+  pending modifier, or if <kbd>.</kbd> is pressed when <kbd>Meta</kbd>
+  is the <em>only</em> pending modifier, clear the modifier and add the
+  key <em>unmodified</em> to the key sequence.</p>
+  <p>This rule permits <kbd>,</kbd> and <kbd>.</kbd> to be entered as
+  <kbd>, ,</kbd> or <kbd>. .</kbd>, respectively. It is called
+  double-tap because it takes effect when these keys are tapped twice in
+  succession (provided no other modifiers are in effect).</p>
+  <p>Without this rule, entering a literal comma or period would be
+  unduly onerous. For example, here are four alternate ways by which you
+  could enter a literal comma or period, respectively:</p>
+  <ol type="1">
+  <li><p><kbd>, m S‑c ,</kbd> or <kbd>. m S‑m .</kbd></p>
+  <p>This method uses the Assist Menu (once), but uses a <a
+  href="#sticky-keys">sticky key</a> to keep the menu open.</p></li>
+  <li><p><kbd>, m c m ,</kbd> or <kbd>. m m m .</kbd></p>
+  <p>This method uses the Assist Menu (twice), but does not require a
+  physical modifier key.</p></li>
+  <li><p><kbd>C‑q ,</kbd> or <kbd>C‑q .</kbd></p>
+  <p>In Emacs, <kbd>C‑q</kbd> is bound to the command
+  <code>quoted-insert</code>, which will read the next key and insert
+  it. This method uses <code>quoted-insert</code>, but requires a
+  physical modifier key.</p></li>
+  <li><p><kbd>, q ,</kbd> or <kbd>, q .</kbd></p>
+  <p><kbd>C‑q</kbd> itself can be entered as <kbd>, q</kbd>. This method
+  uses <code>quoted-insert</code>, but does not require a physical
+  modifier key.</p></li>
+  </ol>
+  <p>While the double-tap rule makes entering a literal comma or period
+  easy, it does come with a cost.</p>
+  <p>Without this rule, <kbd>, ,</kbd> would be translated to
+  <kbd>C‑,</kbd>. The first <kbd>,</kbd> would tell Loco to consider
+  <kbd>Control</kbd> as pending, and the second <kbd>,</kbd> would tell
+  Loco to apply <kbd>Control</kbd> to <kbd>,</kbd>.</p>
+  <p>Similarly, <kbd>. .</kbd> would be translated to <kbd>M‑.</kbd>.
+  The first <kbd>.</kbd> would tell Loco to consider <kbd>Meta</kbd> as
+  pending, and the second <kbd>.</kbd> would tell Loco to apply
+  <kbd>Meta</kbd> to <kbd>.</kbd>.</p>
+  <p>While <kbd>C‑,</kbd> and <kbd>M‑.</kbd> are less frequently used
+  than literal commas and periods (<kbd>C‑,</kbd> is not bound to any
+  command and <kbd>M‑.</kbd> is bound to
+  <code>xref-find-definition</code>), we must still be able to enter
+  them.</p>
+  <p>Fortunately, we can use the Assist Menu for this. <kbd>C‑,</kbd>
+  and <kbd>M‑.</kbd> can be entered as <kbd>, m ,</kbd> and <kbd>. m
+  .</kbd>, respectively.</p>
+  <h2 id="author-and-copyright">Author and copyright</h2>
+  <p>Loco was written and copyright in 2024 by Chris McLaren (<a
+  href="https://www.github.com/csmclaren"><span class="citation"
+  data-cites="csmclaren">@csmclaren</span></a>).</p>
+  <h2 id="license">License</h2>
+  <p>This file is part of Loco.</p>
+  <p>Loco is licensed under the <a href="https://www.gnu.org">GNU</a>
+  General Public License v3.0. See the <a href="COPYING">COPYING</a>
+  file for details.</p>
+  <h2 id="colophon">Colophon</h2>
+  <p>The logo for Loco is a representation of a <a
+  href="https://en.wikipedia.org/wiki/Tram">tram</a> car from the <a
+  href="https://home.unicode.org">Unicode</a> chart <a
+  href="https://unicode.org/charts/PDF/U1F680.pdf">Transport and Map
+  Symbols</a>. Loco was created in Lisbon, Portugal, a city with a <a
+  href="https://en.wikipedia.org/wiki/Trams_in_Lisbon">history</a> of
+  using tram cars such as these.</p>
+  <footer>
+  <p>This document was produced on <time datetime="2024-06-14">June 14, 2024</time>, from the original <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> version, using <a href="https://pandoc.org">Pandoc</a>.</p>
+  </footer>
+</body>
+</html>

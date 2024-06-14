@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+rm ../docs/README.css
+rm ../docs/README.html
+rm ../docs/README-standalone.html
