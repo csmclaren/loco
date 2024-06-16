@@ -195,7 +195,7 @@ You can also call this command using Emacs Lisp with:
 
 When Loco is _disabled_ in the current buffer, all keys can be typed normally as if Loco were not installed, with the exception of <kbd>C&#8209;c ,</kbd> and <kbd>C&#8209;c .</kbd> themselves, which are bound in the global keymap.
 
-When Loco is _enabled_ in the current buffer it will place an indicator, which Emacs calls a "lighter", in the mode line of that buffer. The lighter for Loco looks like this: &nbsp;&#x1F68B;&nbsp;. Loco will also bind two additional key sequences: <kbd>S&#8209;&lt;return&gt;</kbd> and <kbd>C&#8209;h S&#8209;&lt;return&gt;</kbd>. Pressing either of these will _activate_ Loco.
+When Loco is _enabled_ in the current buffer it will place an indicator, which Emacs calls a "lighter", in the mode line of that buffer. The lighter for Loco is simply the string "Loco". Loco will also bind two additional key sequences: <kbd>S&#8209;&lt;return&gt;</kbd> and <kbd>C&#8209;h S&#8209;&lt;return&gt;</kbd>. Pressing either of these will _activate_ Loco.
 
 When Loco is activated, it will prompt you to enter a key sequence, then it will lookup whether or not that key sequence is bound to a command. If a command is found, it will either execute or describe that command, depending on which key sequence was used to activate it. <kbd>S&#8209;&lt;return&gt;</kbd> tells Loco that it should _execute_ the command. <kbd>C&#8209;h S&#8209;&lt;return&gt;</kbd> tells Loco it should _describe_ the command.
 

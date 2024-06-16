@@ -54,7 +54,7 @@
 
 ;;;###autoload
 (defcustom loco-lighter
-           (concat " " (char-to-string loco-cp-tram-car))
+           " Loco"
            "The lighter, shown in the mode line when `loco-mode' is enabled."
            :group 'loco
            :type 'string)
