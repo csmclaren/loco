@@ -57,7 +57,7 @@
            (concat " " (char-to-string loco-cp-tram-car))
            "The lighter, shown in the mode line when `loco-mode' is enabled."
            :group 'loco
-           :type 'sexp)
+           :type 'string)
 
 ;;;###autoload
 (defcustom loco-show-command
@@ -506,10 +506,13 @@ VALIDATE            If non-nil, validate all keys used by this function
 
       ;; read event
 
-      (let* ((header-str (if d
-                             loco-prompt-header-describe
-                           loco-prompt-header-execute))
-             (am-str (if am-open
+      (let* ((header (if d
+                         loco-prompt-header-describe
+                       loco-prompt-header-execute))
+             (header-str (if (stringp header)
+                             header
+                           (format "%s" header)))
+             (am (if am-open
                          (cond
                            ((and am-expanded loco-prompt-am-expanded)
                              loco-prompt-am-expanded)
@@ -522,6 +525,9 @@ VALIDATE            If non-nil, validate all keys used by this function
                                               key-am-s-collapse key-am-s-expand
                                               key-am-s-open)))
                        ""))
+             (am-str (if (stringp am)
+                         am
+                       (format "%s" am)))
              (prompt-str (loco--format-prompt header-str
                                               (if loco-prompt-show-kseq-o
                                                   kseq-o
