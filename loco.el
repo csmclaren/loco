@@ -174,7 +174,7 @@ first part of this prompt."
 (defcustom loco-prompt-header-execute
            (propertize (char-to-string loco-cp-black-right-pointing-triangle)
                        'face
-                       '(:foreground "white" bold))
+                       'bold)
            "The header, when Loco is activated to execute a command.
 
 When Loco is activated, it shows a prompt in the echo area.  The header is the
@@ -1080,8 +1080,6 @@ FMT-STR is a format string, followed by ARGS as in \"format\"."
   (pcase level
     (0 '(error bold))
     (1 '(warning bold))
-    (2 '(:foreground "cyan" bold))
-    (3 '(:foreground "white" bold))
     (_ 'bold)))
 
 (defun loco--log-level-as-styled-string (level)
