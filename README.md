@@ -7,7 +7,11 @@ Loco works by translating key sequences from one form to another. It does not re
 
 Loco does not preclude the use of physical modifier keys; it integrates well with them. There may even be some key bindings for which you find using physical modifier keys preferable. And it works equally well in the [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) or the [terminal](https://en.wikipedia.org/wiki/Computer_terminal), working around the [limitations of terminals](#considerations-when-using-a-terminal) that prevent the entry of certain keys, allowing you to move between both with ease.
 
-When enabled, and using the default configuration, pressing <kbd>S&#8209;&lt;return&gt;</kbd> will activate Loco. Once activated, you can type any key sequence, taking advantage of the following special keys to help you avoid pressing any physical modifier keys:
+When enabled, and using the default configuration, pressing <kbd>S&#8209;&lt;return&gt;</kbd> will activate Loco.
+
+>In Emacs, <kbd>S&#8209;&lt;return&gt;</kbd> means hold <kbd>Shift</kbd> then press <kbd>Return</kbd>.
+
+Once activated, you can type any key sequence, taking advantage of the following special keys to help you avoid pressing any physical modifier keys:
 
 * <kbd>j</kbd> to apply the modifier <kbd>Control</kbd> to  the next non&#8209;special key;
 * <kbd>k</kbd> to apply the modifier <kbd>Meta</kbd> to the next non&#8209;special key; or
