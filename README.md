@@ -1,5 +1,8 @@
 # Loco &nbsp;&#x1F68B;
 
+[![MELPA Stable](https://stable.melpa.org/packages/loco-badge.svg)](https://stable.melpa.org/#/loco)
+[![MELPA](https://www.melpa.org/packages/loco-badge.svg)](https://www.melpa.org/#/loco)
+
 Loco is a [package](
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) for [Emacs](https://www.gnu.org/software/emacs/). Loco lets you type any [key sequence](#keys-key-sequences-and-commands), including those requiring the modifiers <kbd>Alt</kbd>, <kbd>Control</kbd>, <kbd>Hyper</kbd>, <kbd>Meta</kbd>, or <kbd>Super</kbd>, without using any physical modifier keys except <kbd>Shift</kbd>. This makes it easy to enter key sequences that are complicated or use hard-to-reach keys.
 
