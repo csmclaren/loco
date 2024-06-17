@@ -66,13 +66,13 @@ The default configuration is not the only way to use Loco. Loco can be [extensiv
 
 ### From MELPA
 
-To install Loco from [MELPA](https://melpa.org) (the easiest method), follow these steps:
+To install Loco from [MELPA](https://melpa.org), follow these steps:
 
 1. Modify your Emacs configuration
 
     Open your [Emacs init file](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html) and complete the following steps:
 
-    * Add the MELPA package archives
+    * Add MELPA to the list of package archives
 
         ```lisp
         (require 'package)
@@ -80,7 +80,21 @@ To install Loco from [MELPA](https://melpa.org) (the easiest method), follow the
         (package-initialize)
         ```
 
-    * Require `loco`
+    * Refresh the descriptions of all packages in all package archives
+
+        ```lisp
+        (unless package-archive-contents
+          (package-refresh-contents))
+        ```
+
+    * Install the `loco` package
+
+        ```lisp
+        (unless (package-installed-p 'loco)
+          (package-install 'loco))
+        ```
+
+    * Load `loco`
 
         ```lisp
         (require 'loco)
@@ -115,7 +129,7 @@ To install Loco from source, follow these steps:
         (add-to-list 'load-path "/path/to/loco")
         ```
 
-    * Require `loco`
+    * Load `loco`
 
         ```lisp
         (require 'loco)

@@ -155,27 +155,36 @@
   </ul>
   <h2 id="installation">Installation</h2>
   <h3 id="from-melpa">From MELPA</h3>
-  <p>To install Loco from <a href="https://melpa.org">MELPA</a> (the
-  easiest method), follow these steps:</p>
+  <p>To install Loco from <a href="https://melpa.org">MELPA</a>, follow
+  these steps:</p>
   <ol type="1">
   <li><p>Modify your Emacs configuration</p>
   <p>Open your <a
   href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">Emacs
   init file</a> and complete the following steps:</p>
   <ul>
-  <li><p>Add the MELPA package archives</p>
+  <li><p>Add MELPA to the list of package archives</p>
   <div class="sourceCode" id="cb1"><pre
   class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;package</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>(add-to-list <span class="dt">&#39;package-archives</span> &#39;(<span class="st">&quot;melpa&quot;</span> . <span class="st">&quot;https://melpa.org/packages/&quot;</span>) <span class="kw">t</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>(package-initialize)</span></code></pre></div></li>
-  <li><p>Require <code>loco</code></p>
+  <li><p>Refresh the descriptions of all packages in all package
+  archives</p>
   <div class="sourceCode" id="cb2"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;loco</span>)</span></code></pre></div></li>
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">unless</span> package-archive-contents</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  (package-refresh-contents))</span></code></pre></div></li>
+  <li><p>Install the <code>loco</code> package</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">unless</span> (package-installed-p <span class="dt">&#39;loco</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  (package-install <span class="dt">&#39;loco</span>))</span></code></pre></div></li>
+  <li><p>Load <code>loco</code></p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;loco</span>)</span></code></pre></div></li>
   <li><p>Set the default key bindings and enable Loco in all buffers
   automatically on startup</p>
-  <div class="sourceCode" id="cb3"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(loco-set-default-key-bindings)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>) <span class="co">; Enable in all buffers</span></span></code></pre></div></li>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(loco-set-default-key-bindings)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>) <span class="co">; Enable in all buffers</span></span></code></pre></div></li>
   </ul>
   <p>To apply these changes, either restart Emacs or evaluate the
   modified sections of your configuration file.</p></li>
@@ -185,8 +194,8 @@
   <ol type="1">
   <li><p>Clone the <a href="https://github.com/csmclaren/loco">official
   repository</a> from GitHub</p>
-  <div class="sourceCode" id="cb4"><pre
-  class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/csmclaren/loco.git</span></code></pre></div></li>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/csmclaren/loco.git</span></code></pre></div></li>
   <li><p>Modify your Emacs configuration</p>
   <p>Open your <a
   href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">Emacs
@@ -194,16 +203,16 @@
   <ul>
   <li><p>Add the load path and make sure to replace
   <code>/path/to/loco</code> with the path to your cloned repository</p>
-  <div class="sourceCode" id="cb5"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(add-to-list <span class="dt">&#39;load-path</span> <span class="st">&quot;/path/to/loco&quot;</span>)</span></code></pre></div></li>
-  <li><p>Require <code>loco</code></p>
-  <div class="sourceCode" id="cb6"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;loco</span>)</span></code></pre></div></li>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(add-to-list <span class="dt">&#39;load-path</span> <span class="st">&quot;/path/to/loco&quot;</span>)</span></code></pre></div></li>
+  <li><p>Load <code>loco</code></p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;loco</span>)</span></code></pre></div></li>
   <li><p>Set the default key bindings and enable Loco in all buffers
   automatically on startup</p>
-  <div class="sourceCode" id="cb7"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(loco-set-default-key-bindings)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>) <span class="co">; Enable in all buffers</span></span></code></pre></div></li>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(loco-set-default-key-bindings)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>) <span class="co">; Enable in all buffers</span></span></code></pre></div></li>
   </ul>
   <p>To apply these changes, either restart Emacs or evaluate the
   modified sections of your configuration file.</p></li>
@@ -272,16 +281,16 @@
   <ul>
   <li><p>No argument, <code>nil</code>, or a positive number to enable
   Loco in the current buffer;</p>
-  <div class="sourceCode" id="cb8"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dv">1</span>) <span class="co">; Enable in the current buffer</span></span></code></pre></div></li>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dv">1</span>) <span class="co">; Enable in the current buffer</span></span></code></pre></div></li>
   <li><p>A zero or negative number to disable Loco in the current
   buffer; or</p>
-  <div class="sourceCode" id="cb9"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dv">0</span>) <span class="co">; Disable in the current buffer</span></span></code></pre></div></li>
+  <div class="sourceCode" id="cb11"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dv">0</span>) <span class="co">; Disable in the current buffer</span></span></code></pre></div></li>
   <li><p>The symbol <code>toggle</code> to toggle Loco in the current
   buffer.</p>
-  <div class="sourceCode" id="cb10"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dt">&#39;toggle</span>) <span class="co">; Toggle in the current buffer</span></span></code></pre></div></li>
+  <div class="sourceCode" id="cb12"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dt">&#39;toggle</span>) <span class="co">; Toggle in the current buffer</span></span></code></pre></div></li>
   </ul>
   <p>To enable or disable Loco <em>in all buffers</em>, use the command
   <code>global-loco-mode</code>. The key sequence <kbd>C‑c .</kbd> is
@@ -294,16 +303,16 @@
   <ul>
   <li><p>No argument, <code>nil</code>, or a positive number to enable
   Loco in all buffers;</p>
-  <div class="sourceCode" id="cb11"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>) <span class="co">; Enable in all buffers</span></span></code></pre></div></li>
+  <div class="sourceCode" id="cb13"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>) <span class="co">; Enable in all buffers</span></span></code></pre></div></li>
   <li><p>A zero or negative number to disable Loco in all buffers;
   or</p>
-  <div class="sourceCode" id="cb12"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">0</span>) <span class="co">; Disable in all buffers</span></span></code></pre></div></li>
+  <div class="sourceCode" id="cb14"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">0</span>) <span class="co">; Disable in all buffers</span></span></code></pre></div></li>
   <li><p>The symbol <code>toggle</code> to toggle Loco in all
   buffers.</p>
-  <div class="sourceCode" id="cb13"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dt">&#39;toggle</span>) <span class="co">; Toggle in all buffers</span></span></code></pre></div></li>
+  <div class="sourceCode" id="cb15"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dt">&#39;toggle</span>) <span class="co">; Toggle in all buffers</span></span></code></pre></div></li>
   </ul>
   <p>When Loco is <em>disabled</em> in the current buffer, all keys can
   be typed normally as if Loco were not installed, with the exception of
@@ -828,22 +837,22 @@
   that you do so. This command sets the default key bindings as follows,
   and you can edit this code to bind your own key sequences as
   desired.</p>
-  <div class="sourceCode" id="cb14"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; Bind &quot;C-c ,&quot; to toggle Loco in the current buffer</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>(keymap-global-set <span class="st">&quot;C-c ,&quot;</span> <span class="op">#&#39;</span>loco-mode)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">;; Bind &quot;C-c .&quot; to toggle Loco in all buffers</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>(keymap-global-set <span class="st">&quot;C-c .&quot;</span> <span class="op">#&#39;</span>global-loco-mode)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-h S-&lt;return&gt;&quot;</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then describe the command to which it is bound</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h S-&lt;return&gt;&quot;</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-describe-kseq)</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;S-&lt;return&gt;&quot;</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then execute the command to which it is bound</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;S-&lt;return&gt;&quot;</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-execute-kseq)</span></code></pre></div>
+  <div class="sourceCode" id="cb16"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; Bind &quot;C-c ,&quot; to toggle Loco in the current buffer</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>(keymap-global-set <span class="st">&quot;C-c ,&quot;</span> <span class="op">#&#39;</span>loco-mode)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">;; Bind &quot;C-c .&quot; to toggle Loco in all buffers</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>(keymap-global-set <span class="st">&quot;C-c .&quot;</span> <span class="op">#&#39;</span>global-loco-mode)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-h S-&lt;return&gt;&quot;</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then describe the command to which it is bound</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h S-&lt;return&gt;&quot;</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-describe-kseq)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;S-&lt;return&gt;&quot;</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then execute the command to which it is bound</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;S-&lt;return&gt;&quot;</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-execute-kseq)</span></code></pre></div>
   <p>The command <code>loco-unset-default-key-bindings</code> is the
   inverse of <code>loco-set-default-key-bindings</code>; the former will
   unset any keybindings set by the latter.</p>
@@ -853,10 +862,10 @@
   <p>By default, <kbd>S‑&lt;return&gt;</kbd> is bound to
   <code>loco-default-execute-kseq</code>. This command is defined as
   follows.</p>
-  <div class="sourceCode" id="cb15"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> loco-default-execute-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-mod-c ?j :key-mod-m ?k args))</span></code></pre></div>
+  <div class="sourceCode" id="cb17"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> loco-default-execute-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-mod-c ?j :key-mod-m ?k args))</span></code></pre></div>
   <p>This command calls <code>loco-read-kseq</code> with two arguments.
   These arguments tell <code>loco-read-kseq</code> that while reading a
   key sequence, <kbd>j</kbd> should set <kbd>Control</kbd> pending and
@@ -864,15 +873,15 @@
   <p>We can define a similar command, called
   <code>my-loco-execute-kseq</code>, and rebind
   <kbd>S‑&lt;return&gt;</kbd> to it as follows.</p>
-  <div class="sourceCode" id="cb16"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;S-&lt;return&gt;&quot;</span> <span class="op">#&#39;</span>my-loco-execute-kseq)</span></code></pre></div>
+  <div class="sourceCode" id="cb18"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;S-&lt;return&gt;&quot;</span> <span class="op">#&#39;</span>my-loco-execute-kseq)</span></code></pre></div>
   <p>Our command calls <code>loco-read-kseq</code> with eight
   arguments.</p>
   <p>The first seven arguments tell <code>loco-read-kseq</code> that
@@ -940,10 +949,10 @@
   <p>By default, <kbd>C‑h S‑&lt;return&gt;</kbd> is bound to
   <code>loco-default-describe-kseq</code>. This command is defined as
   follows.</p>
-  <div class="sourceCode" id="cb17"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> loco-default-describe-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-default-execute-kseq :d <span class="kw">t</span> args))</span></code></pre></div>
+  <div class="sourceCode" id="cb19"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> loco-default-describe-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-default-execute-kseq :d <span class="kw">t</span> args))</span></code></pre></div>
   <p>This command calls <code>loco-default-execute-kseq</code> with one
   additional argument: <code>:d t</code>. When non-nil, this argument
   tells <code>loco-read-kseq</code> that if it reads a key sequence that
@@ -952,12 +961,12 @@
   <p>We can define a similar command, called
   <code>my-loco-describe-kseq</code>, and rebind <kbd>C‑h
   S‑&lt;return&gt;</kbd> to it as follows.</p>
-  <div class="sourceCode" id="cb18"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-kseq :d <span class="kw">t</span> args))</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h S-&lt;return&gt;&quot;</span> <span class="op">#&#39;</span>my-loco-describe-kseq)</span></code></pre></div>
+  <div class="sourceCode" id="cb20"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h S-&lt;return&gt;&quot;</span> <span class="op">#&#39;</span>my-loco-describe-kseq)</span></code></pre></div>
   <p>There are a total of 25 keyword arguments that can be passed to
   <code>loco-read-kseq</code>, all of which are explained in the
   documentation for that command.</p>
@@ -986,16 +995,16 @@
   <em>Done</em> when complete.</p>
   <p>You can set key bindings for <kbd>C‑&lt;return&gt;</kbd> and
   <kbd>C‑h C‑&lt;return&gt;</kbd> as follows.</p>
-  <div class="sourceCode" id="cb19"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-h C-&lt;return&gt;&quot;</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then describe the command to which it is bound</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h C-&lt;return&gt;&quot;</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-describe-kseq)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-&lt;return&gt;&quot;</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then execute the command to which it is bound</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-&lt;return&gt;&quot;</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-execute-kseq)</span></code></pre></div>
+  <div class="sourceCode" id="cb21"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-h C-&lt;return&gt;&quot;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then describe the command to which it is bound</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h C-&lt;return&gt;&quot;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-describe-kseq)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-&lt;return&gt;&quot;</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then execute the command to which it is bound</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-&lt;return&gt;&quot;</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-execute-kseq)</span></code></pre></div>
   <h4 id="activation-keys-that-also-function-as-modifiers">Activation
   keys that also function as modifiers</h4>
   <p>Activation keys can also function as modifiers, allowing you to
@@ -1004,36 +1013,36 @@
   href="#changing-the-keys-used-while-loco-reads-a-key-sequence">Changing
   the keys used while Loco reads a key sequence</a>.</p>
   <p>Consider the following code:</p>
-  <div class="sourceCode" id="cb20"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq :d <span class="kw">t</span> args))</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq :d <span class="kw">t</span> args))</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h C-,&quot;</span> <span class="op">#&#39;</span>my-loco-describe-control-kseq)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h C-.&quot;</span> <span class="op">#&#39;</span>my-loco-describe-meta-kseq)</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>                          :kseq [?,] :strip <span class="kw">t</span></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>                          :kseq [?.] :strip <span class="kw">t</span></span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-,&quot;</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq)</span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-.&quot;</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq)</span></code></pre></div>
+  <div class="sourceCode" id="cb22"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h C-,&quot;</span> <span class="op">#&#39;</span>my-loco-describe-control-kseq)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h C-.&quot;</span> <span class="op">#&#39;</span>my-loco-describe-meta-kseq)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>                          :kseq [?,] :strip <span class="kw">t</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>                          :kseq [?.] :strip <span class="kw">t</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-,&quot;</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq)</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-.&quot;</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq)</span></code></pre></div>
   <p>Here we create a total of four activation keys.</p>
   <p><kbd>C‑,</kbd> and <kbd>C‑.</kbd> both activate Loco to read a key
   sequence and execute the command to which it is bound, but
@@ -1093,38 +1102,38 @@
   href="#activation-keys-that-also-function-as-modifiers">Activation
   keys that also function as modifiers</a>.</p>
   <p>Consider the following code:</p>
-  <div class="sourceCode" id="cb21"><pre
-  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq :d <span class="kw">t</span> args))</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq :d <span class="kw">t</span> args))</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h ,&quot;</span> <span class="op">#&#39;</span>my-loco-describe-control-kseq)</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h .&quot;</span> <span class="op">#&#39;</span>my-loco-describe-meta-kseq)</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :dt <span class="kw">t</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                          :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                          :kseq [?,] :strip <span class="kw">t</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :dt <span class="kw">t</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>                          :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>                          :kseq [?.] :strip <span class="kw">t</span></span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;,&quot;</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq)</span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;.&quot;</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq)</span></code></pre></div>
+  <div class="sourceCode" id="cb23"><pre
+  class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq :d <span class="kw">t</span> args))</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h ,&quot;</span> <span class="op">#&#39;</span>my-loco-describe-control-kseq)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-h .&quot;</span> <span class="op">#&#39;</span>my-loco-describe-meta-kseq)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-control-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :dt <span class="kw">t</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>                          :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>                          :kseq [?,] :strip <span class="kw">t</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-meta-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">apply</span> <span class="op">#&#39;</span>loco-read-kseq :dt <span class="kw">t</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>                          :key-am-mod-c-qk <span class="kw">nil</span> :key-am-mod-m-qk <span class="kw">nil</span></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-collapse ?/ :key-am-s-expand ?/</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>                          :kseq [?.] :strip <span class="kw">t</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>                          :validate <span class="kw">t</span> args))</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;,&quot;</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq)</span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;.&quot;</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq)</span></code></pre></div>
   <p>Here we consider an extreme (but useful) configuration that reduces
   the activation keys to <kbd>C‑h ,</kbd>, <kbd>C‑h .</kbd>,
   <kbd>,</kbd>, and <kbd>.</kbd>.</p>
