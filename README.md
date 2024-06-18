@@ -1,4 +1,4 @@
-# Loco &nbsp;&#x1F68B;
+# Loco &nbsp;&#x1F68B; <!-- omit from toc -->
 
 [![MELPA Stable](https://stable.melpa.org/packages/loco-badge.svg)](https://stable.melpa.org/#/loco)
 [![MELPA](https://www.melpa.org/packages/loco-badge.svg)](https://www.melpa.org/#/loco)
@@ -63,6 +63,36 @@ The default configuration is not the only way to use Loco. Loco can be [extensiv
 * Changing the keys used while Loco reads a key sequence;
 * Configuring activation keys that also function as modifiers; and
 * Configuring activation keys that avoid modifiers completely.
+
+## Table of contents <!-- omit from toc -->
+
+* [Introduction](#introduction)
+* [Installation](#installation)
+  * [From MELPA](#from-melpa)
+  * [From source](#from-source)
+* [Usage](#usage)
+  * [Keys, key sequences, and commands](#keys-key-sequences-and-commands)
+  * [How Loco is different](#how-loco-is-different)
+  * [Enabling, disabling, and activating Loco](#enabling-disabling-and-activating-loco)
+  * [Entering key sequences](#entering-key-sequences)
+    * [Rock \& roll](#rock--roll)
+    * [Sticky keys](#sticky-keys)
+    * [Examples](#examples)
+  * [Describing commands](#describing-commands)
+  * [Repeating commands](#repeating-commands)
+  * [Working with physical modifier keys](#working-with-physical-modifier-keys)
+  * [Considerations when using a terminal](#considerations-when-using-a-terminal)
+* [Customization](#customization)
+  * [Using the "Easy Customization Interface"](#using-the-easy-customization-interface)
+  * [Changing the key bindings used to enable, disable, or activate Loco](#changing-the-key-bindings-used-to-enable-disable-or-activate-loco)
+  * [Changing the keys used while Loco reads a key sequence](#changing-the-keys-used-while-loco-reads-a-key-sequence)
+  * [Advanced topics](#advanced-topics)
+    * [Mapping Caps Lock to Control](#mapping-caps-lock-to-control)
+    * [Activation keys that also function as modifiers](#activation-keys-that-also-function-as-modifiers)
+    * [Activation keys that avoid modifiers completely](#activation-keys-that-avoid-modifiers-completely)
+* [Author and copyright](#author-and-copyright)
+* [License](#license)
+* [Colophon](#colophon)
 
 ## Installation
 
