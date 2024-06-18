@@ -1,7 +1,7 @@
 function Meta(meta)
 
   -- Create the content
-  local fname = "../docs/README.css"
+  local fname = "docs/README.css"
   local file = io.open(fname, "r")
   local content = '<style>\n' .. file:read("*all") .. '\n</style>'
   file:close()
