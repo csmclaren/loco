@@ -102,44 +102,33 @@ To install Loco from [MELPA](https://melpa.org), follow these steps:
 
 1. Modify your Emacs configuration
 
-    Open your [Emacs init file](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html) and complete the following steps:
+    * Open your [Emacs init file](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html) and add the following:
 
-    * Add MELPA to the list of package archives
+      ```lisp
+      ;; Add MELPA to the list of package archives
+      (require 'package)
+      (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+      (package-initialize)
 
-        ```lisp
-        (require 'package)
-        (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-        (package-initialize)
-        ```
+      ;; Refresh the descriptions of all packages in all package archives
+      (unless package-archive-contents
+        (package-refresh-contents))
 
-    * Refresh the descriptions of all packages in all package archives
+      ;; Install the `loco` package
+      (unless (package-installed-p 'loco)
+        (package-install 'loco))
 
-        ```lisp
-        (unless package-archive-contents
-          (package-refresh-contents))
-        ```
+      ;; Load `loco`
+      (require 'loco)
 
-    * Install the `loco` package
+      ;; Set the default key bindings for Loco
+      (loco-set-default-key-bindings)
 
-        ```lisp
-        (unless (package-installed-p 'loco)
-          (package-install 'loco))
-        ```
+      ;; Enable Loco in all buffers
+      (global-loco-mode 1)
+      ```
 
-    * Load `loco`
-
-        ```lisp
-        (require 'loco)
-        ```
-
-    * Set the default key bindings and enable Loco in all buffers automatically on startup
-
-        ```lisp
-        (loco-set-default-key-bindings)
-        (global-loco-mode 1) ; Enable in all buffers
-        ```
-
-    To apply these changes, either restart Emacs or evaluate the modified sections of your configuration file.
+    * Apply your changes by either restarting Emacs or evaluating the modified sections of your configuration file.
 
 ### From source
 
@@ -153,28 +142,23 @@ To install Loco from source, follow these steps:
 
 2. Modify your Emacs configuration
 
-    Open your [Emacs init file](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html) and complete the following steps:
+    * Open your [Emacs init file](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html) and add the following, making sure to replace `/path/to/loco` with the path to your cloned repository:
 
-    * Add the load path and make sure to replace `/path/to/loco` with the path to your cloned repository
+      ```lisp
+      ;; Add the load path
+      (add-to-list 'load-path "/path/to/loco")
 
-        ```lisp
-        (add-to-list 'load-path "/path/to/loco")
-        ```
+      ;; Load `loco`
+      (require 'loco)
 
-    * Load `loco`
+      ;; Set the default key bindings for Loco
+      (loco-set-default-key-bindings)
 
-        ```lisp
-        (require 'loco)
-        ```
+      ;; Enable Loco in all buffers
+      (global-loco-mode 1)
+      ```
 
-    * Set the default key bindings and enable Loco in all buffers automatically on startup
-
-        ```lisp
-        (loco-set-default-key-bindings)
-        (global-loco-mode 1) ; Enable in all buffers
-        ```
-
-    To apply these changes, either restart Emacs or evaluate the modified sections of your configuration file.
+    * Apply your changes by either restarting Emacs or evaluating the modified sections of your configuration file.
 
 ## Usage
 
