@@ -52,14 +52,12 @@
           :group 'editing
           :prefix "loco-")
 
-;;;###autoload
 (defcustom loco-lighter
            " Loco"
            "The lighter, shown in the mode line when `loco-mode' is enabled."
            :group 'loco
            :type 'string)
 
-;;;###autoload
 (defcustom loco-show-command
            t
            "Show the command before it is described or executed.
@@ -69,7 +67,6 @@ determines whether or not to show the name of that command in the echo area."
            :group 'loco
            :type 'boolean)
 
-;;;###autoload
 (defcustom loco-show-state-change
            t
            "Show a message when `loco-mode' changes state.
@@ -87,14 +84,12 @@ not to show the new state in the echo area."
           :group 'loco
           :prefix "loco-")
 
-;;;###autoload
 (defcustom loco-log-buffer-name
            "*Loco-Log*"
            "The name of the log buffer to where messages are logged."
            :group 'loco-log
            :type 'string)
 
-;;;###autoload
 (defcustom loco-log-max-level
            1
            "Log messages with this level of detail or lower.
@@ -109,7 +104,6 @@ Debug      Also log information for debugging purposes."
                           (const :tag "Info" 2)
                           (const :tag "Debug" 3)))
 
-;;;###autoload
 (defcustom loco-log-show-buffer
            t
            "Show the log buffer when a new message is logged.
@@ -127,7 +121,6 @@ the log buffer, if it is not already visible."
           :group 'loco
           :prefix "loco-")
 
-;;;###autoload
 (defcustom loco-prompt-am-collapsed
            nil
            "The Assist Menu, as shown in its collapsed state.
@@ -140,7 +133,6 @@ indicates that Loco should generate a default representation."
            :group 'loco-prompt
            :type 'sexp)
 
-;;;###autoload
 (defcustom loco-prompt-am-expanded
            nil
            "The Assist Menu, as shown in its expanded state.
@@ -153,14 +145,12 @@ indicates that Loco should generate a default representation."
            :group 'loco-prompt
            :type 'sexp)
 
-;;;###autoload
 (defcustom loco-prompt-am-open-expanded
            t
            "Open the Assist Menu expanded, showing its full set of items."
            :group 'loco-prompt
            :type 'boolean)
 
-;;;###autoload
 (defcustom loco-prompt-header-describe
            "Describe the following Loco key sequence:"
            "The header, when Loco is activated to describe a command.
@@ -170,7 +160,6 @@ first part of this prompt."
            :group 'loco-prompt
            :type 'sexp)
 
-;;;###autoload
 (defcustom loco-prompt-header-execute
            (propertize (char-to-string loco-cp-black-right-pointing-triangle)
                        'face
@@ -182,7 +171,6 @@ first part of this prompt."
            :group 'loco-prompt
            :type 'sexp)
 
-;;;###autoload
 (defcustom loco-prompt-show-kseq-o
            nil
            "Show the original key sequence (kseq-o) when Loco is activated.
@@ -194,7 +182,6 @@ of the prompt."
            :group 'loco-prompt
            :type 'boolean)
 
-;;;###autoload
 (defcustom loco-prompt-show-kseq-p
            nil
            "Show the processed key sequence (kseq-p) when Loco is activated.
