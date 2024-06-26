@@ -58,15 +58,6 @@
            :group 'loco
            :type 'string)
 
-(defcustom loco-show-command
-           t
-           "Show the command before it is described or executed.
-
-If Loco reads a key sequence that is bound to a command, this variable
-determines whether or not to show the name of that command in the echo area."
-           :group 'loco
-           :type 'boolean)
-
 (defcustom loco-show-state-change
            t
            "Show a message when `loco-mode' changes state.
@@ -691,8 +682,6 @@ VALIDATE            If non-nil, validate all keys used by this function
                 (loco--log 2 "complete binding (%s)"
                            (loco--format-vars kseq-t3-str binding))
                 (setq should-loop nil)
-                (when loco-show-command
-                  (message "%s" binding))
                 (if d
                     (describe-key kseq-t)
                   (progn
