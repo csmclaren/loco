@@ -1,7 +1,7 @@
 function Meta(meta)
 
   -- Create the content
-  local fname = "README.css"
+  local fname = "loco.css"
   local content = '<link rel="stylesheet" href="' .. fname .. '">'
 
   -- Create an element and insert it into the document
