@@ -15,6 +15,7 @@ make-docs:
 		--from gfm \
 		--lua-filter=tools/pandoc/filter-append-html-footer.lua \
 		--lua-filter=tools/pandoc/filter-link-stylesheet.lua \
+		--metadata filter_link_stylesheet_fpath="loco.css" \
 		--metadata title="Loco" \
 		--output docs/loco.html \
 		--template tools/pandoc/template.html \
