@@ -191,11 +191,11 @@ operation ie when the Assist Menu is open}
 @ref{Examples}
 @itemize
 @item
-@ref{#typical-key-sequences-and-their-translations,,Typical key
-sequences and their translations}
+@ref{Typical key sequences and their translations,,Typical key sequences
+and their translations}
 @item
-@ref{#more-difficult-key-sequences-and-their-translations,,More
-difficult key sequences and their translations}
+@ref{More difficult key sequences and their translations,,More difficult
+key sequences and their translations}
 @end itemize
 
 @end itemize
@@ -572,6 +572,8 @@ reading a key sequence.
 * Rock and roll::
 * Sticky keys::
 * Examples::
+* Typical key sequences and their translations::
+* More difficult key sequences and their translations::
 @end menu
 
 @node Normal operation ie when the Assist Menu is closed
@@ -603,7 +605,7 @@ then add the (potentially modified) key to the key sequence.
 
 @node Assisted operation ie when the Assist Menu is open
 @subsubsection Assisted operation (i.e., when the Assist Menu is open)
-@multitable {@kbd{A} @kbd{C} @kbd{H} @kbd{M} or @kbd{S}} {Toggle @kbd{Alt} @kbd{Control} @kbd{Hyper} @kbd{Meta} or @kbd{Super} respectively, in the set of pending modifiers, but do not close the Assist Menu (see @ref{Sticky keys,,Sticky keys}).} 
+@multitable {@kbd{A} @kbd{C} @kbd{H} @kbd{M} or @kbd{S}} {Toggle @kbd{Alt} @kbd{Control} @kbd{Hyper} @kbd{Meta} or @kbd{Super} respectively, in the set of pending modifiers, but do not close the Assist Menu.} 
 @headitem 
 Key
  @tab Rule
@@ -616,7 +618,7 @@ Assist Menu.
 @kbd{A} @kbd{C} @kbd{H} @kbd{M} or @kbd{S}
  @tab Toggle @kbd{Alt} @kbd{Control} @kbd{Hyper} @kbd{Meta} or
 @kbd{Super} respectively, in the set of pending modifiers, but do not
-close the Assist Menu (see @ref{Sticky keys,,Sticky keys}).
+close the Assist Menu.
 @item 
 @kbd{j} @kbd{k} or @kbd{l}
  @tab Apply any pending modifiers to the key (clearing the modifiers),
@@ -673,7 +675,9 @@ These keys are optional and not shown on the Assist Menu.
 
 @node Examples
 @subsubsection Examples
-Typical key sequences and their translations
+
+@node Typical key sequences and their translations
+@subsubsection Typical key sequences and their translations
 Most key sequences do not involve @kbd{Control} or @kbd{Meta} in
 conjunction with @kbd{j}, @kbd{k}, or @kbd{l}, making them easy to
 enter.
@@ -697,7 +701,8 @@ Typed Key Sequence
  @tab @code{end-of-defun}
 @end multitable
 
-More difficult key sequences and their translations
+@node More difficult key sequences and their translations
+@subsubsection More difficult key sequences and their translations
 Nine key sequences involve @kbd{Control} or @kbd{Meta} in conjunction
 with @kbd{j}, @kbd{k}, or @kbd{l}, making them more difficult to enter.
 

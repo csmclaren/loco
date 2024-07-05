@@ -7,6 +7,7 @@ clean-docs:
 	rm -f docs/loco.html
 	rm -f docs/loco-standalone.html
 	rm -f docs/loco.texi
+	rm -f docs/loco.info
 
 make-docs:
 	curl \
@@ -34,6 +35,7 @@ make-docs:
 		README.md
 	pandoc \
 		--from gfm \
+		--lua-filter=tools/pandoc/filter-adjust-header-depths.lua \
 		--lua-filter=tools/pandoc/filter-process-kbd.lua \
 		--lua-filter=tools/pandoc/filter-strip-headers.lua \
 		--lua-filter=tools/pandoc/filter-trim-headers.lua \
@@ -44,6 +46,7 @@ make-docs:
 		--template tools/pandoc/template.texinfo \
 		--to texinfo \
 		README.md
+	makeinfo --output docs/loco.info docs/loco.texi
 
 set-permissions:
 	find . -type d -exec chmod 755 {} \;

@@ -255,7 +255,7 @@ The following tables explain exactly how key presses are handled while reading a
 | Key | Rule |
 | --- | --- |
 | <kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd> or <kbd>s</kbd> | Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd> <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of pending modifiers, and close the Assist Menu. |
-| <kbd>A</kbd> <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> or <kbd>S</kbd> | Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd> <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of pending modifiers, but do not close the Assist Menu (see [Sticky keys](#sticky-keys)). |
+| <kbd>A</kbd> <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> or <kbd>S</kbd> | Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd> <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of pending modifiers, but do not close the Assist Menu. |
 | <kbd>j</kbd> <kbd>k</kbd> or <kbd>l</kbd> | Apply any pending modifiers to the key (clearing the modifiers), add the (potentially modified) key to the key sequence, and close the Assist Menu. |
 | <kbd>q</kbd> | Close the Assist Menu and cancel the key sequence (equivalent to <kbd>C-g</kbd>). |
 | <kbd>x</kbd> | Close the Assist Menu. |
