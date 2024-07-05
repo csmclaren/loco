@@ -56,7 +56,7 @@ The default configuration is not the only way to use Loco. Loco can be [extensiv
   * [Entering key sequences](#entering-key-sequences)
     * [Normal operation (i.e., when the Assist Menu is closed)](#normal-operation-ie-when-the-assist-menu-is-closed)
     * [Assisted operation (i.e., when the Assist Menu is open)](#assisted-operation-ie-when-the-assist-menu-is-open)
-    * [Rock \& roll](#rock--roll)
+    * [Rock and roll](#rock-and-roll)
     * [Sticky keys](#sticky-keys)
     * [Examples](#examples)
       * [Typical key sequences and their translations](#typical-key-sequences-and-their-translations)
@@ -262,7 +262,7 @@ The following tables explain exactly how key presses are handled while reading a
 | <kbd>;</kbd> | Toggle the Assist Menu between its collapsed and expanded states. |
 | Other | Discard the key, but do not close the Assist Menu. If the Assist Menu is currently collapsed, expand it to remind the user of all available options. |
 
-#### Rock & roll
+#### Rock and roll
 
 The keys <kbd>j</kbd>, <kbd>k</kbd>, and <kbd>l</kbd> were chosen to represent <kbd>Control</kbd>, <kbd>Meta</kbd>, and the Assist Menu, respectively, because on a [QWERTY](https://en.wikipedia.org/wiki/QWERTY) keyboard these keys are adjacent. This allows you to roll from side to side or rock your fingers back and forth over them.
 
