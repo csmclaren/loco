@@ -24,6 +24,7 @@ make-docs:
 		--from gfm \
 		--lua-filter=tools/pandoc/filter-append-html-footer.lua \
 		--lua-filter=tools/pandoc/filter-embed-stylesheet.lua \
+		--metadata filter_embed_stylesheet_fpath="docs/loco.css" \
 		--metadata title="Loco" \
 		--output docs/loco-standalone.html \
 		--template tools/pandoc/template.html \
