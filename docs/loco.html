@@ -22,7 +22,7 @@
   <title>Loco</title>
 </head>
 <body class="markdown-body">
-  <h1 id="loco">Loco  🚋 <!-- omit from toc --></h1>
+  <h1 id="loco--train-">Loco  🚋 <!-- omit from toc --></h1>
   <p><a href="https://stable.melpa.org/#/loco"><img
   src="https://stable.melpa.org/packages/loco-badge.svg"
   alt="MELPA Stable" /></a> <a href="https://www.melpa.org/#/loco"><img
@@ -80,67 +80,36 @@
   </ul></li>
   </ul>
   <table>
-  <caption>
-  Examples (using the default configuration)
-  </caption>
-  <tbody>
-  <tr>
-  <th>
-  Typed Key Sequence
-  </th>
-  <th>
-  Translated Key Sequence
-  </th>
-  <th>
-  Command
-  </th>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j d</kbd>
-  </td>
-  <td>
-  <kbd>C‑d</kbd>
-  </td>
-  <td>
-  <code>delete‑char</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>k d</kbd>
-  </td>
-  <td>
-  <kbd>M‑d</kbd>
-  </td>
-  <td>
-  <code>kill‑word</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j h i</kbd>
-  </td>
-  <td>
-  <kbd>C‑h i</kbd>
-  </td>
-  <td>
-  <code>info</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j x j s</kbd>
-  </td>
-  <td>
-  <kbd>C‑x C‑s</kbd>
-  </td>
-  <td>
-  <code>save‑buffer</code>
-  </td>
-  </tr>
-  </tbody>
+    <caption>Examples (using the default configuration)</caption>
+    <tbody>
+      <tr>
+        <th>Typed Key Sequence</th>
+        <th>Translated Key Sequence</th>
+        <th>Command</th>
+      </tr>
+      <tr>
+        <td><kbd>j d</kbd></td>
+        <td><kbd>C&#8209;d</kbd></td>
+        <td><code>delete&#8209;char</code></td>
+      </tr>
+      <tr>
+        <td><kbd>k d</kbd></td>
+        <td><kbd>M&#8209;d</kbd></td>
+        <td><code>kill&#8209;word</code></td>
+      </tr>
+      <tr>
+        <td><kbd>j h i</kbd></td>
+        <td><kbd>C&#8209;h i</kbd></td>
+        <td><code>info</code></td>
+      </tr>
+      <tr>
+        <td><kbd>j x j s</kbd></td>
+        <td><kbd>C&#8209;x C&#8209;s</kbd></td>
+        <td><code>save&#8209;buffer</code></td>
+      </tr>
+    </tbody>
   </table>
+
   <p>This is only a brief overview; see <a href="#usage">Usage</a> for a
   detailed explanation.</p>
   <p>The default configuration is not the only way to use Loco. Loco can
@@ -154,7 +123,7 @@
   and</li>
   <li>Configuring activation keys that avoid modifiers completely.</li>
   </ul>
-  <h2 id="table-of-contents">Table of contents
+  <h2 id="table-of-contents-">Table of contents
   <!-- omit from toc --></h2>
   <ul>
   <li><a href="#introduction">Introduction</a></li>
@@ -185,8 +154,8 @@
   </ul></li>
   <li><a href="#customization">Customization</a>
   <ul>
-  <li><a href="#using-the-easy-customization-interface">Using the “Easy
-  Customization Interface”</a></li>
+  <li><a href="#using-the-easy-customization-interface">Using the "Easy
+  Customization Interface"</a></li>
   <li><a
   href="#changing-the-key-bindings-used-to-enable-disable-or-activate-loco">Changing
   the key bindings used to enable, disable, or activate Loco</a></li>
@@ -377,8 +346,8 @@
   <kbd>C‑c ,</kbd> and <kbd>C‑c .</kbd> themselves, which are bound in
   the global keymap.</p>
   <p>When Loco is <em>enabled</em> in the current buffer it will place
-  an indicator, which Emacs calls a “lighter”, in the mode line of that
-  buffer. The lighter for Loco is simply the string “Loco”. Loco will
+  an indicator, which Emacs calls a "lighter", in the mode line of that
+  buffer. The lighter for Loco is simply the string "Loco". Loco will
   also bind two additional key sequences: <kbd>S‑&lt;return&gt;</kbd>
   and <kbd>C‑h S‑&lt;return&gt;</kbd>. Pressing either of these will
   <em>activate</em> Loco.</p>
@@ -394,7 +363,7 @@
   <ul>
   <li><p>It tracks a set of modifiers (<kbd>Alt</kbd>,
   <kbd>Control</kbd>, <kbd>Hyper</kbd>, <kbd>Meta</kbd>, and
-  <kbd>Super</kbd>) that it considers “pending”.</p></li>
+  <kbd>Super</kbd>) that it considers "pending".</p></li>
   <li><p><kbd>j</kbd> and <kbd>k</kbd> add <kbd>Control</kbd> and
   <kbd>Meta</kbd>, respectively, to the set of pending modifiers, or
   represent themselves, if their respective modifiers are already
@@ -435,155 +404,82 @@
   <p>The following tables explain exactly how key presses are handled
   while reading a key sequence.</p>
   <table>
-  <caption>
-  Normal operation (i.e., when the Assist Menu is closed)
-  </caption>
-  <tbody>
-  <tr>
-  <th>
-  Key
-  </th>
-  <th>
-  Rule
-  </th>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j</kbd>
-  </td>
-  <td>
-  There are two possibilities for how this key is handled:
-  <ul>
-  <li>
-  If <kbd>Control</kbd> is already pending, apply all pending modifiers
-  to the key (clearing the modifiers), then add the modified key to the
-  key sequence.
-  </li>
-  <li>
-  Otherwise, add <kbd>Control</kbd> to the set of pending modifiers.
-  </li>
-  </ul>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>k</kbd>
-  </td>
-  <td>
-  There are two possibilities for how this key is handled:
-  <ul>
-  <li>
-  If <kbd>Meta</kbd> is already pending, apply all pending modifiers to
-  the key (clearing the modifiers), then add the modified key to the key
-  sequence.
-  </li>
-  <li>
-  Otherwise, add <kbd>Meta</kbd> to the set of pending modifiers.
-  </li>
-  </ul>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>l</kbd>
-  </td>
-  <td>
-  Open the Assist Menu.
-  </td>
-  </tr>
-  <tr>
-  <td>
-  Other
-  </td>
-  <td>
-  Apply any pending modifiers to the key (clearing the modifiers), then
-  add the (potentially modified) key to the key sequence.
-  </td>
-  </tr>
-  </tbody>
+    <caption>Normal operation (i.e., when the Assist Menu is closed)</caption>
+    <tbody>
+      <tr>
+        <th>Key</th>
+        <th>Rule</th>
+      </tr>
+      <tr>
+        <td><kbd>j</kbd></td>
+        <td>
+          There are two possibilities for how this key is handled:
+          <ul>
+            <li>If <kbd>Control</kbd> is already pending, apply all pending modifiers to the key (clearing the modifiers), then add the modified key to the key sequence.</li>
+            <li>Otherwise, add <kbd>Control</kbd> to the set of pending modifiers.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><kbd>k</kbd></td>
+        <td>
+          There are two possibilities for how this key is handled:
+          <ul>
+            <li>If <kbd>Meta</kbd> is already pending, apply all pending modifiers to the key (clearing the modifiers), then add the modified key to the key sequence.</li>
+            <li>Otherwise, add <kbd>Meta</kbd> to the set of pending modifiers.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><kbd>l</kbd></td>
+        <td>Open the Assist Menu. </td>
+      </tr>
+      <tr>
+        <td>Other</td>
+        <td>Apply any pending modifiers to the key (clearing the modifiers), then add the (potentially modified) key to the key sequence.</td>
+      </tr>
+    </tbody>
   </table>
+
   <table>
-  <caption>
-  Assisted operation (i.e., when the Assist Menu is open)
-  </caption>
-  <tbody>
-  <tr>
-  <th>
-  Key
-  </th>
-  <th>
-  Rule
-  </th>
-  </tr>
-  <tr>
-  <td>
-  <kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd> or <kbd>s</kbd>
-  </td>
-  <td>
-  Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd>
-  <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of
-  pending modifiers, and close the Assist Menu.
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>A</kbd> <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> or <kbd>S</kbd>
-  </td>
-  <td>
-  Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd>
-  <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of
-  pending modifiers, but do not close the Assist Menu (see
-  <a href="#sticky-keys">Sticky keys</a>).
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j</kbd> <kbd>k</kbd> or <kbd>l</kbd>
-  </td>
-  <td>
-  Apply any pending modifiers to the key (clearing the modifiers), add
-  the (potentially modified) key to the key sequence, and close the
-  Assist Menu.
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>q</kbd>
-  </td>
-  <td>
-  Close the Assist Menu and cancel the key sequence (equivalent to
-  <kbd>C‑g</kbd>).
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>x</kbd>
-  </td>
-  <td>
-  Close the Assist Menu.
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>;</kbd>
-  </td>
-  <td>
-  Toggle the Assist Menu between its collapsed and expanded states.
-  </td>
-  </tr>
-  <tr>
-  <td>
-  Other
-  </td>
-  <td>
-  Discard the key, but do not close the Assist Menu. If the Assist Menu
-  is currently collapsed, expand it to remind the user of all available
-  options.
-  </td>
-  </tr>
-  </tbody>
+    <caption>Assisted operation (i.e., when the Assist Menu is open)</caption>
+    <tbody>
+      <tr>
+        <th>Key</th>
+        <th>Rule</th>
+      </tr>
+      <tr>
+        <td><kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd> or <kbd>s</kbd></td>
+        <td>Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd> <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of pending modifiers, and close the Assist Menu.</td>
+      </tr>
+      <tr>
+        <td><kbd>A</kbd> <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> or <kbd>S</kbd></td>
+        <td>Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd> <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of pending modifiers, but do not close the Assist Menu (see <a href="#sticky-keys">Sticky keys</a>).</td>
+      </tr>
+      <tr>
+        <td><kbd>j</kbd> <kbd>k</kbd> or <kbd>l</kbd></td>
+        <td>Apply any pending modifiers to the key (clearing the modifiers), add the (potentially modified) key to the key sequence, and close the Assist Menu.</td>
+      </tr>
+      <tr>
+        <td><kbd>q</kbd></td>
+        <td>Close the Assist Menu and cancel the key sequence (equivalent to <kbd>C&#8209;g</kbd>).</td>
+      </tr>
+      <tr>
+        <td><kbd>x</kbd></td>
+        <td>Close the Assist Menu.</td>
+      </tr>
+      <tr>
+        <td><kbd>;</kbd></td>
+        <td>Toggle the Assist Menu between its collapsed and expanded states.</td>
+      </tr>
+      <tr>
+        <td>Other</td>
+        <td>Discard the key, but do not close the Assist Menu. If the Assist Menu is currently collapsed, expand it to remind the user of all available options.</td>
+      </tr>
+    </tbody>
   </table>
-  <h4 id="rock-roll">Rock &amp; roll</h4>
+
+  <h4 id="rock--roll">Rock &amp; roll</h4>
   <p>The keys <kbd>j</kbd>, <kbd>k</kbd>, and <kbd>l</kbd> were chosen
   to represent <kbd>Control</kbd>, <kbd>Meta</kbd>, and the Assist Menu,
   respectively, because on a <a
@@ -613,176 +509,90 @@
   <kbd>Meta</kbd> in conjunction with <kbd>j</kbd>, <kbd>k</kbd>, or
   <kbd>l</kbd>, making them easy to enter.</p>
   <table>
-  <caption>
-  Typical key sequences and their translations
-  </caption>
-  <tbody>
-  <tr>
-  <th>
-  Typed Key Sequence
-  </th>
-  <th>
-  Translated Key Sequence
-  </th>
-  <th>
-  Command
-  </th>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j e</kbd>
-  </td>
-  <td>
-  <kbd>C‑e</kbd>
-  </td>
-  <td>
-  <code>move-end-of-line</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>k e</kbd>
-  </td>
-  <td>
-  <kbd>M‑e</kbd>
-  </td>
-  <td>
-  <code>forward-sentence</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j k e</kbd> or <kbd>k j e</kbd>
-  </td>
-  <td>
-  <kbd>C‑M‑e</kbd>
-  </td>
-  <td>
-  <code>end-of-defun</code>
-  </td>
-  </tr>
-  </tbody>
+    <caption>Typical key sequences and their translations</caption>
+    <tbody>
+      <tr>
+        <th>Typed Key Sequence</th>
+        <th>Translated Key Sequence</th>
+        <th>Command</th>
+      </tr>
+      <tr>
+        <td><kbd>j e</kbd></td>
+        <td><kbd>C&#8209;e</kbd></td>
+        <td><code>move-end-of-line</code></td>
+      </tr>
+      <tr>
+        <td><kbd>k e</kbd></td>
+        <td><kbd>M&#8209;e</kbd></td>
+        <td><code>forward-sentence</code></td>
+      </tr>
+      <tr>
+        <td><kbd>j k e</kbd> or <kbd>k j e</kbd></td>
+        <td><kbd>C&#8209;M&#8209;e</kbd></td>
+        <td><code>end-of-defun</code></td>
+      </tr>
+    </tbody>
   </table>
+
   <p>Nine key sequences involve <kbd>Control</kbd> or <kbd>Meta</kbd> in
   conjunction with <kbd>j</kbd>, <kbd>k</kbd>, or <kbd>l</kbd>, making
   them more difficult to enter.</p>
   <table>
-  <caption>
-  More difficult key sequences and their translations
-  </caption>
-  <tbody>
-  <tr>
-  <th>
-  Typed Key Sequence
-  </th>
-  <th>
-  Translated Key Sequence
-  </th>
-  <th>
-  Command
-  </th>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j l j</kbd> or <kbd>j j</kbd>
-  </td>
-  <td>
-  <kbd>C‑j</kbd>
-  </td>
-  <td>
-  <code>eval-print-last-sexp</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j l k</kbd>
-  </td>
-  <td>
-  <kbd>C‑k</kbd>
-  </td>
-  <td>
-  <code>kill-line</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j l l</kbd>
-  </td>
-  <td>
-  <kbd>C‑l</kbd>
-  </td>
-  <td>
-  <code>recenter-top-bottom</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>k l j</kbd>
-  </td>
-  <td>
-  <kbd>M‑j</kbd>
-  </td>
-  <td>
-  <code>default-indent-new-line</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>k l k</kbd> or <kbd>k k</kbd>
-  </td>
-  <td>
-  <kbd>M‑k</kbd>
-  </td>
-  <td>
-  <code>kill-sentence</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>k l l</kbd>
-  </td>
-  <td>
-  <kbd>M‑l</kbd>
-  </td>
-  <td>
-  <code>downcase-word</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j k j</kbd> or <kbd>k j j</kbd>
-  </td>
-  <td>
-  <kbd>C‑M‑j</kbd>
-  </td>
-  <td>
-  <code>default-indent-new-line</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j k k</kbd> or <kbd>k j k</kbd>
-  </td>
-  <td>
-  <kbd>C‑M‑k</kbd>
-  </td>
-  <td>
-  <code>kill-sexp</code>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <kbd>j k l l</kbd> or <kbd>k j l l</kbd>
-  </td>
-  <td>
-  <kbd>C‑M‑l</kbd>
-  </td>
-  <td>
-  <code>reposition-window</code>
-  </td>
-  </tr>
-  </tbody>
+    <caption>More difficult key sequences and their translations</caption>
+    <tbody>
+      <tr>
+        <th>Typed Key Sequence</th>
+        <th>Translated Key Sequence</th>
+        <th>Command</th>
+      </tr>
+      <tr>
+        <td><kbd>j l j</kbd> or <kbd>j j</kbd></td>
+        <td><kbd>C&#8209;j</kbd></td>
+        <td><code>eval-print-last-sexp</code></td>
+      </tr>
+      <tr>
+        <td><kbd>j l k</kbd></td>
+        <td><kbd>C&#8209;k</kbd></td>
+        <td><code>kill-line</code></td>
+      </tr>
+      <tr>
+        <td><kbd>j l l</kbd></td>
+        <td><kbd>C&#8209;l</kbd></td>
+        <td><code>recenter-top-bottom</code></td>
+      </tr>
+      <tr>
+        <td><kbd>k l j</kbd></td>
+        <td><kbd>M&#8209;j</kbd></td>
+        <td><code>default-indent-new-line</code></td>
+      </tr>
+      <tr>
+        <td><kbd>k l k</kbd> or <kbd>k k</kbd></td>
+        <td><kbd>M&#8209;k</kbd></td>
+        <td><code>kill-sentence</code></td>
+      </tr>
+      <tr>
+        <td><kbd>k l l</kbd></td>
+        <td><kbd>M&#8209;l</kbd></td>
+        <td><code>downcase-word</code></td>
+      </tr>
+      <tr>
+        <td><kbd>j k j</kbd> or <kbd>k j j</kbd></td>
+        <td><kbd>C&#8209;M&#8209;j</kbd></td>
+        <td><code>default-indent-new-line</code></td>
+      </tr>
+      <tr>
+        <td><kbd>j k k</kbd> or <kbd>k j k</kbd></td>
+        <td><kbd>C&#8209;M&#8209;k</kbd></td>
+        <td><code>kill-sexp</code></td>
+      </tr>
+      <tr>
+        <td><kbd>j k l l</kbd> or <kbd>k j l l</kbd></td>
+        <td><kbd>C&#8209;M&#8209;l</kbd></td>
+        <td><code>reposition-window</code></td>
+      </tr>
+    </tbody>
   </table>
+
   <h3 id="describing-commands">Describing commands</h3>
   <p>The built-in command <code>describe-key</code> waits for a key
   sequence to be input. If that key sequence is bound to a command, it
@@ -867,8 +677,8 @@
   href="https://www.gnu.org/software/emacs/manual/html_node/eintr/">Emacs
   Lisp</a>.</p>
   </blockquote>
-  <h3 id="using-the-easy-customization-interface">Using the “Easy
-  Customization Interface”</h3>
+  <h3 id="using-the-easy-customization-interface">Using the "Easy
+  Customization Interface"</h3>
   <p>The <a
   href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html">Easy
   Customization Interface</a> can be used to customize certain
@@ -943,15 +753,21 @@
   <p>Our command calls <code>loco-read-kseq</code> with eight
   arguments.</p>
   <p>The first seven arguments tell <code>loco-read-kseq</code> that
-  while reading a key sequence: * <em>no</em> key should toggle
-  <kbd>Control</kbd> then close the Assist Menu (when it is open); *
-  <em>no</em> key should toggle <kbd>Meta</kbd> then close the Assist
-  Menu (when it is open); * <kbd>/</kbd> should collapse the Assist Menu
-  (when it is open and expanded); * <kbd>/</kbd> should expand the
-  Assist Menu (when it is open and collapsed); * <kbd>m</kbd> should
-  open the Assist Menu; * <kbd>,</kbd> should set <kbd>Control</kbd>
-  pending; and * <kbd>.</kbd> should set <kbd>Meta</kbd> pending,
-  respectively.</p>
+  while reading a key sequence:</p>
+  <ul>
+  <li><em>no</em> key should toggle <kbd>Control</kbd> then close the
+  Assist Menu (when it is open);</li>
+  <li><em>no</em> key should toggle <kbd>Meta</kbd> then close the
+  Assist Menu (when it is open);</li>
+  <li><kbd>/</kbd> should collapse the Assist Menu (when it is open and
+  expanded);</li>
+  <li><kbd>/</kbd> should expand the Assist Menu (when it is open and
+  collapsed);</li>
+  <li><kbd>m</kbd> should open the Assist Menu;</li>
+  <li><kbd>,</kbd> should set <kbd>Control</kbd> pending; and</li>
+  <li><kbd>.</kbd> should set <kbd>Meta</kbd> pending,
+  respectively.</li>
+  </ul>
   <blockquote>
   <p>On a QWERTY keyboard, <kbd>m</kbd>, <kbd>,</kbd>, <kbd>.</kbd>, and
   <kbd>/</kbd> are adjacent, like the default keys <kbd>j</kbd>,
@@ -961,9 +777,9 @@
   configuration for those who find it easier to mentally associate the
   modifiers to punctuation (<kbd>,</kbd> and <kbd>.</kbd> instead of
   <kbd>j</kbd> and <kbd>k</kbd>, respectively), or remember <kbd>m</kbd>
-  as “menu”.</p>
+  as "menu".</p>
   </blockquote>
-  <p>In this configuration, we’ve decided that when Loco is reading a
+  <p>In this configuration, we've decided that when Loco is reading a
   key sequence, <kbd>m</kbd> should open the Assist Menu. By repurposing
   <kbd>m</kbd> for this, we need to rely on the Assist Menu to help us
   enter a literal <em>m</em> when necessary. By default, the Assist Menu
@@ -995,8 +811,8 @@
   checks that no key is assigned to more than one function. Any problems
   found during the validation process are printed in the log.
   <code>:validate t</code> is recommended any time you are customizing
-  Loco’s keys.</p>
-  <p>The Assist Menu displays itself according to the keys as you’ve
+  Loco's keys.</p>
+  <p>The Assist Menu displays itself according to the keys as you've
   configured them. By default, it will display itself (when open and
   expanded) like this: <code>[achms jkl q x ;]</code>. For the
   configuration in this example, it will display itself (when open and
@@ -1043,7 +859,7 @@
   <p>For example, on MacOS, where keys are not easily remapped
   system-wide, mapping <kbd>Caps Lock</kbd> to <kbd>Control</kbd> is
   possible without any third-party tools. In <em>System Preferences &gt;
-  Keyboard &gt; Keyboard Shortcuts… &gt; Modifier Keys</em>, change
+  Keyboard &gt; Keyboard Shortcuts... &gt; Modifier Keys</em>, change
   <em>Caps Lock key</em> to <em>Control</em>. You might also want to
   change <em>Control key</em> to <em>Caps Lock</em>, effectively
   swapping the behaviour of the two keys, to ensure you still have a
@@ -1113,8 +929,8 @@
   <blockquote>
   <p>Note the use of the physical <kbd>Control</kbd> key here. This
   allows us to choose two adjacent activation keys, as there are almost
-  no keys that use <kbd>Shift</kbd> that aren’t extremely important,
-  aside from a few keys like <kbd>S‑&lt;return&gt;</kbd>, which we’ve
+  no keys that use <kbd>Shift</kbd> that aren't extremely important,
+  aside from a few keys like <kbd>S‑&lt;return&gt;</kbd>, which we've
   been using. To use this example effectively, consider <a
   href="#mapping-caps-lock-to-control">Mapping Caps Lock to Control</a>
   to ensure that <kbd>Control</kbd> is easy to press.</p>
@@ -1125,13 +941,13 @@
   <p>In <code>my-loco-execute-control-kseq</code>,
   <code>:kseq [?,]</code> tells <code>loco-read-kseq</code> to
   immediately process a single <kbd>,</kbd> before reading any input
-  from the user. Because we’ve also assigned <kbd>,</kbd> to be
+  from the user. Because we've also assigned <kbd>,</kbd> to be
   interpreted as <kbd>Control</kbd>, the combined effect of both
   arguments is to make <kbd>Control</kbd> immediately pending.</p>
   <p>Similarly, in <code>my-loco-execute-meta-kseq</code>,
   <code>:kseq [?.]</code> tells <code>loco-read-kseq</code> to
   immediately process a single <kbd>.</kbd> before reading any input
-  from the user. Because we’ve also assigned <kbd>.</kbd> to be
+  from the user. Because we've also assigned <kbd>.</kbd> to be
   interpreted as <kbd>Meta</kbd>, the combined effect of both arguments
   is to make <kbd>Meta</kbd> immediately pending.</p>
   <p>The argument <code>:strip t</code> tells
@@ -1145,7 +961,7 @@
   any physical modifier key past its intended key may modify subsequent
   keys, possibly resulting in a key sequence bound to a different
   command that intended. Stripping modifiers from keys allows for some
-  forgiveness when typing quickly, to ensure the modifiers aren’t
+  forgiveness when typing quickly, to ensure the modifiers aren't
   incorrectly applied to the wrong keys.</p>
   <blockquote>
   <p>Note that when both <code>:strip</code> and <code>:validate</code>
@@ -1252,8 +1068,7 @@
   .</kbd>, respectively.</p>
   <h2 id="author-and-copyright">Author and copyright</h2>
   <p>Loco was written and copyright in 2024 by Chris McLaren (<a
-  href="https://www.github.com/csmclaren"><span class="citation"
-  data-cites="csmclaren">@csmclaren</span></a>).</p>
+  href="https://www.github.com/csmclaren">@csmclaren</a>).</p>
   <h2 id="license">License</h2>
   <p>This file is part of Loco.</p>
   <p>Loco is licensed under the <a href="https://www.gnu.org">GNU</a>

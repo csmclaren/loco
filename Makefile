@@ -12,7 +12,7 @@ make-docs:
 		-o docs/loco.css \
 		https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css
 	pandoc \
-		--from markdown \
+		--from gfm \
 		--lua-filter=tools/filter-append-footer.lua \
 		--lua-filter=tools/filter-link-stylesheet.lua \
 		--metadata title="Loco" \
@@ -21,7 +21,7 @@ make-docs:
 		--to html \
 		README.md
 	pandoc \
-		--from markdown \
+		--from gfm \
 		--lua-filter=tools/filter-append-footer.lua \
 		--lua-filter=tools/filter-embed-stylesheet.lua \
 		--metadata title="Loco" \
