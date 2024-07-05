@@ -6,6 +6,7 @@ clean-docs:
 	rm -f docs/loco.css
 	rm -f docs/loco.html
 	rm -f docs/loco-standalone.html
+	rm -f docs/loco.texi
 
 make-docs:
 	curl \
@@ -30,6 +31,18 @@ make-docs:
 		--output docs/loco-standalone.html \
 		--template tools/pandoc/template.html \
 		--to html \
+		README.md
+	pandoc \
+		--from gfm \
+		--lua-filter=tools/pandoc/filter-process-kbd.lua \
+		--lua-filter=tools/pandoc/filter-strip-headers.lua \
+		--lua-filter=tools/pandoc/filter-trim-headers.lua \
+		--metadata dircategory="Emacs" \
+		--metadata direntry="* Loco: (loco).                 A library and minor mode for entering key sequences" \
+		--metadata title="Loco" \
+		--output docs/loco.texi \
+		--template tools/pandoc/template.texinfo \
+		--to texinfo \
 		README.md
 
 set-permissions:
