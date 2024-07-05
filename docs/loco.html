@@ -57,9 +57,9 @@
   terminals</a> that prevent the entry of certain keys, allowing you to
   move between both with ease.</p>
   <p>When enabled, and using the default configuration, pressing
-  <kbd>S‑&lt;return&gt;</kbd> will activate Loco.</p>
+  <kbd>S-&lt;return&gt;</kbd> will activate Loco.</p>
   <blockquote>
-  <p>In Emacs, <kbd>S‑&lt;return&gt;</kbd> means hold <kbd>Shift</kbd>
+  <p>In Emacs, <kbd>S-&lt;return&gt;</kbd> means hold <kbd>Shift</kbd>
   then press <kbd>Return</kbd>.</p>
   </blockquote>
   <p>Once activated, you can type any key sequence, taking advantage of
@@ -89,23 +89,23 @@
       </tr>
       <tr>
         <td><kbd>j d</kbd></td>
-        <td><kbd>C&#8209;d</kbd></td>
-        <td><code>delete&#8209;char</code></td>
+        <td><kbd>C-d</kbd></td>
+        <td><code>delete-char</code></td>
       </tr>
       <tr>
         <td><kbd>k d</kbd></td>
-        <td><kbd>M&#8209;d</kbd></td>
-        <td><code>kill&#8209;word</code></td>
+        <td><kbd>M-d</kbd></td>
+        <td><code>kill-word</code></td>
       </tr>
       <tr>
         <td><kbd>j h i</kbd></td>
-        <td><kbd>C&#8209;h i</kbd></td>
+        <td><kbd>C-h i</kbd></td>
         <td><code>info</code></td>
       </tr>
       <tr>
         <td><kbd>j x j s</kbd></td>
-        <td><kbd>C&#8209;x C&#8209;s</kbd></td>
-        <td><code>save&#8209;buffer</code></td>
+        <td><kbd>C-x C-s</kbd></td>
+        <td><code>save-buffer</code></td>
       </tr>
     </tbody>
   </table>
@@ -268,12 +268,12 @@
   <p>A logical key (or simply a <em>key</em>) is zero or more modifier
   keys pressed simultaneously with a non-modifier key. For example,
   holding down the physical <kbd>Control</kbd> key (written as
-  <kbd>C‑</kbd>) while pressing the physical <kbd>x</kbd> key produces
-  the key <kbd>C‑x</kbd>.</p>
+  <kbd>C-</kbd>) while pressing the physical <kbd>x</kbd> key produces
+  the key <kbd>C-x</kbd>.</p>
   <p>Key sequences are composed of one or more keys. For example, the
-  key sequence <kbd>C‑x s</kbd> is composed of two keys: <kbd>C‑x</kbd>
+  key sequence <kbd>C-x s</kbd> is composed of two keys: <kbd>C-x</kbd>
   and <kbd>s</kbd>. Key sequences can be bound to commands. For example,
-  <kbd>C‑x s</kbd> is bound to the command
+  <kbd>C-x s</kbd> is bound to the command
   <code>save-all-files</code>.</p>
   <p>By composing key sequences from keys, a large number of key
   sequences can be created from a small number of keys. This is similar
@@ -301,7 +301,7 @@
   mode</a> to Emacs. This mode can be enabled or disabled in some or all
   buffers.</p>
   <p>To enable or disable Loco <em>in the current buffer</em>, use the
-  command <code>loco-mode</code>. The key sequence <kbd>C‑c ,</kbd> is
+  command <code>loco-mode</code>. The key sequence <kbd>C-c ,</kbd> is
   bound to this command; pressing it will toggle Loco in the current
   buffer.</p>
   <p>You can also call this command using Emacs Lisp with:</p>
@@ -320,7 +320,7 @@
   class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(loco-mode <span class="dt">&#39;toggle</span>) <span class="co">; Toggle in the current buffer</span></span></code></pre></div></li>
   </ul>
   <p>To enable or disable Loco <em>in all buffers</em>, use the command
-  <code>global-loco-mode</code>. The key sequence <kbd>C‑c .</kbd> is
+  <code>global-loco-mode</code>. The key sequence <kbd>C-c .</kbd> is
   bound to this command; pressing it will toggle Loco in all
   buffers.</p>
   <blockquote>
@@ -343,20 +343,20 @@
   </ul>
   <p>When Loco is <em>disabled</em> in the current buffer, all keys can
   be typed normally as if Loco were not installed, with the exception of
-  <kbd>C‑c ,</kbd> and <kbd>C‑c .</kbd> themselves, which are bound in
+  <kbd>C-c ,</kbd> and <kbd>C-c .</kbd> themselves, which are bound in
   the global keymap.</p>
   <p>When Loco is <em>enabled</em> in the current buffer it will place
   an indicator, which Emacs calls a "lighter", in the mode line of that
   buffer. The lighter for Loco is simply the string "Loco". Loco will
-  also bind two additional key sequences: <kbd>S‑&lt;return&gt;</kbd>
-  and <kbd>C‑h S‑&lt;return&gt;</kbd>. Pressing either of these will
+  also bind two additional key sequences: <kbd>S-&lt;return&gt;</kbd>
+  and <kbd>C-h S-&lt;return&gt;</kbd>. Pressing either of these will
   <em>activate</em> Loco.</p>
   <p>When Loco is activated, it will prompt you to enter a key sequence,
   then it will lookup whether or not that key sequence is bound to a
   command. If a command is found, it will either execute or describe
   that command, depending on which key sequence was used to activate it.
-  <kbd>S‑&lt;return&gt;</kbd> tells Loco that it should <em>execute</em>
-  the command. <kbd>C‑h S‑&lt;return&gt;</kbd> tells Loco it should
+  <kbd>S-&lt;return&gt;</kbd> tells Loco that it should <em>execute</em>
+  the command. <kbd>C-h S-&lt;return&gt;</kbd> tells Loco it should
   <em>describe</em> the command.</p>
   <h3 id="entering-key-sequences">Entering key sequences</h3>
   <p>When Loco reads a key sequence:</p>
@@ -462,7 +462,7 @@
       </tr>
       <tr>
         <td><kbd>q</kbd></td>
-        <td>Close the Assist Menu and cancel the key sequence (equivalent to <kbd>C&#8209;g</kbd>).</td>
+        <td>Close the Assist Menu and cancel the key sequence (equivalent to <kbd>C-g</kbd>).</td>
       </tr>
       <tr>
         <td><kbd>x</kbd></td>
@@ -488,7 +488,7 @@
   your fingers back and forth over them.</p>
   <p>Furthermore, you can build up the set of pending modifiers for a
   key in any order; for example, both <kbd>j k</kbd> and <kbd>k j</kbd>
-  translate to <kbd>C‑M‑</kbd>.</p>
+  translate to <kbd>C-M-</kbd>.</p>
   <p>These design choices enable efficient key entry, enhancing your
   ability to enter these important keys swiftly and accurately.</p>
   <h4 id="sticky-keys">Sticky keys</h4>
@@ -518,17 +518,17 @@
       </tr>
       <tr>
         <td><kbd>j e</kbd></td>
-        <td><kbd>C&#8209;e</kbd></td>
+        <td><kbd>C-e</kbd></td>
         <td><code>move-end-of-line</code></td>
       </tr>
       <tr>
         <td><kbd>k e</kbd></td>
-        <td><kbd>M&#8209;e</kbd></td>
+        <td><kbd>M-e</kbd></td>
         <td><code>forward-sentence</code></td>
       </tr>
       <tr>
         <td><kbd>j k e</kbd> or <kbd>k j e</kbd></td>
-        <td><kbd>C&#8209;M&#8209;e</kbd></td>
+        <td><kbd>C-M-e</kbd></td>
         <td><code>end-of-defun</code></td>
       </tr>
     </tbody>
@@ -547,47 +547,47 @@
       </tr>
       <tr>
         <td><kbd>j l j</kbd> or <kbd>j j</kbd></td>
-        <td><kbd>C&#8209;j</kbd></td>
+        <td><kbd>C-j</kbd></td>
         <td><code>eval-print-last-sexp</code></td>
       </tr>
       <tr>
         <td><kbd>j l k</kbd></td>
-        <td><kbd>C&#8209;k</kbd></td>
+        <td><kbd>C-k</kbd></td>
         <td><code>kill-line</code></td>
       </tr>
       <tr>
         <td><kbd>j l l</kbd></td>
-        <td><kbd>C&#8209;l</kbd></td>
+        <td><kbd>C-l</kbd></td>
         <td><code>recenter-top-bottom</code></td>
       </tr>
       <tr>
         <td><kbd>k l j</kbd></td>
-        <td><kbd>M&#8209;j</kbd></td>
+        <td><kbd>M-j</kbd></td>
         <td><code>default-indent-new-line</code></td>
       </tr>
       <tr>
         <td><kbd>k l k</kbd> or <kbd>k k</kbd></td>
-        <td><kbd>M&#8209;k</kbd></td>
+        <td><kbd>M-k</kbd></td>
         <td><code>kill-sentence</code></td>
       </tr>
       <tr>
         <td><kbd>k l l</kbd></td>
-        <td><kbd>M&#8209;l</kbd></td>
+        <td><kbd>M-l</kbd></td>
         <td><code>downcase-word</code></td>
       </tr>
       <tr>
         <td><kbd>j k j</kbd> or <kbd>k j j</kbd></td>
-        <td><kbd>C&#8209;M&#8209;j</kbd></td>
+        <td><kbd>C-M-j</kbd></td>
         <td><code>default-indent-new-line</code></td>
       </tr>
       <tr>
         <td><kbd>j k k</kbd> or <kbd>k j k</kbd></td>
-        <td><kbd>C&#8209;M&#8209;k</kbd></td>
+        <td><kbd>C-M-k</kbd></td>
         <td><code>kill-sexp</code></td>
       </tr>
       <tr>
         <td><kbd>j k l l</kbd> or <kbd>k j l l</kbd></td>
-        <td><kbd>C&#8209;M&#8209;l</kbd></td>
+        <td><kbd>C-M-l</kbd></td>
         <td><code>reposition-window</code></td>
       </tr>
     </tbody>
@@ -598,14 +598,14 @@
   sequence to be input. If that key sequence is bound to a command, it
   describes the command. This is an excellent way to discover (or remind
   yourself) to which command a key sequence is bound.</p>
-  <p>In the global keymap, <kbd>C‑h k</kbd> (<kbd>j h k</kbd>) is bound
+  <p>In the global keymap, <kbd>C-h k</kbd> (<kbd>j h k</kbd>) is bound
   to <code>describe-key</code>.</p>
   <p>This command reads key sequences directly, without leveraging Loco.
   To use Loco to enter a key sequence for the purpose of describing the
   command to which it is bound, Loco provides a similar command called
   <code>loco-default-describe-kseq</code>.</p>
-  <p>When Loco is enabled in the current buffer, <kbd>C‑h
-  S‑&lt;return&gt;</kbd> (<kbd>j h S‑&lt;return&gt;</kbd>) is bound to
+  <p>When Loco is enabled in the current buffer, <kbd>C-h
+  S-&lt;return&gt;</kbd> (<kbd>j h S-&lt;return&gt;</kbd>) is bound to
   <code>loco-default-describe-kseq</code>.</p>
   <h3 id="repeating-commands">Repeating commands</h3>
   <p>One advantage of using physical modifier keys is that once held,
@@ -727,7 +727,7 @@
   <h3
   id="changing-the-keys-used-while-loco-reads-a-key-sequence">Changing
   the keys used while Loco reads a key sequence</h3>
-  <p>By default, <kbd>S‑&lt;return&gt;</kbd> is bound to
+  <p>By default, <kbd>S-&lt;return&gt;</kbd> is bound to
   <code>loco-default-execute-kseq</code>. This command is defined as
   follows.</p>
   <div class="sourceCode" id="cb11"><pre
@@ -740,7 +740,7 @@
   <kbd>k</kbd> should set <kbd>Meta</kbd> pending, respectively.</p>
   <p>We can define a similar command, called
   <code>my-loco-execute-kseq</code>, and rebind
-  <kbd>S‑&lt;return&gt;</kbd> to it as follows.</p>
+  <kbd>S-&lt;return&gt;</kbd> to it as follows.</p>
   <div class="sourceCode" id="cb12"><pre
   class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-execute-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
@@ -820,7 +820,7 @@
   <p>Our example is not quite complete. We should also ensure that we
   have a describe command that works in the same manner as our execute
   command.</p>
-  <p>By default, <kbd>C‑h S‑&lt;return&gt;</kbd> is bound to
+  <p>By default, <kbd>C-h S-&lt;return&gt;</kbd> is bound to
   <code>loco-default-describe-kseq</code>. This command is defined as
   follows.</p>
   <div class="sourceCode" id="cb13"><pre
@@ -833,8 +833,8 @@
   is bound to a command, that command should be described instead of
   executed.</p>
   <p>We can define a similar command, called
-  <code>my-loco-describe-kseq</code>, and rebind <kbd>C‑h
-  S‑&lt;return&gt;</kbd> to it as follows.</p>
+  <code>my-loco-describe-kseq</code>, and rebind <kbd>C-h
+  S-&lt;return&gt;</kbd> to it as follows.</p>
   <div class="sourceCode" id="cb14"><pre
   class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">defun</span><span class="fu"> my-loco-describe-kseq </span>(&amp;<span class="kw">rest</span> args)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  (interactive)</span>
@@ -847,12 +847,12 @@
   <h3 id="advanced-topics">Advanced topics</h3>
   <h4 id="mapping-caps-lock-to-control">Mapping Caps Lock to
   Control</h4>
-  <p><kbd>S‑&lt;return&gt;</kbd> is easy to press, but it would be
+  <p><kbd>S-&lt;return&gt;</kbd> is easy to press, but it would be
   easier still to be able to activate Loco with a physical modifier key
   located right on the home row. If this physical modifier key were
   <kbd>Control</kbd>, you would also have quick access to some very
   common Emacs key bindings without use of Loco. For example,
-  <kbd>C‑n</kbd> and <kbd>C‑p</kbd>.</p>
+  <kbd>C-n</kbd> and <kbd>C-p</kbd>.</p>
   <p><kbd>Caps Lock</kbd>, located to the left of <kbd>a</kbd> on a
   QWERTY keyboard, is a rarely-used key in a prime location. As such, it
   is common to remap this key to <kbd>Control</kbd>.</p>
@@ -867,8 +867,8 @@
   keyboards, make sure to change these settings for each keyboard in
   turn by selecting each keyboard at the top of this dialog box. Press
   <em>Done</em> when complete.</p>
-  <p>You can set key bindings for <kbd>C‑&lt;return&gt;</kbd> and
-  <kbd>C‑h C‑&lt;return&gt;</kbd> as follows.</p>
+  <p>You can set key bindings for <kbd>C-&lt;return&gt;</kbd> and
+  <kbd>C-h C-&lt;return&gt;</kbd> as follows.</p>
   <div class="sourceCode" id="cb15"><pre
   class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; When Loco is enabled in the current buffer, bind &quot;C-h C-&lt;return&gt;&quot;</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then describe the command to which it is bound</span></span>
@@ -918,19 +918,19 @@
 <span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-,&quot;</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq)</span>
 <span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;C-.&quot;</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq)</span></code></pre></div>
   <p>Here we create a total of four activation keys.</p>
-  <p><kbd>C‑,</kbd> and <kbd>C‑.</kbd> both activate Loco to read a key
+  <p><kbd>C-,</kbd> and <kbd>C-.</kbd> both activate Loco to read a key
   sequence and execute the command to which it is bound, but
-  <kbd>C‑,</kbd> activates Loco with <kbd>Control</kbd> pending and
-  <kbd>C‑.</kbd> with <kbd>Meta</kbd> pending.</p>
-  <p><kbd>C‑h C‑,</kbd> and <kbd>C‑h C‑.</kbd> both activate Loco to
+  <kbd>C-,</kbd> activates Loco with <kbd>Control</kbd> pending and
+  <kbd>C-.</kbd> with <kbd>Meta</kbd> pending.</p>
+  <p><kbd>C-h C-,</kbd> and <kbd>C-h C-.</kbd> both activate Loco to
   read a key sequence and describe the command to which it is bound, but
-  <kbd>C‑h C‑,</kbd> activates Loco with <kbd>Control</kbd> pending and
-  <kbd>C‑h C‑.</kbd> with <kbd>Meta</kbd> pending.</p>
+  <kbd>C-h C-,</kbd> activates Loco with <kbd>Control</kbd> pending and
+  <kbd>C-h C-.</kbd> with <kbd>Meta</kbd> pending.</p>
   <blockquote>
   <p>Note the use of the physical <kbd>Control</kbd> key here. This
   allows us to choose two adjacent activation keys, as there are almost
   no keys that use <kbd>Shift</kbd> that aren't extremely important,
-  aside from a few keys like <kbd>S‑&lt;return&gt;</kbd>, which we've
+  aside from a few keys like <kbd>S-&lt;return&gt;</kbd>, which we've
   been using. To use this example effectively, consider <a
   href="#mapping-caps-lock-to-control">Mapping Caps Lock to Control</a>
   to ensure that <kbd>Control</kbd> is easy to press.</p>
@@ -1009,7 +1009,7 @@
 <span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;,&quot;</span> <span class="op">#&#39;</span>my-loco-execute-control-kseq)</span>
 <span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;.&quot;</span> <span class="op">#&#39;</span>my-loco-execute-meta-kseq)</span></code></pre></div>
   <p>Here we consider an extreme (but useful) configuration that reduces
-  the activation keys to <kbd>C‑h ,</kbd>, <kbd>C‑h .</kbd>,
+  the activation keys to <kbd>C-h ,</kbd>, <kbd>C-h .</kbd>,
   <kbd>,</kbd>, and <kbd>.</kbd>.</p>
   <p>The effect of setting <kbd>,</kbd> and <kbd>.</kbd> as activation
   keys is significant. By rebinding them to activation keys, they no
@@ -1032,39 +1032,39 @@
   unduly onerous. For example, here are four alternate ways by which you
   could enter a literal comma or period, respectively:</p>
   <ol type="1">
-  <li><p><kbd>, m S‑c ,</kbd> or <kbd>. m S‑m .</kbd></p>
+  <li><p><kbd>, m S-c ,</kbd> or <kbd>. m S-m .</kbd></p>
   <p>This method uses the Assist Menu (once), but uses a <a
   href="#sticky-keys">sticky key</a> to keep the menu open.</p></li>
   <li><p><kbd>, m c m ,</kbd> or <kbd>. m m m .</kbd></p>
   <p>This method uses the Assist Menu (twice), but does not require a
   physical modifier key.</p></li>
-  <li><p><kbd>C‑q ,</kbd> or <kbd>C‑q .</kbd></p>
-  <p>In Emacs, <kbd>C‑q</kbd> is bound to the command
+  <li><p><kbd>C-q ,</kbd> or <kbd>C-q .</kbd></p>
+  <p>In Emacs, <kbd>C-q</kbd> is bound to the command
   <code>quoted-insert</code>, which will read the next key and insert
   it. This method uses <code>quoted-insert</code>, but requires a
   physical modifier key.</p></li>
   <li><p><kbd>, q ,</kbd> or <kbd>, q .</kbd></p>
-  <p><kbd>C‑q</kbd> itself can be entered as <kbd>, q</kbd>. This method
+  <p><kbd>C-q</kbd> itself can be entered as <kbd>, q</kbd>. This method
   uses <code>quoted-insert</code>, but does not require a physical
   modifier key.</p></li>
   </ol>
   <p>While the double-tap rule makes entering a literal comma or period
   easy, it does come with a cost.</p>
   <p>Without this rule, <kbd>, ,</kbd> would be translated to
-  <kbd>C‑,</kbd>. The first <kbd>,</kbd> would tell Loco to consider
+  <kbd>C-,</kbd>. The first <kbd>,</kbd> would tell Loco to consider
   <kbd>Control</kbd> as pending, and the second <kbd>,</kbd> would tell
   Loco to apply <kbd>Control</kbd> to <kbd>,</kbd>.</p>
-  <p>Similarly, <kbd>. .</kbd> would be translated to <kbd>M‑.</kbd>.
+  <p>Similarly, <kbd>. .</kbd> would be translated to <kbd>M-.</kbd>.
   The first <kbd>.</kbd> would tell Loco to consider <kbd>Meta</kbd> as
   pending, and the second <kbd>.</kbd> would tell Loco to apply
   <kbd>Meta</kbd> to <kbd>.</kbd>.</p>
-  <p>While <kbd>C‑,</kbd> and <kbd>M‑.</kbd> are less frequently used
-  than literal commas and periods (<kbd>C‑,</kbd> is not bound to any
-  command and <kbd>M‑.</kbd> is bound to
+  <p>While <kbd>C-,</kbd> and <kbd>M-.</kbd> are less frequently used
+  than literal commas and periods (<kbd>C-,</kbd> is not bound to any
+  command and <kbd>M-.</kbd> is bound to
   <code>xref-find-definition</code>), we must still be able to enter
   them.</p>
-  <p>Fortunately, we can use the Assist Menu for this. <kbd>C‑,</kbd>
-  and <kbd>M‑.</kbd> can be entered as <kbd>, m ,</kbd> and <kbd>. m
+  <p>Fortunately, we can use the Assist Menu for this. <kbd>C-,</kbd>
+  and <kbd>M-.</kbd> can be entered as <kbd>, m ,</kbd> and <kbd>. m
   .</kbd>, respectively.</p>
   <h2 id="author-and-copyright">Author and copyright</h2>
   <p>Loco was written and copyright in 2024 by Chris McLaren (<a
