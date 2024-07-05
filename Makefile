@@ -17,7 +17,7 @@ make-docs:
 		--lua-filter=tools/pandoc/filter-link-stylesheet.lua \
 		--metadata title="Loco" \
 		--output docs/loco.html \
-		--template tools/pandoc/loco-template.html \
+		--template tools/pandoc/template.html \
 		--to html \
 		README.md
 	pandoc \
@@ -26,7 +26,7 @@ make-docs:
 		--lua-filter=tools/pandoc/filter-embed-stylesheet.lua \
 		--metadata title="Loco" \
 		--output docs/loco-standalone.html \
-		--template tools/pandoc/loco-template.html \
+		--template tools/pandoc/template.html \
 		--to html \
 		README.md
 
