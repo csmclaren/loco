@@ -584,7 +584,7 @@ The effect of setting <kbd>,</kbd> and <kbd>.</kbd> as activation keys is signif
 
 Here we see a new argument: `:dt t`. When non-nil, this argument tells `loco-read-kseq` to apply an additional rule when processing keys: the _double-tap_ rule.
 
-The double-tap rule, for this configuration, states that if <kbd>,</kbd> is pressed when <kbd>Control</kbd> is the _only_ pending modifier, or if <kbd>.</kbd> is pressed when <kbd>Meta</kbd> is the _only_ pending modifier, clear the modifier and add the key <em>unmodified</em> to the key sequence.
+The double-tap rule, for this configuration, states that if <kbd>,</kbd> is pressed when <kbd>Control</kbd> is the _only_ pending modifier, or if <kbd>.</kbd> is pressed when <kbd>Meta</kbd> is the _only_ pending modifier, clear the modifier and add the key _unmodified_ to the key sequence.
 
 This rule permits <kbd>,</kbd> and <kbd>.</kbd> to be entered as <kbd>, ,</kbd> or <kbd>. .</kbd>, respectively. It is called double-tap because it takes effect when these keys are tapped twice in succession (provided no other modifiers are in effect).
 
