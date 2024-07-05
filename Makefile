@@ -13,20 +13,20 @@ make-docs:
 		https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css
 	pandoc \
 		--from gfm \
-		--lua-filter=tools/filter-append-footer.lua \
-		--lua-filter=tools/filter-link-stylesheet.lua \
+		--lua-filter=tools/pandoc/filter-append-footer.lua \
+		--lua-filter=tools/pandoc/filter-link-stylesheet.lua \
 		--metadata title="Loco" \
 		--output docs/loco.html \
-		--template tools/loco-template.html \
+		--template tools/pandoc/loco-template.html \
 		--to html \
 		README.md
 	pandoc \
 		--from gfm \
-		--lua-filter=tools/filter-append-footer.lua \
-		--lua-filter=tools/filter-embed-stylesheet.lua \
+		--lua-filter=tools/pandoc/filter-append-footer.lua \
+		--lua-filter=tools/pandoc/filter-embed-stylesheet.lua \
 		--metadata title="Loco" \
 		--output docs/loco-standalone.html \
-		--template tools/loco-template.html \
+		--template tools/pandoc/loco-template.html \
 		--to html \
 		README.md
 
