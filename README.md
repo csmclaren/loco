@@ -18,10 +18,10 @@ When enabled, and using the default configuration, pressing <kbd>S-&lt;return&gt
 
 Once activated, you can type any key sequence, taking advantage of the following special keys to help you avoid pressing any physical modifier keys:
 
-* <kbd>j</kbd> to apply the modifier <kbd>Control</kbd> to  the next non&#8209;special key;
-* <kbd>k</kbd> to apply the modifier <kbd>Meta</kbd> to the next non&#8209;special key; or
+* <kbd>j</kbd> to apply the modifier <kbd>Control</kbd> to  the next non&#x2011;special key;
+* <kbd>k</kbd> to apply the modifier <kbd>Meta</kbd> to the next non&#x2011;special key; or
 * <kbd>l</kbd> to open a menu that includes options to:
-  * apply other modifiers (for example, <kbd>Alt</kbd>, <kbd>Hyper</kbd>, or <kbd>Super</kbd>) to the next non&#8209;special key; or
+  * apply other modifiers (for example, <kbd>Alt</kbd>, <kbd>Hyper</kbd>, or <kbd>Super</kbd>) to the next non&#x2011;special key; or
   * enter the special keys themselves as the literal characters _j_, _k_, or _l_.
 
 <table>
