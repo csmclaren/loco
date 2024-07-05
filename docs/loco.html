@@ -236,8 +236,8 @@
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">;; Load `loco`</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;loco</span>)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">;; Set the default key bindings for Loco</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>(loco-set-default-key-bindings)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">;; Set the default configuration for Loco</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>(loco-set-default-configuration)</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">;; Enable Loco in all buffers</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>)</span></code></pre></div></li>
@@ -266,8 +266,8 @@
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">;; Load `loco`</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> <span class="dt">&#39;loco</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">;; Set the default key bindings for Loco</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>(loco-set-default-key-bindings)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">;; Set the default configuration for Loco</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>(loco-set-default-configuration)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">;; Enable Loco in all buffers</span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>(global-loco-mode <span class="dv">1</span>)</span></code></pre></div></li>
@@ -888,7 +888,7 @@
   <h3
   id="changing-the-key-bindings-used-to-enable-disable-or-activate-loco">Changing
   the key bindings used to enable, disable, or activate Loco</h3>
-  <p>The command <code>loco-set-default-key-bindings</code> sets the
+  <p>The command <code>loco-set-default-configuration</code> sets the
   default key bindings to enable, disable, or activate Loco. Typically,
   you should call this command automatically on startup, as recommended
   in <a href="#installation">Installation</a>, but it is not required
@@ -911,9 +911,9 @@
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">;; to read a key sequence then execute the command to which it is bound</span></span>
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>(keymap-set loco-mode-keymap <span class="st">&quot;S-&lt;return&gt;&quot;</span></span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>            <span class="op">#&#39;</span>loco-default-execute-kseq)</span></code></pre></div>
-  <p>The command <code>loco-unset-default-key-bindings</code> is the
-  inverse of <code>loco-set-default-key-bindings</code>; the former will
-  unset any keybindings set by the latter.</p>
+  <p>The command <code>loco-unset-default-configuration</code> is the
+  inverse of <code>loco-set-default-configuration</code>; the former
+  will unset any keybindings set by the latter.</p>
   <h3
   id="changing-the-keys-used-while-loco-reads-a-key-sequence">Changing
   the keys used while Loco reads a key sequence</h3>
@@ -1268,7 +1268,7 @@
   href="https://en.wikipedia.org/wiki/Trams_in_Lisbon">history</a> of
   using tram cars such as these.</p>
   <footer>
-  <p>This document was produced on <time datetime="2024-06-26">June 26, 2024</time>, from the original <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> version, using <a href="https://pandoc.org">Pandoc</a>.</p>
+  <p>This document was produced on <time datetime="2024-07-05">July 05, 2024</time>, from the original <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> version, using <a href="https://pandoc.org">Pandoc</a>.</p>
   </footer>
 </body>
 </html>

@@ -701,8 +701,8 @@ VALIDATE            If non-nil, validate all keys used by this function
                 (message "%s is undefined" kseq-t3-str)))))))))
 
 ;;;###autoload
-(defun loco-set-default-key-bindings ()
-  "Set the default key bindings."
+(defun loco-set-default-configuration ()
+  "Set the default configuration."
   (interactive)
   (keymap-global-set "C-c ," #'loco-mode)
   (keymap-global-set "C-c ." #'global-loco-mode)
@@ -710,8 +710,8 @@ VALIDATE            If non-nil, validate all keys used by this function
   (keymap-set loco-mode-keymap "S-<return>" #'loco-default-execute-kseq))
 
 ;;;###autoload
-(defun loco-unset-default-key-bindings ()
-  "Unset the default key bindings."
+(defun loco-unset-default-configuration ()
+  "Unset the default configuration."
   (interactive)
   (keymap-global-unset "C-c ,")
   (keymap-global-unset "C-c .")

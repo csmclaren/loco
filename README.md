@@ -121,8 +121,8 @@ To install Loco from [MELPA](https://melpa.org), follow these steps:
       ;; Load `loco`
       (require 'loco)
 
-      ;; Set the default key bindings for Loco
-      (loco-set-default-key-bindings)
+      ;; Set the default configuration for Loco
+      (loco-set-default-configuration)
 
       ;; Enable Loco in all buffers
       (global-loco-mode 1)
@@ -151,8 +151,8 @@ To install Loco from source, follow these steps:
       ;; Load `loco`
       (require 'loco)
 
-      ;; Set the default key bindings for Loco
-      (loco-set-default-key-bindings)
+      ;; Set the default configuration for Loco
+      (loco-set-default-configuration)
 
       ;; Enable Loco in all buffers
       (global-loco-mode 1)
@@ -492,7 +492,7 @@ All of the properties presented in this interface can be set using Emacs Lisp as
 
 ### Changing the key bindings used to enable, disable, or activate Loco
 
-The command `loco-set-default-key-bindings` sets the default key bindings to enable, disable, or activate Loco. Typically, you should call this command automatically on startup, as recommended in [Installation](#installation), but it is not required that you do so. This command sets the default key bindings as follows, and you can edit this code to bind your own key sequences as desired.
+The command `loco-set-default-configuration` sets the default key bindings to enable, disable, or activate Loco. Typically, you should call this command automatically on startup, as recommended in [Installation](#installation), but it is not required that you do so. This command sets the default key bindings as follows, and you can edit this code to bind your own key sequences as desired.
 
   ```lisp
   ;; Bind "C-c ," to toggle Loco in the current buffer
@@ -512,7 +512,7 @@ The command `loco-set-default-key-bindings` sets the default key bindings to ena
               #'loco-default-execute-kseq)
   ```
 
-The command `loco-unset-default-key-bindings` is the inverse of `loco-set-default-key-bindings`; the former will unset any keybindings set by the latter.
+The command `loco-unset-default-configuration` is the inverse of `loco-set-default-configuration`; the former will unset any keybindings set by the latter.
 
 ### Changing the keys used while Loco reads a key sequence
 
