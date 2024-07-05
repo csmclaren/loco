@@ -28,10 +28,10 @@ Once activated, you can type any key sequence, taking advantage of the following
 
 | Typed Key Sequence | Translated Key Sequence | Command |
 | --- | --- | --- |
-| <kbd>j d</kbd> | <kbd>C-d</kbd> | <code>delete-char</code> |
-| <kbd>k d</kbd> | <kbd>M-d</kbd> | <code>kill-word</code> |
-| <kbd>j h i</kbd> | <kbd>C-h i</kbd> | <code>info</code> |
-| <kbd>j x j s</kbd> | <kbd>C-x C-s</kbd> | <code>save-buffer</code> |
+| <kbd>j d</kbd> | <kbd>C-d</kbd> | `delete-char` |
+| <kbd>k d</kbd> | <kbd>M-d</kbd> | `kill-word` |
+| <kbd>j h i</kbd> | <kbd>C-h i</kbd> | `info` |
+| <kbd>j x j s</kbd> | <kbd>C-x C-s</kbd> | `save-buffer` |
 
 This is only a brief overview; see [Usage](#usage) for a detailed explanation.
 
@@ -155,7 +155,7 @@ A physical key is what you press with your fingers on the keyboard. Some physica
 
 A logical key (or simply a _key_) is zero or more modifier keys pressed simultaneously with a non-modifier key. For example, holding down the physical <kbd>Control</kbd> key (written as <kbd>C-</kbd>) while pressing the physical <kbd>x</kbd> key produces the key <kbd>C-x</kbd>.
 
-Key sequences are composed of one or more keys. For example, the key sequence <kbd>C-x s</kbd> is composed of two keys: <kbd>C-x</kbd> and <kbd>s</kbd>. Key sequences can be bound to commands. For example, <kbd>C-x s</kbd> is bound to the command <code>save-all-files</code>.
+Key sequences are composed of one or more keys. For example, the key sequence <kbd>C-x s</kbd> is composed of two keys: <kbd>C-x</kbd> and <kbd>s</kbd>. Key sequences can be bound to commands. For example, <kbd>C-x s</kbd> is bound to the command `save-all-files`.
 
 By composing key sequences from keys, a large number of key sequences can be created from a small number of keys. This is similar to how an alphabet can be used to compose the words of a language: a large number of words can be created from a small number of letters.
 
@@ -288,9 +288,9 @@ Most key sequences do not involve <kbd>Control</kbd> or <kbd>Meta</kbd> in conju
 
 | Typed Key Sequence | Translated Key Sequence | Command |
 | --- | --- | --- |
-| <kbd>j e</kbd> | <kbd>C-e</kbd> | <code>move-end-of-line</code> |
-| <kbd>k e</kbd> | <kbd>M-e</kbd> | <code>forward-sentence</code> |
-| <kbd>j k e</kbd> or <kbd>k j e</kbd> | <kbd>C-M-e</kbd> | <code>end-of-defun</code> |
+| <kbd>j e</kbd> | <kbd>C-e</kbd> | `move-end-of-line` |
+| <kbd>k e</kbd> | <kbd>M-e</kbd> | `forward-sentence` |
+| <kbd>j k e</kbd> or <kbd>k j e</kbd> | <kbd>C-M-e</kbd> |`end-of-defun` |
 
 ##### More difficult key sequences and their translations
 
@@ -298,15 +298,15 @@ Nine key sequences involve <kbd>Control</kbd> or <kbd>Meta</kbd> in conjunction 
 
 | Typed Key Sequence | Translated Key Sequence | Command |
 | --- | --- | --- |
-| <kbd>j l j</kbd> or <kbd>j j</kbd> | <kbd>C-j</kbd> | <code>eval-print-last-sexp</code> |
-| <kbd>j l k</kbd> | <kbd>C-k</kbd> | <code>kill-line</code> |
-| <kbd>j l l</kbd> | <kbd>C-l</kbd> | <code>recenter-top-bottom</code> |
-| <kbd>k l j</kbd> | <kbd>M-j</kbd> | <code>default-indent-new-line</code> |
-| <kbd>k l k</kbd> or <kbd>k k</kbd> | <kbd>M-k</kbd> | <code>kill-sentence</code> |
-| <kbd>k l l</kbd> | <kbd>M-l</kbd> | <code>downcase-word</code> |
-| <kbd>j k j</kbd> or <kbd>k j j</kbd> | <kbd>C-M-j</kbd> | <code>default-indent-new-line</code> |
-| <kbd>j k k</kbd> or <kbd>k j k</kbd> | <kbd>C-M-k</kbd> | <code>kill-sexp</code> |
-| <kbd>j k l l</kbd> or <kbd>k j l l</kbd> | <kbd>C-M-l</kbd> | <code>reposition-window</code> |
+| <kbd>j l j</kbd> or <kbd>j j</kbd> | <kbd>C-j</kbd> | `eval-print-last-sexp` |
+| <kbd>j l k</kbd> | <kbd>C-k</kbd> | `kill-line` |
+| <kbd>j l l</kbd> | <kbd>C-l</kbd> | `recenter-top-bottom` |
+| <kbd>k l j</kbd> | <kbd>M-j</kbd> | `default-indent-new-line` |
+| <kbd>k l k</kbd> or <kbd>k k</kbd> | <kbd>M-k</kbd> |`kill-sentence` |
+| <kbd>k l l</kbd> | <kbd>M-l</kbd> | `downcase-word` |
+| <kbd>j k j</kbd> or <kbd>k j j</kbd> | <kbd>C-M-j</kbd> | `default-indent-new-line` |
+| <kbd>j k k</kbd> or <kbd>k j k</kbd> | <kbd>C-M-k</kbd> | `kill-sexp` |
+| <kbd>j k l l</kbd> or <kbd>k j l l</kbd> | <kbd>C-M-l</kbd> | `reposition-window` |
 
 ### Describing commands
 
