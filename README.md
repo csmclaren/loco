@@ -24,36 +24,14 @@ Once activated, you can type any key sequence, taking advantage of the following
   * apply other modifiers (for example, <kbd>Alt</kbd>, <kbd>Hyper</kbd>, or <kbd>Super</kbd>) to the next non&#x2011;special key; or
   * enter the special keys themselves as the literal characters _j_, _k_, or _l_.
 
-<table>
-  <caption>Examples (using the default configuration)</caption>
-  <tbody>
-    <tr>
-      <th>Typed Key Sequence</th>
-      <th>Translated Key Sequence</th>
-      <th>Command</th>
-    </tr>
-    <tr>
-      <td><kbd>j d</kbd></td>
-      <td><kbd>C-d</kbd></td>
-      <td><code>delete-char</code></td>
-    </tr>
-    <tr>
-      <td><kbd>k d</kbd></td>
-      <td><kbd>M-d</kbd></td>
-      <td><code>kill-word</code></td>
-    </tr>
-    <tr>
-      <td><kbd>j h i</kbd></td>
-      <td><kbd>C-h i</kbd></td>
-      <td><code>info</code></td>
-    </tr>
-    <tr>
-      <td><kbd>j x j s</kbd></td>
-      <td><kbd>C-x C-s</kbd></td>
-      <td><code>save-buffer</code></td>
-    </tr>
-  </tbody>
-</table>
+### Examples (using the default configuration)
+
+| Typed Key Sequence | Translated Key Sequence | Command |
+| --- | --- | --- |
+| <kbd>j d</kbd> | <kbd>C-d</kbd> | <code>delete-char</code> |
+| <kbd>k d</kbd> | <kbd>M-d</kbd> | <code>kill-word</code> |
+| <kbd>j h i</kbd> | <kbd>C-h i</kbd> | <code>info</code> |
+| <kbd>j x j s</kbd> | <kbd>C-x C-s</kbd> | <code>save-buffer</code> |
 
 This is only a brief overview; see [Usage](#usage) for a detailed explanation.
 
@@ -67,6 +45,7 @@ The default configuration is not the only way to use Loco. Loco can be [extensiv
 ## Table of contents <!-- omit from toc -->
 
 * [Introduction](#introduction)
+  * [Examples (using the default configuration)](#examples-using-the-default-configuration)
 * [Installation](#installation)
   * [From MELPA](#from-melpa)
   * [From source](#from-source)
@@ -75,9 +54,13 @@ The default configuration is not the only way to use Loco. Loco can be [extensiv
   * [How Loco is different](#how-loco-is-different)
   * [Enabling, disabling, and activating Loco](#enabling-disabling-and-activating-loco)
   * [Entering key sequences](#entering-key-sequences)
+    * [Normal operation (i.e., when the Assist Menu is closed)](#normal-operation-ie-when-the-assist-menu-is-closed)
+    * [Assisted operation (i.e., when the Assist Menu is open)](#assisted-operation-ie-when-the-assist-menu-is-open)
     * [Rock \& roll](#rock--roll)
     * [Sticky keys](#sticky-keys)
     * [Examples](#examples)
+      * [Typical key sequences and their translations](#typical-key-sequences-and-their-translations)
+      * [More difficult key sequences and their translations](#more-difficult-key-sequences-and-their-translations)
   * [Describing commands](#describing-commands)
   * [Repeating commands](#repeating-commands)
   * [Working with physical modifier keys](#working-with-physical-modifier-keys)
@@ -258,81 +241,26 @@ When Loco reads a key sequence:
 
 The following tables explain exactly how key presses are handled while reading a key sequence.
 
-<table>
-  <caption>Normal operation (i.e., when the Assist Menu is closed)</caption>
-  <tbody>
-    <tr>
-      <th>Key</th>
-      <th>Rule</th>
-    </tr>
-    <tr>
-      <td><kbd>j</kbd></td>
-      <td>
-        There are two possibilities for how this key is handled:
-        <ul>
-          <li>If <kbd>Control</kbd> is already pending, apply all pending modifiers to the key (clearing the modifiers), then add the modified key to the key sequence.</li>
-          <li>Otherwise, add <kbd>Control</kbd> to the set of pending modifiers.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><kbd>k</kbd></td>
-      <td>
-        There are two possibilities for how this key is handled:
-        <ul>
-          <li>If <kbd>Meta</kbd> is already pending, apply all pending modifiers to the key (clearing the modifiers), then add the modified key to the key sequence.</li>
-          <li>Otherwise, add <kbd>Meta</kbd> to the set of pending modifiers.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><kbd>l</kbd></td>
-      <td>Open the Assist Menu. </td>
-    </tr>
-    <tr>
-      <td>Other</td>
-      <td>Apply any pending modifiers to the key (clearing the modifiers), then add the (potentially modified) key to the key sequence.</td>
-    </tr>
-  </tbody>
-</table>
+#### Normal operation (i.e., when the Assist Menu is closed)
 
-<table>
-  <caption>Assisted operation (i.e., when the Assist Menu is open)</caption>
-  <tbody>
-    <tr>
-      <th>Key</th>
-      <th>Rule</th>
-    </tr>
-    <tr>
-      <td><kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd> or <kbd>s</kbd></td>
-      <td>Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd> <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of pending modifiers, and close the Assist Menu.</td>
-    </tr>
-    <tr>
-      <td><kbd>A</kbd> <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> or <kbd>S</kbd></td>
-      <td>Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd> <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of pending modifiers, but do not close the Assist Menu (see <a href="#sticky-keys">Sticky keys</a>).</td>
-    </tr>
-    <tr>
-      <td><kbd>j</kbd> <kbd>k</kbd> or <kbd>l</kbd></td>
-      <td>Apply any pending modifiers to the key (clearing the modifiers), add the (potentially modified) key to the key sequence, and close the Assist Menu.</td>
-    </tr>
-    <tr>
-      <td><kbd>q</kbd></td>
-      <td>Close the Assist Menu and cancel the key sequence (equivalent to <kbd>C-g</kbd>).</td>
-    </tr>
-    <tr>
-      <td><kbd>x</kbd></td>
-      <td>Close the Assist Menu.</td>
-    </tr>
-    <tr>
-      <td><kbd>;</kbd></td>
-      <td>Toggle the Assist Menu between its collapsed and expanded states.</td>
-    </tr>
-    <tr>
-      <td>Other</td>
-      <td>Discard the key, but do not close the Assist Menu. If the Assist Menu is currently collapsed, expand it to remind the user of all available options.</td>
-    </tr>
-  </tbody>
-</table>
+| Key | Rule |
+| --- | --- |
+| <kbd>j</kbd> | There are two possibilities for how this key is handled. If <kbd>Control</kbd> is already pending, apply all pending modifiers to the key (clearing the modifiers), then add the modified key to the key sequence. Otherwise, add <kbd>Control</kbd> to the set of pending modifiers. |
+| <kbd>k</kbd> | There are two possibilities for how this key is handled. If <kbd>Meta</kbd> is already pending, apply all pending modifiers to the key (clearing the modifiers), then add the modified key to the key sequence. Otherwise, add <kbd>Meta</kbd> to the set of pending modifiers. |
+| <kbd>l</kbd> | Open the Assist Menu. |
+| Other | Apply any pending modifiers to the key (clearing the modifiers), then add the (potentially modified) key to the key sequence. |
+
+#### Assisted operation (i.e., when the Assist Menu is open)
+
+| Key | Rule |
+| --- | --- |
+| <kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd> or <kbd>s</kbd> | Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd> <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of pending modifiers, and close the Assist Menu. |
+| <kbd>A</kbd> <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> or <kbd>S</kbd> | Toggle <kbd>Alt</kbd> <kbd>Control</kbd> <kbd>Hyper</kbd> <kbd>Meta</kbd> or <kbd>Super</kbd> respectively, in the set of pending modifiers, but do not close the Assist Menu (see <a href="#sticky-keys">Sticky keys</a>). |
+| <kbd>j</kbd> <kbd>k</kbd> or <kbd>l</kbd> | Apply any pending modifiers to the key (clearing the modifiers), add the (potentially modified) key to the key sequence, and close the Assist Menu. |
+| <kbd>q</kbd> | Close the Assist Menu and cancel the key sequence (equivalent to <kbd>C-g</kbd>). |
+| <kbd>x</kbd> | Close the Assist Menu. |
+| <kbd>;</kbd> | Toggle the Assist Menu between its collapsed and expanded states. |
+| Other | Discard the key, but do not close the Assist Menu. If the Assist Menu is currently collapsed, expand it to remind the user of all available options. |
 
 #### Rock & roll
 
@@ -354,91 +282,31 @@ These keys are optional and not shown on the Assist Menu.
 
 #### Examples
 
+##### Typical key sequences and their translations
+
 Most key sequences do not involve <kbd>Control</kbd> or <kbd>Meta</kbd> in conjunction with <kbd>j</kbd>, <kbd>k</kbd>, or <kbd>l</kbd>, making them easy to enter.
 
-<table>
-  <caption>Typical key sequences and their translations</caption>
-  <tbody>
-    <tr>
-      <th>Typed Key Sequence</th>
-      <th>Translated Key Sequence</th>
-      <th>Command</th>
-    </tr>
-    <tr>
-      <td><kbd>j e</kbd></td>
-      <td><kbd>C-e</kbd></td>
-      <td><code>move-end-of-line</code></td>
-    </tr>
-    <tr>
-      <td><kbd>k e</kbd></td>
-      <td><kbd>M-e</kbd></td>
-      <td><code>forward-sentence</code></td>
-    </tr>
-    <tr>
-      <td><kbd>j k e</kbd> or <kbd>k j e</kbd></td>
-      <td><kbd>C-M-e</kbd></td>
-      <td><code>end-of-defun</code></td>
-    </tr>
-  </tbody>
-</table>
+| Typed Key Sequence | Translated Key Sequence | Command |
+| --- | --- | --- |
+| <kbd>j e</kbd> | <kbd>C-e</kbd> | <code>move-end-of-line</code> |
+| <kbd>k e</kbd> | <kbd>M-e</kbd> | <code>forward-sentence</code> |
+| <kbd>j k e</kbd> or <kbd>k j e</kbd> | <kbd>C-M-e</kbd> | <code>end-of-defun</code> |
+
+##### More difficult key sequences and their translations
 
 Nine key sequences involve <kbd>Control</kbd> or <kbd>Meta</kbd> in conjunction with <kbd>j</kbd>, <kbd>k</kbd>, or <kbd>l</kbd>, making them more difficult to enter.
 
-<table>
-  <caption>More difficult key sequences and their translations</caption>
-  <tbody>
-    <tr>
-      <th>Typed Key Sequence</th>
-      <th>Translated Key Sequence</th>
-      <th>Command</th>
-    </tr>
-    <tr>
-      <td><kbd>j l j</kbd> or <kbd>j j</kbd></td>
-      <td><kbd>C-j</kbd></td>
-      <td><code>eval-print-last-sexp</code></td>
-    </tr>
-    <tr>
-      <td><kbd>j l k</kbd></td>
-      <td><kbd>C-k</kbd></td>
-      <td><code>kill-line</code></td>
-    </tr>
-    <tr>
-      <td><kbd>j l l</kbd></td>
-      <td><kbd>C-l</kbd></td>
-      <td><code>recenter-top-bottom</code></td>
-    </tr>
-    <tr>
-      <td><kbd>k l j</kbd></td>
-      <td><kbd>M-j</kbd></td>
-      <td><code>default-indent-new-line</code></td>
-    </tr>
-    <tr>
-      <td><kbd>k l k</kbd> or <kbd>k k</kbd></td>
-      <td><kbd>M-k</kbd></td>
-      <td><code>kill-sentence</code></td>
-    </tr>
-    <tr>
-      <td><kbd>k l l</kbd></td>
-      <td><kbd>M-l</kbd></td>
-      <td><code>downcase-word</code></td>
-    </tr>
-    <tr>
-      <td><kbd>j k j</kbd> or <kbd>k j j</kbd></td>
-      <td><kbd>C-M-j</kbd></td>
-      <td><code>default-indent-new-line</code></td>
-    </tr>
-    <tr>
-      <td><kbd>j k k</kbd> or <kbd>k j k</kbd></td>
-      <td><kbd>C-M-k</kbd></td>
-      <td><code>kill-sexp</code></td>
-    </tr>
-    <tr>
-      <td><kbd>j k l l</kbd> or <kbd>k j l l</kbd></td>
-      <td><kbd>C-M-l</kbd></td>
-      <td><code>reposition-window</code></td>
-    </tr>
-  </tbody>
-</table>
+| Typed Key Sequence | Translated Key Sequence | Command |
+| --- | --- | --- |
+| <kbd>j l j</kbd> or <kbd>j j</kbd> | <kbd>C-j</kbd> | <code>eval-print-last-sexp</code> |
+| <kbd>j l k</kbd> | <kbd>C-k</kbd> | <code>kill-line</code> |
+| <kbd>j l l</kbd> | <kbd>C-l</kbd> | <code>recenter-top-bottom</code> |
+| <kbd>k l j</kbd> | <kbd>M-j</kbd> | <code>default-indent-new-line</code> |
+| <kbd>k l k</kbd> or <kbd>k k</kbd> | <kbd>M-k</kbd> | <code>kill-sentence</code> |
+| <kbd>k l l</kbd> | <kbd>M-l</kbd> | <code>downcase-word</code> |
+| <kbd>j k j</kbd> or <kbd>k j j</kbd> | <kbd>C-M-j</kbd> | <code>default-indent-new-line</code> |
+| <kbd>j k k</kbd> or <kbd>k j k</kbd> | <kbd>C-M-k</kbd> | <code>kill-sexp</code> |
+| <kbd>j k l l</kbd> or <kbd>k j l l</kbd> | <kbd>C-M-l</kbd> | <code>reposition-window</code> |
 
 ### Describing commands
 
