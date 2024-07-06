@@ -1080,7 +1080,7 @@ Without this rule, entering a literal comma or period would be unduly
 onerous.  For example, here are four alternate ways by which you could
 enter a literal comma or period, respectively:
 
-  1. ‘, m S-c ,’ or ‘. m S-m .’
+  1. ‘, m C ,’ or ‘. m M .’
 
      This method uses the Assist Menu (once), but uses a *note sticky
      key: Sticky keys. to keep the menu open.
@@ -1188,9 +1188,9 @@ Node: Advanced topics38158
 Node: Mapping Caps Lock to Control38476
 Node: Activation keys that also function as modifiers40363
 Node: Activation keys that avoid modifiers completely44848
-Node: Author and copyright49586
-Node: License49840
-Node: Colophon50105
+Node: Author and copyright49582
+Node: License49836
+Node: Colophon50101
 
 End Tag Table
 

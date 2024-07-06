@@ -1258,7 +1258,7 @@ enter a literal comma or period, respectively:
 
 @enumerate 
 @item
-@kbd{, m S-c ,} or @kbd{. m S-m .}
+@kbd{, m C ,} or @kbd{. m M .}
 
 This method uses the Assist Menu (once), but uses a
 @ref{Sticky keys,,sticky key} to keep the menu open.

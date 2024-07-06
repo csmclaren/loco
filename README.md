@@ -590,7 +590,7 @@ This rule permits <kbd>,</kbd> and <kbd>.</kbd> to be entered as <kbd>, ,</kbd> 
 
 Without this rule, entering a literal comma or period would be unduly onerous. For example, here are four alternate ways by which you could enter a literal comma or period, respectively:
 
-1. <kbd>, m S-c ,</kbd> or <kbd>. m S-m .</kbd>
+1. <kbd>, m C ,</kbd> or <kbd>. m M .</kbd>
 
     This method uses the Assist Menu (once), but uses a [sticky key](#sticky-keys) to keep the menu open.
 
