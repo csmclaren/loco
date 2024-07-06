@@ -6,20 +6,10 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: loco.info,  Node: Top,  Next: Loco,  Up: (dir)
+File: loco.info,  Node: Top,  Next: Introduction,  Up: (dir)
 
 Loco
 ****
-
-* Menu:
-
-* Loco::
-
-
-File: loco.info,  Node: Loco,  Prev: Top,  Up: Top
-
-1 Loco
-******
 
 [MELPA
 Stable] (https://stable.melpa.org/#/loco) [MELPA] (https://www.melpa.org/#/loco)
@@ -36,10 +26,10 @@ Stable] (https://stable.melpa.org/#/loco) [MELPA] (https://www.melpa.org/#/loco)
 * Colophon::
 
 
-File: loco.info,  Node: Introduction,  Next: Table of contents,  Up: Loco
+File: loco.info,  Node: Introduction,  Next: Table of contents,  Prev: Top,  Up: Top
 
-1.1 Introduction
-================
+1 Introduction
+**************
 
 Loco is a package
 (https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html)
@@ -90,8 +80,8 @@ keys:
 
 File: loco.info,  Node: Examples using the default configuration,  Up: Introduction
 
-1.1.1 Examples (using the default configuration)
-------------------------------------------------
+1.1 Examples (using the default configuration)
+==============================================
 
 Typed Key Sequence   Translated Key Sequence   Command
 ---------------------------------------------------------------
@@ -114,10 +104,10 @@ code.  Many options are possible, including:
    • Configuring activation keys that avoid modifiers completely.
 
 
-File: loco.info,  Node: Table of contents,  Next: Installation,  Prev: Introduction,  Up: Loco
+File: loco.info,  Node: Table of contents,  Next: Installation,  Prev: Introduction,  Up: Top
 
-1.2 Table of contents
-=====================
+2 Table of contents
+*******************
 
    • *note Introduction::
         • *note Examples using the default configuration: Examples using
@@ -175,10 +165,10 @@ File: loco.info,  Node: Table of contents,  Next: Installation,  Prev: Introduct
    • *note Colophon::
 
 
-File: loco.info,  Node: Installation,  Next: Usage,  Prev: Table of contents,  Up: Loco
+File: loco.info,  Node: Installation,  Next: Usage,  Prev: Table of contents,  Up: Top
 
-1.3 Installation
-================
+3 Installation
+**************
 
 * Menu:
 
@@ -188,8 +178,8 @@ File: loco.info,  Node: Installation,  Next: Usage,  Prev: Table of contents,  U
 
 File: loco.info,  Node: From MELPA,  Next: From source,  Up: Installation
 
-1.3.1 From MELPA
-----------------
+3.1 From MELPA
+==============
 
 To install Loco from MELPA (https://melpa.org), follow these steps:
 
@@ -227,8 +217,8 @@ To install Loco from MELPA (https://melpa.org), follow these steps:
 
 File: loco.info,  Node: From source,  Prev: From MELPA,  Up: Installation
 
-1.3.2 From source
------------------
+3.2 From source
+===============
 
 To install Loco from source, follow these steps:
 
@@ -260,10 +250,10 @@ To install Loco from source, follow these steps:
           the modified sections of your configuration file.
 
 
-File: loco.info,  Node: Usage,  Next: Customization,  Prev: Installation,  Up: Loco
+File: loco.info,  Node: Usage,  Next: Customization,  Prev: Installation,  Up: Top
 
-1.4 Usage
-=========
+4 Usage
+*******
 
      This section assumes that you have set the default key bindings for
      Loco, as recommended in *note Installation::.
@@ -282,8 +272,8 @@ File: loco.info,  Node: Usage,  Next: Customization,  Prev: Installation,  Up: L
 
 File: loco.info,  Node: Keys key sequences and commands,  Next: How Loco is different,  Up: Usage
 
-1.4.1 Keys, key sequences, and commands
----------------------------------------
+4.1 Keys, key sequences, and commands
+=====================================
 
 When discussing keys, it is helpful to distinguish between _physical_
 keys and _logical_ keys.
@@ -316,8 +306,8 @@ of words can be created from a small number of letters.
 
 File: loco.info,  Node: How Loco is different,  Next: Enabling disabling and activating Loco,  Prev: Keys key sequences and commands,  Up: Usage
 
-1.4.2 How Loco is different
----------------------------
+4.2 How Loco is different
+=========================
 
 On modern keyboards, which typically have small or hard-to-reach
 modifier keys, or for people with RSI
@@ -337,8 +327,8 @@ key entry.
 
 File: loco.info,  Node: Enabling disabling and activating Loco,  Next: Entering key sequences,  Prev: How Loco is different,  Up: Usage
 
-1.4.3 Enabling, disabling, and activating Loco
-----------------------------------------------
+4.3 Enabling, disabling, and activating Loco
+============================================
 
 Loco works by adding a minor mode
 (https://www.gnu.org/software/emacs/manual/html_node/elisp/Minor-Modes.html)
@@ -403,8 +393,8 @@ Loco it should _describe_ the command.
 
 File: loco.info,  Node: Entering key sequences,  Next: Describing commands,  Prev: Enabling disabling and activating Loco,  Up: Usage
 
-1.4.4 Entering key sequences
-----------------------------
+4.4 Entering key sequences
+==========================
 
 When Loco reads a key sequence:
 
@@ -460,14 +450,12 @@ reading a key sequence.
 * Rock and roll::
 * Sticky keys::
 * Examples::
-* Typical key sequences and their translations::
-* More difficult key sequences and their translations::
 
 
 File: loco.info,  Node: Normal operation ie when the Assist Menu is closed,  Next: Assisted operation ie when the Assist Menu is open,  Up: Entering key sequences
 
-1.4.4.1 Normal operation (i.e., when the Assist Menu is closed)
-...............................................................
+4.4.1 Normal operation (i.e., when the Assist Menu is closed)
+-------------------------------------------------------------
 
 Key   Rule
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -479,8 +467,8 @@ Other Apply any pending modifiers to the key (clearing the modifiers), then add 
 
 File: loco.info,  Node: Assisted operation ie when the Assist Menu is open,  Next: Rock and roll,  Prev: Normal operation ie when the Assist Menu is closed,  Up: Entering key sequences
 
-1.4.4.2 Assisted operation (i.e., when the Assist Menu is open)
-...............................................................
+4.4.2 Assisted operation (i.e., when the Assist Menu is open)
+-------------------------------------------------------------
 
 Key                      Rule
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -497,8 +485,8 @@ Other                    Discard the key, but do not close the Assist Menu.  If 
 
 File: loco.info,  Node: Rock and roll,  Next: Sticky keys,  Prev: Assisted operation ie when the Assist Menu is open,  Up: Entering key sequences
 
-1.4.4.3 Rock and roll
-.....................
+4.4.3 Rock and roll
+-------------------
 
 The keys ‘j’, ‘k’, and ‘l’ were chosen to represent ‘Control’, ‘Meta’,
 and the Assist Menu, respectively, because on a QWERTY
@@ -515,8 +503,8 @@ to enter these important keys swiftly and accurately.
 
 File: loco.info,  Node: Sticky keys,  Next: Examples,  Prev: Rock and roll,  Up: Entering key sequences
 
-1.4.4.4 Sticky keys
-...................
+4.4.4 Sticky keys
+-----------------
 
 On the Assist Menu, the keys used to toggle modifiers (‘a’, ‘c’, ‘h’,
 ‘m’, and ‘s’) can be pressed in conjunction with the physical ‘Shift’
@@ -533,15 +521,20 @@ removed quickly.  The disadvantage is that another key (for example,
 These keys are optional and not shown on the Assist Menu.
 
 
-File: loco.info,  Node: Examples,  Next: Typical key sequences and their translations,  Prev: Sticky keys,  Up: Entering key sequences
+File: loco.info,  Node: Examples,  Prev: Sticky keys,  Up: Entering key sequences
 
-1.4.4.5 Examples
-................
+4.4.5 Examples
+--------------
+
+* Menu:
+
+* Typical key sequences and their translations::
+* More difficult key sequences and their translations::
 
 
-File: loco.info,  Node: Typical key sequences and their translations,  Next: More difficult key sequences and their translations,  Prev: Examples,  Up: Entering key sequences
+File: loco.info,  Node: Typical key sequences and their translations,  Next: More difficult key sequences and their translations,  Up: Examples
 
-1.4.4.6 Typical key sequences and their translations
+4.4.5.1 Typical key sequences and their translations
 ....................................................
 
 Most key sequences do not involve ‘Control’ or ‘Meta’ in conjunction
@@ -554,9 +547,9 @@ Typed Key Sequence   Translated Key Sequence   Command
 ‘j k e’ or ‘k j e’   ‘C-M-e’                   ‘end-of-defun’
 
 
-File: loco.info,  Node: More difficult key sequences and their translations,  Prev: Typical key sequences and their translations,  Up: Entering key sequences
+File: loco.info,  Node: More difficult key sequences and their translations,  Prev: Typical key sequences and their translations,  Up: Examples
 
-1.4.4.7 More difficult key sequences and their translations
+4.4.5.2 More difficult key sequences and their translations
 ...........................................................
 
 Nine key sequences involve ‘Control’ or ‘Meta’ in conjunction with ‘j’,
@@ -577,8 +570,8 @@ Typed Key Sequence       Translated Key Sequence   Command
 
 File: loco.info,  Node: Describing commands,  Next: Repeating commands,  Prev: Entering key sequences,  Up: Usage
 
-1.4.5 Describing commands
--------------------------
+4.5 Describing commands
+=======================
 
 The built-in command ‘describe-key’ waits for a key sequence to be
 input.  If that key sequence is bound to a command, it describes the
@@ -598,8 +591,8 @@ S-<return>’) is bound to ‘loco-default-describe-kseq’.
 
 File: loco.info,  Node: Repeating commands,  Next: Working with physical modifier keys,  Prev: Describing commands,  Up: Usage
 
-1.4.6 Repeating commands
-------------------------
+4.6 Repeating commands
+======================
 
 One advantage of using physical modifier keys is that once held, the
 non-modifier key can be pressed multiple times in sequence to repeat the
@@ -615,8 +608,8 @@ recommended.
 
 File: loco.info,  Node: Working with physical modifier keys,  Next: Considerations when using a terminal,  Prev: Repeating commands,  Up: Usage
 
-1.4.7 Working with physical modifier keys
------------------------------------------
+4.7 Working with physical modifier keys
+=======================================
 
 While Loco aims to replace the need for physical modifier keys, there
 might be some cases where you want to use key bindings that use them.
@@ -630,8 +623,8 @@ pending modifiers.
 
 File: loco.info,  Node: Considerations when using a terminal,  Prev: Working with physical modifier keys,  Up: Usage
 
-1.4.8 Considerations when using a terminal
-------------------------------------------
+4.8 Considerations when using a terminal
+========================================
 
 In a GUI environment, applications receive key events directly from the
 windowing system (https://en.wikipedia.org/wiki/Windowing_system) (for
@@ -677,10 +670,10 @@ translating simple key sequences into complex ones, Loco avoids the
 above limitations.
 
 
-File: loco.info,  Node: Customization,  Next: Author and copyright,  Prev: Usage,  Up: Loco
+File: loco.info,  Node: Customization,  Next: Author and copyright,  Prev: Usage,  Up: Top
 
-1.5 Customization
-=================
+5 Customization
+***************
 
      Most of this section assumes the reader has basic experience with
      Emacs Lisp
@@ -696,8 +689,8 @@ File: loco.info,  Node: Customization,  Next: Author and copyright,  Prev: Usage
 
 File: loco.info,  Node: Using the "Easy Customization Interface",  Next: Changing the key bindings used to enable disable or activate Loco,  Up: Customization
 
-1.5.1 Using the "Easy Customization Interface"
-----------------------------------------------
+5.1 Using the "Easy Customization Interface"
+============================================
 
 The Easy Customization Interface
 (https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html)
@@ -719,15 +712,15 @@ Lisp as well.
 
 File: loco.info,  Node: Changing the key bindings used to enable disable or activate Loco,  Next: Changing the keys used while Loco reads a key sequence,  Prev: Using the "Easy Customization Interface",  Up: Customization
 
-1.5.2 Changing the key bindings used to enable, disable, or
------------------------------------------------------------
+5.2 Changing the key bindings used to enable, disable, or activate
+==================================================================
 
-activate Loco The command ‘loco-set-default-configuration’ sets the
-default key bindings to enable, disable, or activate Loco.  Typically,
-you should call this command automatically on startup, as recommended in
-*note Installation::, but it is not required that you do so.  This
-command sets the default key bindings as follows, and you can edit this
-code to bind your own key sequences as desired.
+Loco The command ‘loco-set-default-configuration’ sets the default key
+bindings to enable, disable, or activate Loco.  Typically, you should
+call this command automatically on startup, as recommended in *note
+Installation::, but it is not required that you do so.  This command
+sets the default key bindings as follows, and you can edit this code to
+bind your own key sequences as desired.
 
 ;; Bind "C-c ," to toggle Loco in the current buffer
 (keymap-global-set "C-c ," #'loco-mode)
@@ -752,8 +745,8 @@ set by the latter.
 
 File: loco.info,  Node: Changing the keys used while Loco reads a key sequence,  Next: Advanced topics,  Prev: Changing the key bindings used to enable disable or activate Loco,  Up: Customization
 
-1.5.3 Changing the keys used while Loco reads a key sequence
-------------------------------------------------------------
+5.3 Changing the keys used while Loco reads a key sequence
+==========================================================
 
 By default, ‘S-<return>’ is bound to ‘loco-default-execute-kseq’.  This
 command is defined as follows.
@@ -866,8 +859,8 @@ that command.
 
 File: loco.info,  Node: Advanced topics,  Prev: Changing the keys used while Loco reads a key sequence,  Up: Customization
 
-1.5.4 Advanced topics
----------------------
+5.4 Advanced topics
+===================
 
 * Menu:
 
@@ -878,8 +871,8 @@ File: loco.info,  Node: Advanced topics,  Prev: Changing the keys used while Loc
 
 File: loco.info,  Node: Mapping Caps Lock to Control,  Next: Activation keys that also function as modifiers,  Up: Advanced topics
 
-1.5.4.1 Mapping Caps Lock to Control
-....................................
+5.4.1 Mapping Caps Lock to Control
+----------------------------------
 
 ‘S-<return>’ is easy to press, but it would be easier still to be able
 to activate Loco with a physical modifier key located right on the home
@@ -917,8 +910,8 @@ follows.
 
 File: loco.info,  Node: Activation keys that also function as modifiers,  Next: Activation keys that avoid modifiers completely,  Prev: Mapping Caps Lock to Control,  Up: Advanced topics
 
-1.5.4.2 Activation keys that also function as modifiers
-.......................................................
+5.4.2 Activation keys that also function as modifiers
+-----------------------------------------------------
 
 Activation keys can also function as modifiers, allowing you to both
 activate Loco and set a pending modifier with a single key.
@@ -1010,8 +1003,8 @@ incorrectly applied to the wrong keys.
 
 File: loco.info,  Node: Activation keys that avoid modifiers completely,  Prev: Activation keys that also function as modifiers,  Up: Advanced topics
 
-1.5.4.3 Activation keys that avoid modifiers completely
-.......................................................
+5.4.3 Activation keys that avoid modifiers completely
+-----------------------------------------------------
 
 Activation keys can avoid modifiers completely, allowing you use Loco
 without using any physical modifier keys.
@@ -1120,19 +1113,19 @@ Fortunately, we can use the Assist Menu for this.  ‘C-,’ and ‘M-.’ can
 be entered as ‘, m ,’ and ‘. m .’, respectively.
 
 
-File: loco.info,  Node: Author and copyright,  Next: License,  Prev: Customization,  Up: Loco
+File: loco.info,  Node: Author and copyright,  Next: License,  Prev: Customization,  Up: Top
 
-1.6 Author and copyright
-========================
+6 Author and copyright
+**********************
 
 Loco was written and copyright in 2024 by Chris McLaren (@csmclaren
 (https://www.github.com/csmclaren)).
 
 
-File: loco.info,  Node: License,  Next: Colophon,  Prev: Author and copyright,  Up: Loco
+File: loco.info,  Node: License,  Next: Colophon,  Prev: Author and copyright,  Up: Top
 
-1.7 License
-===========
+7 License
+*********
 
 This file is part of Loco.
 
@@ -1140,10 +1133,10 @@ Loco is licensed under the GNU (https://www.gnu.org) General Public
 License v3.0.  See the <COPYING> file for details.
 
 
-File: loco.info,  Node: Colophon,  Prev: License,  Up: Loco
+File: loco.info,  Node: Colophon,  Prev: License,  Up: Top
 
-1.8 Colophon
-============
+8 Colophon
+**********
 
 The logo for Loco is a representation of a tram
 (https://en.wikipedia.org/wiki/Tram) car from the Unicode
@@ -1157,40 +1150,39 @@ as these.
 
 Tag Table:
 Node: Top201
-Node: Loco287
-Node: Introduction589
-Node: Examples using the default configuration2941
-Node: Table of contents4081
-Node: Installation6874
-Node: From MELPA7041
-Node: From source8309
-Node: Usage9371
-Node: Keys key sequences and commands9874
-Node: How Loco is different11589
-Node: Enabling disabling and activating Loco12573
-Node: Entering key sequences15264
-Node: Normal operation ie when the Assist Menu is closed17966
-Node: Assisted operation ie when the Assist Menu is open19262
-Node: Rock and roll20814
-Node: Sticky keys21595
-Node: Examples22404
-Node: Typical key sequences and their translations22577
-Node: More difficult key sequences and their translations23361
-Node: Describing commands24686
-Node: Repeating commands25566
-Node: Working with physical modifier keys26228
-Node: Considerations when using a terminal26872
-Node: Customization29412
-Node: Using the "Easy Customization Interface"29903
-Node: Changing the key bindings used to enable disable or activate Loco30946
-Node: Changing the keys used while Loco reads a key sequence32501
-Node: Advanced topics38158
-Node: Mapping Caps Lock to Control38476
-Node: Activation keys that also function as modifiers40363
-Node: Activation keys that avoid modifiers completely44848
-Node: Author and copyright49582
-Node: License49836
-Node: Colophon50101
+Node: Introduction509
+Node: Examples using the default configuration2868
+Node: Table of contents4004
+Node: Installation6792
+Node: From MELPA6954
+Node: From source8218
+Node: Usage9276
+Node: Keys key sequences and commands9774
+Node: How Loco is different11485
+Node: Enabling disabling and activating Loco12465
+Node: Entering key sequences15152
+Node: Normal operation ie when the Assist Menu is closed17745
+Node: Assisted operation ie when the Assist Menu is open19037
+Node: Rock and roll20585
+Node: Sticky keys21362
+Node: Examples22167
+Node: Typical key sequences and their translations22398
+Node: More difficult key sequences and their translations23151
+Node: Describing commands24462
+Node: Repeating commands25338
+Node: Working with physical modifier keys25996
+Node: Considerations when using a terminal26636
+Node: Customization29172
+Node: Using the "Easy Customization Interface"29658
+Node: Changing the key bindings used to enable disable or activate Loco30697
+Node: Changing the keys used while Loco reads a key sequence32257
+Node: Advanced topics37910
+Node: Mapping Caps Lock to Control38224
+Node: Activation keys that also function as modifiers40107
+Node: Activation keys that avoid modifiers completely44588
+Node: Author and copyright49318
+Node: License49567
+Node: Colophon49827
 
 End Tag Table
 

@@ -18,12 +18,6 @@
 @node Top
 @top Loco
 
-@menu
-* Loco::
-@end menu
-
-@node Loco
-@chapter Loco
 @uref{https://stable.melpa.org/#/loco,@image{https://stable.melpa.org/packages/loco-badge,,,MELPA
 Stable,svg}}
 @uref{https://www.melpa.org/#/loco,@image{https://www.melpa.org/packages/loco-badge,,,MELPA,svg}}
@@ -40,7 +34,7 @@ Stable,svg}}
 @end menu
 
 @node Introduction
-@section Introduction
+@chapter Introduction
 Loco is a
 @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html,package}
 for @uref{https://www.gnu.org/software/emacs/,Emacs}. Loco lets you type
@@ -102,7 +96,7 @@ enter the special keys themselves as the literal characters @emph{j},
 @end menu
 
 @node Examples using the default configuration
-@subsection Examples (using the default configuration)
+@section Examples (using the default configuration)
 @multitable {Typed Key Sequence} {Translated Key Sequence} {@code{save-buffer}} 
 @headitem 
 Typed Key Sequence
@@ -145,7 +139,7 @@ Configuring activation keys that avoid modifiers completely.
 @end itemize
 
 @node Table of contents
-@section Table of contents
+@chapter Table of contents
 @itemize
 @item
 @ref{Introduction}
@@ -248,7 +242,7 @@ that avoid modifiers completely}
 @end itemize
 
 @node Installation
-@section Installation
+@chapter Installation
 
 @menu
 * From MELPA::
@@ -256,7 +250,7 @@ that avoid modifiers completely}
 @end menu
 
 @node From MELPA
-@subsection From MELPA
+@section From MELPA
 To install Loco from @uref{https://melpa.org,MELPA}, follow these steps:
 
 @enumerate 
@@ -302,7 +296,7 @@ sections of your configuration file.
 @end enumerate
 
 @node From source
-@subsection From source
+@section From source
 To install Loco from source, follow these steps:
 
 @enumerate 
@@ -347,7 +341,7 @@ sections of your configuration file.
 @end enumerate
 
 @node Usage
-@section Usage
+@chapter Usage
 @quotation
 This section assumes that you have set the default key bindings for
 Loco, as recommended in @ref{Installation}.
@@ -365,7 +359,7 @@ Loco, as recommended in @ref{Installation}.
 @end menu
 
 @node Keys key sequences and commands
-@subsection Keys, key sequences, and commands
+@section Keys, key sequences, and commands
 When discussing keys, it is helpful to distinguish between
 @emph{physical} keys and @emph{logical} keys.
 
@@ -397,7 +391,7 @@ alphabet can be used to compose the words of a language: a large number
 of words can be created from a small number of letters.
 
 @node How Loco is different
-@subsection How Loco is different
+@section How Loco is different
 On modern keyboards, which typically have small or hard-to-reach
 modifier keys, or for people with
 @uref{https://en.wikipedia.org/wiki/Repetitive_strain_injury,RSI} or
@@ -413,7 +407,7 @@ other, not simultaneously. Additionally, Loco uses certain easy-to-reach
 non-modifier keys (or @emph{special} keys) to assist you with key entry.
 
 @node Enabling disabling and activating Loco
-@subsection Enabling, disabling, and activating Loco
+@section Enabling, disabling, and activating Loco
 Loco works by adding a
 @uref{https://www.gnu.org/software/emacs/manual/html_node/elisp/Minor-Modes.html,minor
 mode} to Emacs. This mode can be enabled or disabled in some or all
@@ -503,7 +497,7 @@ depending on which key sequence was used to activate it.
 @kbd{C-h S-<return>} tells Loco it should @emph{describe} the command.
 
 @node Entering key sequences
-@subsection Entering key sequences
+@section Entering key sequences
 When Loco reads a key sequence:
 
 @itemize
@@ -572,12 +566,10 @@ reading a key sequence.
 * Rock and roll::
 * Sticky keys::
 * Examples::
-* Typical key sequences and their translations::
-* More difficult key sequences and their translations::
 @end menu
 
 @node Normal operation ie when the Assist Menu is closed
-@subsubsection Normal operation (i.e., when the Assist Menu is closed)
+@subsection Normal operation (i.e., when the Assist Menu is closed)
 @multitable {@kbd{l}} {There are two possibilities for how this key is handled. If @kbd{Control} is already pending, apply all pending modifiers to the key (clearing the modifiers), then add the modified key to the key sequence. Otherwise, add @kbd{Control} to the set of pending modifiers.} 
 @headitem 
 Key
@@ -604,7 +596,7 @@ then add the (potentially modified) key to the key sequence.
 @end multitable
 
 @node Assisted operation ie when the Assist Menu is open
-@subsubsection Assisted operation (i.e., when the Assist Menu is open)
+@subsection Assisted operation (i.e., when the Assist Menu is open)
 @multitable {@kbd{A} @kbd{C} @kbd{H} @kbd{M} or @kbd{S}} {Toggle @kbd{Alt} @kbd{Control} @kbd{Hyper} @kbd{Meta} or @kbd{Super} respectively, in the set of pending modifiers, but do not close the Assist Menu.} 
 @headitem 
 Key
@@ -642,7 +634,7 @@ available options.
 @end multitable
 
 @node Rock and roll
-@subsubsection Rock and roll
+@subsection Rock and roll
 The keys @kbd{j}, @kbd{k}, and @kbd{l} were chosen to represent
 @kbd{Control}, @kbd{Meta}, and the Assist Menu, respectively, because on
 a @uref{https://en.wikipedia.org/wiki/QWERTY,QWERTY} keyboard these keys
@@ -657,7 +649,7 @@ These design choices enable efficient key entry, enhancing your ability
 to enter these important keys swiftly and accurately.
 
 @node Sticky keys
-@subsubsection Sticky keys
+@subsection Sticky keys
 On the Assist Menu, the keys used to toggle modifiers (@kbd{a}, @kbd{c},
 @kbd{h}, @kbd{m}, and @kbd{s}) can be pressed in conjunction with the
 physical @kbd{Shift} key (@kbd{A}, @kbd{C}, @kbd{H}, @kbd{M}, and
@@ -674,7 +666,12 @@ removed quickly. The disadvantage is that another key (for example,
 These keys are optional and not shown on the Assist Menu.
 
 @node Examples
-@subsubsection Examples
+@subsection Examples
+
+@menu
+* Typical key sequences and their translations::
+* More difficult key sequences and their translations::
+@end menu
 
 @node Typical key sequences and their translations
 @subsubsection Typical key sequences and their translations
@@ -750,7 +747,7 @@ Typed Key Sequence
 @end multitable
 
 @node Describing commands
-@subsection Describing commands
+@section Describing commands
 The built-in command @code{describe-key} waits for a key sequence to be
 input. If that key sequence is bound to a command, it describes the
 command. This is an excellent way to discover (or remind yourself) to
@@ -768,7 +765,7 @@ When Loco is enabled in the current buffer, @kbd{C-h S-<return>} (@kbd{j
 h S-<return>}) is bound to @code{loco-default-describe-kseq}.
 
 @node Repeating commands
-@subsection Repeating commands
+@section Repeating commands
 One advantage of using physical modifier keys is that once held, the
 non-modifier key can be pressed multiple times in sequence to repeat the
 command.
@@ -781,7 +778,7 @@ commands that can be repeated by pressing only their last letter is
 highly recommended.
 
 @node Working with physical modifier keys
-@subsection Working with physical modifier keys
+@section Working with physical modifier keys
 While Loco aims to replace the need for physical modifier keys, there
 might be some cases where you want to use key bindings that use them.
 Because Loco does not replace or disable any keymaps, you are able to
@@ -792,7 +789,7 @@ while entering key sequences in Loco are properly merged with the set of
 pending modifiers.
 
 @node Considerations when using a terminal
-@subsection Considerations when using a terminal
+@section Considerations when using a terminal
 In a GUI environment, applications receive key events directly from the
 @uref{https://en.wikipedia.org/wiki/Windowing_system,windowing system}
 (for example, X11, Wayland, or Quartz Compositor). These systems have
@@ -841,7 +838,7 @@ translating simple key sequences into complex ones, Loco avoids the
 above limitations.
 
 @node Customization
-@section Customization
+@chapter Customization
 @quotation
 Most of this section assumes the reader has basic experience with
 @uref{https://www.gnu.org/software/emacs/manual/html_node/eintr/,Emacs
@@ -856,7 +853,7 @@ Lisp}.
 @end menu
 
 @node Using the "Easy Customization Interface"
-@subsection Using the "Easy Customization Interface"
+@section Using the "Easy Customization Interface"
 The
 @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html,Easy
 Customization Interface} can be used to customize certain properties of
@@ -876,8 +873,8 @@ All of the properties presented in this interface can be set using Emacs
 Lisp as well.
 
 @node Changing the key bindings used to enable disable or activate Loco
-@subsection Changing the key bindings used to enable, disable, or
-activate Loco
+@section Changing the key bindings used to enable, disable, or activate
+Loco
 The command @code{loco-set-default-configuration} sets the default key
 bindings to enable, disable, or activate Loco. Typically, you should
 call this command automatically on startup, as recommended in
@@ -908,7 +905,7 @@ The command @code{loco-unset-default-configuration} is the inverse of
 keybindings set by the latter.
 
 @node Changing the keys used while Loco reads a key sequence
-@subsection Changing the keys used while Loco reads a key sequence
+@section Changing the keys used while Loco reads a key sequence
 By default, @kbd{S-<return>} is bound to
 @code{loco-default-execute-kseq}. This command is defined as follows.
 
@@ -1041,7 +1038,7 @@ There are a total of 25 keyword arguments that can be passed to
 for that command.
 
 @node Advanced topics
-@subsection Advanced topics
+@section Advanced topics
 
 @menu
 * Mapping Caps Lock to Control::
@@ -1050,7 +1047,7 @@ for that command.
 @end menu
 
 @node Mapping Caps Lock to Control
-@subsubsection Mapping Caps Lock to Control
+@subsection Mapping Caps Lock to Control
 @kbd{S-<return>} is easy to press, but it would be easier still to be
 able to activate Loco with a physical modifier key located right on the
 home row. If this physical modifier key were @kbd{Control}, you would
@@ -1088,7 +1085,7 @@ as follows.
 @end verbatim
 
 @node Activation keys that also function as modifiers
-@subsubsection Activation keys that also function as modifiers
+@subsection Activation keys that also function as modifiers
 Activation keys can also function as modifiers, allowing you to both
 activate Loco and set a pending modifier with a single key.
 
@@ -1184,7 +1181,7 @@ duplicates.
 @end quotation
 
 @node Activation keys that avoid modifiers completely
-@subsubsection Activation keys that avoid modifiers completely
+@subsection Activation keys that avoid modifiers completely
 Activation keys can avoid modifiers completely, allowing you use Loco
 without using any physical modifier keys.
 
@@ -1304,19 +1301,19 @@ Fortunately, we can use the Assist Menu for this. @kbd{C-,} and
 @kbd{M-.} can be entered as @kbd{, m ,} and @kbd{. m .}, respectively.
 
 @node Author and copyright
-@section Author and copyright
+@chapter Author and copyright
 Loco was written and copyright in 2024 by Chris McLaren
 (@uref{https://www.github.com/csmclaren,@@csmclaren}).
 
 @node License
-@section License
+@chapter License
 This file is part of Loco.
 
 Loco is licensed under the @uref{https://www.gnu.org,GNU} General Public
 License v3.0. See the @url{COPYING} file for details.
 
 @node Colophon
-@section Colophon
+@chapter Colophon
 The logo for Loco is a representation of a
 @uref{https://en.wikipedia.org/wiki/Tram,tram} car from the
 @uref{https://home.unicode.org,Unicode} chart
