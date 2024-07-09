@@ -666,7 +666,11 @@ VALIDATE            If non-nil, validate all keys used by this function
                  (result (loco--lookup-kseq kseq-p keymaps))
                  (kseq-t3 (seq-elt result 0))
                  (kseq-t3-str (loco--format-kseq kseq-t3))
-                 (binding (seq-elt result 1)))
+                 (binding (seq-elt result 1))
+                 (kseq-last (loco--seq-last kseq-t3))
+                 (kseq-last-str (loco--format-kseq (vector kseq-last)))
+                 (kseq-not-last (loco--seq-not-last kseq-t3))
+                 (kseq-not-last-str (loco--format-kseq kseq-not-last)))
 
             (setq kseq-t kseq-t3)
 
@@ -694,6 +698,15 @@ VALIDATE            If non-nil, validate all keys used by this function
               ((or (keymapp binding) (eq binding t))
                 (loco--log 2 "incomplete binding (%s)"
                            (loco--format-vars kseq-t3-str)))
+              ((and (or (eq kseq-last 8) (eq kseq-last 'f1))
+                    (>= (seq-length kseq-not-last) 1)
+                    (let* ((result (loco--lookup-kseq kseq-not-last keymaps))
+                           (binding (seq-elt result 1)))
+                      (keymapp binding)))
+                (loco--log 2 "describe bindings (%s)"
+                           (loco--format-vars kseq-not-last-str kseq-last-str))
+                (setq should-loop nil)
+                (describe-bindings kseq-not-last))
               (t
                 (loco--log 2 "unbound key sequence (%s)"
                            (loco--format-vars kseq-t3-str))
@@ -770,7 +783,8 @@ During the lookup process, KSEQ may be translated up to three times through
 respectively.  This translation follows the algorithm described in \\[info]
 in the section \"Translation Keymaps\".
 
-Returns a command, a keymap, t (if reading should continue due to an incomplete
+Returns the pair of the translated KSEQ and a binding; where a binding is a
+command, a keymap, t (if reading should continue due to an incomplete
 translation), or nil."
   (let ((binding nil)
         (kseq-t1 nil)
@@ -1204,6 +1218,30 @@ If SEQ is a sequence with one or more element, return the first element,
 otherwise return nil."
   (when (and seq (sequencep seq) (> (seq-length seq) 0))
     (seq-elt seq 0)))
+
+(defun loco--seq-last (seq)
+  "Return the last element of SEQ.
+
+If SEQ is a sequence with one or more elements, return the last element,
+otherwise return nil."
+  (when (and seq (sequencep seq) (> (seq-length seq) 0))
+    (seq-elt seq (1- (seq-length seq)))))
+
+(defun loco--seq-not-first (seq)
+  "Return all but the first element of SEQ.
+
+If SEQ is a sequence with one or more element, return all but the first
+element, otherwise return nil."
+  (when (and seq (sequencep seq) (> (seq-length seq) 0))
+    (seq-subseq seq 1)))
+
+(defun loco--seq-not-last (seq)
+  "Return all but the last element of SEQ.
+
+If SEQ is a sequence with one or more elements, return all but the last
+element, otherwise return nil."
+  (when (and seq (sequencep seq) (> (seq-length seq) 0))
+    (seq-subseq seq 0 (1- (seq-length seq)))))
 
 ;; Sorting
 ;; Private functions
