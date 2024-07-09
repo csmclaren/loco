@@ -15,6 +15,7 @@ make-docs:
 	mkdir -p docs/build
 	pandoc \
 		--from gfm \
+		--lua-filter=tools/pandoc/filter-append-default-footer.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
 		--metadata title="Loco" \
 		--output README.md \
@@ -48,6 +49,7 @@ make-docs:
 	pandoc \
 		--from gfm \
 		--lua-filter=tools/pandoc/filter-adjust-header-depths.lua \
+		--lua-filter=tools/pandoc/filter-append-default-footer.lua \
 		--lua-filter=tools/pandoc/filter-process-kbd.lua \
 		--lua-filter=tools/pandoc/filter-strip-headers.lua \
 		--lua-filter=tools/pandoc/filter-trim-headers.lua \

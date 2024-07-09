@@ -1011,3 +1011,5 @@ Symbols](https://unicode.org/charts/PDF/U1F680.pdf). Loco was created in
 Lisbon, Portugal, a city with a
 [history](https://en.wikipedia.org/wiki/Trams_in_Lisbon) of using tram
 cars such as these.
+
+This document was produced on July 09, 2024, using [Pandoc](https://pandoc.org).
