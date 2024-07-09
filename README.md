@@ -1,4 +1,4 @@
-# Loco  🚋 <!-- omit from toc -->
+# Loco  🚋
 
 [![MELPA
 Stable](https://stable.melpa.org/packages/loco-badge.svg)](https://stable.melpa.org/#/loco)
@@ -74,54 +74,56 @@ Many options are possible, including:
 - Configuring activation keys that also function as modifiers; and
 - Configuring activation keys that avoid modifiers completely.
 
-## Table of contents <!-- omit from toc -->
+## Table of contents
 
-- [Introduction](#introduction)
-  - [Examples (using the default
-    configuration)](#examples-using-the-default-configuration)
-- [Installation](#installation)
-  - [From MELPA](#from-melpa)
-  - [From source](#from-source)
-- [Usage](#usage)
-  - [Keys, key sequences, and
-    commands](#keys-key-sequences-and-commands)
-  - [How Loco is different](#how-loco-is-different)
-  - [Enabling, disabling, and activating
-    Loco](#enabling-disabling-and-activating-loco)
-  - [Entering key sequences](#entering-key-sequences)
-    - [Normal operation (i.e., when the Assist Menu is
-      closed)](#normal-operation-ie-when-the-assist-menu-is-closed)
-    - [Assisted operation (i.e., when the Assist Menu is
-      open)](#assisted-operation-ie-when-the-assist-menu-is-open)
-    - [Rock and roll](#rock-and-roll)
-    - [Persistent keys](#persistent-keys)
-    - [Examples](#examples)
-      - [Typical key sequences and their
-        translations](#typical-key-sequences-and-their-translations)
-      - [More difficult key sequences and their
-        translations](#more-difficult-key-sequences-and-their-translations)
-  - [Describing commands](#describing-commands)
-  - [Repeating commands](#repeating-commands)
-  - [Working with physical modifier
-    keys](#working-with-physical-modifier-keys)
-  - [Considerations when using a
-    terminal](#considerations-when-using-a-terminal)
-- [Customization](#customization)
-  - [Using the "Easy Customization
-    Interface"](#using-the-easy-customization-interface)
-  - [Changing the key bindings used to enable, disable, or activate
-    Loco](#changing-the-key-bindings-used-to-enable-disable-or-activate-loco)
-  - [Changing the keys used while Loco reads a key
-    sequence](#changing-the-keys-used-while-loco-reads-a-key-sequence)
-  - [Advanced topics](#advanced-topics)
-    - [Mapping Caps Lock to Control](#mapping-caps-lock-to-control)
-    - [Activation keys that also function as
-      modifiers](#activation-keys-that-also-function-as-modifiers)
-    - [Activation keys that avoid modifiers
-      completely](#activation-keys-that-avoid-modifiers-completely)
-- [Author and copyright](#author-and-copyright)
-- [License](#license)
-- [Colophon](#colophon)
+- [Loco  🚋](#loco--train)
+  - [Introduction](#introduction)
+    - [Examples (using the default
+      configuration)](#examples-using-the-default-configuration)
+  - [Table of contents](#table-of-contents)
+  - [Installation](#installation)
+    - [From MELPA](#from-melpa)
+    - [From source](#from-source)
+  - [Usage](#usage)
+    - [Keys, key sequences, and
+      commands](#keys-key-sequences-and-commands)
+    - [How Loco is different](#how-loco-is-different)
+    - [Enabling, disabling, and activating
+      Loco](#enabling-disabling-and-activating-loco)
+    - [Entering key sequences](#entering-key-sequences)
+      - [Normal operation (i.e., when the Assist Menu is
+        closed)](#normal-operation-ie-when-the-assist-menu-is-closed)
+      - [Assisted operation (i.e., when the Assist Menu is
+        open)](#assisted-operation-ie-when-the-assist-menu-is-open)
+      - [Rock and roll](#rock-and-roll)
+      - [Persistent keys](#persistent-keys)
+      - [Examples](#examples)
+        - [Typical key sequences and their
+          translations](#typical-key-sequences-and-their-translations)
+        - [More difficult key sequences and their
+          translations](#more-difficult-key-sequences-and-their-translations)
+    - [Describing commands](#describing-commands)
+    - [Repeating commands](#repeating-commands)
+    - [Working with physical modifier
+      keys](#working-with-physical-modifier-keys)
+    - [Considerations when using a
+      terminal](#considerations-when-using-a-terminal)
+  - [Customization](#customization)
+    - [Using the "Easy Customization
+      Interface"](#using-the-easy-customization-interface)
+    - [Changing the key bindings used to enable, disable, or activate
+      Loco](#changing-the-key-bindings-used-to-enable-disable-or-activate-loco)
+    - [Changing the keys used while Loco reads a key
+      sequence](#changing-the-keys-used-while-loco-reads-a-key-sequence)
+    - [Advanced topics](#advanced-topics)
+      - [Mapping Caps Lock to Control](#mapping-caps-lock-to-control)
+      - [Activation keys that also function as
+        modifiers](#activation-keys-that-also-function-as-modifiers)
+      - [Activation keys that avoid modifiers
+        completely](#activation-keys-that-avoid-modifiers-completely)
+  - [Author and copyright](#author-and-copyright)
+  - [License](#license)
+  - [Colophon](#colophon)
 
 ## Installation
 

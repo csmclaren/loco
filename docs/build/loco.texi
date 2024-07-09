@@ -147,6 +147,14 @@ Configuring activation keys that avoid modifiers completely.
 @item
 @ref{Examples using the default configuration,,Examples using the
 default configuration}
+@itemize
+@end itemize
+
+@end itemize
+
+@item
+@ref{Table of contents,,Table of contents}
+@itemize
 @end itemize
 
 @item
@@ -154,8 +162,14 @@ default configuration}
 @itemize
 @item
 @ref{From MELPA,,From MELPA}
+@itemize
+@end itemize
+
 @item
 @ref{From source,,From source}
+@itemize
+@end itemize
+
 @end itemize
 
 @item
@@ -163,47 +177,86 @@ default configuration}
 @itemize
 @item
 @ref{Keys key sequences and commands,,Keys key sequences and commands}
+@itemize
+@end itemize
+
 @item
 @ref{How Loco is different,,How Loco is different}
+@itemize
+@end itemize
+
 @item
 @ref{Enabling disabling and activating Loco,,Enabling disabling and
 activating Loco}
+@itemize
+@end itemize
+
 @item
 @ref{Entering key sequences,,Entering key sequences}
 @itemize
 @item
 @ref{Normal operation ie when the Assist Menu is closed,,Normal
 operation ie when the Assist Menu is closed}
+@itemize
+@end itemize
+
 @item
 @ref{Assisted operation ie when the Assist Menu is open,,Assisted
 operation ie when the Assist Menu is open}
+@itemize
+@end itemize
+
 @item
 @ref{Rock and roll,,Rock and roll}
+@itemize
+@end itemize
+
 @item
 @ref{Persistent keys,,Persistent keys}
+@itemize
+@end itemize
+
 @item
 @ref{Examples}
 @itemize
 @item
 @ref{Typical key sequences and their translations,,Typical key sequences
 and their translations}
+@itemize
+@end itemize
+
 @item
 @ref{More difficult key sequences and their translations,,More difficult
 key sequences and their translations}
+@itemize
+@end itemize
+
 @end itemize
 
 @end itemize
 
 @item
 @ref{Describing commands,,Describing commands}
+@itemize
+@end itemize
+
 @item
 @ref{Repeating commands,,Repeating commands}
+@itemize
+@end itemize
+
 @item
 @ref{Working with physical modifier keys,,Working with physical modifier
 keys}
+@itemize
+@end itemize
+
 @item
 @ref{Considerations when using a terminal,,Considerations when using a
 terminal}
+@itemize
+@end itemize
+
 @end itemize
 
 @item
@@ -212,33 +265,60 @@ terminal}
 @item
 @ref{Using the "Easy Customization Interface",,Using the "Easy
 Customization Interface"}
+@itemize
+@end itemize
+
 @item
 @ref{Changing the key bindings used to enable disable or activate Loco,,Changing
 the key bindings used to enable disable or activate Loco}
+@itemize
+@end itemize
+
 @item
 @ref{Changing the keys used while Loco reads a key sequence,,Changing
 the keys used while Loco reads a key sequence}
+@itemize
+@end itemize
+
 @item
 @ref{Advanced topics,,Advanced topics}
 @itemize
 @item
 @ref{Mapping Caps Lock to Control,,Mapping Caps Lock to Control}
+@itemize
+@end itemize
+
 @item
 @ref{Activation keys that also function as modifiers,,Activation keys
 that also function as modifiers}
+@itemize
+@end itemize
+
 @item
 @ref{Activation keys that avoid modifiers completely,,Activation keys
 that avoid modifiers completely}
+@itemize
+@end itemize
+
 @end itemize
 
 @end itemize
 
 @item
 @ref{Author and copyright,,Author and copyright}
+@itemize
+@end itemize
+
 @item
 @ref{License}
+@itemize
+@end itemize
+
 @item
 @ref{Colophon}
+@itemize
+@end itemize
+
 @end itemize
 
 @node Installation

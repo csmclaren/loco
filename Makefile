@@ -15,6 +15,7 @@ make-docs:
 	mkdir -p docs/build
 	pandoc \
 		--from gfm \
+		--lua-filter=tools/pandoc/filter-toc.lua \
 		--metadata title="Loco" \
 		--output README.md \
 		--to gfm \
@@ -26,6 +27,7 @@ make-docs:
 		--from gfm \
 		--lua-filter=tools/pandoc/filter-append-html-footer.lua \
 		--lua-filter=tools/pandoc/filter-link-stylesheet.lua \
+		--lua-filter=tools/pandoc/filter-toc.lua \
 		--metadata filter_link_stylesheet_fpath="loco.css" \
 		--metadata title="Loco" \
 		--output docs/build/loco.html \
@@ -36,6 +38,7 @@ make-docs:
 		--from gfm \
 		--lua-filter=tools/pandoc/filter-append-html-footer.lua \
 		--lua-filter=tools/pandoc/filter-embed-stylesheet.lua \
+		--lua-filter=tools/pandoc/filter-toc.lua \
 		--metadata filter_embed_stylesheet_fpath="docs/build/loco.css" \
 		--metadata title="Loco" \
 		--output docs/build/loco-standalone.html \
@@ -48,6 +51,7 @@ make-docs:
 		--lua-filter=tools/pandoc/filter-process-kbd.lua \
 		--lua-filter=tools/pandoc/filter-strip-headers.lua \
 		--lua-filter=tools/pandoc/filter-trim-headers.lua \
+		--lua-filter=tools/pandoc/filter-toc.lua \
 		--metadata dircategory="Emacs" \
 		--metadata direntry="* Loco: (loco).                 A library and minor mode for entering key sequences" \
 		--metadata title="Loco" \
