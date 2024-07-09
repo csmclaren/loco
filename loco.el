@@ -276,138 +276,138 @@ ARGS  Additional arguments to be passed to `loco-read-kseq'."
 (defun loco-read-kseq (&rest args)
   "Read a key sequence.
 
-ARGS                Keyword arguments, as described below:
+ARGS              Keyword arguments, as described below:
 
-D                   If non-nil, if a key sequence is bound to a command,
-                    that command should be described instead of executed.
-                    Default: nil
+D                 If non-nil, if a key sequence is bound to a command,
+                  that command should be described instead of executed.
+                  Default: nil
 
-DT                  If non-nil, pressing one of the modifier keys starting with
-                    KEY-MOD- will clear all modifiers and insert the key
-                    literally if its modifier (and only that modifier) was
-                    already in effect.  (This enables the double-tap rule,
-                    described fully in the manual).
-                    Default: nil
+DT                If non-nil, pressing one of the modifier keys starting with
+                  KEY-MOD- will clear all modifiers and insert the key
+                  literally if its modifier (and only that modifier) was
+                  already in effect.  (This enables the double-tap rule,
+                  described fully in the manual).
+                  Default: nil
 
-KEY-AM-MOD-A-QK     If non-nil, when the Assist Menu is open,
-                    this key will toggle A-, then close the Assist Menu.
-                    Default: `a'
+KEY-AM-MOD-A-CL   If non-nil, when the Assist Menu is open,
+                  this key will toggle A-, then close the Assist Menu.
+                  Default: `a'
 
-KEY-AM-MOD-A-ST     If non-nil, when the Assist Menu is open,
-                    this key will toggle A-, but keep the Assist Menu open.
-                    Default: `A'
+KEY-AM-MOD-A-OP   If non-nil, when the Assist Menu is open,
+                  this key will toggle A-, but keep the Assist Menu open.
+                  Default: `A'
 
-KEY-AM-MOD-C-QK     If non-nil, when the Assist Menu is open,
-                    this key will toggle C-, then close the Assist Menu.
-                    Default: `c'
+KEY-AM-MOD-C-CL   If non-nil, when the Assist Menu is open,
+                  this key will toggle C-, then close the Assist Menu.
+                  Default: `c'
 
-KEY-AM-MOD-C-ST     If non-nil, when the Assist Menu is open,
-                    this key will toggle C-, but keep the Assist Menu open.
-                    Default: `C'
+KEY-AM-MOD-C-OP   If non-nil, when the Assist Menu is open,
+                  this key will toggle C-, but keep the Assist Menu open.
+                  Default: `C'
 
-KEY-AM-MOD-H-QK     If non-nil, when the Assist Menu is open,
-                    this key will toggle H-, then close the Assist Menu.
-                    Default: `h'
+KEY-AM-MOD-H-CL   If non-nil, when the Assist Menu is open,
+                  this key will toggle H-, then close the Assist Menu.
+                  Default: `h'
 
-KEY-AM-MOD-H-ST     If non-nil, when the Assist Menu is open,
-                    this key will toggle H-, but keep the Assist Menu open.
-                    Default: `H'
+KEY-AM-MOD-H-OP   If non-nil, when the Assist Menu is open,
+                  this key will toggle H-, but keep the Assist Menu open.
+                  Default: `H'
 
-KEY-AM-MOD-M-QK     If non-nil, when the Assist Menu is open,
-                    this key will toggle M-, then close the Assist Menu.
-                    Default: `m'
+KEY-AM-MOD-M-CL   If non-nil, when the Assist Menu is open,
+                  this key will toggle M-, then close the Assist Menu.
+                  Default: `m'
 
-KEY-AM-MOD-M-ST     If non-nil, when the Assist Menu is open,
-                    this key will toggle M-, but keep the Assist Menu open.
-                    Default: `M'
+KEY-AM-MOD-M-OP   If non-nil, when the Assist Menu is open,
+                  this key will toggle M-, but keep the Assist Menu open.
+                  Default: `M'
 
-KEY-AM-MOD-S-QK     If non-nil, when the Assist Menu is open,
-                    this key will toggle s-, then close the Assist Menu.
-                    Default: `s'
+KEY-AM-MOD-S-CL   If non-nil, when the Assist Menu is open,
+                  this key will toggle s-, then close the Assist Menu.
+                  Default: `s'
 
-KEY-AM-MOD-S-ST     If non-nil, when the Assist Menu is open,
-                    this key will toggle s-, but keep the Assist Menu open.
-                    Default: `S'
+KEY-AM-MOD-S-OP   If non-nil, when the Assist Menu is open,
+                  this key will toggle s-, but keep the Assist Menu open.
+                  Default: `S'
 
-KEY-AM-QUIT         If non-nil, when the Assist Menu is open,
-                    this key will quit.
-                    Default: `q'
+KEY-AM-QUIT       If non-nil, when the Assist Menu is open,
+                  this key will quit.
+                  Default: `q'
 
-KEY-AM-S-CLOSE      If non-nil, when the Assist Menu is open,
-                    this key will close the Assist Menu.
-                    Default: `x'
+KEY-AM-S-CL       If non-nil, when the Assist Menu is open,
+                  this key will close the Assist Menu.
+                  Default: `x'
 
-KEY-AM-S-COLLAPSE   If non-nil, when the Assist Menu is open and expanded,
-                    this key will collapse the Assist Menu.
-                    Default: `;'
+KEY-AM-S-CO       If non-nil, when the Assist Menu is open and expanded,
+                  this key will collapse the Assist Menu.
+                  Default: `;'
 
-KEY-AM-S-EXPAND     If non-nil, when the Assist Menu is open and collapsed,
-                    this key will expand the Assist Menu.
-                    Default: `;'
+KEY-AM-S-EX       If non-nil, when the Assist Menu is open and collapsed,
+                  this key will expand the Assist Menu.
+                  Default: `;'
 
-KEY-AM-S-OPEN       If non-nil, when the Assist Menu is closed,
-                    this key will open the Assist Menu.
-                    Default: `l'
+KEY-AM-S-OP       If non-nil, when the Assist Menu is closed,
+                  this key will open the Assist Menu.
+                  Default: `l'
 
-KEY-MOD-A           If non-nil, when the Assist Menu is closed,
-                    this key will be interpreted as `A-'.
-                    Default: nil
+KEY-MOD-A         If non-nil, when the Assist Menu is closed,
+                  this key will be interpreted as `A-'.
+                  Default: nil
 
-KEY-MOD-C           If non-nil, when the Assist Menu is closed,
-                    this key will be interpreted as `C-'.
-                    Default: nil
+KEY-MOD-C         If non-nil, when the Assist Menu is closed,
+                  this key will be interpreted as `C-'.
+                  Default: nil
 
-KEY-MOD-H           If non-nil, when the Assist Menu is closed,
-                    this key will be interpreted as `H-'.
-                    Default: nil
+KEY-MOD-H         If non-nil, when the Assist Menu is closed,
+                  this key will be interpreted as `H-'.
+                  Default: nil
 
-KEY-MOD-M           If non-nil, when the Assist Menu is closed,
-                    this key will be interpreted as `M-'.
-                    Default: nil
+KEY-MOD-M         If non-nil, when the Assist Menu is closed,
+                  this key will be interpreted as `M-'.
+                  Default: nil
 
-KEY-MOD-S           If non-nil, when the Assist Menu is closed,
-                    this key will be interpreted as `s-'.
-                    Default: nil
+KEY-MOD-S         If non-nil, when the Assist Menu is closed,
+                  this key will be interpreted as `s-'.
+                  Default: nil
 
-KSEQ                If non-nil, key events will be taken from this vector
-                    before `read-event` is called.
-                    Default: nil
+KSEQ              If non-nil, key events will be taken from this vector
+                  before `read-event` is called.
+                  Default: nil
 
-STRIP               If non-nil, this function should strip all modifiers
-                    (except Shift) from keys.  This can improve flow and help
-                    prevent key entry errors due to a modifier key being
-                    accidentially held down longer than necessary.  If nil,
-                    modifiers are maintained.  In this case, Loco will
-                    (properly) merge any modifiers on a key with the set of
-                    pending modifiers.
-                    Default: nil
+STRIP             If non-nil, this function should strip all modifiers
+                  (except Shift) from keys.  This can improve flow and help
+                  prevent key entry errors due to a modifier key being
+                  accidentially held down longer than necessary.  If nil,
+                  modifiers are maintained.  In this case, Loco will (properly)
+                  merge any modifiers on a key with the set of pending
+                  modifiers.
+                  Default: nil
 
-VALIDATE            If non-nil, validate all keys used by this function
-                    (That is, the keyword arguments beginning with `KEY-') to
-                    check for duplicates or unreachable keys.  A key is
-                    unreachable if it includes modifiers and STRIP is non-nil.
-                    Default: nil"
+VALIDATE          If non-nil, validate all keys used by this function
+                  (That is, the keyword arguments beginning with `KEY-') to
+                  check for duplicates or unreachable keys.  A key is
+                  unreachable if it includes modifiers and STRIP is non-nil.
+                  Default: nil"
   (interactive)
   (let (;; keyword arguments
         (d (plist-get args :d))
         (dt (plist-get args :dt))
-        (key-am-mod-a-qk (loco--plist-get-d args :key-am-mod-a-qk ?a))
-        (key-am-mod-a-st (loco--plist-get-d args :key-am-mod-a-st ?A))
-        (key-am-mod-c-qk (loco--plist-get-d args :key-am-mod-c-qk ?c))
-        (key-am-mod-c-st (loco--plist-get-d args :key-am-mod-c-st ?C))
-        (key-am-mod-h-qk (loco--plist-get-d args :key-am-mod-h-qk ?h))
-        (key-am-mod-h-st (loco--plist-get-d args :key-am-mod-h-st ?H))
-        (key-am-mod-m-qk (loco--plist-get-d args :key-am-mod-m-qk ?m))
-        (key-am-mod-m-st (loco--plist-get-d args :key-am-mod-m-st ?M))
-        (key-am-mod-s-qk (loco--plist-get-d args :key-am-mod-s-qk ?s))
-        (key-am-mod-s-st (loco--plist-get-d args :key-am-mod-s-st ?S))
+        (key-am-mod-a-cl (loco--plist-get-d args :key-am-mod-a-cl ?a))
+        (key-am-mod-a-op (loco--plist-get-d args :key-am-mod-a-op ?A))
+        (key-am-mod-c-cl (loco--plist-get-d args :key-am-mod-c-cl ?c))
+        (key-am-mod-c-op (loco--plist-get-d args :key-am-mod-c-op ?C))
+        (key-am-mod-h-cl (loco--plist-get-d args :key-am-mod-h-cl ?h))
+        (key-am-mod-h-op (loco--plist-get-d args :key-am-mod-h-op ?H))
+        (key-am-mod-m-cl (loco--plist-get-d args :key-am-mod-m-cl ?m))
+        (key-am-mod-m-op (loco--plist-get-d args :key-am-mod-m-op ?M))
+        (key-am-mod-s-cl (loco--plist-get-d args :key-am-mod-s-cl ?s))
+        (key-am-mod-s-op (loco--plist-get-d args :key-am-mod-s-op ?S))
         (key-am-quit (loco--plist-get-d args :key-am-quit ?q))
-        (key-am-s-close (loco--plist-get-d args :key-am-s-close ?x))
+        (key-am-s-cl (loco--plist-get-d args :key-am-s-cl ?x))
         ;; NOTE ASCII 59 is ?\;
         ;; (the literal form breaks syntax colouring in some non-emacs editors)
-        (key-am-s-collapse (loco--plist-get-d args :key-am-s-collapse 59))
-        (key-am-s-expand (loco--plist-get-d args :key-am-s-expand 59))
-        (key-am-s-open (loco--plist-get-d args :key-am-s-open ?l))
+        (key-am-s-co (loco--plist-get-d args :key-am-s-co 59))
+        (key-am-s-ex (loco--plist-get-d args :key-am-s-ex 59))
+        (key-am-s-op (loco--plist-get-d args :key-am-s-op ?l))
         (key-mod-a (plist-get args :key-mod-a))
         (key-mod-c (plist-get args :key-mod-c))
         (key-mod-h (plist-get args :key-mod-h))
@@ -421,8 +421,8 @@ VALIDATE            If non-nil, validate all keys used by this function
         (am-open nil) ; is assist menu open?
         (fn-name "loco-read-kseq") ; function name used in log messages
         (keys-am-l nil) ; the literal keys on the assist menu
-        (keys-am-mod-qk nil) ; the quick modifier keys on the assist menu
-        (keys-am-mod-st nil) ; the sticky modifier keys on the assist menu
+        (keys-am-mod-cl nil) ; the modifier keys that close the assist menu
+        (keys-am-mod-op nil) ; the modifier keys that keep the assist menu open
         (kseq-o []) ; the original key sequence
         (kseq-p []) ; the processed key sequence
         (kseq-t []) ; the translated key sequence
@@ -436,20 +436,20 @@ VALIDATE            If non-nil, validate all keys used by this function
     ;; prologue
 
     (setq keys-am-l (list key-mod-a key-mod-c key-mod-h key-mod-m key-mod-s)
-          keys-am-mod-qk (list key-am-mod-a-qk key-am-mod-c-qk key-am-mod-h-qk
-                               key-am-mod-m-qk key-am-mod-s-qk)
-          keys-am-mod-st (list key-am-mod-a-st key-am-mod-c-st key-am-mod-h-st
-                               key-am-mod-m-st key-am-mod-s-st))
+          keys-am-mod-cl (list key-am-mod-a-cl key-am-mod-c-cl key-am-mod-h-cl
+                               key-am-mod-m-cl key-am-mod-s-cl)
+          keys-am-mod-op (list key-am-mod-a-op key-am-mod-c-op key-am-mod-h-op
+                               key-am-mod-m-op key-am-mod-s-op))
 
     (when validate
-      (let* ((keys-am-collapsed (append keys-am-l keys-am-mod-qk keys-am-mod-st
-                                        (list key-am-quit key-am-s-close
-                                              key-am-s-expand key-am-s-open)))
+      (let* ((keys-am-collapsed (append keys-am-l keys-am-mod-cl keys-am-mod-op
+                                        (list key-am-quit key-am-s-cl
+                                              key-am-s-ex key-am-s-op)))
              (nn-keys-am-collapsed (seq-filter #'identity keys-am-collapsed))
              (dup-keys-am-collapsed (loco--seq-all-dups nn-keys-am-collapsed))
-             (keys-am-expanded (append keys-am-l keys-am-mod-qk keys-am-mod-st
-                                       (list key-am-quit key-am-s-close
-                                             key-am-s-collapse key-am-s-open)))
+             (keys-am-expanded (append keys-am-l keys-am-mod-cl keys-am-mod-op
+                                       (list key-am-quit key-am-s-cl
+                                             key-am-s-co key-am-s-op)))
              (nn-keys-am-expanded (seq-filter #'identity keys-am-expanded))
              (dup-keys-am-expanded (loco--seq-all-dups nn-keys-am-expanded))
              (dup-keys (seq-uniq (append dup-keys-am-collapsed
@@ -459,10 +459,9 @@ VALIDATE            If non-nil, validate all keys used by this function
                  (message-str (format "duplicate keys found: %s" sorted)))
             (loco--log 0 "[%s.validate] %s" fn-name message-str))))
       (when strip
-        (let* ((all-keys (append keys-am-l keys-am-mod-qk keys-am-mod-st
-                                 (list key-am-quit key-am-s-close
-                                       key-am-s-collapse key-am-s-expand
-                                       key-am-s-open)))
+        (let* ((all-keys (append keys-am-l keys-am-mod-cl keys-am-mod-op
+                                 (list key-am-quit key-am-s-cl key-am-s-co
+                                       key-am-s-ex key-am-s-op)))
                (fn (lambda (key)
                      (let ((modifiers (delq 'shift (event-modifiers key))))
                        (not (seq-empty-p modifiers)))))
@@ -498,10 +497,10 @@ VALIDATE            If non-nil, validate all keys used by this function
                              loco-prompt-am-collapsed)
                            (t
                              (loco--format-am am-expanded keys-am-l
-                                              keys-am-mod-qk keys-am-mod-st
-                                              key-am-quit key-am-s-close
-                                              key-am-s-collapse key-am-s-expand
-                                              key-am-s-open)))
+                                              keys-am-mod-cl keys-am-mod-op
+                                              key-am-quit key-am-s-cl
+                                              key-am-s-co key-am-s-ex
+                                              key-am-s-op)))
                        ""))
              (am-str (if (stringp am)
                          am
@@ -543,46 +542,46 @@ VALIDATE            If non-nil, validate all keys used by this function
                   ((eq e-o key-am-quit)
                     (loco--invoke-kseq-str "C-g"))
                   ;; close the assist menu
-                  ((eq e-o key-am-s-close)
+                  ((eq e-o key-am-s-cl)
                     (setq action 'accept am-open nil))
                   ;; collapse the assist menu
-                  ((and (eq e-o key-am-s-collapse) am-expanded)
+                  ((and (eq e-o key-am-s-co) am-expanded)
                     (setq am-expanded nil))
                   ;; expand the assist menu
-                  ((and (eq e-o key-am-s-expand) (not am-expanded))
+                  ((and (eq e-o key-am-s-ex) (not am-expanded))
                     (setq am-expanded t))
                   ;; treat literally and close the assist menu
-                  ((or (eq e-o key-am-s-open) (memq e-o keys-am-l))
+                  ((or (eq e-o key-am-s-op) (memq e-o keys-am-l))
                     (setq action 'literal am-open nil))
                   ;; toggle A- and close the assist menu
-                  ((eq e-o key-am-mod-a-qk)
+                  ((eq e-o key-am-mod-a-cl)
                     (setq action 'accept am-open nil mod-a (not mod-a)))
                   ;; toggle A-
-                  ((eq e-o key-am-mod-a-st)
+                  ((eq e-o key-am-mod-a-op)
                     (setq action 'accept mod-a (not mod-a)))
                   ;; toggle C- and close the assist menu
-                  ((eq e-o key-am-mod-c-qk)
+                  ((eq e-o key-am-mod-c-cl)
                     (setq action 'accept am-open nil) mod-c (not mod-c))
                   ;; toggle C-
-                  ((eq e-o key-am-mod-c-st)
+                  ((eq e-o key-am-mod-c-op)
                     (setq action 'accept mod-c (not mod-c)))
                   ;; toggle H- and close the assist menu
-                  ((eq e-o key-am-mod-h-qk)
+                  ((eq e-o key-am-mod-h-cl)
                     (setq action 'accept am-open nil mod-h (not mod-h)))
                   ;; toggle H-
-                  ((eq e-o key-am-mod-h-st)
+                  ((eq e-o key-am-mod-h-op)
                     (setq action 'accept mod-h (not mod-h)))
                   ;; toggle M- and close the assist menu
-                  ((eq e-o key-am-mod-m-qk)
+                  ((eq e-o key-am-mod-m-cl)
                     (setq action 'accept am-open nil mod-m (not mod-m)))
                   ;; toggle M-
-                  ((eq e-o key-am-mod-m-st)
+                  ((eq e-o key-am-mod-m-op)
                     (setq action 'accept mod-m (not mod-m)))
                   ;; toggle s- and close the assist menu
-                  ((eq e-o key-am-mod-s-qk)
+                  ((eq e-o key-am-mod-s-cl)
                     (setq action 'accept am-open nil mod-s (not mod-s)))
                   ;; toggle s-
-                  ((eq e-o key-am-mod-s-st)
+                  ((eq e-o key-am-mod-s-op)
                     (setq action 'accept mod-s (not mod-s)))
                   ;; expand the assist menu and ding
                   (t
@@ -590,7 +589,7 @@ VALIDATE            If non-nil, validate all keys used by this function
                     (ding)))
               (cond
                 ;; open the assist menu
-                ((eq e-o key-am-s-open)
+                ((eq e-o key-am-s-op)
                   (setq action 'accept am-open t))
                 ;; A-
                 ((eq e-o key-mod-a)
@@ -632,11 +631,11 @@ VALIDATE            If non-nil, validate all keys used by this function
                   (setq action 'literal))))
 
           (when (memq action '(accept double-tap literal))
-            (setq kseq-o (if (and (equal e-o key-am-s-close)
+            (setq kseq-o (if (and (equal e-o key-am-s-cl)
                                   (not (seq-empty-p kseq-o))
                                   (equal (seq-elt kseq-o
                                                   (1- (seq-length kseq-o)))
-                                         key-am-s-open))
+                                         key-am-s-op))
                                (seq-take kseq-o (1- (seq-length kseq-o)))
                              (vconcat kseq-o (vector e-o)))))
 
@@ -1098,30 +1097,30 @@ FMT-STR is a format string, followed by ARGS as in \"format\"."
 ;; Private functions
 ;; Low-level (no use of global variables declared herein)
 
-(defun loco--format-am (expanded keys-l keys-mod-qk keys-mod-st key-quit
-                        key-s-close key-s-collapse key-s-expand key-s-open)
+(defun loco--format-am (expanded keys-l keys-mod-cl keys-mod-op key-quit
+                        key-s-cl key-s-co key-s-ex key-s-op)
   "Return a formatted string representing the Assist Menu.
 
-EXPANDED        If non-nil, the Assist Menu should show all commands.
-KEYS-L          If non-nil, these keys will be treated literally,
-                then close the Assist Menu.
-KEYS-MOD-QK     If non-nil, these keys will toggle modifiers,
-                then close the Assist Menu.
-KEYS-MOD-ST     If non-nil, these keys will toggle modifiers,
-                but keep the Assist Menu open.
-KEY-QUIT        If non-nil, this key will quit.
-KEY-S-CLOSE     If non-nil, this key will close the Assist Menu.
-KEY-S-COLLAPSE  If non-nil, this key will collapse the Assist Menu.
-KEY-S-EXPAND    If non-nil, this key will expand the Assist Menu.
-KEY-S-OPEN      If non-nil, this key will open the Assist Menu."
-  (ignore keys-mod-st)
+EXPANDED      If non-nil, the Assist Menu should show all commands.
+KEYS-L        If non-nil, these keys will be treated literally,
+              then close the Assist Menu.
+KEYS-MOD-CL   If non-nil, these keys will toggle modifiers,
+              then close the Assist Menu.
+KEYS-MOD-OP   If non-nil, these keys will toggle modifiers,
+              but keep the Assist Menu open.
+KEY-QUIT      If non-nil, this key will quit.
+KEY-S-CL      If non-nil, this key will close the Assist Menu.
+KEY-S-CO      If non-nil, this key will collapse the Assist Menu.
+KEY-S-EX      If non-nil, this key will expand the Assist Menu.
+KEY-S-OP      If non-nil, this key will open the Assist Menu."
+  (ignore keys-mod-op)
   (let ((sections (if expanded
-                      (list keys-mod-qk
-                            (append keys-l (list key-s-open))
+                      (list keys-mod-cl
+                            (append keys-l (list key-s-op))
                             (list key-quit)
-                            (list key-s-close)
-                            (list key-s-collapse))
-                    (list (list key-s-expand)))))
+                            (list key-s-cl)
+                            (list key-s-co))
+                    (list (list key-s-ex)))))
     (concat "[" (loco--format-am-sections sections) "]")))
 
 (defun loco--format-am-key (key)

@@ -57,7 +57,7 @@ The default configuration is not the only way to use Loco. Loco can be [extensiv
     * [Normal operation (i.e., when the Assist Menu is closed)](#normal-operation-ie-when-the-assist-menu-is-closed)
     * [Assisted operation (i.e., when the Assist Menu is open)](#assisted-operation-ie-when-the-assist-menu-is-open)
     * [Rock and roll](#rock-and-roll)
-    * [Sticky keys](#sticky-keys)
+    * [Persistent keys](#persistent-keys)
     * [Examples](#examples)
       * [Typical key sequences and their translations](#typical-key-sequences-and-their-translations)
       * [More difficult key sequences and their translations](#more-difficult-key-sequences-and-their-translations)
@@ -270,11 +270,11 @@ Furthermore, you can build up the set of pending modifiers for a key in any orde
 
 These design choices enable efficient key entry, enhancing your ability to enter these important keys swiftly and accurately.
 
-#### Sticky keys
+#### Persistent keys
 
 On the Assist Menu, the keys used to toggle modifiers (<kbd>a</kbd>, <kbd>c</kbd>, <kbd>h</kbd>, <kbd>m</kbd>, and <kbd>s</kbd>) can be pressed in conjunction with the physical <kbd>Shift</kbd> key (<kbd>A</kbd>, <kbd>C</kbd>, <kbd>H</kbd>, <kbd>M</kbd>, and <kbd>S</kbd>, respectively).
 
-These <kbd>Shift</kbd>-modified keys perform the same operation as their unmodified counterparts but make the Assist Menu _sticky_: after use, the menu remains open to use again.
+These <kbd>Shift</kbd>-modified keys perform the same operation as their unmodified counterparts but make the Assist Menu _persistent_: after use, the menu remains open to use again.
 
 The advantage of these keys is that multiple modifiers can be added or removed quickly. The disadvantage is that another key (for example, <kbd>x</kbd>) is then required to close the Assist Menu.
 
@@ -399,9 +399,9 @@ We can define a similar command, called `my-loco-execute-kseq`, and rebind <kbd>
   ```lisp
   (defun my-loco-execute-kseq (&rest args)
     (interactive)
-    (apply #'loco-read-kseq :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                            :key-am-s-collapse ?/ :key-am-s-expand ?/
-                            :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+    (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                            :key-am-s-co ?/ :key-am-s-ex ?/
+                            :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                             :validate t args))
 
   (keymap-set loco-mode-keymap "S-<return>" #'my-loco-execute-kseq)
@@ -422,9 +422,9 @@ The first seven arguments tell `loco-read-kseq` that while reading a key sequenc
 
 In this configuration, we've decided that when Loco is reading a key sequence, <kbd>m</kbd> should open the Assist Menu. By repurposing <kbd>m</kbd> for this, we need to rely on the Assist Menu to help us enter a literal _m_ when necessary. By default, the Assist Menu already reserves <kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd> and <kbd>s</kbd> to toggle pending modifiers then close the Assist Menu. This creates the potential for conflict.
 
-Our configuration also defines <kbd>,</kbd> and <kbd>.</kbd> as the primary means to set <kbd>Control</kbd> and <kbd>Meta</kbd> pending, respectively. As such, having the means to toggle these modifiers from the Assist Menu is less useful. To avoid the potential conflict in setting <kbd>m</kbd> to mean both _m_ and <kbd>Meta</kbd> when the Assist Menu is open, we remove the latter meaning using `:key-am-mod-m-qk nil`. And while not necessary to avoid a conflict, for clarity and consistency we also set `:key-am-mod-c-qk nil`.
+Our configuration also defines <kbd>,</kbd> and <kbd>.</kbd> as the primary means to set <kbd>Control</kbd> and <kbd>Meta</kbd> pending, respectively. As such, having the means to toggle these modifiers from the Assist Menu is less useful. To avoid the potential conflict in setting <kbd>m</kbd> to mean both _m_ and <kbd>Meta</kbd> when the Assist Menu is open, we remove the latter meaning using `:key-am-mod-m-cl nil`. And while not necessary to avoid a conflict, for clarity and consistency we also set `:key-am-mod-c-cl nil`.
 
->Note that, by default, the Assist Menu also reserves <kbd>A</kbd> <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> and <kbd>S</kbd> as the [sticky](#sticky-keys) versions of <kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd> and <kbd>s</kbd>, respectively. As none of the sticky versions of these keys were removed from our configuration, there does remain a means to toggle <kbd>Control</kbd> and <kbd>Meta</kbd> from the Assist Menu if desired.
+>Note that, by default, the Assist Menu also reserves <kbd>A</kbd> <kbd>C</kbd> <kbd>H</kbd> <kbd>M</kbd> and <kbd>S</kbd> as the [persistent](#persistent-keys) versions of <kbd>a</kbd> <kbd>c</kbd> <kbd>h</kbd> <kbd>m</kbd> and <kbd>s</kbd>, respectively. As none of the persistent versions of these keys were removed from our configuration, there does remain a means to toggle <kbd>Control</kbd> and <kbd>Meta</kbd> from the Assist Menu if desired.
 
 Our command calls `loco-read-kseq` with one additional argument: `:validate t`. When non-nil, this argument tells `loco-read-kseq` to validate the set of keys it will use while reading a key sequence. For example, the validation process checks that no key is assigned to more than one function. Any problems found during the validation process are printed in the log. `:validate t` is recommended any time you are customizing Loco's keys.
 
@@ -500,17 +500,17 @@ Consider the following code:
 
   (defun my-loco-execute-control-kseq (&rest args)
     (interactive)
-    (apply #'loco-read-kseq :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                            :key-am-s-collapse ?/ :key-am-s-expand ?/
-                            :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+    (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                            :key-am-s-co ?/ :key-am-s-ex ?/
+                            :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                             :kseq [?,] :strip t
                             :validate t args))
 
   (defun my-loco-execute-meta-kseq (&rest args)
     (interactive)
-    (apply #'loco-read-kseq :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                            :key-am-s-collapse ?/ :key-am-s-expand ?/
-                            :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+    (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                            :key-am-s-co ?/ :key-am-s-ex ?/
+                            :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                             :kseq [?.] :strip t
                             :validate t args))
 
@@ -559,18 +559,18 @@ Consider the following code:
   (defun my-loco-execute-control-kseq (&rest args)
     (interactive)
     (apply #'loco-read-kseq :dt t
-                            :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                            :key-am-s-collapse ?/ :key-am-s-expand ?/
-                            :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+                            :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                            :key-am-s-co ?/ :key-am-s-ex ?/
+                            :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                             :kseq [?,] :strip t
                             :validate t args))
 
   (defun my-loco-execute-meta-kseq (&rest args)
     (interactive)
     (apply #'loco-read-kseq :dt t
-                            :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                            :key-am-s-collapse ?/ :key-am-s-expand ?/
-                            :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+                            :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                            :key-am-s-co ?/ :key-am-s-ex ?/
+                            :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                             :kseq [?.] :strip t
                             :validate t args))
 
@@ -592,7 +592,7 @@ Without this rule, entering a literal comma or period would be unduly onerous. F
 
 1. <kbd>, m C ,</kbd> or <kbd>. m M .</kbd>
 
-    This method uses the Assist Menu (once), but uses a [sticky key](#sticky-keys) to keep the menu open.
+    This method uses the Assist Menu (once), but uses a [persistent key](#persistent-keys) to keep the menu open.
 
 2. <kbd>, m c m ,</kbd> or <kbd>. m m m .</kbd>
 

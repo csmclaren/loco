@@ -129,7 +129,7 @@ File: loco.info,  Node: Table of contents,  Next: Installation,  Prev: Introduct
              • *note Assisted operation ie when the Assist Menu is open:
                Assisted operation ie when the Assist Menu is open.
              • *note Rock and roll: Rock and roll.
-             • *note Sticky keys: Sticky keys.
+             • *note Persistent keys: Persistent keys.
              • *note Examples::
                   • *note Typical key sequences and their translations:
                     Typical key sequences and their translations.
@@ -448,7 +448,7 @@ reading a key sequence.
 * Normal operation ie when the Assist Menu is closed::
 * Assisted operation ie when the Assist Menu is open::
 * Rock and roll::
-* Sticky keys::
+* Persistent keys::
 * Examples::
 
 
@@ -483,7 +483,7 @@ Other                    Discard the key, but do not close the Assist Menu.  If 
                          all available options.
 
 
-File: loco.info,  Node: Rock and roll,  Next: Sticky keys,  Prev: Assisted operation ie when the Assist Menu is open,  Up: Entering key sequences
+File: loco.info,  Node: Rock and roll,  Next: Persistent keys,  Prev: Assisted operation ie when the Assist Menu is open,  Up: Entering key sequences
 
 4.4.3 Rock and roll
 -------------------
@@ -501,18 +501,18 @@ These design choices enable efficient key entry, enhancing your ability
 to enter these important keys swiftly and accurately.
 
 
-File: loco.info,  Node: Sticky keys,  Next: Examples,  Prev: Rock and roll,  Up: Entering key sequences
+File: loco.info,  Node: Persistent keys,  Next: Examples,  Prev: Rock and roll,  Up: Entering key sequences
 
-4.4.4 Sticky keys
------------------
+4.4.4 Persistent keys
+---------------------
 
 On the Assist Menu, the keys used to toggle modifiers (‘a’, ‘c’, ‘h’,
 ‘m’, and ‘s’) can be pressed in conjunction with the physical ‘Shift’
 key (‘A’, ‘C’, ‘H’, ‘M’, and ‘S’, respectively).
 
 These ‘Shift’-modified keys perform the same operation as their
-unmodified counterparts but make the Assist Menu _sticky_: after use,
-the menu remains open to use again.
+unmodified counterparts but make the Assist Menu _persistent_: after
+use, the menu remains open to use again.
 
 The advantage of these keys is that multiple modifiers can be added or
 removed quickly.  The disadvantage is that another key (for example,
@@ -521,7 +521,7 @@ removed quickly.  The disadvantage is that another key (for example,
 These keys are optional and not shown on the Assist Menu.
 
 
-File: loco.info,  Node: Examples,  Prev: Sticky keys,  Up: Entering key sequences
+File: loco.info,  Node: Examples,  Prev: Persistent keys,  Up: Entering key sequences
 
 4.4.5 Examples
 --------------
@@ -764,9 +764,9 @@ rebind ‘S-<return>’ to it as follows.
 
 (defun my-loco-execute-kseq (&rest args)
   (interactive)
-  (apply #'loco-read-kseq :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+  (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :validate t args))
 
 (keymap-set loco-mode-keymap "S-<return>" #'my-loco-execute-kseq)
@@ -805,15 +805,15 @@ Our configuration also defines ‘,’ and ‘.’ as the primary means to set
 to toggle these modifiers from the Assist Menu is less useful.  To avoid
 the potential conflict in setting ‘m’ to mean both _m_ and ‘Meta’ when
 the Assist Menu is open, we remove the latter meaning using
-‘:key-am-mod-m-qk nil’.  And while not necessary to avoid a conflict,
-for clarity and consistency we also set ‘:key-am-mod-c-qk nil’.
+‘:key-am-mod-m-cl nil’.  And while not necessary to avoid a conflict,
+for clarity and consistency we also set ‘:key-am-mod-c-cl nil’.
 
      Note that, by default, the Assist Menu also reserves ‘A’ ‘C’ ‘H’
-     ‘M’ and ‘S’ as the *note sticky: Sticky keys. versions of ‘a’ ‘c’
-     ‘h’ ‘m’ and ‘s’, respectively.  As none of the sticky versions of
-     these keys were removed from our configuration, there does remain a
-     means to toggle ‘Control’ and ‘Meta’ from the Assist Menu if
-     desired.
+     ‘M’ and ‘S’ as the *note persistent: Persistent keys. versions of
+     ‘a’ ‘c’ ‘h’ ‘m’ and ‘s’, respectively.  As none of the persistent
+     versions of these keys were removed from our configuration, there
+     does remain a means to toggle ‘Control’ and ‘Meta’ from the Assist
+     Menu if desired.
 Our command calls ‘loco-read-kseq’ with one additional argument:
 ‘:validate t’.  When non-nil, this argument tells ‘loco-read-kseq’ to
 validate the set of keys it will use while reading a key sequence.  For
@@ -935,17 +935,17 @@ Consider the following code:
 
 (defun my-loco-execute-control-kseq (&rest args)
   (interactive)
-  (apply #'loco-read-kseq :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+  (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :kseq [?,] :strip t
                           :validate t args))
 
 (defun my-loco-execute-meta-kseq (&rest args)
   (interactive)
-  (apply #'loco-read-kseq :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+  (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :kseq [?.] :strip t
                           :validate t args))
 
@@ -1028,18 +1028,18 @@ Consider the following code:
 (defun my-loco-execute-control-kseq (&rest args)
   (interactive)
   (apply #'loco-read-kseq :dt t
-                          :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+                          :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :kseq [?,] :strip t
                           :validate t args))
 
 (defun my-loco-execute-meta-kseq (&rest args)
   (interactive)
   (apply #'loco-read-kseq :dt t
-                          :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+                          :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :kseq [?.] :strip t
                           :validate t args))
 
@@ -1075,8 +1075,8 @@ enter a literal comma or period, respectively:
 
   1. ‘, m C ,’ or ‘. m M .’
 
-     This method uses the Assist Menu (once), but uses a *note sticky
-     key: Sticky keys. to keep the menu open.
+     This method uses the Assist Menu (once), but uses a *note
+     persistent key: Persistent keys. to keep the menu open.
 
   2. ‘, m c m ,’ or ‘. m m m .’
 
@@ -1153,36 +1153,36 @@ Node: Top201
 Node: Introduction509
 Node: Examples using the default configuration2868
 Node: Table of contents4004
-Node: Installation6792
-Node: From MELPA6954
-Node: From source8218
-Node: Usage9276
-Node: Keys key sequences and commands9774
-Node: How Loco is different11485
-Node: Enabling disabling and activating Loco12465
-Node: Entering key sequences15152
-Node: Normal operation ie when the Assist Menu is closed17745
-Node: Assisted operation ie when the Assist Menu is open19037
-Node: Rock and roll20585
-Node: Sticky keys21362
-Node: Examples22167
-Node: Typical key sequences and their translations22398
-Node: More difficult key sequences and their translations23151
-Node: Describing commands24462
-Node: Repeating commands25338
-Node: Working with physical modifier keys25996
-Node: Considerations when using a terminal26636
-Node: Customization29172
-Node: Using the "Easy Customization Interface"29658
-Node: Changing the key bindings used to enable disable or activate Loco30697
-Node: Changing the keys used while Loco reads a key sequence32257
-Node: Advanced topics37910
-Node: Mapping Caps Lock to Control38224
-Node: Activation keys that also function as modifiers40107
-Node: Activation keys that avoid modifiers completely44588
-Node: Author and copyright49318
-Node: License49567
-Node: Colophon49827
+Node: Installation6800
+Node: From MELPA6962
+Node: From source8226
+Node: Usage9284
+Node: Keys key sequences and commands9782
+Node: How Loco is different11493
+Node: Enabling disabling and activating Loco12473
+Node: Entering key sequences15160
+Node: Normal operation ie when the Assist Menu is closed17757
+Node: Assisted operation ie when the Assist Menu is open19049
+Node: Rock and roll20597
+Node: Persistent keys21378
+Node: Examples22199
+Node: Typical key sequences and their translations22434
+Node: More difficult key sequences and their translations23187
+Node: Describing commands24498
+Node: Repeating commands25374
+Node: Working with physical modifier keys26032
+Node: Considerations when using a terminal26672
+Node: Customization29208
+Node: Using the "Easy Customization Interface"29694
+Node: Changing the key bindings used to enable disable or activate Loco30733
+Node: Changing the keys used while Loco reads a key sequence32293
+Node: Advanced topics37946
+Node: Mapping Caps Lock to Control38260
+Node: Activation keys that also function as modifiers40143
+Node: Activation keys that avoid modifiers completely44600
+Node: Author and copyright49314
+Node: License49563
+Node: Colophon49823
 
 End Tag Table
 

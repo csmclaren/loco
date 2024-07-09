@@ -180,7 +180,7 @@ operation ie when the Assist Menu is open}
 @item
 @ref{Rock and roll,,Rock and roll}
 @item
-@ref{Sticky keys,,Sticky keys}
+@ref{Persistent keys,,Persistent keys}
 @item
 @ref{Examples}
 @itemize
@@ -564,7 +564,7 @@ reading a key sequence.
 * Normal operation ie when the Assist Menu is closed::
 * Assisted operation ie when the Assist Menu is open::
 * Rock and roll::
-* Sticky keys::
+* Persistent keys::
 * Examples::
 @end menu
 
@@ -648,16 +648,16 @@ any order; for example, both @kbd{j k} and @kbd{k j} translate to
 These design choices enable efficient key entry, enhancing your ability
 to enter these important keys swiftly and accurately.
 
-@node Sticky keys
-@subsection Sticky keys
+@node Persistent keys
+@subsection Persistent keys
 On the Assist Menu, the keys used to toggle modifiers (@kbd{a}, @kbd{c},
 @kbd{h}, @kbd{m}, and @kbd{s}) can be pressed in conjunction with the
 physical @kbd{Shift} key (@kbd{A}, @kbd{C}, @kbd{H}, @kbd{M}, and
 @kbd{S}, respectively).
 
 These @kbd{Shift}-modified keys perform the same operation as their
-unmodified counterparts but make the Assist Menu @emph{sticky}: after
-use, the menu remains open to use again.
+unmodified counterparts but make the Assist Menu @emph{persistent}:
+after use, the menu remains open to use again.
 
 The advantage of these keys is that multiple modifiers can be added or
 removed quickly. The disadvantage is that another key (for example,
@@ -926,9 +926,9 @@ rebind @kbd{S-<return>} to it as follows.
 @verbatim
 (defun my-loco-execute-kseq (&rest args)
   (interactive)
-  (apply #'loco-read-kseq :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+  (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :validate t args))
 
 (keymap-set loco-mode-keymap "S-<return>" #'my-loco-execute-kseq)
@@ -979,17 +979,17 @@ to set @kbd{Control} and @kbd{Meta} pending, respectively. As such,
 having the means to toggle these modifiers from the Assist Menu is less
 useful. To avoid the potential conflict in setting @kbd{m} to mean both
 @emph{m} and @kbd{Meta} when the Assist Menu is open, we remove the
-latter meaning using @code{:key-am-mod-m-qk nil}. And while not
+latter meaning using @code{:key-am-mod-m-cl nil}. And while not
 necessary to avoid a conflict, for clarity and consistency we also set
-@code{:key-am-mod-c-qk nil}.
+@code{:key-am-mod-c-cl nil}.
 
 @quotation
 Note that, by default, the Assist Menu also reserves @kbd{A} @kbd{C}
-@kbd{H} @kbd{M} and @kbd{S} as the @ref{Sticky keys,,sticky} versions of
-@kbd{a} @kbd{c} @kbd{h} @kbd{m} and @kbd{s}, respectively. As none of
-the sticky versions of these keys were removed from our configuration,
-there does remain a means to toggle @kbd{Control} and @kbd{Meta} from
-the Assist Menu if desired.
+@kbd{H} @kbd{M} and @kbd{S} as the @ref{Persistent keys,,persistent}
+versions of @kbd{a} @kbd{c} @kbd{h} @kbd{m} and @kbd{s}, respectively.
+As none of the persistent versions of these keys were removed from our
+configuration, there does remain a means to toggle @kbd{Control} and
+@kbd{Meta} from the Assist Menu if desired.
 @end quotation
 Our command calls @code{loco-read-kseq} with one additional argument:
 @code{:validate t}. When non-nil, this argument tells
@@ -1109,17 +1109,17 @@ Consider the following code:
 
 (defun my-loco-execute-control-kseq (&rest args)
   (interactive)
-  (apply #'loco-read-kseq :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+  (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :kseq [?,] :strip t
                           :validate t args))
 
 (defun my-loco-execute-meta-kseq (&rest args)
   (interactive)
-  (apply #'loco-read-kseq :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+  (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :kseq [?.] :strip t
                           :validate t args))
 
@@ -1206,18 +1206,18 @@ Consider the following code:
 (defun my-loco-execute-control-kseq (&rest args)
   (interactive)
   (apply #'loco-read-kseq :dt t
-                          :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+                          :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :kseq [?,] :strip t
                           :validate t args))
 
 (defun my-loco-execute-meta-kseq (&rest args)
   (interactive)
   (apply #'loco-read-kseq :dt t
-                          :key-am-mod-c-qk nil :key-am-mod-m-qk nil
-                          :key-am-s-collapse ?/ :key-am-s-expand ?/
-                          :key-am-s-open ?m :key-mod-c ?, :key-mod-m ?.
+                          :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/
+                          :key-am-s-op ?m :key-mod-c ?, :key-mod-m ?.
                           :kseq [?.] :strip t
                           :validate t args))
 
@@ -1258,7 +1258,7 @@ enter a literal comma or period, respectively:
 @kbd{, m C ,} or @kbd{. m M .}
 
 This method uses the Assist Menu (once), but uses a
-@ref{Sticky keys,,sticky key} to keep the menu open.
+@ref{Persistent keys,,persistent key} to keep the menu open.
 
 @item
 @kbd{, m c m ,} or @kbd{. m m m .}
