@@ -730,6 +730,347 @@ VALIDATE          If non-nil, validate all keys used by this function
   (keymap-unset loco-mode-keymap "C-h S-<return>")
   (keymap-unset loco-mode-keymap "S-<return>"))
 
+;; Standard configurations
+;; Public functions
+;; High-level (use of global variables declared herein)
+
+;;;###autoload
+(defun loco-set-standard-configuration (config &rest args)
+  "Set the standard configuration based on CONFIG.
+
+Valid options for CONFIG and their meanings:
+
+control-jk          `C-j' to activate and apply `C-' or
+                    `C-k' to activate and apply `M-' then
+                    `j' to apply `C-' or `k' to apply `M-'
+                    (this option passes `:strip t' to `loco-read-kseq').
+
+super-jk            `s-j' to activate and apply `C-' or
+                    `s-k' to activate and apply `M-' then
+                    `j' to apply `C-' or `k' to apply `M-'
+                    (this option passes `:strip t' to `loco-read-kseq').
+
+control-cp          `C-,' to activate and apply `C-' or
+                    `C-.' to activate and apply `M-' then
+                    `,' to apply `C-' or `.' to apply `M-'
+                    (this option passes `:strip t' to `loco-read-kseq').
+
+super-cp            `s-,' to activate and apply `C-' or
+                    `s-.' to activate and apply `M-' then
+                    `,' to apply `C-' or `.' to apply `M-'
+                    (this option passes `:strip t' to `loco-read-kseq').
+
+control-return-jk   `C-return' to activate then
+                    `j' to apply `C-' or `k' to apply `M-'.
+
+super-return-jk     `s-return' to activate then
+                    `j' to apply `C-' or `k' to apply `M-'.
+
+shift-return-jk     `S-return' to activate then
+                    `j' to apply `C-' or `k' to apply `M-'.
+
+control-return-cp   `C-return' to activate then
+                    `,' to apply `C-' or `.' to apply `M-'.
+
+super-return-cp     `s-return' to activate then
+                    `,' to apply `C-' or `.' to apply `M-'.
+
+shift-return-cp     `S-return' to activate then
+                    `,' to apply `C-' or `.' to apply `M-'.
+
+double-tap-cp       `,' to activate and apply `C-' or
+                    `.' to activate and apply `M-' then
+                    `,' to apply `C-' or `.' to apply `M-'
+                    (this option passes `:dt t' and `:strip t' to
+                    `loco-read-kseq').
+
+ARGS  Additional arguments to be passed to `loco-read-kseq'."
+  (cond
+    ;; control-jk
+    ((eq config 'control-jk)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-global-set "C-c ." #'global-loco-mode)
+      (keymap-set loco-mode-keymap "C-h C-j"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-describe-kseq :kseq [?j] :strip t args)))
+      (keymap-set loco-mode-keymap "C-h C-k"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-describe-kseq :kseq [?k] :strip t args)))
+      (keymap-set loco-mode-keymap "C-j"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-execute-kseq :kseq [?j] :strip t args)))
+      (keymap-set loco-mode-keymap "C-k"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-execute-kseq :kseq [?k] :strip t args))))
+    ;; super-jk
+    ((eq config 'super-jk)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-global-set "C-c ." #'global-loco-mode)
+      (keymap-set loco-mode-keymap "C-h s-j"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-describe-kseq :kseq [?j] :strip t args)))
+      (keymap-set loco-mode-keymap "C-h s-k"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-describe-kseq :kseq [?k] :strip t args)))
+      (keymap-set loco-mode-keymap "s-j"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-execute-kseq :kseq [?j] :strip t args)))
+      (keymap-set loco-mode-keymap "s-k"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-execute-kseq :kseq [?k] :strip t args))))
+    ;; control-cp
+    ((eq config 'control-cp)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-global-set "C-c ." #'global-loco-mode)
+      (keymap-set loco-mode-keymap "C-h C-,"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-describe-kseq :kseq [?,] :strip t args)))
+      (keymap-set loco-mode-keymap "C-h C-."
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-describe-kseq :kseq [?.] :strip t args)))
+      (keymap-set loco-mode-keymap "C-,"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-execute-kseq :kseq [?,] :strip t args)))
+      (keymap-set loco-mode-keymap "C-."
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-execute-kseq :kseq [?.] :strip t args))))
+    ;; super-cp
+    ((eq config 'super-cp)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-global-set "C-c ." #'global-loco-mode)
+      (keymap-set loco-mode-keymap "C-h s-,"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-describe-kseq :kseq [?,] :strip t args)))
+      (keymap-set loco-mode-keymap "C-h s-."
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-describe-kseq :kseq [?.] :strip t args)))
+      (keymap-set loco-mode-keymap "s-,"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-execute-kseq :kseq [?,] :strip t args)))
+      (keymap-set loco-mode-keymap "s-."
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-execute-kseq :kseq [?.] :strip t args))))
+    ;; control-return-jk
+    ((eq config 'control-return-jk)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-global-set "C-c ." #'global-loco-mode)
+      (keymap-set loco-mode-keymap "C-h C-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-describe-kseq args)))
+      (keymap-set loco-mode-keymap "C-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-execute-kseq args))))
+    ;; super-return-jk
+    ((eq config 'super-return-jk)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-global-set "C-c ." #'global-loco-mode)
+      (keymap-set loco-mode-keymap "C-h s-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-describe-kseq args)))
+      (keymap-set loco-mode-keymap "s-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-execute-kseq args))))
+    ;; shift-return-jk
+    ((eq config 'shift-return-jk)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-set loco-mode-keymap "C-h S-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-describe-kseq args)))
+      (keymap-set loco-mode-keymap "S-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--jk-execute-kseq args))))
+    ;; control-return-cp
+    ((eq config 'control-return-cp)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-global-set "C-c ." #'global-loco-mode)
+      (keymap-set loco-mode-keymap "C-h C-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-describe-kseq args)))
+      (keymap-set loco-mode-keymap "C-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-execute-kseq args))))
+    ;; super-return-cp
+    ((eq config 'super-return-cp)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-global-set "C-c ." #'global-loco-mode)
+      (keymap-set loco-mode-keymap "C-h s-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-describe-kseq args)))
+      (keymap-set loco-mode-keymap "s-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-execute-kseq args))))
+    ;; shift-return-cp
+    ((eq config 'shift-return-cp)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-set loco-mode-keymap "C-h S-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-describe-kseq args)))
+      (keymap-set loco-mode-keymap "S-<return>"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-execute-kseq args))))
+    ;; double-tap-cp
+    ((eq config 'double-tap-cp)
+      (keymap-global-set "C-c ," #'loco-mode)
+      (keymap-global-set "C-c ." #'global-loco-mode)
+      (keymap-set loco-mode-keymap "C-h ,"
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-describe-kseq :dt t :kseq [?,] :strip t
+                           args)))
+      (keymap-set loco-mode-keymap "C-h ."
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-describe-kseq :dt t :kseq [?.] :strip t
+                           args)))
+      (keymap-set loco-mode-keymap ","
+                  (lambda ()
+                    (interactive)
+                     (apply #'loco--cp-execute-kseq :dt t :kseq [?,] :strip t
+                           args)))
+      (keymap-set loco-mode-keymap "."
+                  (lambda ()
+                    (interactive)
+                    (apply #'loco--cp-execute-kseq :dt t :kseq [?.] :strip t
+                           args))))
+    ;; invalid configuration
+    (t
+      (let* ((fn-name "loco-set-standard-configuration")
+             (message-str (format "invalid configuration: %s" config)))
+        (loco--log 0 "[%s] %s" fn-name message-str)))))
+
+;;;###autoload
+(defun loco-unset-standard-configuration (config)
+  "Unset the standard configuration based on CONFIG."
+  (cond
+    ((eq config 'control-jk)
+      (keymap-global-unset "C-c ,")
+      (keymap-global-unset "C-c .")
+      (keymap-unset loco-mode-keymap "C-h C-j")
+      (keymap-unset loco-mode-keymap "C-h C-k")
+      (keymap-unset loco-mode-keymap "C-j")
+      (keymap-unset loco-mode-keymap "C-k"))
+    ((eq config 'super-jk)
+      (keymap-global-unset "C-c ,")
+      (keymap-global-unset "C-c .")
+      (keymap-unset loco-mode-keymap "C-h s-j")
+      (keymap-unset loco-mode-keymap "C-h s-k")
+      (keymap-unset loco-mode-keymap "s-j")
+      (keymap-unset loco-mode-keymap "s-k"))
+    ((eq config 'control-cp)
+      (keymap-global-unset "C-c ,")
+      (keymap-global-unset "C-c .")
+      (keymap-unset loco-mode-keymap "C-h C-,")
+      (keymap-unset loco-mode-keymap "C-h C-.")
+      (keymap-unset loco-mode-keymap "C-,")
+      (keymap-unset loco-mode-keymap "C-."))
+    ((eq config 'super-cp)
+      (keymap-global-unset "C-c ,")
+      (keymap-global-unset "C-c .")
+      (keymap-unset loco-mode-keymap "C-h s-,")
+      (keymap-unset loco-mode-keymap "C-h s-.")
+      (keymap-unset loco-mode-keymap "s-,")
+      (keymap-unset loco-mode-keymap "s-."))
+    ((or (eq config 'control-return-jk) (eq config 'control-return-cp))
+      (keymap-global-unset "C-c ,")
+      (keymap-global-unset "C-c .")
+      (keymap-unset loco-mode-keymap "C-h C-<return>")
+      (keymap-unset loco-mode-keymap "C-<return>"))
+    ((or (eq config 'super-return-jk) (eq config 'super-return-cp))
+      (keymap-global-unset "C-c ,")
+      (keymap-global-unset "C-c .")
+      (keymap-unset loco-mode-keymap "C-h s-<return>")
+      (keymap-unset loco-mode-keymap "s-<return>"))
+    ((or (eq config 'shift-return-jk) (eq config 'shift-return-cp))
+      (keymap-global-unset "C-c ,")
+      (keymap-global-unset "C-c .")
+      (keymap-unset loco-mode-keymap "C-h S-<return>")
+      (keymap-unset loco-mode-keymap "S-<return>"))
+    ((eq config 'double-tap-cp)
+      (keymap-global-unset "C-c ,")
+      (keymap-global-unset "C-c .")
+      (keymap-unset loco-mode-keymap "C-h ,")
+      (keymap-unset loco-mode-keymap "C-h .")
+      (keymap-unset loco-mode-keymap ",")
+      (keymap-unset loco-mode-keymap "."))
+    (t
+      (let* ((fn-name "loco-unset-standard-configuration")
+             (message-str (format "invalid configuration: %s" config)))
+        (loco--log 0 "[%s] %s" fn-name message-str)))))
+
+;; Standard configurations
+;; Private functions
+;; Low-level (no use of global variables declared herein)
+
+(defun loco--cp-describe-kseq (&rest args)
+  "Read and describe a key sequence with parameters focused on `,' and `.'.
+
+This function prompts the user to enter a key sequence and then describes the
+command to which the key sequence is bound, if any.
+
+ARGS  Additional arguments to be passed to `loco-read-kseq'."
+  (interactive)
+  (apply #'loco--cp-execute-kseq :d t args))
+
+(defun loco--cp-execute-kseq (&rest args)
+  "Read and execute a key sequence with parameters focused on `,' and `.'.
+
+This function prompts the user to enter a key sequence and then executes the
+command to which the key sequence is bound, if any.
+
+ARGS  Additional arguments to be passed to `loco-read-kseq'."
+  (interactive)
+  (apply #'loco-read-kseq :key-am-mod-c-cl nil :key-am-mod-m-cl nil
+                          :key-am-s-co ?/ :key-am-s-ex ?/ :key-am-s-op ?m
+                          :key-mod-c ?, :key-mod-m ?. args))
+
+(defun loco--jk-describe-kseq (&rest args)
+  "Read and describe a key sequence with parameters focused on `j' and `k'.
+
+This function prompts the user to enter a key sequence and then describes the
+command to which the key sequence is bound, if any.
+
+ARGS  Additional arguments to be passed to `loco-read-kseq'."
+  (interactive)
+  (apply #'loco--jk-execute-kseq :d t args))
+
+(defun loco--jk-execute-kseq (&rest args)
+  "Read and execute a key sequence with parameters focused on `j' and `k'.
+
+This function prompts the user to enter a key sequence and then executes the
+command to which the key sequence is bound, if any.
+
+ARGS  Additional arguments to be passed to `loco-read-kseq'."
+  (interactive)
+  (apply #'loco-read-kseq :key-mod-c ?j :key-mod-m ?k args))
+
 ;; Keys
 ;; Private functions
 ;; High-level (use of global variables declared herein)
