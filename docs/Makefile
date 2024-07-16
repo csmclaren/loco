@@ -2,7 +2,7 @@
 
 all: clean build
 
-build: build/loco.md build/loco.css build/loco.html build/loco-standalone.html build/loco.texi build/loco.info
+build: build/loco.md build/loco.css build/loco.html build/loco-standalone.html build/loco.texi build/loco.info build/README.md
 
 build/loco.md:
 	mkdir -p build && \
@@ -69,6 +69,17 @@ build/loco.texi:
 
 build/loco.info: build/loco.texi
 	makeinfo --output build/loco.info build/loco.texi
+
+build/README.md:
+	mkdir -p build && \
+	pandoc \
+		--from gfm \
+		--lua-filter=tools/pandoc/filter-append-default-footer.lua \
+		--lua-filter=tools/pandoc/filter-toc.lua \
+		--metadata title="Loco" \
+		--output build/README.md \
+		--to gfm \
+		src/README.md
 
 clean:
 	rm -fr build

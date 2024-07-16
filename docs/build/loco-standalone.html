@@ -1258,121 +1258,19 @@
 </head>
 <body class="markdown-body">
   <h1 id="loco--train">Loco  🚋</h1>
-  <p><a href="https://stable.melpa.org/#/loco"><img
-  src="https://stable.melpa.org/packages/loco-badge.svg"
-  alt="MELPA Stable" /></a> <a href="https://www.melpa.org/#/loco"><img
-  src="https://www.melpa.org/packages/loco-badge.svg"
-  alt="MELPA" /></a></p>
-  <h2 id="introduction">Introduction</h2>
-  <p>Loco is a <a
-  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html">package</a>
-  for <a href="https://www.gnu.org/software/emacs/">Emacs</a>. Loco lets
-  you type any <a href="#keys-key-sequences-and-commands">key
-  sequence</a>, including those requiring the modifiers <kbd>Alt</kbd>,
-  <kbd>Control</kbd>, <kbd>Hyper</kbd>, <kbd>Meta</kbd>, or
-  <kbd>Super</kbd>, without using any physical modifier keys except
-  <kbd>Shift</kbd>. This makes it easy to enter key sequences that are
-  complicated or use hard-to-reach keys.</p>
-  <p>Loco works by translating key sequences from one form to another.
-  It does not redefine the <a
-  href="https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf">standard
-  key bindings</a>, nor does it prevent you from <a
-  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Bindings.html">defining
-  your own</a>. Learn the few rules of Loco and be productive
-  immediately, using the key bindings you already know.</p>
-  <p>Loco does not preclude the use of physical modifier keys; it
-  integrates well with them. There may even be some key bindings for
-  which you find using physical modifier keys preferable. And it works
-  equally well in the <a
-  href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a>
-  or the <a
-  href="https://en.wikipedia.org/wiki/Computer_terminal">terminal</a>,
-  working around the <a
-  href="#considerations-when-using-a-terminal">limitations of
-  terminals</a> that prevent the entry of certain keys, allowing you to
-  move between both with ease.</p>
-  <p>When enabled, and using the default configuration, pressing
-  <kbd>S-&lt;return&gt;</kbd> will activate Loco.</p>
-  <blockquote>
-  <p>In Emacs, <kbd>S-&lt;return&gt;</kbd> means hold <kbd>Shift</kbd>
-  then press <kbd>Return</kbd>.</p>
-  </blockquote>
-  <p>Once activated, you can type any key sequence, taking advantage of
-  the following special keys to help you avoid pressing any physical
-  modifier keys:</p>
-  <ul>
-  <li><kbd>j</kbd> to apply the modifier <kbd>Control</kbd> to the next
-  non‑special key;</li>
-  <li><kbd>k</kbd> to apply the modifier <kbd>Meta</kbd> to the next
-  non‑special key; or</li>
-  <li><kbd>l</kbd> to open a menu that includes options to:
-  <ul>
-  <li>apply other modifiers (for example, <kbd>Alt</kbd>,
-  <kbd>Hyper</kbd>, or <kbd>Super</kbd>) to the next non‑special key;
-  or</li>
-  <li>enter the special keys themselves as the literal characters
-  <em>j</em>, <em>k</em>, or <em>l</em>.</li>
-  </ul></li>
-  </ul>
-  <h3 id="examples-using-the-default-configuration">Examples (using the
-  default configuration)</h3>
-  <table>
-  <thead>
-  <tr>
-  <th>Typed Key Sequence</th>
-  <th>Translated Key Sequence</th>
-  <th>Command</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td><kbd>j d</kbd></td>
-  <td><kbd>C-d</kbd></td>
-  <td><code>delete-char</code></td>
-  </tr>
-  <tr>
-  <td><kbd>k d</kbd></td>
-  <td><kbd>M-d</kbd></td>
-  <td><code>kill-word</code></td>
-  </tr>
-  <tr>
-  <td><kbd>j h i</kbd></td>
-  <td><kbd>C-h i</kbd></td>
-  <td><code>info</code></td>
-  </tr>
-  <tr>
-  <td><kbd>j x j s</kbd></td>
-  <td><kbd>C-x C-s</kbd></td>
-  <td><code>save-buffer</code></td>
-  </tr>
-  </tbody>
-  </table>
-  <p>This is only a brief overview; see <a href="#usage">Usage</a> for a
-  detailed explanation.</p>
-  <p>The default configuration is not the only way to use Loco. Loco can
-  be <a href="#customization">extensively customized</a> with just a few
-  lines of code. Many options are possible, including:</p>
-  <ul>
-  <li>Changing the key bindings used to enable, disable, or activate
-  Loco;</li>
-  <li>Changing the keys used while Loco reads a key sequence;</li>
-  <li>Configuring activation keys that also function as modifiers;
-  and</li>
-  <li>Configuring activation keys that avoid modifiers completely.</li>
-  </ul>
   <h2 id="table-of-contents">Table of contents</h2>
   <ul>
   <li><a href="#loco--train">Loco  🚋</a>
   <ul>
+  <li><a href="#table-of-contents">Table of contents</a>
+  <ul class="task-list">
+  </ul></li>
   <li><a href="#introduction">Introduction</a>
   <ul>
   <li><a href="#examples-using-the-default-configuration">Examples
   (using the default configuration)</a>
   <ul class="task-list">
   </ul></li>
-  </ul></li>
-  <li><a href="#table-of-contents">Table of contents</a>
-  <ul class="task-list">
   </ul></li>
   <li><a href="#installation">Installation</a>
   <ul>
@@ -1486,6 +1384,103 @@
   <ul class="task-list">
   </ul></li>
   </ul></li>
+  </ul>
+  <h2 id="introduction">Introduction</h2>
+  <p>Loco is a <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html">package</a>
+  for <a href="https://www.gnu.org/software/emacs/">Emacs</a>. Loco lets
+  you type any <a href="#keys-key-sequences-and-commands">key
+  sequence</a>, including those requiring the modifiers <kbd>Alt</kbd>,
+  <kbd>Control</kbd>, <kbd>Hyper</kbd>, <kbd>Meta</kbd>, or
+  <kbd>Super</kbd>, without using any physical modifier keys except
+  <kbd>Shift</kbd>. This makes it easy to enter key sequences that are
+  complicated or use hard-to-reach keys.</p>
+  <p>Loco works by translating key sequences from one form to another.
+  It does not redefine the <a
+  href="https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf">standard
+  key bindings</a>, nor does it prevent you from <a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Bindings.html">defining
+  your own</a>. Learn the few rules of Loco and be productive
+  immediately, using the key bindings you already know.</p>
+  <p>Loco does not preclude the use of physical modifier keys; it
+  integrates well with them. There may even be some key bindings for
+  which you find using physical modifier keys preferable. And it works
+  equally well in the <a
+  href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a>
+  or the <a
+  href="https://en.wikipedia.org/wiki/Computer_terminal">terminal</a>,
+  working around the <a
+  href="#considerations-when-using-a-terminal">limitations of
+  terminals</a> that prevent the entry of certain keys, allowing you to
+  move between both with ease.</p>
+  <p>When enabled, and using the default configuration, pressing
+  <kbd>S-&lt;return&gt;</kbd> will activate Loco.</p>
+  <blockquote>
+  <p>In Emacs, <kbd>S-&lt;return&gt;</kbd> means hold <kbd>Shift</kbd>
+  then press <kbd>Return</kbd>.</p>
+  </blockquote>
+  <p>Once activated, you can type any key sequence, taking advantage of
+  the following special keys to help you avoid pressing any physical
+  modifier keys:</p>
+  <ul>
+  <li><kbd>j</kbd> to apply the modifier <kbd>Control</kbd> to the next
+  non‑special key;</li>
+  <li><kbd>k</kbd> to apply the modifier <kbd>Meta</kbd> to the next
+  non‑special key; or</li>
+  <li><kbd>l</kbd> to open a menu that includes options to:
+  <ul>
+  <li>apply other modifiers (for example, <kbd>Alt</kbd>,
+  <kbd>Hyper</kbd>, or <kbd>Super</kbd>) to the next non‑special key;
+  or</li>
+  <li>enter the special keys themselves as the literal characters
+  <em>j</em>, <em>k</em>, or <em>l</em>.</li>
+  </ul></li>
+  </ul>
+  <h3 id="examples-using-the-default-configuration">Examples (using the
+  default configuration)</h3>
+  <table>
+  <thead>
+  <tr>
+  <th>Typed Key Sequence</th>
+  <th>Translated Key Sequence</th>
+  <th>Command</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><kbd>j d</kbd></td>
+  <td><kbd>C-d</kbd></td>
+  <td><code>delete-char</code></td>
+  </tr>
+  <tr>
+  <td><kbd>k d</kbd></td>
+  <td><kbd>M-d</kbd></td>
+  <td><code>kill-word</code></td>
+  </tr>
+  <tr>
+  <td><kbd>j h i</kbd></td>
+  <td><kbd>C-h i</kbd></td>
+  <td><code>info</code></td>
+  </tr>
+  <tr>
+  <td><kbd>j x j s</kbd></td>
+  <td><kbd>C-x C-s</kbd></td>
+  <td><code>save-buffer</code></td>
+  </tr>
+  </tbody>
+  </table>
+  <p>This is only a brief overview; see <a href="#usage">Usage</a> for a
+  detailed explanation.</p>
+  <p>The default configuration is not the only way to use Loco. Loco can
+  be <a href="#customization">extensively customized</a> with just a few
+  lines of code. Many options are possible, including:</p>
+  <ul>
+  <li>Changing the key bindings used to enable, disable, or activate
+  Loco;</li>
+  <li>Changing the keys used while Loco reads a key sequence;</li>
+  <li>Configuring activation keys that also function as modifiers;
+  and</li>
+  <li>Configuring activation keys that avoid modifiers completely.</li>
   </ul>
   <h2 id="installation">Installation</h2>
   <h3 id="from-melpa">From MELPA</h3>

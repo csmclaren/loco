@@ -1,7 +1,8 @@
 # Loco &nbsp;&#x1F68B;
 
-[![MELPA Stable](https://stable.melpa.org/packages/loco-badge.svg)](https://stable.melpa.org/#/loco)
-[![MELPA](https://www.melpa.org/packages/loco-badge.svg)](https://www.melpa.org/#/loco)
+## Table of contents
+
+{{TOC}}
 
 ## Introduction
 
@@ -41,10 +42,6 @@ The default configuration is not the only way to use Loco. Loco can be [extensiv
 * Changing the keys used while Loco reads a key sequence;
 * Configuring activation keys that also function as modifiers; and
 * Configuring activation keys that avoid modifiers completely.
-
-## Table of contents
-
-{{TOC}}
 
 ## Installation
 

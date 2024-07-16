@@ -18,13 +18,9 @@
 @node Top
 @top Loco
 
-@uref{https://stable.melpa.org/#/loco,@image{https://stable.melpa.org/packages/loco-badge,,,MELPA
-Stable,svg}}
-@uref{https://www.melpa.org/#/loco,@image{https://www.melpa.org/packages/loco-badge,,,MELPA,svg}}
-
 @menu
-* Introduction::
 * Table of contents::
+* Introduction::
 * Installation::
 * Usage::
 * Customization::
@@ -33,114 +29,14 @@ Stable,svg}}
 * Colophon::
 @end menu
 
-@node Introduction
-@chapter Introduction
-Loco is a
-@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html,package}
-for @uref{https://www.gnu.org/software/emacs/,Emacs}. Loco lets you type
-any @ref{Keys key sequences and commands,,key sequence}, including those
-requiring the modifiers @kbd{Alt}, @kbd{Control}, @kbd{Hyper},
-@kbd{Meta}, or @kbd{Super}, without using any physical modifier keys
-except @kbd{Shift}. This makes it easy to enter key sequences that are
-complicated or use hard-to-reach keys.
-
-Loco works by translating key sequences from one form to another. It
-does not redefine the
-@uref{https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf,standard
-key bindings}, nor does it prevent you from
-@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Bindings.html,defining
-your own}. Learn the few rules of Loco and be productive immediately,
-using the key bindings you already know.
-
-Loco does not preclude the use of physical modifier keys; it integrates
-well with them. There may even be some key bindings for which you find
-using physical modifier keys preferable. And it works equally well in
-the @uref{https://en.wikipedia.org/wiki/Graphical_user_interface,GUI} or
-the @uref{https://en.wikipedia.org/wiki/Computer_terminal,terminal},
-working around the
-@ref{Considerations when using a terminal,,limitations of terminals}
-that prevent the entry of certain keys, allowing you to move between
-both with ease.
-
-When enabled, and using the default configuration, pressing
-@kbd{S-<return>} will activate Loco.
-
-@quotation
-In Emacs, @kbd{S-<return>} means hold @kbd{Shift} then press
-@kbd{Return}.
-@end quotation
-Once activated, you can type any key sequence, taking advantage of the
-following special keys to help you avoid pressing any physical modifier
-keys:
-
-@itemize
-@item
-@kbd{j} to apply the modifier @kbd{Control} to the next non‑special key;
-@item
-@kbd{k} to apply the modifier @kbd{Meta} to the next non‑special key; or
-@item
-@kbd{l} to open a menu that includes options to:
-@itemize
-@item
-apply other modifiers (for example, @kbd{Alt}, @kbd{Hyper}, or
-@kbd{Super}) to the next non‑special key; or
-@item
-enter the special keys themselves as the literal characters @emph{j},
-@emph{k}, or @emph{l}.
-@end itemize
-
-@end itemize
-
-@menu
-* Examples using the default configuration::
-@end menu
-
-@node Examples using the default configuration
-@section Examples (using the default configuration)
-@multitable {Typed Key Sequence} {Translated Key Sequence} {@code{save-buffer}} 
-@headitem 
-Typed Key Sequence
- @tab Translated Key Sequence
- @tab Command
-@item 
-@kbd{j d}
- @tab @kbd{C-d}
- @tab @code{delete-char}
-@item 
-@kbd{k d}
- @tab @kbd{M-d}
- @tab @code{kill-word}
-@item 
-@kbd{j h i}
- @tab @kbd{C-h i}
- @tab @code{info}
-@item 
-@kbd{j x j s}
- @tab @kbd{C-x C-s}
- @tab @code{save-buffer}
-@end multitable
-
-This is only a brief overview; see @ref{Usage} for a detailed
-explanation.
-
-The default configuration is not the only way to use Loco. Loco can be
-@ref{Customization,,extensively customized} with just a few lines of
-code. Many options are possible, including:
-
-@itemize
-@item
-Changing the key bindings used to enable, disable, or activate Loco;
-@item
-Changing the keys used while Loco reads a key sequence;
-@item
-Configuring activation keys that also function as modifiers; and
-@item
-Configuring activation keys that avoid modifiers completely.
-@end itemize
-
 @node Table of contents
 @chapter Table of contents
 @itemize
+@item
+@ref{Table of contents,,Table of contents}
+@itemize
+@end itemize
+
 @item
 @ref{Introduction}
 @itemize
@@ -150,11 +46,6 @@ default configuration}
 @itemize
 @end itemize
 
-@end itemize
-
-@item
-@ref{Table of contents,,Table of contents}
-@itemize
 @end itemize
 
 @item
@@ -319,6 +210,111 @@ that avoid modifiers completely}
 @itemize
 @end itemize
 
+@end itemize
+
+@node Introduction
+@chapter Introduction
+Loco is a
+@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html,package}
+for @uref{https://www.gnu.org/software/emacs/,Emacs}. Loco lets you type
+any @ref{Keys key sequences and commands,,key sequence}, including those
+requiring the modifiers @kbd{Alt}, @kbd{Control}, @kbd{Hyper},
+@kbd{Meta}, or @kbd{Super}, without using any physical modifier keys
+except @kbd{Shift}. This makes it easy to enter key sequences that are
+complicated or use hard-to-reach keys.
+
+Loco works by translating key sequences from one form to another. It
+does not redefine the
+@uref{https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf,standard
+key bindings}, nor does it prevent you from
+@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Bindings.html,defining
+your own}. Learn the few rules of Loco and be productive immediately,
+using the key bindings you already know.
+
+Loco does not preclude the use of physical modifier keys; it integrates
+well with them. There may even be some key bindings for which you find
+using physical modifier keys preferable. And it works equally well in
+the @uref{https://en.wikipedia.org/wiki/Graphical_user_interface,GUI} or
+the @uref{https://en.wikipedia.org/wiki/Computer_terminal,terminal},
+working around the
+@ref{Considerations when using a terminal,,limitations of terminals}
+that prevent the entry of certain keys, allowing you to move between
+both with ease.
+
+When enabled, and using the default configuration, pressing
+@kbd{S-<return>} will activate Loco.
+
+@quotation
+In Emacs, @kbd{S-<return>} means hold @kbd{Shift} then press
+@kbd{Return}.
+@end quotation
+Once activated, you can type any key sequence, taking advantage of the
+following special keys to help you avoid pressing any physical modifier
+keys:
+
+@itemize
+@item
+@kbd{j} to apply the modifier @kbd{Control} to the next non‑special key;
+@item
+@kbd{k} to apply the modifier @kbd{Meta} to the next non‑special key; or
+@item
+@kbd{l} to open a menu that includes options to:
+@itemize
+@item
+apply other modifiers (for example, @kbd{Alt}, @kbd{Hyper}, or
+@kbd{Super}) to the next non‑special key; or
+@item
+enter the special keys themselves as the literal characters @emph{j},
+@emph{k}, or @emph{l}.
+@end itemize
+
+@end itemize
+
+@menu
+* Examples using the default configuration::
+@end menu
+
+@node Examples using the default configuration
+@section Examples (using the default configuration)
+@multitable {Typed Key Sequence} {Translated Key Sequence} {@code{save-buffer}} 
+@headitem 
+Typed Key Sequence
+ @tab Translated Key Sequence
+ @tab Command
+@item 
+@kbd{j d}
+ @tab @kbd{C-d}
+ @tab @code{delete-char}
+@item 
+@kbd{k d}
+ @tab @kbd{M-d}
+ @tab @code{kill-word}
+@item 
+@kbd{j h i}
+ @tab @kbd{C-h i}
+ @tab @code{info}
+@item 
+@kbd{j x j s}
+ @tab @kbd{C-x C-s}
+ @tab @code{save-buffer}
+@end multitable
+
+This is only a brief overview; see @ref{Usage} for a detailed
+explanation.
+
+The default configuration is not the only way to use Loco. Loco can be
+@ref{Customization,,extensively customized} with just a few lines of
+code. Many options are possible, including:
+
+@itemize
+@item
+Changing the key bindings used to enable, disable, or activate Loco;
+@item
+Changing the keys used while Loco reads a key sequence;
+@item
+Configuring activation keys that also function as modifiers; and
+@item
+Configuring activation keys that avoid modifiers completely.
 @end itemize
 
 @node Installation

@@ -11,7 +11,7 @@ loco.info: docs
 	cp docs/build/loco.info loco.info
 
 README.md: docs
-	cp docs/build/loco.md README.md
+	cp docs/build/README.md README.md
 
 set-permissions:
 	find . -path './_private' -prune -o -type d -exec chmod 755 {} \;
