@@ -1,67 +1,17 @@
-.PHONY: all clean-docs make-docs set-permissions set-timestamps
+.PHONY: all build clean docs set-permissions set-timestamps
 
-all: clean-docs make-docs set-permissions set-timestamps
+all: clean build
 
-clean-docs:
-	rm -f README.md
-	rm -f docs/build/loco.css
-	rm -f docs/build/loco.html
-	rm -f docs/build/loco-standalone.html
-	rm -f docs/build/loco.texi
-	rmdir docs/build || true
-	rm -f loco.info
+build: docs loco.info README.md set-permissions set-timestamps
 
-make-docs:
-	mkdir -p docs/build
-	pandoc \
-		--from gfm \
-		--lua-filter=tools/pandoc/filter-append-default-footer.lua \
-		--lua-filter=tools/pandoc/filter-toc.lua \
-		--metadata title="Loco" \
-		--output README.md \
-		--to gfm \
-		docs/src/loco.md
-	curl \
-		-o docs/build/loco.css \
-		https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css
-	pandoc \
-		--from gfm \
-		--lua-filter=tools/pandoc/filter-append-html-footer.lua \
-		--lua-filter=tools/pandoc/filter-link-stylesheet.lua \
-		--lua-filter=tools/pandoc/filter-toc.lua \
-		--metadata filter_link_stylesheet_fpath="loco.css" \
-		--metadata title="Loco" \
-		--output docs/build/loco.html \
-		--template tools/pandoc/template.html \
-		--to html \
-		docs/src/loco.md
-	pandoc \
-		--from gfm \
-		--lua-filter=tools/pandoc/filter-append-html-footer.lua \
-		--lua-filter=tools/pandoc/filter-embed-stylesheet.lua \
-		--lua-filter=tools/pandoc/filter-toc.lua \
-		--metadata filter_embed_stylesheet_fpath="docs/build/loco.css" \
-		--metadata title="Loco" \
-		--output docs/build/loco-standalone.html \
-		--template tools/pandoc/template.html \
-		--to html \
-		docs/src/loco.md
-	pandoc \
-		--from gfm \
-		--lua-filter=tools/pandoc/filter-adjust-header-depths.lua \
-		--lua-filter=tools/pandoc/filter-append-default-footer.lua \
-		--lua-filter=tools/pandoc/filter-process-kbd.lua \
-		--lua-filter=tools/pandoc/filter-strip-headers.lua \
-		--lua-filter=tools/pandoc/filter-trim-headers.lua \
-		--lua-filter=tools/pandoc/filter-toc.lua \
-		--metadata dircategory="Emacs" \
-		--metadata direntry="* Loco: (loco).                 A library and minor mode for entering key sequences" \
-		--metadata title="Loco" \
-		--output docs/build/loco.texi \
-		--template tools/pandoc/template.texinfo \
-		--to texinfo \
-		docs/src/loco.md
-	makeinfo --output loco.info docs/build/loco.texi
+docs:
+	$(MAKE) -C docs build
+
+loco.info: docs
+	cp docs/build/loco.info loco.info
+
+README.md: docs
+	cp docs/build/loco.md README.md
 
 set-permissions:
 	find . -path './_private' -prune -o -type d -exec chmod 755 {} \;
@@ -69,3 +19,8 @@ set-permissions:
 
 set-timestamps:
 	find . -exec touch {} +
+
+clean:
+	$(MAKE) -C docs clean
+	rm -f loco.info
+	rm -f README.md
