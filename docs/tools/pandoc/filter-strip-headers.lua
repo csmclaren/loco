@@ -3,16 +3,8 @@ function Header(elem)
 
   for _, item in ipairs(elem.content) do
     if item.t == "Str" then
-      local str = {}
-
-      for c in item.text:gmatch(".") do
-        if c:byte() <= 127 then
-          table.insert(str, c)
-        end
-      end
-
-      str = table.concat(str)
-      table.insert(content, pandoc.Str(str))
+      local text = item.text:gsub("[^\x00-\x7F]", "")
+      table.insert(content, pandoc.Str(text))
     else
       table.insert(content, item)
     end

@@ -33,11 +33,6 @@
 @chapter Table of contents
 @itemize
 @item
-@ref{Table of contents,,Table of contents}
-@itemize
-@end itemize
-
-@item
 @ref{Introduction}
 @itemize
 @item
@@ -1398,6 +1393,6 @@ Symbols}. Loco was created in Lisbon, Portugal, a city with a
 @uref{https://en.wikipedia.org/wiki/Trams_in_Lisbon,history} of using
 tram cars such as these.
 
-This document was produced on July 16, 2024, using @uref{https://pandoc.org,Pandoc}.
+This document was produced on July 17, 2024, using @uref{https://pandoc.org,Pandoc}.
 
 @bye

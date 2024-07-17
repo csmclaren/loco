@@ -10,6 +10,7 @@ build/loco.md:
 		--from gfm \
 		--lua-filter=tools/pandoc/filter-append-default-footer.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
+		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
 		--metadata title="Loco" \
 		--output build/loco.md \
 		--to gfm \
@@ -29,6 +30,7 @@ build/loco.html:
 		--lua-filter=tools/pandoc/filter-link-stylesheet.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
 		--metadata filter_link_stylesheet_fpath="loco.css" \
+		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
 		--metadata title="Loco" \
 		--output build/loco.html \
 		--template tools/pandoc/template.html \
@@ -43,6 +45,7 @@ build/loco-standalone.html:
 		--lua-filter=tools/pandoc/filter-embed-stylesheet.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
 		--metadata filter_embed_stylesheet_fpath="build/loco.css" \
+		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
 		--metadata title="Loco" \
 		--output build/loco-standalone.html \
 		--template tools/pandoc/template.html \
@@ -61,6 +64,7 @@ build/loco.texi:
 		--lua-filter=tools/pandoc/filter-toc.lua \
 		--metadata dircategory="Emacs" \
 		--metadata direntry="* Loco: (loco).                 A library and minor mode for entering key sequences" \
+		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
 		--metadata title="Loco" \
 		--output build/loco.texi \
 		--template tools/pandoc/template.texinfo \
@@ -76,6 +80,7 @@ build/README.md:
 		--from gfm \
 		--lua-filter=tools/pandoc/filter-append-default-footer.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
+		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
 		--metadata title="Loco" \
 		--output build/README.md \
 		--to gfm \

@@ -101,4 +101,4 @@ This file is part of Loco.
 Loco is licensed under the [GNU](https://www.gnu.org) General Public
 License v3.0. See the [COPYING](COPYING) file for details.
 
-This document was produced on July 16, 2024, using [Pandoc](https://pandoc.org).
+This document was produced on July 17, 2024, using [Pandoc](https://pandoc.org).

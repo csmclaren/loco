@@ -2,8 +2,7 @@
 
 ## Table of contents
 
-- [Loco  🚋](#loco--train)
-  - [Table of contents](#table-of-contents)
+- [Loco](#loco--train)
   - [Introduction](#introduction)
     - [Examples (using the default
       configuration)](#examples-using-the-default-configuration)
@@ -1008,4 +1007,4 @@ Lisbon, Portugal, a city with a
 [history](https://en.wikipedia.org/wiki/Trams_in_Lisbon) of using tram
 cars such as these.
 
-This document was produced on July 16, 2024, using [Pandoc](https://pandoc.org).
+This document was produced on July 17, 2024, using [Pandoc](https://pandoc.org).

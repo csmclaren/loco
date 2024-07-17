@@ -1,15 +1,32 @@
+local exclude_pattern = nil
 local path = {}
 local root = pandoc.BulletList{}
 
+function Meta(meta)
+  exclude_pattern = meta.filter_toc_exclude_pattern
+  return meta
+end
+
 function Header(elem)
-  local level = elem.level
-  local text = pandoc.utils.stringify(elem.content)
   local id = elem.identifier
-  local item = {pandoc.Link(text, "#" .. id), pandoc.BulletList{}}
+
+  if exclude_pattern and string.match(id, exclude_pattern) then
+    return nil
+  end
+
+  local level = elem.level
 
   while level < #path + 1 do
     table.remove(path)
   end
+
+  local text = pandoc.utils.stringify(elem.content)
+  -- Strip non-ASCII
+  text = text:gsub("[^\x00-\x7F]", "")
+  -- Trim whitespace
+  text = text:match("^%s*(.-)%s*$")
+
+  local item = {pandoc.Link(text, "#" .. id), pandoc.BulletList{}}
 
   if level == #path + 1 then
     if #path >= 1 then
@@ -36,3 +53,10 @@ function Pandoc(doc)
 
   return doc
 end
+
+-- Ensure Meta is called before Header.
+return {
+  {Meta = Meta},
+  {Header = Header},
+  {Pandoc = Pandoc}
+}

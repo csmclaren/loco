@@ -3,8 +3,8 @@ function Header(elem)
 
   for _, item in ipairs(elem.content) do
     if item.t == "Str" then
-      local str = item.text:match("^%s*(.-)%s*$")
-      table.insert(content, pandoc.Str(str))
+      local text = item.text:match("^%s*(.-)%s*$")
+      table.insert(content, pandoc.Str(text))
     else
       table.insert(content, item)
     end
