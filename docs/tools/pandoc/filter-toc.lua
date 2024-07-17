@@ -3,7 +3,8 @@ local path = {}
 local root = pandoc.BulletList{}
 
 function Meta(meta)
-  exclude_pattern = meta.filter_toc_exclude_pattern
+  exclude_pattern = pandoc.utils.stringify(meta.filter_toc_exclude_pattern)
+  print(exclude_pattern)
   return meta
 end
 
@@ -15,6 +16,12 @@ function Header(elem)
   end
 
   local level = elem.level
+
+  if level == 1 then
+    return nil
+  end
+
+  level = level - 1
 
   while level < #path + 1 do
     table.remove(path)

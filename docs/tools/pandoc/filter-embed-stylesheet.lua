@@ -1,7 +1,7 @@
 function Meta(meta)
 
   -- Create the content
-  local fpath = meta.filter_embed_stylesheet_fpath
+  local fpath = pandoc.utils.stringify(meta.filter_embed_stylesheet_fpath)
   local file = io.open(fpath, "r")
   local content = '<style>\n' .. file:read("*all") .. '\n</style>'
   file:close()

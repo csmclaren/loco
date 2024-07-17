@@ -10,10 +10,9 @@ build/loco.md:
 		--from gfm \
 		--lua-filter=tools/pandoc/filter-append-default-footer.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
-		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
-		--metadata title="Loco" \
 		--output build/loco.md \
 		--to gfm \
+		--wrap none \
 		src/loco.md
 
 build/loco.css:
@@ -29,12 +28,10 @@ build/loco.html:
 		--lua-filter=tools/pandoc/filter-append-html-footer.lua \
 		--lua-filter=tools/pandoc/filter-link-stylesheet.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
-		--metadata filter_link_stylesheet_fpath="loco.css" \
-		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
-		--metadata title="Loco" \
 		--output build/loco.html \
 		--template tools/pandoc/template.html \
 		--to html \
+		--wrap none \
 		src/loco.md
 
 build/loco-standalone.html:
@@ -44,12 +41,10 @@ build/loco-standalone.html:
 		--lua-filter=tools/pandoc/filter-append-html-footer.lua \
 		--lua-filter=tools/pandoc/filter-embed-stylesheet.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
-		--metadata filter_embed_stylesheet_fpath="build/loco.css" \
-		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
-		--metadata title="Loco" \
 		--output build/loco-standalone.html \
 		--template tools/pandoc/template.html \
 		--to html \
+		--wrap none \
 		src/loco.md
 
 build/loco.texi:
@@ -62,13 +57,10 @@ build/loco.texi:
 		--lua-filter=tools/pandoc/filter-strip-headers.lua \
 		--lua-filter=tools/pandoc/filter-trim-headers.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
-		--metadata dircategory="Emacs" \
-		--metadata direntry="* Loco: (loco).                 A library and minor mode for entering key sequences" \
-		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
-		--metadata title="Loco" \
 		--output build/loco.texi \
 		--template tools/pandoc/template.texinfo \
 		--to texinfo \
+		--wrap none \
 		src/loco.md
 
 build/loco.info: build/loco.texi
@@ -78,12 +70,10 @@ build/README.md:
 	mkdir -p build && \
 	pandoc \
 		--from gfm \
-		--lua-filter=tools/pandoc/filter-append-default-footer.lua \
 		--lua-filter=tools/pandoc/filter-toc.lua \
-		--metadata filter_toc_exclude_pattern="table%-of%-contents" \
-		--metadata title="Loco" \
 		--output build/README.md \
 		--to gfm \
+		--wrap none \
 		src/README.md
 
 clean:

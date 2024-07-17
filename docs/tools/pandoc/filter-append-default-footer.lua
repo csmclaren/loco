@@ -8,8 +8,6 @@ function Pandoc(doc)
   local element = pandoc.Para({
     pandoc.Str("This document was produced on "),
     pandoc.Str(date_formatted),
-    pandoc.Str(", using "),
-    pandoc.Link("Pandoc", "https://pandoc.org"),
     pandoc.Str(".")
   })
   table.insert(doc.blocks, element)

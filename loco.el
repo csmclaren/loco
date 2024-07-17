@@ -1,4 +1,4 @@
-;;; loco.el --- A library and minor mode for entering key sequences  -*- lexical-binding: t; -*-
+;;; loco.el --- Enter complex key sequences with ease!  -*- lexical-binding: t; -*-
 
 ;; Copyright 2024, Chris McLaren
 ;; Author: Chris McLaren <csmclaren@me.com>
@@ -28,8 +28,9 @@
 
 ;;; Commentary:
 
-;; loco is a library and minor mode for entering key sequences.
-;; For full details, see the README.md file distributed with this file.
+;; Loco is a library and minor mode to help you enter complex key sequences
+;; with ease. For full details, see the documentation distributed with this
+;; file.
 
 ;;; Code:
 
@@ -48,7 +49,7 @@
 
 (defgroup loco
           nil
-          "A library and minor mode for entering key sequences."
+          "Enter complex key sequences with ease!"
           :group 'editing
           :prefix "loco-")
 
@@ -229,7 +230,7 @@ FMT-STR is a format string, followed by ARGS as in \"format\"."
 (define-minor-mode loco-mode
   "Toggle `loco-mode'.
 
-A minor mode for entering key sequences."
+A minor mode to help you enter complex key sequences with ease."
   :group 'loco
   :init-value nil
   :keymap loco-mode-keymap

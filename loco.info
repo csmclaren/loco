@@ -2,7 +2,7 @@ This is loco.info, produced by makeinfo version 7.1 from loco.texi.
 
 INFO-DIR-SECTION Emacs
 START-INFO-DIR-ENTRY
-* Loco: (loco). A library and minor mode for entering key sequences
+Loco: (loco). Enter complex key sequences with ease!
 END-INFO-DIR-ENTRY
 
 
@@ -10,6 +10,9 @@ File: loco.info,  Node: Top,  Next: Table of contents,  Up: (dir)
 
 Loco
 ****
+
+Loco is a library and minor mode to help you enter complex key sequences
+with ease.
 
 * Menu:
 
@@ -28,79 +31,69 @@ File: loco.info,  Node: Table of contents,  Next: Introduction,  Prev: Top,  Up:
 1 Table of contents
 *******************
 
-   • *note Introduction::
-        • *note Examples using the default configuration: Examples using
-          the default configuration.
+   • *note Examples using the default configuration: Examples using the
+     default configuration.
 
-   • *note Installation::
-        • *note From MELPA: From MELPA.
+   • *note From MELPA: From MELPA.
 
-        • *note From source: From source.
+   • *note From source: From source.
 
-   • *note Usage::
-        • *note Keys key sequences and commands: Keys key sequences and
-          commands.
+   • *note Keys key sequences and commands: Keys key sequences and
+     commands.
 
-        • *note How Loco is different: How Loco is different.
+   • *note How Loco is different: How Loco is different.
 
-        • *note Enabling disabling and activating Loco: Enabling
-          disabling and activating Loco.
+   • *note Enabling disabling and activating Loco: Enabling disabling
+     and activating Loco.
 
-        • *note Entering key sequences: Entering key sequences.
-             • *note Normal operation ie when the Assist Menu is closed:
-               Normal operation ie when the Assist Menu is closed.
+   • *note Entering key sequences: Entering key sequences.
+        • *note Normal operation ie when the Assist Menu is closed:
+          Normal operation ie when the Assist Menu is closed.
 
-             • *note Assisted operation ie when the Assist Menu is open:
-               Assisted operation ie when the Assist Menu is open.
+        • *note Assisted operation ie when the Assist Menu is open:
+          Assisted operation ie when the Assist Menu is open.
 
-             • *note Rock and roll: Rock and roll.
+        • *note Rock and roll: Rock and roll.
 
-             • *note Persistent keys: Persistent keys.
+        • *note Persistent keys: Persistent keys.
 
-             • *note Examples::
-                  • *note Typical key sequences and their translations:
-                    Typical key sequences and their translations.
+        • *note Examples::
+             • *note Typical key sequences and their translations:
+               Typical key sequences and their translations.
 
-                  • *note More difficult key sequences and their
-                    translations: More difficult key sequences and their
-                    translations.
+             • *note More difficult key sequences and their
+               translations: More difficult key sequences and their
+               translations.
 
-        • *note Describing commands: Describing commands.
+   • *note Describing commands: Describing commands.
 
-        • *note Repeating commands: Repeating commands.
+   • *note Repeating commands: Repeating commands.
 
-        • *note Working with physical modifier keys: Working with
-          physical modifier keys.
+   • *note Working with physical modifier keys: Working with physical
+     modifier keys.
 
-        • *note Considerations when using a terminal: Considerations
-          when using a terminal.
+   • *note Considerations when using a terminal: Considerations when
+     using a terminal.
 
-   • *note Customization::
-        • *note Using the "Easy Customization Interface": Using the
-          "Easy Customization Interface".
+   • *note Using the "Easy Customization Interface": Using the "Easy
+     Customization Interface".
 
-        • *note Changing the key bindings used to enable disable or
-          activate Loco: Changing the key bindings used to enable
-          disable or activate Loco.
+   • *note Changing the key bindings used to enable disable or activate
+     Loco: Changing the key bindings used to enable disable or activate
+     Loco.
 
-        • *note Changing the keys used while Loco reads a key sequence:
-          Changing the keys used while Loco reads a key sequence.
+   • *note Changing the keys used while Loco reads a key sequence:
+     Changing the keys used while Loco reads a key sequence.
 
-        • *note Advanced topics: Advanced topics.
-             • *note Mapping Caps Lock to Control: Mapping Caps Lock to
-               Control.
+   • *note Advanced topics: Advanced topics.
+        • *note Mapping Caps Lock to Control: Mapping Caps Lock to
+          Control.
 
-             • *note Activation keys that also function as modifiers:
-               Activation keys that also function as modifiers.
+        • *note Activation keys that also function as modifiers:
+          Activation keys that also function as modifiers.
 
-             • *note Activation keys that avoid modifiers completely:
-               Activation keys that avoid modifiers completely.
-
-   • *note Author and copyright: Author and copyright.
-
-   • *note License::
-
-   • *note Colophon::
+        • *note Activation keys that avoid modifiers completely:
+          Activation keys that avoid modifiers completely.
 
 
 File: loco.info,  Node: Introduction,  Next: Installation,  Prev: Table of contents,  Up: Top
@@ -132,7 +125,7 @@ the GUI (https://en.wikipedia.org/wiki/Graphical_user_interface) or the
 terminal (https://en.wikipedia.org/wiki/Computer_terminal), working
 around the *note limitations of terminals: Considerations when using a
 terminal. that prevent the entry of certain keys, allowing you to move
-between both with ease.
+between both easily.
 
 When enabled, and using the default configuration, pressing ‘S-<return>’
 will activate Loco.
@@ -728,10 +721,10 @@ Lisp as well.
 
 File: loco.info,  Node: Changing the key bindings used to enable disable or activate Loco,  Next: Changing the keys used while Loco reads a key sequence,  Prev: Using the "Easy Customization Interface",  Up: Customization
 
-5.2 Changing the key bindings used to enable, disable, or activate
-==================================================================
+5.2 Changing the key bindings used to enable, disable, or activate Loco
+=======================================================================
 
-Loco The command ‘loco-set-default-configuration’ sets the default key
+The command ‘loco-set-default-configuration’ sets the default key
 bindings to enable, disable, or activate Loco.  Typically, you should
 call this command automatically on startup, as recommended in *note
 Installation::, but it is not required that you do so.  This command
@@ -1162,46 +1155,45 @@ Lisbon, Portugal, a city with a history
 (https://en.wikipedia.org/wiki/Trams_in_Lisbon) of using tram cars such
 as these.
 
-This document was produced on July 17, 2024, using Pandoc
-(https://pandoc.org).
+This document was produced on July 17, 2024.
 
 
 
 Tag Table:
-Node: Top201
-Node: Table of contents425
-Node: Introduction3231
-Node: Examples using the default configuration5599
-Node: Installation6735
-Node: From MELPA6892
-Node: From source8156
-Node: Usage9214
-Node: Keys key sequences and commands9712
-Node: How Loco is different11423
-Node: Enabling disabling and activating Loco12403
-Node: Entering key sequences15090
-Node: Normal operation ie when the Assist Menu is closed17687
-Node: Assisted operation ie when the Assist Menu is open18979
-Node: Rock and roll20527
-Node: Persistent keys21308
-Node: Examples22129
-Node: Typical key sequences and their translations22364
-Node: More difficult key sequences and their translations23117
-Node: Describing commands24428
-Node: Repeating commands25304
-Node: Working with physical modifier keys25962
-Node: Considerations when using a terminal26602
-Node: Customization29138
-Node: Using the "Easy Customization Interface"29624
-Node: Changing the key bindings used to enable disable or activate Loco30663
-Node: Changing the keys used while Loco reads a key sequence32223
-Node: Advanced topics37876
-Node: Mapping Caps Lock to Control38190
-Node: Activation keys that also function as modifiers40073
-Node: Activation keys that avoid modifiers completely44530
-Node: Author and copyright49244
-Node: License49493
-Node: Colophon49753
+Node: Top186
+Node: Table of contents495
+Node: Introduction2878
+Node: Examples using the default configuration5243
+Node: Installation6379
+Node: From MELPA6536
+Node: From source7800
+Node: Usage8858
+Node: Keys key sequences and commands9356
+Node: How Loco is different11067
+Node: Enabling disabling and activating Loco12047
+Node: Entering key sequences14734
+Node: Normal operation ie when the Assist Menu is closed17331
+Node: Assisted operation ie when the Assist Menu is open18623
+Node: Rock and roll20171
+Node: Persistent keys20952
+Node: Examples21773
+Node: Typical key sequences and their translations22008
+Node: More difficult key sequences and their translations22761
+Node: Describing commands24072
+Node: Repeating commands24948
+Node: Working with physical modifier keys25606
+Node: Considerations when using a terminal26246
+Node: Customization28782
+Node: Using the "Easy Customization Interface"29268
+Node: Changing the key bindings used to enable disable or activate Loco30307
+Node: Changing the keys used while Loco reads a key sequence31872
+Node: Advanced topics37525
+Node: Mapping Caps Lock to Control37839
+Node: Activation keys that also function as modifiers39722
+Node: Activation keys that avoid modifiers completely44179
+Node: Author and copyright48893
+Node: License49142
+Node: Colophon49402
 
 End Tag Table
 

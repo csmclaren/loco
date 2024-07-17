@@ -3,7 +3,7 @@
 
 @dircategory Emacs
 @direntry
-* Loco: (loco). A library and minor mode for entering key sequences
+Loco: (loco). Enter complex key sequences with ease!
 @end direntry
 
 @documentencoding UTF-8
@@ -17,6 +17,8 @@
 
 @node Top
 @top Loco
+
+Loco is a library and minor mode to help you enter complex key sequences with ease.
 
 @menu
 * Table of contents::
@@ -33,19 +35,10 @@
 @chapter Table of contents
 @itemize
 @item
-@ref{Introduction}
-@itemize
-@item
-@ref{Examples using the default configuration,,Examples using the
-default configuration}
+@ref{Examples using the default configuration,,Examples using the default configuration}
 @itemize
 @end itemize
 
-@end itemize
-
-@item
-@ref{Installation}
-@itemize
 @item
 @ref{From MELPA,,From MELPA}
 @itemize
@@ -56,11 +49,6 @@ default configuration}
 @itemize
 @end itemize
 
-@end itemize
-
-@item
-@ref{Usage}
-@itemize
 @item
 @ref{Keys key sequences and commands,,Keys key sequences and commands}
 @itemize
@@ -72,8 +60,7 @@ default configuration}
 @end itemize
 
 @item
-@ref{Enabling disabling and activating Loco,,Enabling disabling and
-activating Loco}
+@ref{Enabling disabling and activating Loco,,Enabling disabling and activating Loco}
 @itemize
 @end itemize
 
@@ -81,14 +68,12 @@ activating Loco}
 @ref{Entering key sequences,,Entering key sequences}
 @itemize
 @item
-@ref{Normal operation ie when the Assist Menu is closed,,Normal
-operation ie when the Assist Menu is closed}
+@ref{Normal operation ie when the Assist Menu is closed,,Normal operation ie when the Assist Menu is closed}
 @itemize
 @end itemize
 
 @item
-@ref{Assisted operation ie when the Assist Menu is open,,Assisted
-operation ie when the Assist Menu is open}
+@ref{Assisted operation ie when the Assist Menu is open,,Assisted operation ie when the Assist Menu is open}
 @itemize
 @end itemize
 
@@ -106,14 +91,12 @@ operation ie when the Assist Menu is open}
 @ref{Examples}
 @itemize
 @item
-@ref{Typical key sequences and their translations,,Typical key sequences
-and their translations}
+@ref{Typical key sequences and their translations,,Typical key sequences and their translations}
 @itemize
 @end itemize
 
 @item
-@ref{More difficult key sequences and their translations,,More difficult
-key sequences and their translations}
+@ref{More difficult key sequences and their translations,,More difficult key sequences and their translations}
 @itemize
 @end itemize
 
@@ -132,37 +115,27 @@ key sequences and their translations}
 @end itemize
 
 @item
-@ref{Working with physical modifier keys,,Working with physical modifier
-keys}
+@ref{Working with physical modifier keys,,Working with physical modifier keys}
 @itemize
 @end itemize
 
 @item
-@ref{Considerations when using a terminal,,Considerations when using a
-terminal}
-@itemize
-@end itemize
-
-@end itemize
-
-@item
-@ref{Customization}
-@itemize
-@item
-@ref{Using the "Easy Customization Interface",,Using the "Easy
-Customization Interface"}
+@ref{Considerations when using a terminal,,Considerations when using a terminal}
 @itemize
 @end itemize
 
 @item
-@ref{Changing the key bindings used to enable disable or activate Loco,,Changing
-the key bindings used to enable disable or activate Loco}
+@ref{Using the "Easy Customization Interface",,Using the "Easy Customization Interface"}
 @itemize
 @end itemize
 
 @item
-@ref{Changing the keys used while Loco reads a key sequence,,Changing
-the keys used while Loco reads a key sequence}
+@ref{Changing the key bindings used to enable disable or activate Loco,,Changing the key bindings used to enable disable or activate Loco}
+@itemize
+@end itemize
+
+@item
+@ref{Changing the keys used while Loco reads a key sequence,,Changing the keys used while Loco reads a key sequence}
 @itemize
 @end itemize
 
@@ -175,77 +148,33 @@ the keys used while Loco reads a key sequence}
 @end itemize
 
 @item
-@ref{Activation keys that also function as modifiers,,Activation keys
-that also function as modifiers}
+@ref{Activation keys that also function as modifiers,,Activation keys that also function as modifiers}
 @itemize
 @end itemize
 
 @item
-@ref{Activation keys that avoid modifiers completely,,Activation keys
-that avoid modifiers completely}
+@ref{Activation keys that avoid modifiers completely,,Activation keys that avoid modifiers completely}
 @itemize
 @end itemize
 
-@end itemize
-
-@end itemize
-
-@item
-@ref{Author and copyright,,Author and copyright}
-@itemize
-@end itemize
-
-@item
-@ref{License}
-@itemize
-@end itemize
-
-@item
-@ref{Colophon}
-@itemize
 @end itemize
 
 @end itemize
 
 @node Introduction
 @chapter Introduction
-Loco is a
-@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html,package}
-for @uref{https://www.gnu.org/software/emacs/,Emacs}. Loco lets you type
-any @ref{Keys key sequences and commands,,key sequence}, including those
-requiring the modifiers @kbd{Alt}, @kbd{Control}, @kbd{Hyper},
-@kbd{Meta}, or @kbd{Super}, without using any physical modifier keys
-except @kbd{Shift}. This makes it easy to enter key sequences that are
-complicated or use hard-to-reach keys.
+Loco is a @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html,package} for @uref{https://www.gnu.org/software/emacs/,Emacs}. Loco lets you type any @ref{Keys key sequences and commands,,key sequence}, including those requiring the modifiers @kbd{Alt}, @kbd{Control}, @kbd{Hyper}, @kbd{Meta}, or @kbd{Super}, without using any physical modifier keys except @kbd{Shift}. This makes it easy to enter key sequences that are complicated or use hard-to-reach keys.
 
-Loco works by translating key sequences from one form to another. It
-does not redefine the
-@uref{https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf,standard
-key bindings}, nor does it prevent you from
-@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Bindings.html,defining
-your own}. Learn the few rules of Loco and be productive immediately,
-using the key bindings you already know.
+Loco works by translating key sequences from one form to another. It does not redefine the @uref{https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf,standard key bindings}, nor does it prevent you from @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Bindings.html,defining your own}. Learn the few rules of Loco and be productive immediately, using the key bindings you already know.
 
-Loco does not preclude the use of physical modifier keys; it integrates
-well with them. There may even be some key bindings for which you find
-using physical modifier keys preferable. And it works equally well in
-the @uref{https://en.wikipedia.org/wiki/Graphical_user_interface,GUI} or
-the @uref{https://en.wikipedia.org/wiki/Computer_terminal,terminal},
-working around the
-@ref{Considerations when using a terminal,,limitations of terminals}
-that prevent the entry of certain keys, allowing you to move between
-both with ease.
+Loco does not preclude the use of physical modifier keys; it integrates well with them. There may even be some key bindings for which you find using physical modifier keys preferable. And it works equally well in the @uref{https://en.wikipedia.org/wiki/Graphical_user_interface,GUI} or the @uref{https://en.wikipedia.org/wiki/Computer_terminal,terminal}, working around the @ref{Considerations when using a terminal,,limitations of terminals} that prevent the entry of certain keys, allowing you to move between both easily.
 
-When enabled, and using the default configuration, pressing
-@kbd{S-<return>} will activate Loco.
+When enabled, and using the default configuration, pressing @kbd{S-<return>} will activate Loco.
 
 @quotation
-In Emacs, @kbd{S-<return>} means hold @kbd{Shift} then press
-@kbd{Return}.
+In Emacs, @kbd{S-<return>} means hold @kbd{Shift} then press @kbd{Return}.
 @end quotation
-Once activated, you can type any key sequence, taking advantage of the
-following special keys to help you avoid pressing any physical modifier
-keys:
+Once activated, you can type any key sequence, taking advantage of the following special keys to help you avoid pressing any physical modifier keys:
 
 @itemize
 @item
@@ -256,11 +185,9 @@ keys:
 @kbd{l} to open a menu that includes options to:
 @itemize
 @item
-apply other modifiers (for example, @kbd{Alt}, @kbd{Hyper}, or
-@kbd{Super}) to the next non‑special key; or
+apply other modifiers (for example, @kbd{Alt}, @kbd{Hyper}, or @kbd{Super}) to the next non‑special key; or
 @item
-enter the special keys themselves as the literal characters @emph{j},
-@emph{k}, or @emph{l}.
+enter the special keys themselves as the literal characters @emph{j}, @emph{k}, or @emph{l}.
 @end itemize
 
 @end itemize
@@ -294,12 +221,9 @@ Typed Key Sequence
  @tab @code{save-buffer}
 @end multitable
 
-This is only a brief overview; see @ref{Usage} for a detailed
-explanation.
+This is only a brief overview; see @ref{Usage} for a detailed explanation.
 
-The default configuration is not the only way to use Loco. Loco can be
-@ref{Customization,,extensively customized} with just a few lines of
-code. Many options are possible, including:
+The default configuration is not the only way to use Loco. Loco can be @ref{Customization,,extensively customized} with just a few lines of code. Many options are possible, including:
 
 @itemize
 @item
@@ -330,9 +254,7 @@ Modify your Emacs configuration
 
 @itemize
 @item
-Open your
-@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html,Emacs
-init file} and add the following:
+Open your @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html,Emacs init file} and add the following:
 
 @verbatim
 ;; Add MELPA to the list of package archives
@@ -359,8 +281,7 @@ init file} and add the following:
 @end verbatim
 
 @item
-Apply your changes by either restarting Emacs or evaluating the modified
-sections of your configuration file.
+Apply your changes by either restarting Emacs or evaluating the modified sections of your configuration file.
 
 @end itemize
 
@@ -372,8 +293,7 @@ To install Loco from source, follow these steps:
 
 @enumerate 
 @item
-Clone the @uref{https://github.com/csmclaren/loco,official repository}
-from GitHub
+Clone the @uref{https://github.com/csmclaren/loco,official repository} from GitHub
 
 @verbatim
 git clone https://github.com/csmclaren/loco.git
@@ -384,10 +304,7 @@ Modify your Emacs configuration
 
 @itemize
 @item
-Open your
-@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html,Emacs
-init file} and add the following, making sure to replace
-@code{/path/to/loco} with the path to your cloned repository:
+Open your @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html,Emacs init file} and add the following, making sure to replace @code{/path/to/loco} with the path to your cloned repository:
 
 @verbatim
 ;; Add the load path
@@ -404,8 +321,7 @@ init file} and add the following, making sure to replace
 @end verbatim
 
 @item
-Apply your changes by either restarting Emacs or evaluating the modified
-sections of your configuration file.
+Apply your changes by either restarting Emacs or evaluating the modified sections of your configuration file.
 
 @end itemize
 
@@ -414,8 +330,7 @@ sections of your configuration file.
 @node Usage
 @chapter Usage
 @quotation
-This section assumes that you have set the default key bindings for
-Loco, as recommended in @ref{Installation}.
+This section assumes that you have set the default key bindings for Loco, as recommended in @ref{Installation}.
 @end quotation
 
 @menu
@@ -431,69 +346,33 @@ Loco, as recommended in @ref{Installation}.
 
 @node Keys key sequences and commands
 @section Keys, key sequences, and commands
-When discussing keys, it is helpful to distinguish between
-@emph{physical} keys and @emph{logical} keys.
+When discussing keys, it is helpful to distinguish between @emph{physical} keys and @emph{logical} keys.
 
-A physical key is what you press with your fingers on the keyboard. Some
-physical keys are called @emph{modifier} keys. Emacs recognizes six
-modifier keys: @kbd{Alt}, @kbd{Control}, @kbd{Hyper}, @kbd{Meta},
-@kbd{Super}, and @kbd{Shift}. Your keyboard may not have all of these
-keys. Furthermore, your keyboard might have different names for the
-modifier keys that it does have. For example, @kbd{Super} is called
-@kbd{Command} on
-@uref{https://en.wikipedia.org/wiki/Apple_keyboards,Apple keyboards},
-and @kbd{Meta} is called @kbd{Alt} or @kbd{Option} on most modern
-keyboards. Most physical keys, like letters, numbers, and symbols, are
-@emph{non-modifier} keys.
+A physical key is what you press with your fingers on the keyboard. Some physical keys are called @emph{modifier} keys. Emacs recognizes six modifier keys: @kbd{Alt}, @kbd{Control}, @kbd{Hyper}, @kbd{Meta}, @kbd{Super}, and @kbd{Shift}. Your keyboard may not have all of these keys. Furthermore, your keyboard might have different names for the modifier keys that it does have. For example, @kbd{Super} is called @kbd{Command} on @uref{https://en.wikipedia.org/wiki/Apple_keyboards,Apple keyboards}, and @kbd{Meta} is called @kbd{Alt} or @kbd{Option} on most modern keyboards. Most physical keys, like letters, numbers, and symbols, are @emph{non-modifier} keys.
 
-A logical key (or simply a @emph{key}) is zero or more modifier keys
-pressed simultaneously with a non-modifier key. For example, holding
-down the physical @kbd{Control} key (written as @kbd{C-}) while pressing
-the physical @kbd{x} key produces the key @kbd{C-x}.
+A logical key (or simply a @emph{key}) is zero or more modifier keys pressed simultaneously with a non-modifier key. For example, holding down the physical @kbd{Control} key (written as @kbd{C-}) while pressing the physical @kbd{x} key produces the key @kbd{C-x}.
 
-Key sequences are composed of one or more keys. For example, the key
-sequence @kbd{C-x s} is composed of two keys: @kbd{C-x} and @kbd{s}. Key
-sequences can be bound to commands. For example, @kbd{C-x s} is bound to
-the command @code{save-all-files}.
+Key sequences are composed of one or more keys. For example, the key sequence @kbd{C-x s} is composed of two keys: @kbd{C-x} and @kbd{s}. Key sequences can be bound to commands. For example, @kbd{C-x s} is bound to the command @code{save-all-files}.
 
-By composing key sequences from keys, a large number of key sequences
-can be created from a small number of keys. This is similar to how an
-alphabet can be used to compose the words of a language: a large number
-of words can be created from a small number of letters.
+By composing key sequences from keys, a large number of key sequences can be created from a small number of keys. This is similar to how an alphabet can be used to compose the words of a language: a large number of words can be created from a small number of letters.
 
 @node How Loco is different
 @section How Loco is different
-On modern keyboards, which typically have small or hard-to-reach
-modifier keys, or for people with
-@uref{https://en.wikipedia.org/wiki/Repetitive_strain_injury,RSI} or
-other forms of limited mobility, pressing one or more keys
-simultaneously can be difficult or even painful. This is especially true
-when two or more modifier keys are required to complete a single key, or
-if a certain modifier key is particularly hard to reach.
+On modern keyboards, which typically have small or hard-to-reach modifier keys, or for people with @uref{https://en.wikipedia.org/wiki/Repetitive_strain_injury,RSI} or other forms of limited mobility, pressing one or more keys simultaneously can be difficult or even painful. This is especially true when two or more modifier keys are required to complete a single key, or if a certain modifier key is particularly hard to reach.
 
-To help solve this problem, Loco extends the idea of composing key
-sequences from keys to the level of the key itself. In Loco, logical
-keys can be composed of one or more physical keys pressed one after the
-other, not simultaneously. Additionally, Loco uses certain easy-to-reach
-non-modifier keys (or @emph{special} keys) to assist you with key entry.
+To help solve this problem, Loco extends the idea of composing key sequences from keys to the level of the key itself. In Loco, logical keys can be composed of one or more physical keys pressed one after the other, not simultaneously. Additionally, Loco uses certain easy-to-reach non-modifier keys (or @emph{special} keys) to assist you with key entry.
 
 @node Enabling disabling and activating Loco
 @section Enabling, disabling, and activating Loco
-Loco works by adding a
-@uref{https://www.gnu.org/software/emacs/manual/html_node/elisp/Minor-Modes.html,minor
-mode} to Emacs. This mode can be enabled or disabled in some or all
-buffers.
+Loco works by adding a @uref{https://www.gnu.org/software/emacs/manual/html_node/elisp/Minor-Modes.html,minor mode} to Emacs. This mode can be enabled or disabled in some or all buffers.
 
-To enable or disable Loco @emph{in the current buffer}, use the command
-@code{loco-mode}. The key sequence @kbd{C-c ,} is bound to this command;
-pressing it will toggle Loco in the current buffer.
+To enable or disable Loco @emph{in the current buffer}, use the command @code{loco-mode}. The key sequence @kbd{C-c ,} is bound to this command; pressing it will toggle Loco in the current buffer.
 
 You can also call this command using Emacs Lisp with:
 
 @itemize
 @item
-No argument, @code{nil}, or a positive number to enable Loco in the
-current buffer;
+No argument, @code{nil}, or a positive number to enable Loco in the current buffer;
 
 @verbatim
 (loco-mode 1) ; Enable in the current buffer
@@ -515,9 +394,7 @@ The symbol @code{toggle} to toggle Loco in the current buffer.
 
 @end itemize
 
-To enable or disable Loco @emph{in all buffers}, use the command
-@code{global-loco-mode}. The key sequence @kbd{C-c .} is bound to this
-command; pressing it will toggle Loco in all buffers.
+To enable or disable Loco @emph{in all buffers}, use the command @code{global-loco-mode}. The key sequence @kbd{C-c .} is bound to this command; pressing it will toggle Loco in all buffers.
 
 @quotation
 This command will override any local settings.
@@ -526,8 +403,7 @@ You can also call this command using Emacs Lisp with:
 
 @itemize
 @item
-No argument, @code{nil}, or a positive number to enable Loco in all
-buffers;
+No argument, @code{nil}, or a positive number to enable Loco in all buffers;
 
 @verbatim
 (global-loco-mode 1) ; Enable in all buffers
@@ -549,23 +425,11 @@ The symbol @code{toggle} to toggle Loco in all buffers.
 
 @end itemize
 
-When Loco is @emph{disabled} in the current buffer, all keys can be
-typed normally as if Loco were not installed, with the exception of
-@kbd{C-c ,} and @kbd{C-c .} themselves, which are bound in the global
-keymap.
+When Loco is @emph{disabled} in the current buffer, all keys can be typed normally as if Loco were not installed, with the exception of @kbd{C-c ,} and @kbd{C-c .} themselves, which are bound in the global keymap.
 
-When Loco is @emph{enabled} in the current buffer it will place an
-indicator, which Emacs calls a "lighter", in the mode line of that
-buffer. The lighter for Loco is simply the string "Loco". Loco will also
-bind two additional key sequences: @kbd{S-<return>} and @kbd{C-h
-S-<return>}. Pressing either of these will @emph{activate} Loco.
+When Loco is @emph{enabled} in the current buffer it will place an indicator, which Emacs calls a "lighter", in the mode line of that buffer. The lighter for Loco is simply the string "Loco". Loco will also bind two additional key sequences: @kbd{S-<return>} and @kbd{C-h S-<return>}. Pressing either of these will @emph{activate} Loco.
 
-When Loco is activated, it will prompt you to enter a key sequence, then
-it will lookup whether or not that key sequence is bound to a command.
-If a command is found, it will either execute or describe that command,
-depending on which key sequence was used to activate it.
-@kbd{S-<return>} tells Loco that it should @emph{execute} the command.
-@kbd{C-h S-<return>} tells Loco it should @emph{describe} the command.
+When Loco is activated, it will prompt you to enter a key sequence, then it will lookup whether or not that key sequence is bound to a command. If a command is found, it will either execute or describe that command, depending on which key sequence was used to activate it. @kbd{S-<return>} tells Loco that it should @emph{execute} the command. @kbd{C-h S-<return>} tells Loco it should @emph{describe} the command.
 
 @node Entering key sequences
 @section Entering key sequences
@@ -573,39 +437,22 @@ When Loco reads a key sequence:
 
 @itemize
 @item
-It tracks a set of modifiers (@kbd{Alt}, @kbd{Control}, @kbd{Hyper},
-@kbd{Meta}, and @kbd{Super}) that it considers "pending".
+It tracks a set of modifiers (@kbd{Alt}, @kbd{Control}, @kbd{Hyper}, @kbd{Meta}, and @kbd{Super}) that it considers "pending".
 
 @item
-@kbd{j} and @kbd{k} add @kbd{Control} and @kbd{Meta}, respectively, to
-the set of pending modifiers, or represent themselves, if their
-respective modifiers are already pending.
+@kbd{j} and @kbd{k} add @kbd{Control} and @kbd{Meta}, respectively, to the set of pending modifiers, or represent themselves, if their respective modifiers are already pending.
 
 @item
-@kbd{l} opens the Assist Menu, a menu which includes commands to toggle
-pending modifiers (@kbd{a} @kbd{c} @kbd{h} @kbd{m} and @kbd{s}) or enter
-keys for which there is no other way to enter because they have been
-repurposed by Loco (@kbd{j} @kbd{k} and @kbd{l} itself).
+@kbd{l} opens the Assist Menu, a menu which includes commands to toggle pending modifiers (@kbd{a} @kbd{c} @kbd{h} @kbd{m} and @kbd{s}) or enter keys for which there is no other way to enter because they have been repurposed by Loco (@kbd{j} @kbd{k} and @kbd{l} itself).
 
 @item
-When a key is pressed to which modifiers could be applied, any pending
-modifiers from that set are applied to the key, as if the equivalent
-physical modifier keys were held down at the time the key was pressed.
-The set (if not empty) is then cleared. The key (now potentially
-modified) is then added to the key sequence.
+When a key is pressed to which modifiers could be applied, any pending modifiers from that set are applied to the key, as if the equivalent physical modifier keys were held down at the time the key was pressed. The set (if not empty) is then cleared. The key (now potentially modified) is then added to the key sequence.
 
 @item
-When a key is added to the key sequence, Loco will check if the key
-sequence is bound to a command. If it is a @emph{partial match} to one
-(or more) commands, Loco will continue to read keys. If it is an
-@emph{exact match} to a command, Loco will stop reading keys and execute
-or describe that command (depending on how Loco was activated).
-Otherwise, Loco will stop reading keys and tell the user that no match
-was found.
+When a key is added to the key sequence, Loco will check if the key sequence is bound to a command. If it is a @emph{partial match} to one (or more) commands, Loco will continue to read keys. If it is an @emph{exact match} to a command, Loco will stop reading keys and execute or describe that command (depending on how Loco was activated). Otherwise, Loco will stop reading keys and tell the user that no match was found.
 
 @item
-It will display its prompt in the minibuffer. The prompt will consist
-of:
+It will display its prompt in the minibuffer. The prompt will consist of:
 
 @itemize
 @item
@@ -615,21 +462,16 @@ A right-pointing triangle (▶);
 The current key sequence, if any, displayed in the normal Emacs style;
 
 @item
-The set of pending modifiers, if any, displayed in the normal Emacs
-style, i.e., @code{A-}, @code{C-}, @code{H-}, @code{M-}, and @code{s-},
-corresponding to the modifiers @kbd{Alt}, @kbd{Control}, @kbd{Hyper},
-@kbd{Meta}, and @kbd{Super}, respectively; and
+The set of pending modifiers, if any, displayed in the normal Emacs style, i.e., @code{A-}, @code{C-}, @code{H-}, @code{M-}, and @code{s-}, corresponding to the modifiers @kbd{Alt}, @kbd{Control}, @kbd{Hyper}, @kbd{Meta}, and @kbd{Super}, respectively; and
 
 @item
-The Assist Menu, if open, displayed as @code{[;]} (in its collapsed
-state) or @code{[achms jkl q x ;]} (in its expanded state).
+The Assist Menu, if open, displayed as @code{[;]} (in its collapsed state) or @code{[achms jkl q x ;]} (in its expanded state).
 
 @end itemize
 
 @end itemize
 
-The following tables explain exactly how key presses are handled while
-reading a key sequence.
+The following tables explain exactly how key presses are handled while reading a key sequence.
 
 @menu
 * Normal operation ie when the Assist Menu is closed::
@@ -647,23 +489,16 @@ Key
  @tab Rule
 @item 
 @kbd{j}
- @tab There are two possibilities for how this key is handled. If
-@kbd{Control} is already pending, apply all pending modifiers to the key
-(clearing the modifiers), then add the modified key to the key sequence.
-Otherwise, add @kbd{Control} to the set of pending modifiers.
+ @tab There are two possibilities for how this key is handled. If @kbd{Control} is already pending, apply all pending modifiers to the key (clearing the modifiers), then add the modified key to the key sequence. Otherwise, add @kbd{Control} to the set of pending modifiers.
 @item 
 @kbd{k}
- @tab There are two possibilities for how this key is handled. If
-@kbd{Meta} is already pending, apply all pending modifiers to the key
-(clearing the modifiers), then add the modified key to the key sequence.
-Otherwise, add @kbd{Meta} to the set of pending modifiers.
+ @tab There are two possibilities for how this key is handled. If @kbd{Meta} is already pending, apply all pending modifiers to the key (clearing the modifiers), then add the modified key to the key sequence. Otherwise, add @kbd{Meta} to the set of pending modifiers.
 @item 
 @kbd{l}
  @tab Open the Assist Menu.
 @item 
 Other
- @tab Apply any pending modifiers to the key (clearing the modifiers),
-then add the (potentially modified) key to the key sequence.
+ @tab Apply any pending modifiers to the key (clearing the modifiers), then add the (potentially modified) key to the key sequence.
 @end multitable
 
 @node Assisted operation ie when the Assist Menu is open
@@ -674,23 +509,16 @@ Key
  @tab Rule
 @item 
 @kbd{a} @kbd{c} @kbd{h} @kbd{m} or @kbd{s}
- @tab Toggle @kbd{Alt} @kbd{Control} @kbd{Hyper} @kbd{Meta} or
-@kbd{Super} respectively, in the set of pending modifiers, and close the
-Assist Menu.
+ @tab Toggle @kbd{Alt} @kbd{Control} @kbd{Hyper} @kbd{Meta} or @kbd{Super} respectively, in the set of pending modifiers, and close the Assist Menu.
 @item 
 @kbd{A} @kbd{C} @kbd{H} @kbd{M} or @kbd{S}
- @tab Toggle @kbd{Alt} @kbd{Control} @kbd{Hyper} @kbd{Meta} or
-@kbd{Super} respectively, in the set of pending modifiers, but do not
-close the Assist Menu.
+ @tab Toggle @kbd{Alt} @kbd{Control} @kbd{Hyper} @kbd{Meta} or @kbd{Super} respectively, in the set of pending modifiers, but do not close the Assist Menu.
 @item 
 @kbd{j} @kbd{k} or @kbd{l}
- @tab Apply any pending modifiers to the key (clearing the modifiers),
-add the (potentially modified) key to the key sequence, and close the
-Assist Menu.
+ @tab Apply any pending modifiers to the key (clearing the modifiers), add the (potentially modified) key to the key sequence, and close the Assist Menu.
 @item 
 @kbd{q}
- @tab Close the Assist Menu and cancel the key sequence (equivalent to
-@kbd{C-g}).
+ @tab Close the Assist Menu and cancel the key sequence (equivalent to @kbd{C-g}).
 @item 
 @kbd{x}
  @tab Close the Assist Menu.
@@ -699,40 +527,24 @@ Assist Menu.
  @tab Toggle the Assist Menu between its collapsed and expanded states.
 @item 
 Other
- @tab Discard the key, but do not close the Assist Menu. If the Assist
-Menu is currently collapsed, expand it to remind the user of all
-available options.
+ @tab Discard the key, but do not close the Assist Menu. If the Assist Menu is currently collapsed, expand it to remind the user of all available options.
 @end multitable
 
 @node Rock and roll
 @subsection Rock and roll
-The keys @kbd{j}, @kbd{k}, and @kbd{l} were chosen to represent
-@kbd{Control}, @kbd{Meta}, and the Assist Menu, respectively, because on
-a @uref{https://en.wikipedia.org/wiki/QWERTY,QWERTY} keyboard these keys
-are adjacent. This allows you to roll from side to side or rock your
-fingers back and forth over them.
+The keys @kbd{j}, @kbd{k}, and @kbd{l} were chosen to represent @kbd{Control}, @kbd{Meta}, and the Assist Menu, respectively, because on a @uref{https://en.wikipedia.org/wiki/QWERTY,QWERTY} keyboard these keys are adjacent. This allows you to roll from side to side or rock your fingers back and forth over them.
 
-Furthermore, you can build up the set of pending modifiers for a key in
-any order; for example, both @kbd{j k} and @kbd{k j} translate to
-@kbd{C-M-}.
+Furthermore, you can build up the set of pending modifiers for a key in any order; for example, both @kbd{j k} and @kbd{k j} translate to @kbd{C-M-}.
 
-These design choices enable efficient key entry, enhancing your ability
-to enter these important keys swiftly and accurately.
+These design choices enable efficient key entry, enhancing your ability to enter these important keys swiftly and accurately.
 
 @node Persistent keys
 @subsection Persistent keys
-On the Assist Menu, the keys used to toggle modifiers (@kbd{a}, @kbd{c},
-@kbd{h}, @kbd{m}, and @kbd{s}) can be pressed in conjunction with the
-physical @kbd{Shift} key (@kbd{A}, @kbd{C}, @kbd{H}, @kbd{M}, and
-@kbd{S}, respectively).
+On the Assist Menu, the keys used to toggle modifiers (@kbd{a}, @kbd{c}, @kbd{h}, @kbd{m}, and @kbd{s}) can be pressed in conjunction with the physical @kbd{Shift} key (@kbd{A}, @kbd{C}, @kbd{H}, @kbd{M}, and @kbd{S}, respectively).
 
-These @kbd{Shift}-modified keys perform the same operation as their
-unmodified counterparts but make the Assist Menu @emph{persistent}:
-after use, the menu remains open to use again.
+These @kbd{Shift}-modified keys perform the same operation as their unmodified counterparts but make the Assist Menu @emph{persistent}: after use, the menu remains open to use again.
 
-The advantage of these keys is that multiple modifiers can be added or
-removed quickly. The disadvantage is that another key (for example,
-@kbd{x}) is then required to close the Assist Menu.
+The advantage of these keys is that multiple modifiers can be added or removed quickly. The disadvantage is that another key (for example, @kbd{x}) is then required to close the Assist Menu.
 
 These keys are optional and not shown on the Assist Menu.
 
@@ -746,9 +558,7 @@ These keys are optional and not shown on the Assist Menu.
 
 @node Typical key sequences and their translations
 @subsubsection Typical key sequences and their translations
-Most key sequences do not involve @kbd{Control} or @kbd{Meta} in
-conjunction with @kbd{j}, @kbd{k}, or @kbd{l}, making them easy to
-enter.
+Most key sequences do not involve @kbd{Control} or @kbd{Meta} in conjunction with @kbd{j}, @kbd{k}, or @kbd{l}, making them easy to enter.
 
 @multitable {@kbd{j k e} or @kbd{k j e}} {Translated Key Sequence} {@code{forward-sentence}} 
 @headitem 
@@ -771,8 +581,7 @@ Typed Key Sequence
 
 @node More difficult key sequences and their translations
 @subsubsection More difficult key sequences and their translations
-Nine key sequences involve @kbd{Control} or @kbd{Meta} in conjunction
-with @kbd{j}, @kbd{k}, or @kbd{l}, making them more difficult to enter.
+Nine key sequences involve @kbd{Control} or @kbd{Meta} in conjunction with @kbd{j}, @kbd{k}, or @kbd{l}, making them more difficult to enter.
 
 @multitable {@kbd{j k l l} or @kbd{k j l l}} {Translated Key Sequence} {@code{default-indent-new-line}} 
 @headitem 
@@ -819,101 +628,49 @@ Typed Key Sequence
 
 @node Describing commands
 @section Describing commands
-The built-in command @code{describe-key} waits for a key sequence to be
-input. If that key sequence is bound to a command, it describes the
-command. This is an excellent way to discover (or remind yourself) to
-which command a key sequence is bound.
+The built-in command @code{describe-key} waits for a key sequence to be input. If that key sequence is bound to a command, it describes the command. This is an excellent way to discover (or remind yourself) to which command a key sequence is bound.
 
-In the global keymap, @kbd{C-h k} (@kbd{j h k}) is bound to
-@code{describe-key}.
+In the global keymap, @kbd{C-h k} (@kbd{j h k}) is bound to @code{describe-key}.
 
-This command reads key sequences directly, without leveraging Loco. To
-use Loco to enter a key sequence for the purpose of describing the
-command to which it is bound, Loco provides a similar command called
-@code{loco-default-describe-kseq}.
+This command reads key sequences directly, without leveraging Loco. To use Loco to enter a key sequence for the purpose of describing the command to which it is bound, Loco provides a similar command called @code{loco-default-describe-kseq}.
 
-When Loco is enabled in the current buffer, @kbd{C-h S-<return>} (@kbd{j
-h S-<return>}) is bound to @code{loco-default-describe-kseq}.
+When Loco is enabled in the current buffer, @kbd{C-h S-<return>} (@kbd{j h S-<return>}) is bound to @code{loco-default-describe-kseq}.
 
 @node Repeating commands
 @section Repeating commands
-One advantage of using physical modifier keys is that once held, the
-non-modifier key can be pressed multiple times in sequence to repeat the
-command.
+One advantage of using physical modifier keys is that once held, the non-modifier key can be pressed multiple times in sequence to repeat the command.
 
-Emacs provides a
-@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Repeating.html,number
-of ways} to assist with repeating a command, and Loco works well with
-all of them. In particular, using @code{repeat-mode} to setup groups of
-commands that can be repeated by pressing only their last letter is
-highly recommended.
+Emacs provides a @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Repeating.html,number of ways} to assist with repeating a command, and Loco works well with all of them. In particular, using @code{repeat-mode} to setup groups of commands that can be repeated by pressing only their last letter is highly recommended.
 
 @node Working with physical modifier keys
 @section Working with physical modifier keys
-While Loco aims to replace the need for physical modifier keys, there
-might be some cases where you want to use key bindings that use them.
-Because Loco does not replace or disable any keymaps, you are able to
-use other key bindings as you see fit.
+While Loco aims to replace the need for physical modifier keys, there might be some cases where you want to use key bindings that use them. Because Loco does not replace or disable any keymaps, you are able to use other key bindings as you see fit.
 
-Furthermore, while not necessary, any physical modifier keys you use
-while entering key sequences in Loco are properly merged with the set of
-pending modifiers.
+Furthermore, while not necessary, any physical modifier keys you use while entering key sequences in Loco are properly merged with the set of pending modifiers.
 
 @node Considerations when using a terminal
 @section Considerations when using a terminal
-In a GUI environment, applications receive key events directly from the
-@uref{https://en.wikipedia.org/wiki/Windowing_system,windowing system}
-(for example, X11, Wayland, or Quartz Compositor). These systems have
-comprehensive support for detecting various key combinations, including
-multiple modifiers pressed simultaneously with other keys. The only
-limitation is usually from the operating system itself, which reserves
-certain key combinations for its own functions.
+In a GUI environment, applications receive key events directly from the @uref{https://en.wikipedia.org/wiki/Windowing_system,windowing system} (for example, X11, Wayland, or Quartz Compositor). These systems have comprehensive support for detecting various key combinations, including multiple modifiers pressed simultaneously with other keys. The only limitation is usually from the operating system itself, which reserves certain key combinations for its own functions.
 
-Modern terminal applications are typically run within a
-@uref{https://en.wikipedia.org/wiki/Terminal_emulator,terminal
-emulator}, an application that itself reserves certain key combinations
-for its own functions. This creates a disparity between the total number
-of keys available to the GUI application and the terminal application.
+Modern terminal applications are typically run within a @uref{https://en.wikipedia.org/wiki/Terminal_emulator,terminal emulator}, an application that itself reserves certain key combinations for its own functions. This creates a disparity between the total number of keys available to the GUI application and the terminal application.
 
-Terminal emulators are designed to mimic the behaviour of older physical
-terminals (for example, the
-@uref{https://en.wikipedia.org/wiki/VT100,VT100}). Most terminal
-emulators work by encoding input into characters or escape sequences
-that the terminal application interprets. This limits how key events are
-handled by terminal applications in several ways:
+Terminal emulators are designed to mimic the behaviour of older physical terminals (for example, the @uref{https://en.wikipedia.org/wiki/VT100,VT100}). Most terminal emulators work by encoding input into characters or escape sequences that the terminal application interprets. This limits how key events are handled by terminal applications in several ways:
 
 @itemize
 @item
-The @kbd{Control} key is typically limited to modifying these specific
-32 characters:
-@code{@@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ?}.
-These characters have @uref{https://en.wikipedia.org/wiki/ASCII,ASCII}
-codes of 64 to 95 inclusive. When pressed in conjunction with
-@kbd{Control}, 64 is subtracted from their ASCII code, resulting in a
-@uref{https://en.wikipedia.org/wiki/Control_character,Control
-Character}. This form of encoding inherently limits which combinations
-are possible with @kbd{Control} and does not work well in conjunction
-with any other modifier key.
+The @kbd{Control} key is typically limited to modifying these specific 32 characters: @code{@@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ?}. These characters have @uref{https://en.wikipedia.org/wiki/ASCII,ASCII} codes of 64 to 95 inclusive. When pressed in conjunction with @kbd{Control}, 64 is subtracted from their ASCII code, resulting in a @uref{https://en.wikipedia.org/wiki/Control_character,Control Character}. This form of encoding inherently limits which combinations are possible with @kbd{Control} and does not work well in conjunction with any other modifier key.
 
 @item
-Other modifier keys, and keys without ASCII equivalents (for example,
-the arrow and function keys), are either encoded as character sequences
-beginning with the @kbd{ESC} character or not sent to terminal
-applications at all. Interpreting these sequences can be less reliable,
-especially for complex combinations involving multiple modifiers.
+Other modifier keys, and keys without ASCII equivalents (for example, the arrow and function keys), are either encoded as character sequences beginning with the @kbd{ESC} character or not sent to terminal applications at all. Interpreting these sequences can be less reliable, especially for complex combinations involving multiple modifiers.
 
 @end itemize
 
-Fortunately, Loco works consistently in both the GUI and terminal. By
-translating simple key sequences into complex ones, Loco avoids the
-above limitations.
+Fortunately, Loco works consistently in both the GUI and terminal. By translating simple key sequences into complex ones, Loco avoids the above limitations.
 
 @node Customization
 @chapter Customization
 @quotation
-Most of this section assumes the reader has basic experience with
-@uref{https://www.gnu.org/software/emacs/manual/html_node/eintr/,Emacs
-Lisp}.
+Most of this section assumes the reader has basic experience with @uref{https://www.gnu.org/software/emacs/manual/html_node/eintr/,Emacs Lisp}.
 @end quotation
 
 @menu
@@ -925,33 +682,18 @@ Lisp}.
 
 @node Using the "Easy Customization Interface"
 @section Using the "Easy Customization Interface"
-The
-@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html,Easy
-Customization Interface} can be used to customize certain properties of
-Loco, including its lighter and its prompts.
+The @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html,Easy Customization Interface} can be used to customize certain properties of Loco, including its lighter and its prompts.
 
 @quotation
-You can also customize properties related to logging, which is useful if
-you are planning on modifying the source code for Loco. Logging is not
-explained in this document; see the source code for details.
+You can also customize properties related to logging, which is useful if you are planning on modifying the source code for Loco. Logging is not explained in this document; see the source code for details.
 @end quotation
-Some of the properties presented in this interface take
-@uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Expressions.html,S-expressions}
-as values. These permit more possibilities for values; for example,
-strings styled with custom colours and fonts.
+Some of the properties presented in this interface take @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Expressions.html,S-expressions} as values. These permit more possibilities for values; for example, strings styled with custom colours and fonts.
 
-All of the properties presented in this interface can be set using Emacs
-Lisp as well.
+All of the properties presented in this interface can be set using Emacs Lisp as well.
 
 @node Changing the key bindings used to enable disable or activate Loco
-@section Changing the key bindings used to enable, disable, or activate
-Loco
-The command @code{loco-set-default-configuration} sets the default key
-bindings to enable, disable, or activate Loco. Typically, you should
-call this command automatically on startup, as recommended in
-@ref{Installation}, but it is not required that you do so. This command
-sets the default key bindings as follows, and you can edit this code to
-bind your own key sequences as desired.
+@section Changing the key bindings used to enable, disable, or activate Loco
+The command @code{loco-set-default-configuration} sets the default key bindings to enable, disable, or activate Loco. Typically, you should call this command automatically on startup, as recommended in @ref{Installation}, but it is not required that you do so. This command sets the default key bindings as follows, and you can edit this code to bind your own key sequences as desired.
 
 @verbatim
 ;; Bind "C-c ," to toggle Loco in the current buffer
@@ -971,14 +713,11 @@ bind your own key sequences as desired.
             #'loco-default-execute-kseq)
 @end verbatim
 
-The command @code{loco-unset-default-configuration} is the inverse of
-@code{loco-set-default-configuration}; the former will unset any
-keybindings set by the latter.
+The command @code{loco-unset-default-configuration} is the inverse of @code{loco-set-default-configuration}; the former will unset any keybindings set by the latter.
 
 @node Changing the keys used while Loco reads a key sequence
 @section Changing the keys used while Loco reads a key sequence
-By default, @kbd{S-<return>} is bound to
-@code{loco-default-execute-kseq}. This command is defined as follows.
+By default, @kbd{S-<return>} is bound to @code{loco-default-execute-kseq}. This command is defined as follows.
 
 @verbatim
 (defun loco-default-execute-kseq (&rest args)
@@ -986,13 +725,9 @@ By default, @kbd{S-<return>} is bound to
   (apply #'loco-read-kseq :key-mod-c ?j :key-mod-m ?k args))
 @end verbatim
 
-This command calls @code{loco-read-kseq} with two arguments. These
-arguments tell @code{loco-read-kseq} that while reading a key sequence,
-@kbd{j} should set @kbd{Control} pending and @kbd{k} should set
-@kbd{Meta} pending, respectively.
+This command calls @code{loco-read-kseq} with two arguments. These arguments tell @code{loco-read-kseq} that while reading a key sequence, @kbd{j} should set @kbd{Control} pending and @kbd{k} should set @kbd{Meta} pending, respectively.
 
-We can define a similar command, called @code{my-loco-execute-kseq}, and
-rebind @kbd{S-<return>} to it as follows.
+We can define a similar command, called @code{my-loco-execute-kseq}, and rebind @kbd{S-<return>} to it as follows.
 
 @verbatim
 (defun my-loco-execute-kseq (&rest args)
@@ -1007,16 +742,13 @@ rebind @kbd{S-<return>} to it as follows.
 
 Our command calls @code{loco-read-kseq} with eight arguments.
 
-The first seven arguments tell @code{loco-read-kseq} that while reading
-a key sequence:
+The first seven arguments tell @code{loco-read-kseq} that while reading a key sequence:
 
 @itemize
 @item
-@emph{no} key should toggle @kbd{Control} then close the Assist Menu
-(when it is open);
+@emph{no} key should toggle @kbd{Control} then close the Assist Menu (when it is open);
 @item
-@emph{no} key should toggle @kbd{Meta} then close the Assist Menu (when
-it is open);
+@emph{no} key should toggle @kbd{Meta} then close the Assist Menu (when it is open);
 @item
 @kbd{/} should collapse the Assist Menu (when it is open and expanded);
 @item
@@ -1030,57 +762,22 @@ it is open);
 @end itemize
 
 @quotation
-On a QWERTY keyboard, @kbd{m}, @kbd{,}, @kbd{.}, and @kbd{/} are
-adjacent, like the default keys @kbd{j}, @kbd{k}, @kbd{l}, and @kbd{;},
-but located one row lower on the keyboard and with the two modifier keys
-located in the centre of the group. While only an example, this may be a
-desirable configuration for those who find it easier to mentally
-associate the modifiers to punctuation (@kbd{,} and @kbd{.} instead of
-@kbd{j} and @kbd{k}, respectively), or remember @kbd{m} as "menu".
+On a QWERTY keyboard, @kbd{m}, @kbd{,}, @kbd{.}, and @kbd{/} are adjacent, like the default keys @kbd{j}, @kbd{k}, @kbd{l}, and @kbd{;}, but located one row lower on the keyboard and with the two modifier keys located in the centre of the group. While only an example, this may be a desirable configuration for those who find it easier to mentally associate the modifiers to punctuation (@kbd{,} and @kbd{.} instead of @kbd{j} and @kbd{k}, respectively), or remember @kbd{m} as "menu".
 @end quotation
-In this configuration, we've decided that when Loco is reading a key
-sequence, @kbd{m} should open the Assist Menu. By repurposing @kbd{m}
-for this, we need to rely on the Assist Menu to help us enter a literal
-@emph{m} when necessary. By default, the Assist Menu already reserves
-@kbd{a} @kbd{c} @kbd{h} @kbd{m} and @kbd{s} to toggle pending modifiers
-then close the Assist Menu. This creates the potential for conflict.
+In this configuration, we've decided that when Loco is reading a key sequence, @kbd{m} should open the Assist Menu. By repurposing @kbd{m} for this, we need to rely on the Assist Menu to help us enter a literal @emph{m} when necessary. By default, the Assist Menu already reserves @kbd{a} @kbd{c} @kbd{h} @kbd{m} and @kbd{s} to toggle pending modifiers then close the Assist Menu. This creates the potential for conflict.
 
-Our configuration also defines @kbd{,} and @kbd{.} as the primary means
-to set @kbd{Control} and @kbd{Meta} pending, respectively. As such,
-having the means to toggle these modifiers from the Assist Menu is less
-useful. To avoid the potential conflict in setting @kbd{m} to mean both
-@emph{m} and @kbd{Meta} when the Assist Menu is open, we remove the
-latter meaning using @code{:key-am-mod-m-cl nil}. And while not
-necessary to avoid a conflict, for clarity and consistency we also set
-@code{:key-am-mod-c-cl nil}.
+Our configuration also defines @kbd{,} and @kbd{.} as the primary means to set @kbd{Control} and @kbd{Meta} pending, respectively. As such, having the means to toggle these modifiers from the Assist Menu is less useful. To avoid the potential conflict in setting @kbd{m} to mean both @emph{m} and @kbd{Meta} when the Assist Menu is open, we remove the latter meaning using @code{:key-am-mod-m-cl nil}. And while not necessary to avoid a conflict, for clarity and consistency we also set @code{:key-am-mod-c-cl nil}.
 
 @quotation
-Note that, by default, the Assist Menu also reserves @kbd{A} @kbd{C}
-@kbd{H} @kbd{M} and @kbd{S} as the @ref{Persistent keys,,persistent}
-versions of @kbd{a} @kbd{c} @kbd{h} @kbd{m} and @kbd{s}, respectively.
-As none of the persistent versions of these keys were removed from our
-configuration, there does remain a means to toggle @kbd{Control} and
-@kbd{Meta} from the Assist Menu if desired.
+Note that, by default, the Assist Menu also reserves @kbd{A} @kbd{C} @kbd{H} @kbd{M} and @kbd{S} as the @ref{Persistent keys,,persistent} versions of @kbd{a} @kbd{c} @kbd{h} @kbd{m} and @kbd{s}, respectively. As none of the persistent versions of these keys were removed from our configuration, there does remain a means to toggle @kbd{Control} and @kbd{Meta} from the Assist Menu if desired.
 @end quotation
-Our command calls @code{loco-read-kseq} with one additional argument:
-@code{:validate t}. When non-nil, this argument tells
-@code{loco-read-kseq} to validate the set of keys it will use while
-reading a key sequence. For example, the validation process checks that
-no key is assigned to more than one function. Any problems found during
-the validation process are printed in the log. @code{:validate t} is
-recommended any time you are customizing Loco's keys.
+Our command calls @code{loco-read-kseq} with one additional argument: @code{:validate t}. When non-nil, this argument tells @code{loco-read-kseq} to validate the set of keys it will use while reading a key sequence. For example, the validation process checks that no key is assigned to more than one function. Any problems found during the validation process are printed in the log. @code{:validate t} is recommended any time you are customizing Loco's keys.
 
-The Assist Menu displays itself according to the keys as you've
-configured them. By default, it will display itself (when open and
-expanded) like this: @code{[achms jkl q x ;]}. For the configuration in
-this example, it will display itself (when open and expanded) like this:
-@code{[ahs ,.m q x /]}.
+The Assist Menu displays itself according to the keys as you've configured them. By default, it will display itself (when open and expanded) like this: @code{[achms jkl q x ;]}. For the configuration in this example, it will display itself (when open and expanded) like this: @code{[ahs ,.m q x /]}.
 
-Our example is not quite complete. We should also ensure that we have a
-describe command that works in the same manner as our execute command.
+Our example is not quite complete. We should also ensure that we have a describe command that works in the same manner as our execute command.
 
-By default, @kbd{C-h S-<return>} is bound to
-@code{loco-default-describe-kseq}. This command is defined as follows.
+By default, @kbd{C-h S-<return>} is bound to @code{loco-default-describe-kseq}. This command is defined as follows.
 
 @verbatim
 (defun loco-default-describe-kseq (&rest args)
@@ -1088,13 +785,9 @@ By default, @kbd{C-h S-<return>} is bound to
   (apply #'loco-default-execute-kseq :d t args))
 @end verbatim
 
-This command calls @code{loco-default-execute-kseq} with one additional
-argument: @code{:d t}. When non-nil, this argument tells
-@code{loco-read-kseq} that if it reads a key sequence that is bound to a
-command, that command should be described instead of executed.
+This command calls @code{loco-default-execute-kseq} with one additional argument: @code{:d t}. When non-nil, this argument tells @code{loco-read-kseq} that if it reads a key sequence that is bound to a command, that command should be described instead of executed.
 
-We can define a similar command, called @code{my-loco-describe-kseq},
-and rebind @kbd{C-h S-<return>} to it as follows.
+We can define a similar command, called @code{my-loco-describe-kseq}, and rebind @kbd{C-h S-<return>} to it as follows.
 
 @verbatim
 (defun my-loco-describe-kseq (&rest args)
@@ -1104,9 +797,7 @@ and rebind @kbd{C-h S-<return>} to it as follows.
 (keymap-set loco-mode-keymap "C-h S-<return>" #'my-loco-describe-kseq)
 @end verbatim
 
-There are a total of 25 keyword arguments that can be passed to
-@code{loco-read-kseq}, all of which are explained in the documentation
-for that command.
+There are a total of 25 keyword arguments that can be passed to @code{loco-read-kseq}, all of which are explained in the documentation for that command.
 
 @node Advanced topics
 @section Advanced topics
@@ -1119,29 +810,13 @@ for that command.
 
 @node Mapping Caps Lock to Control
 @subsection Mapping Caps Lock to Control
-@kbd{S-<return>} is easy to press, but it would be easier still to be
-able to activate Loco with a physical modifier key located right on the
-home row. If this physical modifier key were @kbd{Control}, you would
-also have quick access to some very common Emacs key bindings without
-use of Loco. For example, @kbd{C-n} and @kbd{C-p}.
+@kbd{S-<return>} is easy to press, but it would be easier still to be able to activate Loco with a physical modifier key located right on the home row. If this physical modifier key were @kbd{Control}, you would also have quick access to some very common Emacs key bindings without use of Loco. For example, @kbd{C-n} and @kbd{C-p}.
 
-@kbd{Caps Lock}, located to the left of @kbd{a} on a QWERTY keyboard, is
-a rarely-used key in a prime location. As such, it is common to remap
-this key to @kbd{Control}.
+@kbd{Caps Lock}, located to the left of @kbd{a} on a QWERTY keyboard, is a rarely-used key in a prime location. As such, it is common to remap this key to @kbd{Control}.
 
-For example, on MacOS, where keys are not easily remapped system-wide,
-mapping @kbd{Caps Lock} to @kbd{Control} is possible without any
-third-party tools. In @emph{System Preferences > Keyboard > Keyboard
-Shortcuts... > Modifier Keys}, change @emph{Caps Lock key} to
-@emph{Control}. You might also want to change @emph{Control key} to
-@emph{Caps Lock}, effectively swapping the behaviour of the two keys, to
-ensure you still have a means to toggle @kbd{Caps Lock} if desired. If
-you use multiple keyboards, make sure to change these settings for each
-keyboard in turn by selecting each keyboard at the top of this dialog
-box. Press @emph{Done} when complete.
+For example, on MacOS, where keys are not easily remapped system-wide, mapping @kbd{Caps Lock} to @kbd{Control} is possible without any third-party tools. In @emph{System Preferences > Keyboard > Keyboard Shortcuts... > Modifier Keys}, change @emph{Caps Lock key} to @emph{Control}. You might also want to change @emph{Control key} to @emph{Caps Lock}, effectively swapping the behaviour of the two keys, to ensure you still have a means to toggle @kbd{Caps Lock} if desired. If you use multiple keyboards, make sure to change these settings for each keyboard in turn by selecting each keyboard at the top of this dialog box. Press @emph{Done} when complete.
 
-You can set key bindings for @kbd{C-<return>} and @kbd{C-h C-<return>}
-as follows.
+You can set key bindings for @kbd{C-<return>} and @kbd{C-h C-<return>} as follows.
 
 @verbatim
 ;; When Loco is enabled in the current buffer, bind "C-h C-<return>"
@@ -1157,12 +832,9 @@ as follows.
 
 @node Activation keys that also function as modifiers
 @subsection Activation keys that also function as modifiers
-Activation keys can also function as modifiers, allowing you to both
-activate Loco and set a pending modifier with a single key.
+Activation keys can also function as modifiers, allowing you to both activate Loco and set a pending modifier with a single key.
 
-This example will extend the example in
-@ref{Changing the keys used while Loco reads a key sequence,,Changing
-the keys used while Loco reads a key sequence}.
+This example will extend the example in @ref{Changing the keys used while Loco reads a key sequence,,Changing the keys used while Loco reads a key sequence}.
 
 Consider the following code:
 
@@ -1200,65 +872,30 @@ Consider the following code:
 
 Here we create a total of four activation keys.
 
-@kbd{C-,} and @kbd{C-.} both activate Loco to read a key sequence and
-execute the command to which it is bound, but @kbd{C-,} activates Loco
-with @kbd{Control} pending and @kbd{C-.} with @kbd{Meta} pending.
+@kbd{C-,} and @kbd{C-.} both activate Loco to read a key sequence and execute the command to which it is bound, but @kbd{C-,} activates Loco with @kbd{Control} pending and @kbd{C-.} with @kbd{Meta} pending.
 
-@kbd{C-h C-,} and @kbd{C-h C-.} both activate Loco to read a key
-sequence and describe the command to which it is bound, but @kbd{C-h
-C-,} activates Loco with @kbd{Control} pending and @kbd{C-h C-.} with
-@kbd{Meta} pending.
+@kbd{C-h C-,} and @kbd{C-h C-.} both activate Loco to read a key sequence and describe the command to which it is bound, but @kbd{C-h C-,} activates Loco with @kbd{Control} pending and @kbd{C-h C-.} with @kbd{Meta} pending.
 
 @quotation
-Note the use of the physical @kbd{Control} key here. This allows us to
-choose two adjacent activation keys, as there are almost no keys that
-use @kbd{Shift} that aren't extremely important, aside from a few keys
-like @kbd{S-<return>}, which we've been using. To use this example
-effectively, consider @ref{Mapping Caps Lock to Control,,Mapping Caps
-Lock to Control} to ensure that @kbd{Control} is easy to press.
+Note the use of the physical @kbd{Control} key here. This allows us to choose two adjacent activation keys, as there are almost no keys that use @kbd{Shift} that aren't extremely important, aside from a few keys like @kbd{S-<return>}, which we've been using. To use this example effectively, consider @ref{Mapping Caps Lock to Control,,Mapping Caps Lock to Control} to ensure that @kbd{Control} is easy to press.
 @end quotation
-The argument @code{:kseq} tells @code{loco-read-kseq} to immediately
-process a key sequence before reading any input from the user.
+The argument @code{:kseq} tells @code{loco-read-kseq} to immediately process a key sequence before reading any input from the user.
 
-In @code{my-loco-execute-control-kseq}, @code{:kseq [?,]} tells
-@code{loco-read-kseq} to immediately process a single @kbd{,} before
-reading any input from the user. Because we've also assigned @kbd{,} to
-be interpreted as @kbd{Control}, the combined effect of both arguments
-is to make @kbd{Control} immediately pending.
+In @code{my-loco-execute-control-kseq}, @code{:kseq [?,]} tells @code{loco-read-kseq} to immediately process a single @kbd{,} before reading any input from the user. Because we've also assigned @kbd{,} to be interpreted as @kbd{Control}, the combined effect of both arguments is to make @kbd{Control} immediately pending.
 
-Similarly, in @code{my-loco-execute-meta-kseq}, @code{:kseq [?.]} tells
-@code{loco-read-kseq} to immediately process a single @kbd{.} before
-reading any input from the user. Because we've also assigned @kbd{.} to
-be interpreted as @kbd{Meta}, the combined effect of both arguments is
-to make @kbd{Meta} immediately pending.
+Similarly, in @code{my-loco-execute-meta-kseq}, @code{:kseq [?.]} tells @code{loco-read-kseq} to immediately process a single @kbd{.} before reading any input from the user. Because we've also assigned @kbd{.} to be interpreted as @kbd{Meta}, the combined effect of both arguments is to make @kbd{Meta} immediately pending.
 
-The argument @code{:strip t} tells @code{loco-read-kseq} to strip all
-modifiers from any key that it reads. This is optional; its effect,
-though subtle, can be desirable. As per
-@ref{Working with physical modifier keys,,Working with physical modifier
-keys}, Loco is happy to merge any modified keys with any pending
-modifiers. When activating Loco with a key that is similar to the keys
-required to toggle pending modifiers, accidentally holding any physical
-modifier key past its intended key may modify subsequent keys, possibly
-resulting in a key sequence bound to a different command that intended.
-Stripping modifiers from keys allows for some forgiveness when typing
-quickly, to ensure the modifiers aren't incorrectly applied to the wrong
-keys.
+The argument @code{:strip t} tells @code{loco-read-kseq} to strip all modifiers from any key that it reads. This is optional; its effect, though subtle, can be desirable. As per @ref{Working with physical modifier keys,,Working with physical modifier keys}, Loco is happy to merge any modified keys with any pending modifiers. When activating Loco with a key that is similar to the keys required to toggle pending modifiers, accidentally holding any physical modifier key past its intended key may modify subsequent keys, possibly resulting in a key sequence bound to a different command that intended. Stripping modifiers from keys allows for some forgiveness when typing quickly, to ensure the modifiers aren't incorrectly applied to the wrong keys.
 
 @quotation
-Note that when both @code{:strip} and @code{:validate} are non-nil, the
-validation process will correctly strip all keys before checking for
-duplicates.
+Note that when both @code{:strip} and @code{:validate} are non-nil, the validation process will correctly strip all keys before checking for duplicates.
 @end quotation
 
 @node Activation keys that avoid modifiers completely
 @subsection Activation keys that avoid modifiers completely
-Activation keys can avoid modifiers completely, allowing you use Loco
-without using any physical modifier keys.
+Activation keys can avoid modifiers completely, allowing you use Loco without using any physical modifier keys.
 
-This example will extend the example in
-@ref{Activation keys that also function as modifiers,,Activation keys
-that also function as modifiers}.
+This example will extend the example in @ref{Activation keys that also function as modifiers,,Activation keys that also function as modifiers}.
 
 Consider the following code:
 
@@ -1296,103 +933,65 @@ Consider the following code:
 (keymap-set loco-mode-keymap "." #'my-loco-execute-meta-kseq)
 @end verbatim
 
-Here we consider an extreme (but useful) configuration that reduces the
-activation keys to @kbd{C-h ,}, @kbd{C-h .}, @kbd{,}, and @kbd{.}.
+Here we consider an extreme (but useful) configuration that reduces the activation keys to @kbd{C-h ,}, @kbd{C-h .}, @kbd{,}, and @kbd{.}.
 
-The effect of setting @kbd{,} and @kbd{.} as activation keys is
-significant. By rebinding them to activation keys, they no longer
-perform their original purpose: to enter a literal comma or period,
-respectively. Both are essential punctuation, second only to the letters
-and digits in terms of frequency of use.
+The effect of setting @kbd{,} and @kbd{.} as activation keys is significant. By rebinding them to activation keys, they no longer perform their original purpose: to enter a literal comma or period, respectively. Both are essential punctuation, second only to the letters and digits in terms of frequency of use.
 
-Here we see a new argument: @code{:dt t}. When non-nil, this argument
-tells @code{loco-read-kseq} to apply an additional rule when processing
-keys: the @emph{double-tap} rule.
+Here we see a new argument: @code{:dt t}. When non-nil, this argument tells @code{loco-read-kseq} to apply an additional rule when processing keys: the @emph{double-tap} rule.
 
-The double-tap rule, for this configuration, states that if @kbd{,} is
-pressed when @kbd{Control} is the @emph{only} pending modifier, or if
-@kbd{.} is pressed when @kbd{Meta} is the @emph{only} pending modifier,
-clear the modifier and add the key @emph{unmodified} to the key
-sequence.
+The double-tap rule, for this configuration, states that if @kbd{,} is pressed when @kbd{Control} is the @emph{only} pending modifier, or if @kbd{.} is pressed when @kbd{Meta} is the @emph{only} pending modifier, clear the modifier and add the key @emph{unmodified} to the key sequence.
 
-This rule permits @kbd{,} and @kbd{.} to be entered as @kbd{, ,} or
-@kbd{. .}, respectively. It is called double-tap because it takes effect
-when these keys are tapped twice in succession (provided no other
-modifiers are in effect).
+This rule permits @kbd{,} and @kbd{.} to be entered as @kbd{, ,} or @kbd{. .}, respectively. It is called double-tap because it takes effect when these keys are tapped twice in succession (provided no other modifiers are in effect).
 
-Without this rule, entering a literal comma or period would be unduly
-onerous. For example, here are four alternate ways by which you could
-enter a literal comma or period, respectively:
+Without this rule, entering a literal comma or period would be unduly onerous. For example, here are four alternate ways by which you could enter a literal comma or period, respectively:
 
 @enumerate 
 @item
 @kbd{, m C ,} or @kbd{. m M .}
 
-This method uses the Assist Menu (once), but uses a
-@ref{Persistent keys,,persistent key} to keep the menu open.
+This method uses the Assist Menu (once), but uses a @ref{Persistent keys,,persistent key} to keep the menu open.
 
 @item
 @kbd{, m c m ,} or @kbd{. m m m .}
 
-This method uses the Assist Menu (twice), but does not require a
-physical modifier key.
+This method uses the Assist Menu (twice), but does not require a physical modifier key.
 
 @item
 @kbd{C-q ,} or @kbd{C-q .}
 
-In Emacs, @kbd{C-q} is bound to the command @code{quoted-insert}, which
-will read the next key and insert it. This method uses
-@code{quoted-insert}, but requires a physical modifier key.
+In Emacs, @kbd{C-q} is bound to the command @code{quoted-insert}, which will read the next key and insert it. This method uses @code{quoted-insert}, but requires a physical modifier key.
 
 @item
 @kbd{, q ,} or @kbd{, q .}
 
-@kbd{C-q} itself can be entered as @kbd{, q}. This method uses
-@code{quoted-insert}, but does not require a physical modifier key.
+@kbd{C-q} itself can be entered as @kbd{, q}. This method uses @code{quoted-insert}, but does not require a physical modifier key.
 
 @end enumerate
 
-While the double-tap rule makes entering a literal comma or period easy,
-it does come with a cost.
+While the double-tap rule makes entering a literal comma or period easy, it does come with a cost.
 
-Without this rule, @kbd{, ,} would be translated to @kbd{C-,}. The first
-@kbd{,} would tell Loco to consider @kbd{Control} as pending, and the
-second @kbd{,} would tell Loco to apply @kbd{Control} to @kbd{,}.
+Without this rule, @kbd{, ,} would be translated to @kbd{C-,}. The first @kbd{,} would tell Loco to consider @kbd{Control} as pending, and the second @kbd{,} would tell Loco to apply @kbd{Control} to @kbd{,}.
 
-Similarly, @kbd{. .} would be translated to @kbd{M-.}. The first @kbd{.}
-would tell Loco to consider @kbd{Meta} as pending, and the second
-@kbd{.} would tell Loco to apply @kbd{Meta} to @kbd{.}.
+Similarly, @kbd{. .} would be translated to @kbd{M-.}. The first @kbd{.} would tell Loco to consider @kbd{Meta} as pending, and the second @kbd{.} would tell Loco to apply @kbd{Meta} to @kbd{.}.
 
-While @kbd{C-,} and @kbd{M-.} are less frequently used than literal
-commas and periods (@kbd{C-,} is not bound to any command and @kbd{M-.}
-is bound to @code{xref-find-definition}), we must still be able to enter
-them.
+While @kbd{C-,} and @kbd{M-.} are less frequently used than literal commas and periods (@kbd{C-,} is not bound to any command and @kbd{M-.} is bound to @code{xref-find-definition}), we must still be able to enter them.
 
-Fortunately, we can use the Assist Menu for this. @kbd{C-,} and
-@kbd{M-.} can be entered as @kbd{, m ,} and @kbd{. m .}, respectively.
+Fortunately, we can use the Assist Menu for this. @kbd{C-,} and @kbd{M-.} can be entered as @kbd{, m ,} and @kbd{. m .}, respectively.
 
 @node Author and copyright
 @chapter Author and copyright
-Loco was written and copyright in 2024 by Chris McLaren
-(@uref{https://www.github.com/csmclaren,@@csmclaren}).
+Loco was written and copyright in 2024 by Chris McLaren (@uref{https://www.github.com/csmclaren,@@csmclaren}).
 
 @node License
 @chapter License
 This file is part of Loco.
 
-Loco is licensed under the @uref{https://www.gnu.org,GNU} General Public
-License v3.0. See the @url{COPYING} file for details.
+Loco is licensed under the @uref{https://www.gnu.org,GNU} General Public License v3.0. See the @url{COPYING} file for details.
 
 @node Colophon
 @chapter Colophon
-The logo for Loco is a representation of a
-@uref{https://en.wikipedia.org/wiki/Tram,tram} car from the
-@uref{https://home.unicode.org,Unicode} chart
-@uref{https://unicode.org/charts/PDF/U1F680.pdf,Transport and Map
-Symbols}. Loco was created in Lisbon, Portugal, a city with a
-@uref{https://en.wikipedia.org/wiki/Trams_in_Lisbon,history} of using
-tram cars such as these.
+The logo for Loco is a representation of a @uref{https://en.wikipedia.org/wiki/Tram,tram} car from the @uref{https://home.unicode.org,Unicode} chart @uref{https://unicode.org/charts/PDF/U1F680.pdf,Transport and Map Symbols}. Loco was created in Lisbon, Portugal, a city with a @uref{https://en.wikipedia.org/wiki/Trams_in_Lisbon,history} of using tram cars such as these.
 
-This document was produced on July 17, 2024, using @uref{https://pandoc.org,Pandoc}.
+This document was produced on July 17, 2024.
 
 @bye

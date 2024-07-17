@@ -1,4 +1,15 @@
+---
+dircategory: "Emacs"
+direntry: "* Loco: (loco).                 Enter complex key sequences with ease!"
+filter_embed_stylesheet_fpath: "build/loco.css"
+filter_link_stylesheet_fpath: "loco.css"
+filter_toc_exclude_pattern: "table%-of%-contents"
+title: "Loco"
+---
+
 # Loco &nbsp;&#x1F68B;
+
+Loco is a library and minor mode to help you enter complex key sequences with ease.
 
 ## Table of contents
 
@@ -11,7 +22,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) for [Em
 
 Loco works by translating key sequences from one form to another. It does not redefine the [standard key bindings](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf), nor does it prevent you from [defining your own](https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Bindings.html). Learn the few rules of Loco and be productive immediately, using the key bindings you already know.
 
-Loco does not preclude the use of physical modifier keys; it integrates well with them. There may even be some key bindings for which you find using physical modifier keys preferable. And it works equally well in the [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) or the [terminal](https://en.wikipedia.org/wiki/Computer_terminal), working around the [limitations of terminals](#considerations-when-using-a-terminal) that prevent the entry of certain keys, allowing you to move between both with ease.
+Loco does not preclude the use of physical modifier keys; it integrates well with them. There may even be some key bindings for which you find using physical modifier keys preferable. And it works equally well in the [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) or the [terminal](https://en.wikipedia.org/wiki/Computer_terminal), working around the [limitations of terminals](#considerations-when-using-a-terminal) that prevent the entry of certain keys, allowing you to move between both easily.
 
 When enabled, and using the default configuration, pressing <kbd>S-&lt;return&gt;</kbd> will activate Loco.
 
