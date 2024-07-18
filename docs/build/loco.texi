@@ -3,7 +3,7 @@
 
 @dircategory Emacs
 @direntry
-Loco: (loco). Enter complex key sequences with ease!
+* Loco: (loco). Enter complex key sequences with ease!
 @end direntry
 
 @documentencoding UTF-8
@@ -992,6 +992,6 @@ Loco is licensed under the @uref{https://www.gnu.org,GNU} General Public License
 @chapter Colophon
 The logo for Loco is a representation of a @uref{https://en.wikipedia.org/wiki/Tram,tram} car from the @uref{https://home.unicode.org,Unicode} chart @uref{https://unicode.org/charts/PDF/U1F680.pdf,Transport and Map Symbols}. Loco was created in Lisbon, Portugal, a city with a @uref{https://en.wikipedia.org/wiki/Trams_in_Lisbon,history} of using tram cars such as these.
 
-This document was produced on July 17, 2024.
+This document was produced on July 18, 2024.
 
 @bye

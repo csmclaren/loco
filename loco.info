@@ -2,7 +2,7 @@ This is loco.info, produced by makeinfo version 7.1 from loco.texi.
 
 INFO-DIR-SECTION Emacs
 START-INFO-DIR-ENTRY
-Loco: (loco). Enter complex key sequences with ease!
+* Loco: (loco). Enter complex key sequences with ease!
 END-INFO-DIR-ENTRY
 
 
@@ -1155,45 +1155,45 @@ Lisbon, Portugal, a city with a history
 (https://en.wikipedia.org/wiki/Trams_in_Lisbon) of using tram cars such
 as these.
 
-This document was produced on July 17, 2024.
+This document was produced on July 18, 2024.
 
 
 
 Tag Table:
-Node: Top186
-Node: Table of contents495
-Node: Introduction2878
-Node: Examples using the default configuration5243
-Node: Installation6379
-Node: From MELPA6536
-Node: From source7800
-Node: Usage8858
-Node: Keys key sequences and commands9356
-Node: How Loco is different11067
-Node: Enabling disabling and activating Loco12047
-Node: Entering key sequences14734
-Node: Normal operation ie when the Assist Menu is closed17331
-Node: Assisted operation ie when the Assist Menu is open18623
-Node: Rock and roll20171
-Node: Persistent keys20952
-Node: Examples21773
-Node: Typical key sequences and their translations22008
-Node: More difficult key sequences and their translations22761
-Node: Describing commands24072
-Node: Repeating commands24948
-Node: Working with physical modifier keys25606
-Node: Considerations when using a terminal26246
-Node: Customization28782
-Node: Using the "Easy Customization Interface"29268
-Node: Changing the key bindings used to enable disable or activate Loco30307
-Node: Changing the keys used while Loco reads a key sequence31872
-Node: Advanced topics37525
-Node: Mapping Caps Lock to Control37839
-Node: Activation keys that also function as modifiers39722
-Node: Activation keys that avoid modifiers completely44179
-Node: Author and copyright48893
-Node: License49142
-Node: Colophon49402
+Node: Top188
+Node: Table of contents497
+Node: Introduction2880
+Node: Examples using the default configuration5245
+Node: Installation6381
+Node: From MELPA6538
+Node: From source7802
+Node: Usage8860
+Node: Keys key sequences and commands9358
+Node: How Loco is different11069
+Node: Enabling disabling and activating Loco12049
+Node: Entering key sequences14736
+Node: Normal operation ie when the Assist Menu is closed17333
+Node: Assisted operation ie when the Assist Menu is open18625
+Node: Rock and roll20173
+Node: Persistent keys20954
+Node: Examples21775
+Node: Typical key sequences and their translations22010
+Node: More difficult key sequences and their translations22763
+Node: Describing commands24074
+Node: Repeating commands24950
+Node: Working with physical modifier keys25608
+Node: Considerations when using a terminal26248
+Node: Customization28784
+Node: Using the "Easy Customization Interface"29270
+Node: Changing the key bindings used to enable disable or activate Loco30309
+Node: Changing the keys used while Loco reads a key sequence31874
+Node: Advanced topics37527
+Node: Mapping Caps Lock to Control37841
+Node: Activation keys that also function as modifiers39724
+Node: Activation keys that avoid modifiers completely44181
+Node: Author and copyright48895
+Node: License49144
+Node: Colophon49404
 
 End Tag Table
 

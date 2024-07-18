@@ -1,10 +1,10 @@
 ---
-dircategory: "Emacs"
-direntry: "* Loco: (loco).                 Enter complex key sequences with ease!"
-filter_embed_stylesheet_fpath: "build/loco.css"
-filter_link_stylesheet_fpath: "loco.css"
-filter_toc_exclude_pattern: "table%-of%-contents"
-title: "Loco"
+dircategory: 'Emacs'
+direntry: '\* Loco: (loco).                 Enter complex key sequences with ease!'
+filter_embed_stylesheet_fpath: 'build/loco.css'
+filter_link_stylesheet_fpath: 'loco.css'
+filter_toc_exclude_pattern: 'table%-of%-contents'
+title: 'Loco'
 ---
 
 # Loco &nbsp;&#x1F68B;

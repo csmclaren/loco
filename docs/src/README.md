@@ -1,6 +1,6 @@
 ---
-filter_toc_exclude_pattern: "table%-of%-contents"
-title: "Loco"
+filter_toc_exclude_pattern: 'table%-of%-contents'
+title: 'Loco'
 ---
 
 # Loco &nbsp;&#x1F68B;
