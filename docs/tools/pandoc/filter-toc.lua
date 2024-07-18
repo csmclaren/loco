@@ -4,7 +4,6 @@ local root = pandoc.BulletList{}
 
 function Meta(meta)
   exclude_pattern = pandoc.utils.stringify(meta.filter_toc_exclude_pattern)
-  print(exclude_pattern)
   return meta
 end
 
