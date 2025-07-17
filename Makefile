@@ -14,8 +14,8 @@ README.md: docs
 	cp docs/build/README.md README.md
 
 set-permissions:
-	find . -path './_private' -prune -o -type d -exec chmod 755 {} \;
-	find . -path './_private' -prune -o -type f -exec chmod 644 {} \;
+	find . -type d -exec chmod 755 {} \;
+	find . -type f -exec chmod 644 {} \;
 
 set-timestamps:
 	find . -exec touch {} +
