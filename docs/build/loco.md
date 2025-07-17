@@ -623,13 +623,11 @@ Fortunately, we can use the Assist Menu for this. <kbd>C-,</kbd> and <kbd>M-.</k
 
 ## Author and copyright
 
-Loco was written and copyright in 2024 by Chris McLaren ([@csmclaren](https://www.github.com/csmclaren)).
+This project was written and copyrighted in 2024 by Chris McLaren ([@csmclaren](https://www.github.com/csmclaren)).
 
 ## License
 
-This file is part of Loco.
-
-Loco is licensed under the [GNU](https://www.gnu.org) General Public License v3.0. See the [COPYING](COPYING) file for details.
+Unless otherwise noted, all files in this project are licensed under the [GNU](https://www.gnu.org) General Public License v3.0. See the [COPYING](COPYING) file for details.
 
 ## Colophon
 

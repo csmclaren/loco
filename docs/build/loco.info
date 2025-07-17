@@ -1127,8 +1127,8 @@ File: loco.info,  Node: Author and copyright,  Next: License,  Prev: Customizati
 6 Author and copyright
 **********************
 
-Loco was written and copyright in 2024 by Chris McLaren (@csmclaren
-(https://www.github.com/csmclaren)).
+This project was written and copyrighted in 2024 by Chris McLaren
+(@csmclaren (https://www.github.com/csmclaren)).
 
 
 File: loco.info,  Node: License,  Next: Colophon,  Prev: Author and copyright,  Up: Top
@@ -1136,10 +1136,9 @@ File: loco.info,  Node: License,  Next: Colophon,  Prev: Author and copyright,  
 7 License
 *********
 
-This file is part of Loco.
-
-Loco is licensed under the GNU (https://www.gnu.org) General Public
-License v3.0.  See the <COPYING> file for details.
+Unless otherwise noted, all files in this project are licensed under the
+GNU (https://www.gnu.org) General Public License v3.0.  See the
+<COPYING> file for details.
 
 
 File: loco.info,  Node: Colophon,  Prev: License,  Up: Top
@@ -1191,8 +1190,8 @@ Node: Mapping Caps Lock to Control37841
 Node: Activation keys that also function as modifiers39724
 Node: Activation keys that avoid modifiers completely44181
 Node: Author and copyright48895
-Node: License49144
-Node: Colophon49404
+Node: License49154
+Node: Colophon49432
 
 End Tag Table
 

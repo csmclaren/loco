@@ -980,13 +980,11 @@ Fortunately, we can use the Assist Menu for this. @kbd{C-,} and @kbd{M-.} can be
 
 @node Author and copyright
 @chapter Author and copyright
-Loco was written and copyright in 2024 by Chris McLaren (@uref{https://www.github.com/csmclaren,@@csmclaren}).
+This project was written and copyrighted in 2024 by Chris McLaren (@uref{https://www.github.com/csmclaren,@@csmclaren}).
 
 @node License
 @chapter License
-This file is part of Loco.
-
-Loco is licensed under the @uref{https://www.gnu.org,GNU} General Public License v3.0. See the @url{COPYING} file for details.
+Unless otherwise noted, all files in this project are licensed under the @uref{https://www.gnu.org,GNU} General Public License v3.0. See the @url{COPYING} file for details.
 
 @node Colophon
 @chapter Colophon
