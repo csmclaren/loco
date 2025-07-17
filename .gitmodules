@@ -1,0 +1,3 @@
+[submodule "docs/tools/pandoc-tools"]
+	path = docs/tools/pandoc-tools
+	url = http://github.com/csmclaren/pandoc-tools
