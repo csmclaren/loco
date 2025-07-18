@@ -14,11 +14,11 @@ README.md: docs
 	cp docs/build/README.md README.md
 
 set-permissions:
-	find . -type d -exec chmod 755 {} \;
-	find . -type f -exec chmod 644 {} \;
+	find . -type d -exec chmod 755 {} +
+	find . -type f -exec chmod 644 {} +
 
 set-timestamps:
-	find . -exec touch {} +
+	find . -path './.git' -prune -o -exec touch {} +
 
 clean:
 	$(MAKE) -C docs clean
