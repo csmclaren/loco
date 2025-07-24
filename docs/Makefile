@@ -1,85 +1,87 @@
 .PHONY: all build clean
 
+NAME := loco
+
+FILTER_DIR := tools/pandoc-tools/filters
+TEMPLATE_DIR := tools/pandoc-tools/templates
+
 all: clean build
 
-clean:
-	rm -fr build
-
 build: \
-	build/loco.md \
-	build/loco.css \
-	build/loco.html \
-	build/loco-standalone.html \
-	build/loco.texi \
-	build/loco.info \
+	build/$(NAME).md \
+	build/$(NAME).css \
+	build/$(NAME).html \
+	build/$(NAME)-standalone.html \
+	build/$(NAME).texi \
+	build/$(NAME).info \
 	build/README.md
 
-build/loco.md:
-	mkdir -p build && \
+build-dir:
+	mkdir -p build
+
+build/$(NAME).md: | build-dir
 	pandoc \
 		--from gfm \
-		--lua-filter=tools/pandoc-tools/filters/filter-append-default-footer.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-toc.lua \
-		--output build/loco.md \
+		--lua-filter=$(FILTER_DIR)/filter-append-default-footer.lua \
+		--lua-filter=$(FILTER_DIR)/filter-toc.lua \
+		--output $@ \
 		--to gfm \
 		--wrap none \
-		src/loco.md
+		src/$(NAME).md
 
-build/loco.css:
-	mkdir -p build && \
-	cp tools/pandoc-tools/css/default.css build/loco.css
+build/$(NAME).css: | build-dir
+	cp tools/pandoc-tools/css/default.css $@
 
-build/loco.html:
-	mkdir -p build && \
+build/$(NAME).html: | build-dir
 	pandoc \
 		--from gfm \
-		--lua-filter=tools/pandoc-tools/filters/filter-append-html-footer.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-link-stylesheet.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-toc.lua \
-		--output build/loco.html \
-		--template tools/pandoc-tools/templates/template.html \
+		--lua-filter=$(FILTER_DIR)/filter-append-html-footer.lua \
+		--lua-filter=$(FILTER_DIR)/filter-link-stylesheet.lua \
+		--lua-filter=$(FILTER_DIR)/filter-toc.lua \
+		--output $@ \
+		--template $(TEMPLATE_DIR)/template.html \
 		--to html \
 		--wrap none \
-		src/loco.md
+		src/$(NAME).md
 
-build/loco-standalone.html:
-	mkdir -p build && \
+build/$(NAME)-standalone.html: | build-dir
 	pandoc \
 		--from gfm \
-		--lua-filter=tools/pandoc-tools/filters/filter-append-html-footer.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-embed-stylesheet.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-toc.lua \
-		--output build/loco-standalone.html \
-		--template tools/pandoc-tools/templates/template.html \
+		--lua-filter=$(FILTER_DIR)/filter-append-html-footer.lua \
+		--lua-filter=$(FILTER_DIR)/filter-embed-stylesheet.lua \
+		--lua-filter=$(FILTER_DIR)/filter-toc.lua \
+		--output $@ \
+		--template $(TEMPLATE_DIR)/template.html \
 		--to html \
 		--wrap none \
-		src/loco.md
+		src/$(NAME).md
 
-build/loco.texi:
-	mkdir -p build && \
+build/$(NAME).texi: | build-dir
 	pandoc \
 		--from gfm \
-		--lua-filter=tools/pandoc-tools/filters/filter-adjust-header-depths.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-append-default-footer.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-process-kbd.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-strip-headers.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-trim-headers.lua \
-		--lua-filter=tools/pandoc-tools/filters/filter-toc.lua \
-		--output build/loco.texi \
-		--template tools/pandoc-tools/templates/template.texinfo \
+		--lua-filter=$(FILTER_DIR)/filter-adjust-header-depths.lua \
+		--lua-filter=$(FILTER_DIR)/filter-append-default-footer.lua \
+		--lua-filter=$(FILTER_DIR)/filter-process-kbd.lua \
+		--lua-filter=$(FILTER_DIR)/filter-strip-headers.lua \
+		--lua-filter=$(FILTER_DIR)/filter-trim-headers.lua \
+		--lua-filter=$(FILTER_DIR)/filter-toc.lua \
+		--output $@ \
+		--template $(TEMPLATE_DIR)/template.texinfo \
 		--to texinfo \
 		--wrap none \
-		src/loco.md
+		src/$(NAME).md
 
-build/loco.info: build/loco.texi
-	makeinfo --output build/loco.info build/loco.texi
+build/$(NAME).info: build/$(NAME).texi
+	makeinfo --output $@ build/$(NAME).texi
 
-build/README.md:
-	mkdir -p build && \
+build/README.md: | build-dir
 	pandoc \
 		--from gfm \
-		--lua-filter=tools/pandoc-tools/filters/filter-toc.lua \
-		--output build/README.md \
+		--lua-filter=$(FILTER_DIR)/filter-toc.lua \
+		--output $@ \
 		--to gfm \
 		--wrap none \
 		src/README.md
+
+clean:
+	rm -fr build

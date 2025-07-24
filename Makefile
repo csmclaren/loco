@@ -8,10 +8,10 @@ docs:
 	$(MAKE) -C docs build
 
 loco.info: docs
-	cp docs/build/loco.info loco.info
+	cp docs/build/$@ $@
 
 README.md: docs
-	cp docs/build/README.md README.md
+	cp docs/build/$@ $@
 
 set-permissions:
 	find . -type d -exec chmod 755 {} +
