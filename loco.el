@@ -717,19 +717,13 @@ VALIDATE          If non-nil, validate all keys used by this function
 (defun loco-set-default-configuration ()
   "Set the default configuration."
   (interactive)
-  (keymap-global-set "C-c ," #'loco-mode)
-  (keymap-global-set "C-c ." #'global-loco-mode)
-  (keymap-set loco-mode-keymap "C-h S-<return>" #'loco-default-describe-kseq)
-  (keymap-set loco-mode-keymap "S-<return>" #'loco-default-execute-kseq))
+  (loco-set-standard-configuration 'shift-return-jk))
 
 ;;;###autoload
 (defun loco-unset-default-configuration ()
   "Unset the default configuration."
   (interactive)
-  (keymap-global-unset "C-c ,")
-  (keymap-global-unset "C-c .")
-  (keymap-unset loco-mode-keymap "C-h S-<return>")
-  (keymap-unset loco-mode-keymap "S-<return>"))
+  (loco-unset-standard-configuration 'shift-return-jk))
 
 ;; Standard configurations
 ;; Public functions
