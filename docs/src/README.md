@@ -25,11 +25,11 @@ When enabled, and using the default configuration, pressing <kbd>S-&lt;return&gt
 
 Once activated, you can type any key sequence, taking advantage of the following special keys to help you avoid pressing any physical modifier keys:
 
-* <kbd>j</kbd> to apply the modifier <kbd>Control</kbd> to  the next non&#x2011;special key;
-* <kbd>k</kbd> to apply the modifier <kbd>Meta</kbd> to the next non&#x2011;special key; or
-* <kbd>l</kbd> to open a menu that includes options to:
-  * apply other modifiers (for example, <kbd>Alt</kbd>, <kbd>Hyper</kbd>, or <kbd>Super</kbd>) to the next non&#x2011;special key; or
-  * enter the special keys themselves as the literal characters _j_, _k_, or _l_.
+- <kbd>j</kbd> to apply the modifier <kbd>Control</kbd> to  the next non&#x2011;special key;
+- <kbd>k</kbd> to apply the modifier <kbd>Meta</kbd> to the next non&#x2011;special key; or
+- <kbd>l</kbd> to open a menu that includes options to:
+  - apply other modifiers (for example, <kbd>Alt</kbd>, <kbd>Hyper</kbd>, or <kbd>Super</kbd>) to the next non&#x2011;special key; or
+  - enter the special keys themselves as the literal characters *j*, *k*, or *l*.
 
 ### Examples (using the default configuration)
 
@@ -40,14 +40,12 @@ Once activated, you can type any key sequence, taking advantage of the following
 | <kbd>j h i</kbd> | <kbd>C-h i</kbd> | `info` |
 | <kbd>j x j s</kbd> | <kbd>C-x C-s</kbd> | `save-buffer` |
 
-This is only a brief overview; see [Usage](docs/build/loco.md#usage) for a detailed explanation.
+The default configuration is not the only way to use Loco, it is one of a set of pre-defined [standard configurations](docs/build/loco.md#standard-configurations). Loco can also be [extensively customized](docs/build/loco.md#customization) with just a few lines of code. Many options are possible, including:
 
-The default configuration is not the only way to use Loco. Loco can be [extensively customized](docs/build/loco.md#customization) with just a few lines of code. Many options are possible, including:
-
-* Changing the key bindings used to enable, disable, or activate Loco;
-* Changing the keys used while Loco reads a key sequence;
-* Configuring activation keys that also function as modifiers; and
-* Configuring activation keys that avoid modifiers completely.
+- Changing the key bindings used to enable, disable, or activate Loco;
+- Changing the keys used while Loco reads a key sequence;
+- Configuring activation keys that also function as modifiers; and
+- Configuring activation keys that avoid modifiers completely.
 
 ## Documentation
 
@@ -55,11 +53,11 @@ This project includes a user manual which includes information on how to install
 
 The user manual is available here, in five formats:
 
-  * [Markdown](docs/build/loco.md)
-  * [HTML](docs/build/loco.html)
-  * [HTML Standalone](docs/build/loco-standalone.html)
-  * [Texinfo](docs/build/loco.texi)
-  * [Info](docs/build/loco.info)
+- [Markdown](docs/build/loco.md)
+- [HTML](docs/build/loco.html)
+- [HTML Standalone](docs/build/loco-standalone.html)
+- [Texinfo](docs/build/loco.texi)
+- [Info](docs/build/loco.info)
 
 ## Author and copyright
 

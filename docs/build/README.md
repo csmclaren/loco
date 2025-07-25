@@ -33,9 +33,7 @@ Once activated, you can type any key sequence, taking advantage of the following
 | <kbd>j h i</kbd>   | <kbd>C-h i</kbd>        | `info`        |
 | <kbd>j x j s</kbd> | <kbd>C-x C-s</kbd>      | `save-buffer` |
 
-This is only a brief overview; see [Usage](docs/build/loco.md#usage) for a detailed explanation.
-
-The default configuration is not the only way to use Loco. Loco can be [extensively customized](docs/build/loco.md#customization) with just a few lines of code. Many options are possible, including:
+The default configuration is not the only way to use Loco, it is one of a set of pre-defined [standard configurations](docs/build/loco.md#standard-configurations). Loco can also be [extensively customized](docs/build/loco.md#customization) with just a few lines of code. Many options are possible, including:
 
 - Changing the key bindings used to enable, disable, or activate Loco;
 - Changing the keys used while Loco reads a key sequence;
