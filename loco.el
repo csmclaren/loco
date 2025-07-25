@@ -4,7 +4,7 @@
 ;; Author: Chris McLaren <csmclaren@me.com>
 ;; Maintainer: Chris McLaren <csmclaren@me.com>
 ;; Created: 2024-06-14
-;; Version: 0.1.0
+;; Version: 0.2.0
 ;; Keywords: abbrev, convenience
 ;; URL: https://github.com/csmclaren/loco
 ;; Package-Requires: ((emacs "29.1"))
@@ -250,28 +250,6 @@ A minor mode to help you enter complex key sequences with ease."
   :group 'loco)
 
 ;; Public functions
-
-;;;###autoload
-(defun loco-default-describe-kseq (&rest args)
-  "Read and describe a key sequence with default parameters.
-
-This function prompts the user to enter a key sequence and then describes the
-command to which the key sequence is bound, if any.
-
-ARGS  Additional arguments to be passed to `loco-read-kseq'."
-  (interactive)
-  (apply #'loco-default-execute-kseq :d t args))
-
-;;;###autoload
-(defun loco-default-execute-kseq (&rest args)
-  "Read and execute a key sequence with default parameters.
-
-This function prompts the user to enter a key sequence and then executes the
-command to which the key sequence is bound, if any.
-
-ARGS  Additional arguments to be passed to `loco-read-kseq'."
-  (interactive)
-  (apply #'loco-read-kseq :key-mod-c ?j :key-mod-m ?k args))
 
 ;;;###autoload
 (defun loco-read-kseq (&rest args)
