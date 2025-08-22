@@ -1043,6 +1043,6 @@ Unless otherwise noted, all files in this project are licensed under the @uref{h
 @chapter Colophon
 The logo for Loco is a representation of a @uref{https://en.wikipedia.org/wiki/Tram,tram} car from the @uref{https://home.unicode.org,Unicode} chart @uref{https://unicode.org/charts/PDF/U1F680.pdf,Transport and Map Symbols}. Loco was created in Lisbon, Portugal, a city with a @uref{https://en.wikipedia.org/wiki/Trams_in_Lisbon,history} of using tram cars such as these.
 
-This document was produced on July 25, 2025.
+This document was produced on August 22, 2025.
 
 @bye

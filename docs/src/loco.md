@@ -315,25 +315,25 @@ These allow one to use Loco beyond what is provided by the default configuration
 
   Note that this:
 
-  ``` lisp
+  ```lisp
   (loco-set-default-configuration)
   ```
 
   is equivalent to:
 
-  ``` lisp
+  ```lisp
   (loco-set-standard-configuration 'shift‑return‑jk)
   ```
 
   Similarly, this:
 
-  ``` lisp
+  ```lisp
   (loco-unset-default-configuration)
   ```
 
   is equivalent to:
 
-  ``` lisp
+  ```lisp
   (loco-unset-standard-configuration 'shift‑return‑jk)
   ```
 
