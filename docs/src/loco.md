@@ -537,7 +537,7 @@ This project was written and copyrighted in 2024 by Chris McLaren ([@csmclaren](
 
 ## License
 
-Unless otherwise noted, all files in this project are licensed under the [GNU](https://www.gnu.org) General Public License v3.0. See the [COPYING](COPYING) file for details.
+Unless otherwise noted, all files in this project are licensed under the [GNU](https://www.gnu.org) General Public License v3.0. See the [COPYING](/COPYING) file for details.
 
 ## Colophon
 

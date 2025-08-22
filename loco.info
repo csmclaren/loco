@@ -1089,8 +1089,8 @@ File: loco.info,  Node: License,  Next: Colophon,  Prev: Author and copyright,  
 *********
 
 Unless otherwise noted, all files in this project are licensed under the
-GNU (https://www.gnu.org) General Public License v3.0.  See the
-<COPYING> file for details.
+GNU (https://www.gnu.org) General Public License v3.0.  See the COPYING
+(/COPYING) file for details.
 
 
 File: loco.info,  Node: Colophon,  Prev: License,  Up: Top
@@ -1144,7 +1144,7 @@ Node: Mapping Caps Lock to Control44456
 Node: Going further46008
 Node: Author and copyright46938
 Node: License47189
-Node: Colophon47467
+Node: Colophon47476
 
 End Tag Table
 

@@ -1037,7 +1037,7 @@ This project was written and copyrighted in 2024 by Chris McLaren (@uref{https:/
 
 @node License
 @chapter License
-Unless otherwise noted, all files in this project are licensed under the @uref{https://www.gnu.org,GNU} General Public License v3.0. See the @url{COPYING} file for details.
+Unless otherwise noted, all files in this project are licensed under the @uref{https://www.gnu.org,GNU} General Public License v3.0. See the @uref{/COPYING,COPYING} file for details.
 
 @node Colophon
 @chapter Colophon

@@ -13,11 +13,11 @@ Loco is a library and minor mode to help you enter complex key sequences with ea
 ## Introduction
 
 Loco is a [package](
-https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) for [Emacs](https://www.gnu.org/software/emacs/). Loco lets you type any [key sequence](docs/build/loco.md#keys-key-sequences-and-commands), including those requiring the modifiers <kbd>Alt</kbd>, <kbd>Control</kbd>, <kbd>Hyper</kbd>, <kbd>Meta</kbd>, or <kbd>Super</kbd>, without using any physical modifier keys except <kbd>Shift</kbd>. This makes it easy to enter key sequences that are complicated or use hard-to-reach keys.
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) for [Emacs](https://www.gnu.org/software/emacs/). Loco lets you type any [key sequence](/docs/build/loco.md#keys-key-sequences-and-commands), including those requiring the modifiers <kbd>Alt</kbd>, <kbd>Control</kbd>, <kbd>Hyper</kbd>, <kbd>Meta</kbd>, or <kbd>Super</kbd>, without using any physical modifier keys except <kbd>Shift</kbd>. This makes it easy to enter key sequences that are complicated or use hard-to-reach keys.
 
 Loco works by translating key sequences from one form to another. It does not redefine the [standard key bindings](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf), nor does it prevent you from [defining your own](https://www.gnu.org/software/emacs/manual/html_node/emacs/Key-Bindings.html). Learn the few rules of Loco and be productive immediately, using the key bindings you already know.
 
-Loco does not preclude the use of physical modifier keys; it integrates well with them. There may even be some key bindings for which you find using physical modifier keys preferable. And it works equally well in the [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) or the [terminal](https://en.wikipedia.org/wiki/Computer_terminal), working around the [limitations of terminals](docs/build/loco.md#considerations-when-using-a-terminal) that prevent the entry of certain keys, allowing you to move between both easily.
+Loco does not preclude the use of physical modifier keys; it integrates well with them. There may even be some key bindings for which you find using physical modifier keys preferable. And it works equally well in the [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) or the [terminal](https://en.wikipedia.org/wiki/Computer_terminal), working around the [limitations of terminals](/docs/build/loco.md#considerations-when-using-a-terminal) that prevent the entry of certain keys, allowing you to move between both easily.
 
 When enabled, and using the default configuration, pressing <kbd>S-&lt;return&gt;</kbd> will activate Loco.
 
@@ -40,7 +40,7 @@ Once activated, you can type any key sequence, taking advantage of the following
 | <kbd>j h i</kbd> | <kbd>C-h i</kbd> | `info` |
 | <kbd>j x j s</kbd> | <kbd>C-x C-s</kbd> | `save-buffer` |
 
-The default configuration is not the only way to use Loco, it is one of a set of pre-defined [standard configurations](docs/build/loco.md#standard-configurations). Loco can also be [extensively customized](docs/build/loco.md#customization) with just a few lines of code. Many options are possible, including:
+The default configuration is not the only way to use Loco, it is one of a set of pre-defined [standard configurations](/docs/build/loco.md#standard-configurations). Loco can also be [extensively customized](/docs/build/loco.md#customization) with just a few lines of code. Many options are possible, including:
 
 - Changing the key bindings used to enable, disable, or activate Loco;
 - Changing the keys used while Loco reads a key sequence;
@@ -53,11 +53,11 @@ This project includes a user manual which includes information on how to install
 
 The user manual is available here, in five formats:
 
-- [Markdown](docs/build/loco.md)
-- [HTML](docs/build/loco.html)
-- [HTML Standalone](docs/build/loco-standalone.html)
-- [Texinfo](docs/build/loco.texi)
-- [Info](docs/build/loco.info)
+- [Markdown](/docs/build/loco.md)
+- [HTML](/docs/build/loco.html)
+- [HTML Standalone](/docs/build/loco-standalone.html)
+- [Texinfo](/docs/build/loco.texi)
+- [Info](/docs/build/loco.info)
 
 ## Author and copyright
 
@@ -65,4 +65,4 @@ This project was written and copyrighted in 2024 by Chris McLaren ([@csmclaren](
 
 ## License
 
-Unless otherwise noted, all files in this project are licensed under the [GNU](https://www.gnu.org) General Public License v3.0. See the [COPYING](COPYING) file for details.
+Unless otherwise noted, all files in this project are licensed under the [GNU](https://www.gnu.org) General Public License v3.0. See the [COPYING](/COPYING) file for details.
