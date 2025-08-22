@@ -2,6 +2,8 @@
 
 NAME := loco
 
+REF := main
+
 FILTER_DIR := tools/pandoc-tools/filters
 TEMPLATE_DIR := tools/pandoc-tools/templates
 
@@ -37,7 +39,9 @@ build/$(NAME).html: | build-dir
 		--from gfm \
 		--lua-filter=$(FILTER_DIR)/append-html-footer.lua \
 		--lua-filter=$(FILTER_DIR)/link-stylesheet.lua \
+		--lua-filter=$(FILTER_DIR)/process-github-links.lua \
 		--lua-filter=$(FILTER_DIR)/toc.lua \
+		--metadata filter_process_github_links.ref=$(REF) \
 		--output $@ \
 		--template $(TEMPLATE_DIR)/default.html \
 		--to html \
@@ -49,7 +53,9 @@ build/$(NAME)-standalone.html: | build-dir
 		--from gfm \
 		--lua-filter=$(FILTER_DIR)/append-html-footer.lua \
 		--lua-filter=$(FILTER_DIR)/embed-stylesheet.lua \
+		--lua-filter=$(FILTER_DIR)/process-github-links.lua \
 		--lua-filter=$(FILTER_DIR)/toc.lua \
+		--metadata filter_process_github_links.ref=$(REF) \
 		--output $@ \
 		--template $(TEMPLATE_DIR)/default.html \
 		--to html \
