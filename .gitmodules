@@ -1,3 +1,5 @@
 [submodule "docs/tools/pandoc-tools"]
 	path = docs/tools/pandoc-tools
 	url = https://github.com/csmclaren/pandoc-tools.git
+[submodule "pandoc-tools"]
+	branch = main
