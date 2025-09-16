@@ -1,11 +1,8 @@
 ---
 dircategory: 'Emacs'
 direntry: '\* Loco: (loco).                 Enter complex key sequences with ease!'
-filter_embed_stylesheet_fpath: 'docs/build/loco.css'
-filter_link_stylesheet_fpath: 'loco.css'
 filter_process_github_links:
   org: csmclaren
-  repo: loco
   root: docs/build
 filter_toc_exclude_pattern: 'table%-of%-contents'
 title: 'Loco'

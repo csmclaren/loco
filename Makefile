@@ -1,18 +1,24 @@
-.PHONY: all build check-emacs clean docs docs-build-dir set-permissions set-timestamps
+include meta.mk
+export NAME REF REPOSITORY_URL VERSION
 
-NAME := loco
-REF := main
+.PHONY: all build check check-emacs check-headers clean docs docs-build-dir set-permissions set-timestamps
 
 FILTER_DIR := tools/pandoc-tools/filters
 TEMPLATE_DIR := tools/pandoc-tools/templates
 
 all: clean build
 
-build: docs loco.info README.md set-permissions set-timestamps
+build: check docs loco.info README.md set-permissions set-timestamps
+
+check: check-headers
 
 check-emacs:
 	@command -v emacs >/dev/null 2>&1 || \
-	  { echo "Error: 'emacs' is not installed or not in PATH."; exit 1; }
+		{ echo "Error: 'emacs' is not installed or not in PATH."; exit 1; }
+
+check-headers: check-emacs
+	FILE=$(NAME).el URL=$(REPOSITORY_URL) VERSION=$(VERSION) \
+		emacs -Q --batch -l lisp-mnt -l tools/check-headers.el
 
 clean:
 	$(RM) -f README.md
@@ -38,7 +44,10 @@ docs/build/$(NAME)-standalone.html: docs/src/$(NAME).md docs/build/$(NAME).css |
 		--lua-filter=$(FILTER_DIR)/embed-stylesheet.lua \
 		--lua-filter=$(FILTER_DIR)/process-github-links.lua \
 		--lua-filter=$(FILTER_DIR)/toc.lua \
+		--metadata filter_embed_stylesheet_fpath=docs/build/$(NAME).css \
+		--metadata filter_link_stylesheet_fpath=$(NAME).css \
 		--metadata filter_process_github_links.ref=$(REF) \
+		--metadata filter_process_github_links.repo=$(NAME) \
 		--output $@ \
 		--template $(TEMPLATE_DIR)/default.html \
 		--to html \
@@ -55,7 +64,10 @@ docs/build/$(NAME).html: docs/src/$(NAME).md | docs-build-dir docs/build/$(NAME)
 		--lua-filter=$(FILTER_DIR)/link-stylesheet.lua \
 		--lua-filter=$(FILTER_DIR)/process-github-links.lua \
 		--lua-filter=$(FILTER_DIR)/toc.lua \
+		--metadata filter_embed_stylesheet_fpath=docs/build/$(NAME).css \
+		--metadata filter_link_stylesheet_fpath=$(NAME).css \
 		--metadata filter_process_github_links.ref=$(REF) \
+		--metadata filter_process_github_links.repo=$(NAME) \
 		--output $@ \
 		--template $(TEMPLATE_DIR)/default.html \
 		--to html \

@@ -2,15 +2,15 @@
 ;;; (URL then Version) -*- lexical-binding: t; -*-
 
 ;; Usage (from any shell or build tool):
-;;   EXPECT_FILE="path/to/file.el" \
-;;   EXPECT_URL="https://example.com/repo" \
-;;   EXPECT_VERSION="1.0.0" \
+;;   FILE="path/to/file.el" \
+;;   URL="https://example.com/repo" \
+;;   VERSION="1.0.0" \
 ;;     emacs -Q --batch -l lisp-mnt -l path/to/check-headers.el
 ;;
 ;; Notes:
 ;; - Only the `URL:` and `Version:` headers are considered.
-;; - EXPECT_URL and EXPECT_VERSION are optional; when set, their values
-;;   must exactly match the corresponding headers in the target file.
+;; - URL and VERSION are optional; when set, their values must exactly match
+;;   the corresponding headers in the target file.
 ;; - String comparisons are exact, after trimming and removing text properties.
 ;;
 ;; Exit status:
@@ -36,12 +36,12 @@
     (or (lm-header name) "")))
 
 (when noninteractive
-  (let* ((file (or (getenv "EXPECT_FILE")
-                   (check-headers--fatal "EXPECT_FILE not set")))
+  (let* ((file (or (getenv "FILE")
+                   (check-headers--fatal "FILE not set")))
          (abs-file (expand-file-name file))
          (buf nil)
-         (expected-url (or (getenv "EXPECT_URL") ""))
-         (expected-version (or (getenv "EXPECT_VERSION") ""))
+         (expected-url (or (getenv "URL") ""))
+         (expected-version (or (getenv "VERSION") ""))
          found-url
          found-version)
 
