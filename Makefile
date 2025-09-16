@@ -1,14 +1,14 @@
 include meta.mk
 export NAME REF REPOSITORY_URL VERSION
 
-.PHONY: all build check check-emacs check-headers clean docs docs-build-dir set-permissions set-timestamps
-
 FILTER_DIR := tools/pandoc-tools/filters
 TEMPLATE_DIR := tools/pandoc-tools/templates
 
+.PHONY: all build check check-emacs check-headers clean docs docs-build-dir set-permissions set-timestamps
+
 all: clean build
 
-build: check docs loco.info README.md set-permissions set-timestamps
+build: check docs set-permissions set-timestamps
 
 check: check-headers
 
@@ -22,37 +22,19 @@ check-headers: check-emacs
 
 clean:
 	$(RM) -f README.md
-	$(RM) -f loco.info
+	$(RM) -f $(NAME).info
 	$(RM) -fr docs/build
 
 docs: \
-	docs/build/$(NAME)-standalone.html \
 	docs/build/$(NAME).css \
 	docs/build/$(NAME).html \
-	docs/build/$(NAME).info \
 	docs/build/$(NAME).md \
 	docs/build/$(NAME).texi \
-	docs/build/README.md
+	$(NAME).info \
+	README.md
 
 docs-build-dir:
 	mkdir -p docs/build
-
-docs/build/$(NAME)-standalone.html: docs/src/$(NAME).md docs/build/$(NAME).css | docs-build-dir
-	pandoc \
-		--from gfm \
-		--lua-filter=$(FILTER_DIR)/append-html-footer.lua \
-		--lua-filter=$(FILTER_DIR)/embed-stylesheet.lua \
-		--lua-filter=$(FILTER_DIR)/process-github-links.lua \
-		--lua-filter=$(FILTER_DIR)/toc.lua \
-		--metadata filter_embed_stylesheet_fpath=docs/build/$(NAME).css \
-		--metadata filter_link_stylesheet_fpath=$(NAME).css \
-		--metadata filter_process_github_links.ref=$(REF) \
-		--metadata filter_process_github_links.repo=$(NAME) \
-		--output $@ \
-		--template $(TEMPLATE_DIR)/default.html \
-		--to html \
-		--wrap none \
-		docs/src/$(NAME).md
 
 docs/build/$(NAME).css: tools/pandoc-tools/css/default.css | docs-build-dir
 	cp tools/pandoc-tools/css/default.css $@
@@ -73,9 +55,6 @@ docs/build/$(NAME).html: docs/src/$(NAME).md | docs-build-dir docs/build/$(NAME)
 		--to html \
 		--wrap none \
 		docs/src/$(NAME).md
-
-docs/build/$(NAME).info: docs/build/$(NAME).texi | docs-build-dir
-	makeinfo --output $@ docs/build/$(NAME).texi
 
 docs/build/$(NAME).md: docs/src/$(NAME).md | docs-build-dir
 	pandoc \
@@ -102,7 +81,10 @@ docs/build/$(NAME).texi: docs/src/$(NAME).md | docs-build-dir
 		--wrap none \
 		docs/src/$(NAME).md
 
-docs/build/README.md: docs/src/README.md | docs-build-dir
+$(NAME).info: docs/build/$(NAME).texi | docs-build-dir
+	makeinfo --output $@ docs/build/$(NAME).texi
+
+README.md: docs/src/README.md | docs-build-dir
 	pandoc \
 		--from gfm \
 		--lua-filter=$(FILTER_DIR)/toc.lua \
@@ -110,12 +92,6 @@ docs/build/README.md: docs/src/README.md | docs-build-dir
 		--to gfm \
 		--wrap none \
 		docs/src/README.md
-
-loco.info: docs/build/$(NAME).info
-	cp docs/build/$@ $@
-
-README.md: docs/build/README.md
-	cp docs/build/$@ $@
 
 set-permissions:
 	find . -type d -exec chmod 755 {} +

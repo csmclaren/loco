@@ -51,12 +51,10 @@ The default configuration is not the only way to use Loco, it is one of a set of
 
 This project includes a user manual which includes information on how to install this package.
 
-The user manual is available here, in five formats:
+The user manual is available here, in three formats:
 
 - [Markdown](/docs/build/loco.md)
 - [HTML](/docs/build/loco.html)
-- [HTML Standalone](/docs/build/loco-standalone.html)
-- [Texinfo](/docs/build/loco.texi)
 - [Info](/docs/build/loco.info)
 
 ## Author and copyright
