@@ -4,7 +4,7 @@
 ;; Author: Chris McLaren <csmclaren@me.com>
 ;; Maintainer: Chris McLaren <csmclaren@me.com>
 ;; Created: 2024-06-14
-;; Version: 0.2.4
+;; Version: 0.2.5
 ;; Keywords: abbrev, convenience
 ;; URL: https://github.com/csmclaren/loco
 ;; Package-Requires: ((emacs "29.1"))

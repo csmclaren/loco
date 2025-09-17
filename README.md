@@ -44,11 +44,12 @@ The default configuration is not the only way to use Loco, it is one of a set of
 
 This project includes a user manual which includes information on how to install this package.
 
-The user manual is available here, in three formats:
+The user manual is available here, in various formats:
 
+- [HTML (.tar.gz)](https://github.com/csmclaren/loco/releases/download/v0.2.5/loco-0.2.5-docs.tar.gz)
+- [HTML (.zip)](https://github.com/csmclaren/loco/releases/download/v0.2.5/loco-0.2.5-docs.zip)
+- [Info](/loco.info)
 - [Markdown](/docs/build/loco.md)
-- [HTML](/docs/build/loco.html)
-- [Info](/docs/build/loco.info)
 
 ## Author and copyright
 
